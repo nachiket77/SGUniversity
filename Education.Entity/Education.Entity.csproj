@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E998EA48-C4A0-446C-9DB2-4D22824D8D53}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Education.Entity</RootNamespace>
+    <AssemblyName>Education.Entity</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Education.DB, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Education.DB\bin\Debug\Education.DB.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\EducationApp\EducationApp\EducationApp\Education.WebApp\bin\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\Test\AllTestDetails.cs" />
+    <Compile Include="Admin\Test\Answer.cs" />
+    <Compile Include="Admin\Test\Questions.cs" />
+    <Compile Include="Admin\Test\QuestionType.cs" />
+    <Compile Include="Admin\Test\TestDetails.cs" />
+    <Compile Include="Admin\Test\TESTTYPE.cs" />
+    <Compile Include="Admin\Videos\AllVideosDetails.cs" />
+    <Compile Include="Admin\Videos\VideoUpload.cs" />
+    <Compile Include="CountryEntity\City.cs" />
+    <Compile Include="CountryEntity\Country.cs" />
+    <Compile Include="CountryEntity\State.cs" />
+    <Compile Include="Login\Login.cs" />
+    <Compile Include="Login\LoginResponse.cs" />
+    <Compile Include="Login\LoginView.cs" />
+    <Compile Include="Master\Master.cs" />
+    <Compile Include="Master\SubjectMaster.cs" />
+    <Compile Include="Master\UserTypeMaster.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Students\AllDetails.cs" />
+    <Compile Include="Students\Boards.cs" />
+    <Compile Include="Students\Classes.cs" />
+    <Compile Include="Students\Documents.cs" />
+    <Compile Include="Students\InstitutionDetail.cs" />
+    <Compile Include="Students\StudentDetails.cs" />
+    <Compile Include="Teachers\AllTeacherDetails.cs" />
+    <Compile Include="Teachers\TeacherDetails.cs" />
+    <Compile Include="UserType.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\Education.Entity.dll" />
+    <Content Include="bin\Debug\Education.Entity.pdb" />
+    <Content Include="bin\Release\Education.Entity.dll" />
+    <Content Include="bin\Release\Education.Entity.pdb" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

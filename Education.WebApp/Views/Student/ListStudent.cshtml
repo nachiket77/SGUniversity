@@ -1,0 +1,19 @@
+﻿@model Education.Entity.Students.AllDetails
+@{
+    ViewBag.Title = "ListStudent";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-xs-12 home-bg">
+    <div class="col-xs-12 col-md-10 col-md-offset-1 side-no-pad liststudent-table">
+        <div class="table-responsive">
+            <table class="table">
+               @{
+                   ViewBag.Title = "grid";
+                   WebGrid grid = new WebGrid(Model, rowsPerPage: 5);
+            }
+            </table>
+        </div>
+    </div>
+</div>
+

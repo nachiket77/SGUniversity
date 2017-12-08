@@ -1,0 +1,452 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E0745DE3-1436-4A23-8ED7-E64DB68F28D3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Education.DB</RootNamespace>
+    <AssemblyName>Education.DB</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Education.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Education.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Education.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Education.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Education.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Fiscalyear.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetAllTBL_MASTER_BOARDS_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MemberRegistration.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentDetail.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PlanMaster.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReceiptDetail.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SchemeMaster.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocMemberRegistrationSelectList_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocMemberRegistrationSelectSingleItem_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocPaymentDetailsSelectList_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocPaymentDetailsSelectSingleItem_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocPlanMasterSelectList_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocPlanMasterSelectSingleItem_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_MASTER_BOARDSSelectList_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_MASTER_BOARDSSelectSingleItem_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_MASTER_CITYSelectList_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_MASTER_CITYSelectSingleItem_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_MASTER_CLASSSelectList_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_MASTER_CLASSSelectSingleItem_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_MASTER_COUNTRYSelectList_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_MASTER_COUNTRYSelectSingleItem_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_MASTER_COURSESelectList_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_MASTER_COURSESelectSingleItem_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_MASTER_DOCUMENTTYPESelectList_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_MASTER_DOCUMENTTYPESelectSingleItem_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_MASTER_STATESelectList_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_MASTER_STATESelectSingleItem_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_MASTER_STATUSSelectList_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_MASTER_STATUSSelectSingleItem_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_MASTER_SUBJECTSelectList_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_MASTER_SUBJECTSelectSingleItem_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_MASTER_USERTYPESelectList_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_MASTER_USERTYPESelectSingleItem_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_USER_ADDRESS_DETAILSSelectList_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_USER_ADDRESS_DETAILSSelectSingleItem_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_USER_COURSE_DETAILSSelectList_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_USER_COURSE_DETAILSSelectSingleItem_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_USER_DETAILSSelectList_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_USER_DETAILSSelectSingleItem_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_USER_DOCUMENTS_DETAILSSelectList_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_USER_DOCUMENTS_DETAILSSelectSingleItem_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_USER_INSTITUTION_DETAILSSelectList_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_USER_INSTITUTION_DETAILSSelectSingleItem_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_USER_LOGINSelectList_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_USER_LOGINSelectSingleItem_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_USER_LOGIN_TRAILSelectList_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_USER_LOGIN_TRAILSelectSingleItem_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_USER_PARENTS_DETAILSSelectList_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_USER_PARENTS_DETAILSSelectSingleItem_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_USER_PROFESSIONAL_DETAILSSelectList_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_USER_PROFESSIONAL_DETAILSSelectSingleItem_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_USER_SUBJECTSSelectList_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_USER_SUBJECTSSelectSingleItem_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_COURSE_SUBJECT_MAPPING_DETAILS.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_GN_ANNAUNCMENT.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_GN_DIGITALDOC_DETAILS.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_GN_DIGITALDOC_VIEWDETAILS.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_MASTER_BOARDS.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_MASTER_CITY.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_MASTER_CLASS.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_MASTER_COUNTRY.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_MASTER_COURSE.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_MASTER_DIGITALDOC.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_MASTER_DOCUMENTTYPE.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_MASTER_STATE.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_MASTER_STATUS.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_MASTER_SUBJECT.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_MASTER_TEACHER.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_MASTER_TESTQUESTIONTYPE.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_MASTER_TEST_TYPE.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_MASTER_USERTYPE.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_STUDENT_MASTER_MAPPING.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_TEACHER_COURSE_MAPPING_DETAILS.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_TEACHER_SUBJECT_MAPPING_DETAILS.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_TEST_ANSWERS.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_TEST_ATAMPT.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_TEST_ATAMPT_QUESTION_ANSWER.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_TEST_QUESTIONS.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_TEST_TESTDETAIL.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_USER_ADDRESS_DETAILS.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_USER_COURSE_DETAILS.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_USER_COURSE_MAPPING_DETAILS.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_USER_DETAILS.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_USER_DOCUMENTS_DETAILS.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_USER_INSTITUTION_DETAILS.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_USER_LOGIN.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_USER_LOGIN_TRAIL.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_USER_PARENTS_DETAILS.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_USER_PROFESSIONAL_DETAILS.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_USER_ROLE.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TBL_USER_SUBJECTS.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usp_ALLPaymentDetailinfo_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usp_DisplayAllUser_And_Roles_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usp_Generatenumber_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usp_GenerateRecepit_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usp_GetAllRenwalrecordsFromBetweenDate_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usp_GetAllRenwalrecords_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usp_GetAllUsers_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usp_GetDataofMemberbyID_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usp_getDec_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usp_GetMonthwisepaymentdetails_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usp_GetPlanByWorkTypeID_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usp_GetRoles_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usp_GetYearwisepaymentdetails_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USP_listofMemberName_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USP_listofMemberno_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usp_PaymentDetailinfo_Name_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usp_PaymentDetailinfo_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="webpages_Membership.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="webpages_OAuthMembership.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="webpages_Roles.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Education.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Education.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="Education.edmx.diagram">
+      <DependentUpon>Education.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Education.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Education.edmx</DependentUpon>
+      <LastGenOutput>Education.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Education.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Education.edmx</DependentUpon>
+      <LastGenOutput>Education.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

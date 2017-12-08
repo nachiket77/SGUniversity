@@ -1,0 +1,124 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link href="~/assets/css/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="~/assets/css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-default navlogin-style display-flex">
+        <div class="navbar-header navitem-left">
+            <a class="navbar-brand pad-top-0" href="#">
+                <div class="navbar-item ">
+                    <div>
+                        <img src="~/assets/images/navlogo.png" alt="logo">
+                    </div>
+                    <div class="pad-left-10">
+                        <p class="no-bottom lin-height">Sou. Shusila Danchad Ghodawat Charitable Trust's</p>
+                        <p class="no-bottom lin-height"><b>Sanjay Ghodawat Group of Institutions</b></p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <ul class="nav navbar-nav navitem-right">
+            <li>
+                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#signinmodal">Sign In</button>
+            </li>
+        </ul>
+        </div>
+        </div>
+    </nav>
+    <div class="col-xs-12 login-bg">
+    </div>
+    <!-- Modal -->
+    <div id="signinmodal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body text-align text-color">
+                    <div class="col-xs-12 col-sm-10 col-sm-offset-1 xs-side-no-pad">
+                        <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+                            <h4 class="fw-bold">Start learning with your Teacher Fair!</h4>
+                            <p class="black-color opacity">We'll personalize your learning experience and automatically save your points and progress</p>
+                        </div>
+                        <div class="col-xs-12 mr40 side-no-pad">
+                            <div class="type-radio">
+                                <img src="~/assets/images/student.png" alt="" class="">
+                                <br>
+                                <!-- <label class="radio-inline">
+                                    <input type="radio" name="optradio">I'm Student
+                                </label> -->
+                                <div class="radio radio-primary">
+                                    <input type="radio" name="radio1" id="radio1" value="option1">
+                                    <label for="radio1">
+                                        I'm Student
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="type-radio">
+                                <img src="~/assets/images/student.png" alt="" class="">
+                                <br>
+                                <div class="radio radio-primary">
+                                    <input type="radio" name="radio2" id="radio2" value="option2">
+                                    <label for="radio2">
+                                        I'm Teacher
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="type-radio">
+                                <img src="~/assets/images/student.png" alt="" class="">
+                                <br>
+                                <div class="radio radio-primary">
+                                    <input type="radio" name="radio3" id="radio3" value="option3">
+                                    <label for="radio3">
+                                        I'm Admin
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-10 col-sm-offset-1 mr40 xs-side-no-pad">
+                            <div class="col-xs-12 xs-side-no-pad">
+                                <div class="input-group pad-bottom-10">
+                                    <span class="input-group-addon modalinput-icon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                                    <input type="text" class="form-control modalinput-text" placeholder="Username" aria-describedby="basic-addon1">
+                                </div>
+                                <div class="input-group pad-bottom-10">
+                                    <span class="input-group-addon modalinput-icon"><i class="fa fa-lock" aria-hidden="true"></i></span>
+                                    <input type="text" class="form-control modalinput-text" placeholder="Password" aria-describedby="basic-addon1">
+                                </div>
+                                <div class="right-align">
+                                    <a href="" class="fw-bold black-color opacity">
+                                        Forgot your password ?
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 pad-top-20 xs-side-no-pad">
+                                <a href="@Url.Action("Index","Home")" class="modalsignin-btn">
+                                    Sign In
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</html>
+

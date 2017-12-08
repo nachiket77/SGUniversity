@@ -1,0 +1,90 @@
+﻿@model Education.Entity.Students.AllDetails
+@{
+    ViewBag.Title = "ListStudent";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href="~/assets/css/style.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+<script type="text/javascript">
+    $(document).on("click", ".editChk", function (e) {
+        debugger;
+        e.preventDefault();
+        var selectedID = $(this).data('todo').id;
+        var selectedName = $(this).data('todo').FirstName;
+        var selectedlastname = $(this).data('todo').LASTNAME;
+        var selectedMiddleName = $(this).data('todo').MIDDLENAME;
+
+        //var myBookId = $('#todolink').data('todo').id;
+        //var FirstName = $('#todolink').data('todo').FirstName;
+        $('#MyId').val(selectedID);
+        $('#FirstName').val(selectedName);
+        $('#Lastname').val(selectedlastname);
+        $('#middlename').val(selectedMiddleName);
+
+
+        //$(".modal-body #bookId").val(myBookId);
+        // As pointed out in comments,
+        // it is superfluous to have to manually call the modal.
+        // $('#addBookDialog').modal('show');
+    });
+</script>
+<div class="col-xs-12 home-bg">
+    <div class="col-xs-12 col-md-10 col-md-offset-1 side-no-pad liststudent-table">
+        <div class="table-responsive">
+            <table class="table">
+                <tr class="table-head">
+                    <td>UserID</td>
+                    <td>Student Name/Contact No.</td>
+                    <td>Parent Name/Contact No.</td>
+                    <td>Date of Birth</td>
+                    <td>Action</td>
+                </tr>
+                @foreach (var item in Model.StudentList)
+                {
+                    <tr class="table-body">
+                        <td class="idcol1">
+                            @item.USERID
+                            @{
+                                ViewBag.USERID = item.USERID;
+                            }
+                        </td>
+                        <td>
+                            @item.FIRSTNAME
+                        </td>
+                        <td>
+                            @item.LASTNAME
+                        </td>
+                        <td>
+                            @item.MIDDLENAME
+                        </td>
+                        <td class="editChk1">
+                            @*<a href='@Url.Action("UpdateStudentDetails","List", new {  USERID=product.USERID })'>Edit</a>*@
+                            <a id="todolink" class="editChk" data-todo='{"id":"@item.USERID","FirstName":"@item.FIRSTNAME","LASTNAME":"@item.LASTNAME","MIDDLENAME":"@item.MIDDLENAME"}' data-toggle="modal" data-target="#signinmodal">Edit</a>
+                            @*<i class="fa fa-cogs" aria-hidden="true"></i>*@
+                        </td>
+                    </tr>
+                                }
+                @*<tr class="table-body">
+                        <td>1</td>
+                        <td>
+                            <ul>
+                                <li>Michel Jo</li>
+                                <li>8963032904</li>
+                            </ul>
+                        </td
+                        <td>
+                            <ul>
+                                <li>Michel Jo</li>
+                                <li>8963032904</li>
+                            </ul>
+                        </td>
+                        <td>08 Aug.2016</td>
+                        <td><i class="fa fa-cogs" aria-hidden="true"></i></td>
+                    </tr>*@
+            </table>
+        </div>
+    </div>
+    
+</div>
