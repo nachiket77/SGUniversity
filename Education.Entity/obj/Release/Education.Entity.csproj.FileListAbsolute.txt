@@ -1,0 +1,8 @@
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.Entity\bin\Release\Education.Entity.dll
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.Entity\bin\Release\Education.Entity.pdb
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.Entity\obj\Release\Education.Entity.csprojResolveAssemblyReference.cache
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.Entity\obj\Release\Education.Entity.dll
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.Entity\obj\Release\Education.Entity.pdb
+G:\ProjectWork\MayurMane\EducationApp\Education.Entity\obj\Release\Education.Entity.csprojResolveAssemblyReference.cache
+G:\ProjectWork\MayurMane\EducationApp\Education.Entity\obj\Release\Education.Entity.dll
+G:\ProjectWork\MayurMane\EducationApp\Education.Entity\obj\Release\Education.Entity.pdb

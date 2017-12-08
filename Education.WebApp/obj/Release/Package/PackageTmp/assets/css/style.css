@@ -1,0 +1,348 @@
+.navbar-brand>img,  {
+	display: inline; 
+}
+.navbar-item{
+ display: flex;
+}
+.nav-style{
+	background: white;
+  border: 0;
+  padding-top: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-bottom: 10px;
+}
+.nav-link{
+ padding-top: 10px !important;
+ padding-bottom: 0 !important;
+}
+.ltr-spacing{
+	letter-spacing: 10px;
+}
+.fw-bold{
+	font-weight: 600;
+}
+.pad-top-0{
+	padding-top: 0px;
+}
+.no-bottom{
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+.pad7{
+  padding-top: 7px;
+}
+.pad14{
+  padding-top: 14px !important;
+}
+.mr-top-10{
+  margin-top: 20px;
+}
+.text-color{
+	color: #2D6493;
+}
+.right-align{
+	float: right;
+}
+.div-bg{
+	background: #2D6493;
+}
+.side-no-pad{
+	padding-left: 0;
+	padding-right: 0;
+}
+.pad-left-10{
+	padding-left: 10px;
+}
+.pad-left-20{
+	padding-left: 20px;
+}
+.pad-top-10{
+	padding-top: 10px;
+}
+.pad-top-40{
+  padding-top: 40px !important;
+}
+.pad-bottom-10{
+	padding-bottom: 10px;
+}
+.pad-top-20{
+	padding-top: 20px !important;
+}
+.pad-bottom-20{
+	padding-bottom: 20px;
+}
+.home-pad{
+	padding:15px 0px 15px 50px;
+}
+.white-color{
+	color: #ffffff;
+}
+.white-bg{
+	background-color: #ffffff !important;
+}
+.home-bg{
+ background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),url(../images/index_41.jpg);
+ min-height: 460px;
+ /*max-height: 460px;*/
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+ width: 100%;
+ box-shadow: 2px 5px 9px rgba(0,0,0,.25);
+}
+.student-icon{
+ display: inline-block;
+ background-image: url(../images/student.png);
+ margin-top: 28px;
+ width: 32px;
+ height: 32px;
+ margin-left: 29px;
+}
+.home-item{
+  border-radius: 50% !important;
+  width: 95px !important;
+  height: 91px !important;
+  background: white;
+  border: 2px solid #2D6493;
+}
+.item-pad{
+	padding-left: 7%;
+	padding-top: 30px;
+}
+@media(min-width: 768px) {
+	.div-pad{
+   padding-left: 40px;
+   padding-right: 40px;
+   padding-bottom: 40px;
+ }
+ .pad50{
+   padding-right: 50px;
+ }
+ .chevron-mr{
+   margin-left: 40px;
+   margin-top: -24px;
+ }
+ .next-btn{
+  padding-top: 15px;
+}
+}
+@media(max-width: 767px) {
+	.nav-style{
+   background: white;
+   border: 0;
+   padding-top: 10px !important;
+   padding-left: 0px !important;
+   padding-right: 0px !important;
+   margin-bottom: 0;
+ }
+ .nav-style p{
+   font-size: 11px;
+ }
+ .profile-btn{
+  background: transparent;
+  padding-top: 0 !important;
+}
+.nav-link{
+ padding-top: 0px !important;
+ padding-bottom: 0 !important;
+}
+.font20{
+ font-size: 20px !important;
+}
+.small-i{
+ font-size: 10px !important;
+}
+.pad50{
+ padding-right: 10px !important;
+}
+.chevron-mr{
+  margin-left: 22px;
+  margin-top: -23px;
+}
+.display-flex{
+	display: flex;
+}
+.xs-details{
+  text-align: center;
+  padding-bottom: 10px;
+}
+.addstudent-style li {
+  font-size: 12px !important;
+  font-weight: 600;
+}
+.addstudent-style li:not(:first-child) {
+  margin-left: 5px !important;
+}
+.breadcrumb-style li {
+  margin-left: 5px !important;
+}
+.breadcrumb-pad{
+  padding-left: 10px !important;
+}
+.home-pad {
+  padding: 15px 0px 15px 0px !important;
+}
+}
+.no-margin{
+	margin: 0;
+}
+.mr10{
+	margin-top: 8%;
+}
+.div-label{
+	color: white;
+  font-weight: 700;
+  font-size: 16px;
+  margin-left: 20px;
+  margin-top: 5px;
+}
+
+@media(max-width: 767px) and (min-width: 450px)  {
+
+}
+.breadcrumb-style{
+ display: flex;
+ list-style: none;
+}
+.breadcrumb-style li{
+  margin-left: 15px;
+}
+.breadcrumb-style li a, .breadcrumb-style li a :active, .breadcrumb-style li a :hover, .breadcrumb-style li a :focus, .breadcrumb-style li a :visited{
+  color: #ffffff !important;
+}
+.addstudent-style{
+ display: flex;
+ list-style: none;
+ padding: 0;
+ margin-top: 20px;	
+}
+.addstudent-style li{
+  font-size: 16px;
+}
+.addstudent-style li a, .addstudent-style li a :active, .addstudent-style li a :hover, .addstudent-style li a :focus, .addstudent-style li a :visited{
+  color: #ffffff !important;
+  text-decoration: none;
+}
+.addstudent-style li:not(:first-child) {
+ margin-left: 70px;
+}
+.no-padding{
+	padding: 0;
+}
+.next-btn a{
+  background: #2D6493;
+  padding: 7px 25px 7px 25px;
+  border-radius: 3px;
+  font-weight: 600;
+  float: right;
+  color: #ffffff;
+}
+.addstudent-table td{
+  text-align: center;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.addstudent-table .table-head{
+  background-color: grey;
+}
+.addstudent-table .table-body{
+  background-color: white;
+}
+
+.addstudent-table td input{
+  text-align: center;
+  border-radius: 3px;
+  border: 1px solid grey;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: #2D6493;
+}
+.addstudent-table td select{
+  text-align: center;
+  border-radius: 3px;
+  border: 1px solid grey;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: #000000;
+  width: 120px;
+  max-width:120px; 
+  padding-left: 10px;
+}
+.max-widthinput{
+  max-width: 80px;
+}
+.profile-menu a{
+  display: block;
+  padding-bottom: 5px;
+  color: #000000;
+  text-decoration: none;
+}
+.profile-btn{
+  background: transparent;
+}
+.profile-menu{
+  padding: 10px;
+  left: 50%;
+  right: auto;
+  text-align: center;
+  transform: translate(-50%, 0);
+  z-index: 9999;
+}
+.pad14 a, .pad14 a :active, .pad14 a :hover, .pad14 a :focus, .pad14 a :visited{
+  color: #F36F6F !important;
+  text-decoration: underline;
+}
+.radio-gender{
+ width: 100%;
+ height: 2em;
+}
+.Addstudent-bg{
+ background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),url(images/index_41.jpg);
+ min-height: 520px;
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+ width: 100%;
+ box-shadow: 2px 5px 9px rgba(0,0,0,.25);
+}
+.lin-height{
+  line-height: 1;
+}
+.liststudent-item a div p{
+  margin-top: 40%;
+  font-weight: 600;
+}
+.liststudent-item a{
+ text-decoration: none;
+}
+.text-align{
+  text-align: center;;
+}
+.liststudent-table td{
+  color: #2D6493;
+  border-top: 0 !important;
+}
+.liststudent-table .table-head td{
+  font-weight: 600;
+  padding-left: 0 !important;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+.liststudent-table .table-body td{
+  background-color: white;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+.liststudent-table .table-body td:not(:first-child){
+  padding-left: 0 !important;
+}
+.liststudent-table table {
+    border-collapse: separate;
+    border-spacing: 0 1em;
+}
+.liststudent-table td ul{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}

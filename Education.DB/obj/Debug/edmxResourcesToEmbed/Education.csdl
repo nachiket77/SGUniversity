@@ -1,0 +1,2500 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ajay_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Fiscalyear">
+    <Key>
+      <PropertyRef Name="Fid" />
+    </Key>
+    <Property Name="Fid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FiscalyearFromDate" Type="DateTime" Precision="3" />
+    <Property Name="FiscalyearToDate" Type="DateTime" Precision="3" />
+    <Property Name="Year" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="MemberRegistration">
+    <Key>
+      <PropertyRef Name="MemID" />
+    </Key>
+    <Property Name="MemID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MemberNo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="MemberFName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MemberLName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MemberMName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DOB" Type="DateTime" Precision="3" />
+    <Property Name="Age" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Contactno" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="EmailID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="PlantypeID" Type="Int32" />
+    <Property Name="WorkouttypeID" Type="Int32" />
+    <Property Name="Createdby" Type="Int64" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int64" />
+    <Property Name="MemImagename" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="MemImagePath" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="JoiningDate" Type="DateTime" Precision="3" />
+    <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="MainMemberID" Type="Int64" />
+  </EntityType>
+  <EntityType Name="PaymentDetail">
+    <Key>
+      <PropertyRef Name="PaymentID" />
+    </Key>
+    <Property Name="PaymentID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PlanID" Type="Int32" />
+    <Property Name="WorkouttypeID" Type="Int32" />
+    <Property Name="Paymenttype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PaymentFromdt" Type="DateTime" Precision="3" />
+    <Property Name="PaymentTodt" Type="DateTime" Precision="3" />
+    <Property Name="PaymentAmount" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="NextRenwalDate" Type="DateTime" Precision="3" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="CreateUserID" Type="Int32" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifyUserID" Type="Int32" />
+    <Property Name="RecStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MemberID" Type="Int64" />
+    <Property Name="MemberNo" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PlanMaster">
+    <Key>
+      <PropertyRef Name="PlanID" />
+    </Key>
+    <Property Name="PlanID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PlanName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PlanAmount" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="ServicetaxAmout" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="ServiceTax" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="CreateUserID" Type="Int32" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifyUserID" Type="Int32" />
+    <Property Name="RecStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SchemeID" Type="Int32" />
+    <Property Name="PeriodID" Type="Int32" />
+    <Property Name="TotalAmout" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="ServicetaxNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ReceiptDetail">
+    <Key>
+      <PropertyRef Name="ReceiptID" />
+    </Key>
+    <Property Name="ReceiptID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Memberid" Type="Int64" />
+    <Property Name="generateby" Type="Int64" />
+    <Property Name="createdby" Type="Int64" />
+    <Property Name="createddate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="SchemeMaster">
+    <Key>
+      <PropertyRef Name="SchemeID" />
+    </Key>
+    <Property Name="SchemeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SchemeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Createdby" Type="Int32" />
+    <Property Name="Createddate" Type="DateTime" Precision="3" />
+    <Property Name="schemebit" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TBL_COURSE_SUBJECT_MAPPING_DETAILS">
+    <Key>
+      <PropertyRef Name="SUBCORID" />
+    </Key>
+    <Property Name="SUBCORID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="COURSEID" Type="Int32" />
+    <Property Name="SUBJECTID" Type="Int32" />
+    <Property Name="CREATEDDATE" Type="DateTime" Precision="3" />
+    <Property Name="MODIFIEDDATE" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="TBL_GN_ANNAUNCMENT">
+    <Key>
+      <PropertyRef Name="ANNAUNCMENTID" />
+    </Key>
+    <Property Name="ANNAUNCMENTID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SUMMARY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="PUBLISHDATE" Type="DateTime" Precision="3" />
+    <Property Name="CREATEDDATE" Type="DateTime" Precision="3" />
+    <Property Name="CREATEDBY" Type="Int64" />
+    <Property Name="MODIFIEDBY" Type="Int64" />
+    <Property Name="MODIFIEDDATE" Type="DateTime" Precision="3" />
+    <Property Name="STATUS" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="TBL_GN_DIGITALDOC_DETAILS">
+    <Key>
+      <PropertyRef Name="DIGITALDOCID" />
+    </Key>
+    <Property Name="DIGITALDOCID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DIGITALDOCTYPEID" Type="Int32" />
+    <Property Name="DOCUMENTNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SUBJECTID" Type="Int32" />
+    <Property Name="CREATEDBY" Type="Int64" />
+    <Property Name="CREATEDDATE" Type="DateTime" Precision="3" />
+    <Property Name="MODIFIEDBY" Type="Int64" />
+    <Property Name="MODIFIEDDATE" Type="DateTime" Precision="3" />
+    <Property Name="STATUS" Type="Boolean" />
+    <Property Name="ALLOWANONYMOUS" Type="Boolean" />
+    <Property Name="DOWNLOADCOUNT" Type="Int32" />
+    <Property Name="VIEWCOUNT" Type="Int32" />
+    <NavigationProperty Name="TBL_MASTER_SUBJECT" Relationship="Self.FK_TBL_GN_DIGITALDOC_DETAILS_TBL_MASTER_SUBJECT" FromRole="TBL_GN_DIGITALDOC_DETAILS" ToRole="TBL_MASTER_SUBJECT" />
+    <NavigationProperty Name="TBL_GN_DIGITALDOC_VIEWDETAILS" Relationship="Self.FK_TBL_GN_DIGITALDOC_VIEWDETAILS_TBL_GN_DIGITALDOC_DETAILS" FromRole="TBL_GN_DIGITALDOC_DETAILS" ToRole="TBL_GN_DIGITALDOC_VIEWDETAILS" />
+  </EntityType>
+  <EntityType Name="TBL_GN_DIGITALDOC_VIEWDETAILS">
+    <Key>
+      <PropertyRef Name="DOCVIEWID" />
+    </Key>
+    <Property Name="DOCVIEWID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DIGITALDOCID" Type="Int64" />
+    <Property Name="VIEWBY" Type="Int64" />
+    <Property Name="DOWNLOADBY" Type="Int64" />
+    <Property Name="CREATEDDATE" Type="DateTime" Precision="3" />
+    <Property Name="MODIFIEDDATE" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TBL_GN_DIGITALDOC_DETAILS" Relationship="Self.FK_TBL_GN_DIGITALDOC_VIEWDETAILS_TBL_GN_DIGITALDOC_DETAILS" FromRole="TBL_GN_DIGITALDOC_VIEWDETAILS" ToRole="TBL_GN_DIGITALDOC_DETAILS" />
+  </EntityType>
+  <EntityType Name="TBL_MASTER_BOARDS">
+    <Key>
+      <PropertyRef Name="BOARDID" />
+    </Key>
+    <Property Name="BOARDID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="TBL_USER_INSTITUTION_DETAILS" Relationship="Self.FK_TBL_USER_INSTITUTION_DETAILS_TBL_MASTER_BOARDS" FromRole="TBL_MASTER_BOARDS" ToRole="TBL_USER_INSTITUTION_DETAILS" />
+  </EntityType>
+  <EntityType Name="TBL_MASTER_CITY">
+    <Key>
+      <PropertyRef Name="CITYID" />
+    </Key>
+    <Property Name="CITYID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAME" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="STATEID" Type="Int32" />
+    <NavigationProperty Name="TBL_MASTER_STATE" Relationship="Self.FK_TBL_MASTER_CITY_TBL_MASTER_STATE" FromRole="TBL_MASTER_CITY" ToRole="TBL_MASTER_STATE" />
+  </EntityType>
+  <EntityType Name="TBL_MASTER_CLASS">
+    <Key>
+      <PropertyRef Name="CLASSID" />
+    </Key>
+    <Property Name="CLASSID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="TBL_USER_INSTITUTION_DETAILS" Relationship="Self.FK_TBL_USER_INSTITUTION_DETAILS_TBL_MASTER_CLASS" FromRole="TBL_MASTER_CLASS" ToRole="TBL_USER_INSTITUTION_DETAILS" />
+  </EntityType>
+  <EntityType Name="TBL_MASTER_COUNTRY">
+    <Key>
+      <PropertyRef Name="COUNTRYID" />
+    </Key>
+    <Property Name="COUNTRYID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="TBL_MASTER_STATE" Relationship="Self.FK_TBL_MASTER_STATE_TBL_MASTER_COUNTRY" FromRole="TBL_MASTER_COUNTRY" ToRole="TBL_MASTER_STATE" />
+  </EntityType>
+  <EntityType Name="TBL_MASTER_COURSE">
+    <Key>
+      <PropertyRef Name="COURSEID" />
+    </Key>
+    <Property Name="COURSEID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="TBL_USER_COURSE_DETAILS" Relationship="Self.FK_TBL_USER_COURSE_DETAILS_TBL_MASTER_COURSE" FromRole="TBL_MASTER_COURSE" ToRole="TBL_USER_COURSE_DETAILS" />
+  </EntityType>
+  <EntityType Name="TBL_MASTER_DIGITALDOC">
+    <Key>
+      <PropertyRef Name="DIGITALDOCTYPEID" />
+    </Key>
+    <Property Name="DIGITALDOCTYPEID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DIGITALDOCNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TBL_MASTER_DOCUMENTTYPE">
+    <Key>
+      <PropertyRef Name="DocumentTypeID" />
+    </Key>
+    <Property Name="DocumentTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DocumentTypeName" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="TBL_USER_DOCUMENTS_DETAILS" Relationship="Self.FK_TBL_USER_DOCUMENTS_DETAILS_TBL_MASTER_DOCUMENTTYPE" FromRole="TBL_MASTER_DOCUMENTTYPE" ToRole="TBL_USER_DOCUMENTS_DETAILS" />
+  </EntityType>
+  <EntityType Name="TBL_MASTER_STATE">
+    <Key>
+      <PropertyRef Name="STATEID" />
+    </Key>
+    <Property Name="STATEID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="COUNTRYID" Type="Int32" />
+    <NavigationProperty Name="TBL_MASTER_CITY" Relationship="Self.FK_TBL_MASTER_CITY_TBL_MASTER_STATE" FromRole="TBL_MASTER_STATE" ToRole="TBL_MASTER_CITY" />
+    <NavigationProperty Name="TBL_MASTER_COUNTRY" Relationship="Self.FK_TBL_MASTER_STATE_TBL_MASTER_COUNTRY" FromRole="TBL_MASTER_STATE" ToRole="TBL_MASTER_COUNTRY" />
+  </EntityType>
+  <EntityType Name="TBL_MASTER_STATUS">
+    <Key>
+      <PropertyRef Name="STATUSID" />
+    </Key>
+    <Property Name="STATUSID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="TBL_USER_LOGIN" Relationship="Self.FK_TBL_USER_LOGIN_TBL_MASTER_STATUS" FromRole="TBL_MASTER_STATUS" ToRole="TBL_USER_LOGIN" />
+  </EntityType>
+  <EntityType Name="TBL_MASTER_SUBJECT">
+    <Key>
+      <PropertyRef Name="SUBJECTID" />
+    </Key>
+    <Property Name="SUBJECTID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="TBL_GN_DIGITALDOC_DETAILS" Relationship="Self.FK_TBL_GN_DIGITALDOC_DETAILS_TBL_MASTER_SUBJECT" FromRole="TBL_MASTER_SUBJECT" ToRole="TBL_GN_DIGITALDOC_DETAILS" />
+    <NavigationProperty Name="TBL_TEST_TESTDETAIL" Relationship="Self.FK_TBL_TEST_TESTDETAIL_TBL_MASTER_SUBJECT" FromRole="TBL_MASTER_SUBJECT" ToRole="TBL_TEST_TESTDETAIL" />
+    <NavigationProperty Name="TBL_USER_SUBJECTS" Relationship="Self.FK_TBL_USER_SUBJECTS_TBL_MASTER_SUBJECT" FromRole="TBL_MASTER_SUBJECT" ToRole="TBL_USER_SUBJECTS" />
+  </EntityType>
+  <EntityType Name="TBL_MASTER_TEACHER">
+    <Key>
+      <PropertyRef Name="TEACHERID" />
+    </Key>
+    <Property Name="TEACHERID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FIRSTNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MIDDLENAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LASTNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EMAILID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MOBILENUMBER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="COURSEID" Type="Int32" />
+    <Property Name="SUBJECTID" Type="Int32" />
+    <Property Name="CREATEDDATE" Type="DateTime" Precision="3" />
+    <Property Name="CREATEDBY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MODIFIEDDATE" Type="DateTime" Precision="3" />
+    <Property Name="MODIFIEDBY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TBL_MASTER_TEST_TYPE">
+    <Key>
+      <PropertyRef Name="TESTTYPEID" />
+    </Key>
+    <Property Name="TESTTYPEID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TESTTYPENAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TBL_MASTER_TESTQUESTIONTYPE">
+    <Key>
+      <PropertyRef Name="QUESTIONTYPEID" />
+    </Key>
+    <Property Name="QUESTIONTYPEID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TYPENAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="TBL_TEST_QUESTIONS" Relationship="Self.FK_TBL_TEST_QUESTIONS_TBL_MASTER_TESTQUESTIONTYPE" FromRole="TBL_MASTER_TESTQUESTIONTYPE" ToRole="TBL_TEST_QUESTIONS" />
+  </EntityType>
+  <EntityType Name="TBL_MASTER_USERTYPE">
+    <Key>
+      <PropertyRef Name="USERTYPEID" />
+    </Key>
+    <Property Name="USERTYPEID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TYPENAME" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="TBL_USER_LOGIN" Relationship="Self.FK_TBL_USER_LOGIN_TBL_MASTER_USERTYPE" FromRole="TBL_MASTER_USERTYPE" ToRole="TBL_USER_LOGIN" />
+    <NavigationProperty Name="TBL_USER_ROLE" Relationship="Self.FK_TBL_USER_ROLE_TBL_MASTER_USERTYPE" FromRole="TBL_MASTER_USERTYPE" ToRole="TBL_USER_ROLE" />
+  </EntityType>
+  <EntityType Name="TBL_STUDENT_MASTER_MAPPING">
+    <Key>
+      <PropertyRef Name="STUDENTMASTERID" />
+    </Key>
+    <Property Name="STUDENTMASTERID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="COURSEID" Type="Int64" />
+    <Property Name="PARENTID" Type="Int64" />
+    <Property Name="PROFESSIONALDETAILID" Type="Int64" />
+    <Property Name="STUDENTID" Type="Int64" />
+    <Property Name="USERID" Type="Int64" />
+    <Property Name="USERDOCUMENTID" Type="Int64" />
+    <Property Name="ROLEID" Type="Int64" />
+  </EntityType>
+  <EntityType Name="TBL_TEACHER_COURSE_MAPPING_DETAILS">
+    <Key>
+      <PropertyRef Name="TEACHERCOURSEID" />
+    </Key>
+    <Property Name="TEACHERCOURSEID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TEACHERID" Type="Int64" />
+    <Property Name="COURSEID" Type="Int32" />
+    <Property Name="CREATEDDATE" Type="DateTime" Precision="3" />
+    <Property Name="MODIFIEDDATE" Type="DateTime" Precision="3" />
+    <Property Name="SUBJECTID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TBL_TEACHER_SUBJECT_MAPPING_DETAILS">
+    <Key>
+      <PropertyRef Name="TEACHERSUBJECTID" />
+    </Key>
+    <Property Name="TEACHERSUBJECTID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TEACHERID" Type="Int64" />
+    <Property Name="SUBJECTID" Type="Int32" />
+    <Property Name="CREATEDDATE" Type="DateTime" Precision="3" />
+    <Property Name="MODIFIEDDATE" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="TBL_TEST_ANSWERS">
+    <Key>
+      <PropertyRef Name="ANSWERID" />
+    </Key>
+    <Property Name="ANSWERID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="QUESTIONID" Type="Int64" />
+    <Property Name="TESTID" Type="Int64" />
+    <Property Name="ISVALID" Type="Boolean" />
+    <NavigationProperty Name="TBL_TEST_QUESTIONS" Relationship="Self.FK_TBL_TEST_ANSWERS_TBL_TEST_QUESTIONS" FromRole="TBL_TEST_ANSWERS" ToRole="TBL_TEST_QUESTIONS" />
+    <NavigationProperty Name="TBL_TEST_TESTDETAIL" Relationship="Self.FK_TBL_TEST_ANSWERS_TBL_TEST_TESTDETAIL" FromRole="TBL_TEST_ANSWERS" ToRole="TBL_TEST_TESTDETAIL" />
+  </EntityType>
+  <EntityType Name="TBL_TEST_ATAMPT">
+    <Key>
+      <PropertyRef Name="TESTATAMPTID" />
+    </Key>
+    <Property Name="TESTATAMPTID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TESTID" Type="Int64" />
+    <Property Name="USERID" Type="Int64" />
+    <Property Name="STARTDATETIME" Type="DateTime" Precision="3" />
+    <Property Name="ENDDATETIME" Type="DateTime" Precision="3" />
+    <Property Name="TOTALMARKS" Type="Int32" />
+    <NavigationProperty Name="TBL_TEST_TESTDETAIL" Relationship="Self.FK_TBL_TEST_ATAMPT_TBL_TEST_TESTDETAIL" FromRole="TBL_TEST_ATAMPT" ToRole="TBL_TEST_TESTDETAIL" />
+    <NavigationProperty Name="TBL_USER_LOGIN" Relationship="Self.FK_TBL_TEST_ATAMPT_TBL_USER_LOGIN" FromRole="TBL_TEST_ATAMPT" ToRole="TBL_USER_LOGIN" />
+  </EntityType>
+  <EntityType Name="TBL_TEST_ATAMPT_QUESTION_ANSWER">
+    <Key>
+      <PropertyRef Name="ATAMPTTESTANSWERID" />
+    </Key>
+    <Property Name="ATAMPTTESTANSWERID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="QUESTIONID" Type="Int64" />
+    <Property Name="ANSWERID" Type="Int64" />
+    <Property Name="TESTID" Type="Int64" />
+    <Property Name="REMARKS" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="TBL_TEST_QUESTIONS" Relationship="Self.FK_TBL_TEST_ATAMPT_QUESTION_ANSWER_TBL_TEST_QUESTIONS" FromRole="TBL_TEST_ATAMPT_QUESTION_ANSWER" ToRole="TBL_TEST_QUESTIONS" />
+    <NavigationProperty Name="TBL_TEST_TESTDETAIL" Relationship="Self.FK_TBL_TEST_ATAMPT_QUESTION_ANSWER_TBL_TEST_TESTDETAIL" FromRole="TBL_TEST_ATAMPT_QUESTION_ANSWER" ToRole="TBL_TEST_TESTDETAIL" />
+  </EntityType>
+  <EntityType Name="TBL_TEST_QUESTIONS">
+    <Key>
+      <PropertyRef Name="QUESTIONID" />
+    </Key>
+    <Property Name="QUESTIONID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ISMULTISELECT" Type="Boolean" Nullable="false" />
+    <Property Name="TESTID" Type="Int64" Nullable="false" />
+    <Property Name="QUESTIONTYPEID" Type="Int32" Nullable="false" />
+    <Property Name="MARKS" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="TBL_MASTER_TESTQUESTIONTYPE" Relationship="Self.FK_TBL_TEST_QUESTIONS_TBL_MASTER_TESTQUESTIONTYPE" FromRole="TBL_TEST_QUESTIONS" ToRole="TBL_MASTER_TESTQUESTIONTYPE" />
+    <NavigationProperty Name="TBL_TEST_ANSWERS" Relationship="Self.FK_TBL_TEST_ANSWERS_TBL_TEST_QUESTIONS" FromRole="TBL_TEST_QUESTIONS" ToRole="TBL_TEST_ANSWERS" />
+    <NavigationProperty Name="TBL_TEST_ATAMPT_QUESTION_ANSWER" Relationship="Self.FK_TBL_TEST_ATAMPT_QUESTION_ANSWER_TBL_TEST_QUESTIONS" FromRole="TBL_TEST_QUESTIONS" ToRole="TBL_TEST_ATAMPT_QUESTION_ANSWER" />
+    <NavigationProperty Name="TBL_TEST_TESTDETAIL" Relationship="Self.FK_Table_1_TBL_TEST_TESTDETAIL" FromRole="TBL_TEST_QUESTIONS" ToRole="TBL_TEST_TESTDETAIL" />
+  </EntityType>
+  <EntityType Name="TBL_TEST_TESTDETAIL">
+    <Key>
+      <PropertyRef Name="TESTID" />
+    </Key>
+    <Property Name="TESTID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TITLE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SUBJECTID" Type="Int32" />
+    <Property Name="PUBLISHDATE" Type="DateTime" Precision="3" />
+    <Property Name="STATUS" Type="Boolean" />
+    <Property Name="GIVENBY" Type="Int64" />
+    <Property Name="CREATEDBY" Type="Int64" />
+    <Property Name="CREATEDDATE" Type="DateTime" Precision="3" />
+    <Property Name="MODIFIEDBY" Type="Int64" />
+    <Property Name="MODIFIEDDATE" Type="DateTime" Precision="3" />
+    <Property Name="COURSEID" Type="Int32" />
+    <Property Name="TESTTYPEID" Type="Int32" />
+    <NavigationProperty Name="TBL_MASTER_SUBJECT" Relationship="Self.FK_TBL_TEST_TESTDETAIL_TBL_MASTER_SUBJECT" FromRole="TBL_TEST_TESTDETAIL" ToRole="TBL_MASTER_SUBJECT" />
+    <NavigationProperty Name="TBL_TEST_ANSWERS" Relationship="Self.FK_TBL_TEST_ANSWERS_TBL_TEST_TESTDETAIL" FromRole="TBL_TEST_TESTDETAIL" ToRole="TBL_TEST_ANSWERS" />
+    <NavigationProperty Name="TBL_TEST_ATAMPT" Relationship="Self.FK_TBL_TEST_ATAMPT_TBL_TEST_TESTDETAIL" FromRole="TBL_TEST_TESTDETAIL" ToRole="TBL_TEST_ATAMPT" />
+    <NavigationProperty Name="TBL_TEST_ATAMPT_QUESTION_ANSWER" Relationship="Self.FK_TBL_TEST_ATAMPT_QUESTION_ANSWER_TBL_TEST_TESTDETAIL" FromRole="TBL_TEST_TESTDETAIL" ToRole="TBL_TEST_ATAMPT_QUESTION_ANSWER" />
+    <NavigationProperty Name="TBL_TEST_QUESTIONS" Relationship="Self.FK_Table_1_TBL_TEST_TESTDETAIL" FromRole="TBL_TEST_TESTDETAIL" ToRole="TBL_TEST_QUESTIONS" />
+  </EntityType>
+  <EntityType Name="TBL_USER_ADDRESS_DETAILS">
+    <Key>
+      <PropertyRef Name="ADDRESSDETAILID" />
+    </Key>
+    <Property Name="ADDRESSDETAILID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USERID" Type="Int64" Nullable="false" />
+    <Property Name="ADDRESSTYPEID" Type="Int32" Nullable="false" />
+    <Property Name="ADDRESSLINE1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ADDRESSLINE2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CITY" Type="Int32" />
+    <Property Name="STATE" Type="Int32" />
+    <Property Name="COUNTRY" Type="Int32" />
+    <Property Name="PINCODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="STATUS" Type="Boolean" />
+    <Property Name="CREATEDBY" Type="Int64" />
+    <Property Name="CREATEDDATE" Type="DateTime" Precision="3" />
+    <Property Name="MODIFIEDDATE" Type="DateTime" Precision="3" />
+    <Property Name="MODIFIEDBY" Type="Int64" />
+    <NavigationProperty Name="TBL_USER_LOGIN" Relationship="Self.FK_TBL_USER_ADDRESS_DETAILS_TBL_USER_LOGIN" FromRole="TBL_USER_ADDRESS_DETAILS" ToRole="TBL_USER_LOGIN" />
+  </EntityType>
+  <EntityType Name="TBL_USER_COURSE_DETAILS">
+    <Key>
+      <PropertyRef Name="STUDENTCOURSEID" />
+    </Key>
+    <Property Name="STUDENTCOURSEID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USERID" Type="Int64" />
+    <Property Name="COURSEID" Type="Int32" />
+    <Property Name="JOINDATE" Type="DateTime" Precision="3" />
+    <Property Name="COMPLETEDATE" Type="DateTime" Precision="3" />
+    <Property Name="CREATEDBY" Type="Int64" />
+    <Property Name="MODIFIEDBY" Type="Int64" />
+    <Property Name="CREATEDDATE" Type="DateTime" Precision="3" />
+    <Property Name="MODIFIEDDATE" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TBL_MASTER_COURSE" Relationship="Self.FK_TBL_USER_COURSE_DETAILS_TBL_MASTER_COURSE" FromRole="TBL_USER_COURSE_DETAILS" ToRole="TBL_MASTER_COURSE" />
+    <NavigationProperty Name="TBL_USER_LOGIN" Relationship="Self.FK_TBL_USER_COURSE_DETAILS_TBL_USER_LOGIN" FromRole="TBL_USER_COURSE_DETAILS" ToRole="TBL_USER_LOGIN" />
+  </EntityType>
+  <EntityType Name="TBL_USER_COURSE_MAPPING_DETAILS">
+    <Key>
+      <PropertyRef Name="USERCOURSEID" />
+    </Key>
+    <Property Name="USERCOURSEID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USERID" Type="Int64" />
+    <Property Name="COURSEID" Type="Int32" />
+    <Property Name="CREATEDDATE" Type="DateTime" Precision="3" />
+    <Property Name="MODIFIEDDATE" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="TBL_USER_DETAILS">
+    <Key>
+      <PropertyRef Name="PERSONALDETAILID" />
+    </Key>
+    <Property Name="PERSONALDETAILID" Type="Int64" Nullable="false" />
+    <Property Name="USERID" Type="Int64" Nullable="false" />
+    <Property Name="FIRSTNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MIDDLENAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LASTNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MOTHERNAME" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="FATHERNAME" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="DOB" Type="DateTime" Precision="3" />
+    <Property Name="DISABILITY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ENROLNMENTID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="GENDER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NATIONALITY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="TBL_USER_LOGIN" Relationship="Self.FK_TBL_USER_DETAILS_TBL_USER_DETAILS" FromRole="TBL_USER_DETAILS" ToRole="TBL_USER_LOGIN" />
+  </EntityType>
+  <EntityType Name="TBL_USER_DOCUMENTS_DETAILS">
+    <Key>
+      <PropertyRef Name="USERDOCUMENTID" />
+    </Key>
+    <Property Name="USERDOCUMENTID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DOCUMENTTYPEID" Type="Int32" />
+    <Property Name="DOCUMENTNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="USERID" Type="Int64" Nullable="false" />
+    <Property Name="STATUS" Type="Boolean" />
+    <Property Name="CREATEDBY" Type="Int64" />
+    <Property Name="CREATEDDATE" Type="DateTime" Precision="3" />
+    <Property Name="MODIFIEDBY" Type="Int64" />
+    <Property Name="MODIFIEDDATE" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TBL_MASTER_DOCUMENTTYPE" Relationship="Self.FK_TBL_USER_DOCUMENTS_DETAILS_TBL_MASTER_DOCUMENTTYPE" FromRole="TBL_USER_DOCUMENTS_DETAILS" ToRole="TBL_MASTER_DOCUMENTTYPE" />
+    <NavigationProperty Name="TBL_USER_LOGIN" Relationship="Self.FK_TBL_USER_DOCUMENTS_DETAILS_TBL_USER_LOGIN" FromRole="TBL_USER_DOCUMENTS_DETAILS" ToRole="TBL_USER_LOGIN" />
+  </EntityType>
+  <EntityType Name="TBL_USER_INSTITUTION_DETAILS">
+    <Key>
+      <PropertyRef Name="INSTITUTIONID" />
+    </Key>
+    <Property Name="INSTITUTIONID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="INSTITUTIONNAME" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="USERID" Type="Int64" />
+    <Property Name="CLASSID" Type="Int32" />
+    <Property Name="BOARDID" Type="Int32" Nullable="false" />
+    <Property Name="PASSINGYEAR" Type="Int32" />
+    <Property Name="GRADE_PERCENT" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CREATEDBY" Type="Int64" />
+    <Property Name="CREATEDDATE" Type="DateTime" Precision="3" />
+    <Property Name="MODIFIEDBY" Type="Int64" />
+    <Property Name="MODIFIEDDATE" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TBL_MASTER_BOARDS" Relationship="Self.FK_TBL_USER_INSTITUTION_DETAILS_TBL_MASTER_BOARDS" FromRole="TBL_USER_INSTITUTION_DETAILS" ToRole="TBL_MASTER_BOARDS" />
+    <NavigationProperty Name="TBL_MASTER_CLASS" Relationship="Self.FK_TBL_USER_INSTITUTION_DETAILS_TBL_MASTER_CLASS" FromRole="TBL_USER_INSTITUTION_DETAILS" ToRole="TBL_MASTER_CLASS" />
+    <NavigationProperty Name="TBL_USER_LOGIN" Relationship="Self.FK_TBL_USER_INSTITUTION_DETAILS_TBL_USER_LOGIN" FromRole="TBL_USER_INSTITUTION_DETAILS" ToRole="TBL_USER_LOGIN" />
+  </EntityType>
+  <EntityType Name="TBL_USER_LOGIN">
+    <Key>
+      <PropertyRef Name="USERID" />
+    </Key>
+    <Property Name="USERID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LOGIN_EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LOGIN_MOBILE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="STATUSID" Type="Int32" Nullable="false" />
+    <Property Name="USERTYPEID" Type="Int32" Nullable="false" />
+    <Property Name="PASSWORDRETRYCOUNT" Type="Int32" Nullable="false" />
+    <Property Name="CREATEDDATE" Type="DateTime" Precision="3" />
+    <Property Name="MODIFIEDDATE" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TBL_MASTER_STATUS" Relationship="Self.FK_TBL_USER_LOGIN_TBL_MASTER_STATUS" FromRole="TBL_USER_LOGIN" ToRole="TBL_MASTER_STATUS" />
+    <NavigationProperty Name="TBL_MASTER_USERTYPE" Relationship="Self.FK_TBL_USER_LOGIN_TBL_MASTER_USERTYPE" FromRole="TBL_USER_LOGIN" ToRole="TBL_MASTER_USERTYPE" />
+    <NavigationProperty Name="TBL_TEST_ATAMPT" Relationship="Self.FK_TBL_TEST_ATAMPT_TBL_USER_LOGIN" FromRole="TBL_USER_LOGIN" ToRole="TBL_TEST_ATAMPT" />
+    <NavigationProperty Name="TBL_USER_ADDRESS_DETAILS" Relationship="Self.FK_TBL_USER_ADDRESS_DETAILS_TBL_USER_LOGIN" FromRole="TBL_USER_LOGIN" ToRole="TBL_USER_ADDRESS_DETAILS" />
+    <NavigationProperty Name="TBL_USER_COURSE_DETAILS" Relationship="Self.FK_TBL_USER_COURSE_DETAILS_TBL_USER_LOGIN" FromRole="TBL_USER_LOGIN" ToRole="TBL_USER_COURSE_DETAILS" />
+    <NavigationProperty Name="TBL_USER_DETAILS" Relationship="Self.FK_TBL_USER_DETAILS_TBL_USER_DETAILS" FromRole="TBL_USER_LOGIN" ToRole="TBL_USER_DETAILS" />
+    <NavigationProperty Name="TBL_USER_DOCUMENTS_DETAILS" Relationship="Self.FK_TBL_USER_DOCUMENTS_DETAILS_TBL_USER_LOGIN" FromRole="TBL_USER_LOGIN" ToRole="TBL_USER_DOCUMENTS_DETAILS" />
+    <NavigationProperty Name="TBL_USER_INSTITUTION_DETAILS" Relationship="Self.FK_TBL_USER_INSTITUTION_DETAILS_TBL_USER_LOGIN" FromRole="TBL_USER_LOGIN" ToRole="TBL_USER_INSTITUTION_DETAILS" />
+    <NavigationProperty Name="TBL_USER_LOGIN_TRAIL" Relationship="Self.FK_TBL_USER_LOGIN_TRAIL_TBL_USER_LOGIN" FromRole="TBL_USER_LOGIN" ToRole="TBL_USER_LOGIN_TRAIL" />
+    <NavigationProperty Name="TBL_USER_PARENTS_DETAILS" Relationship="Self.FK_TBL_USER_PARENTS_DETAILS_TBL_USER_LOGIN" FromRole="TBL_USER_LOGIN" ToRole="TBL_USER_PARENTS_DETAILS" />
+    <NavigationProperty Name="TBL_USER_PROFESSIONAL_DETAILS" Relationship="Self.FK_TBL_USER_PROFESSIONAL_DETAILS_TBL_USER_LOGIN" FromRole="TBL_USER_LOGIN" ToRole="TBL_USER_PROFESSIONAL_DETAILS" />
+    <NavigationProperty Name="TBL_USER_ROLE" Relationship="Self.FK_TBL_USER_ROLE_TBL_USER_LOGIN" FromRole="TBL_USER_LOGIN" ToRole="TBL_USER_ROLE" />
+    <NavigationProperty Name="TBL_USER_SUBJECTS" Relationship="Self.FK_TBL_USER_SUBJECTS_TBL_USER_LOGIN" FromRole="TBL_USER_LOGIN" ToRole="TBL_USER_SUBJECTS" />
+  </EntityType>
+  <EntityType Name="TBL_USER_LOGIN_TRAIL">
+    <Key>
+      <PropertyRef Name="LOGIN_TRAIL_ID" />
+    </Key>
+    <Property Name="LOGIN_TRAIL_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USERID" Type="Int64" Nullable="false" />
+    <Property Name="IPADDRESS" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="LATITUTE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LONGITUTE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LOGINDATETIME" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TBL_USER_LOGIN" Relationship="Self.FK_TBL_USER_LOGIN_TRAIL_TBL_USER_LOGIN" FromRole="TBL_USER_LOGIN_TRAIL" ToRole="TBL_USER_LOGIN" />
+  </EntityType>
+  <EntityType Name="TBL_USER_PARENTS_DETAILS">
+    <Key>
+      <PropertyRef Name="PARENTID" />
+    </Key>
+    <Property Name="PARENTID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USERID" Type="Int64" />
+    <Property Name="FATHERNAME" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="FATHEREMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="FATHERMOBILENUMBER" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="FATHEROCCUPATION" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="FATHERCOMPANYNAME" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="FATHERDESIGNATION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MOTHERNAME" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="MOTHEREMAIL" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="MOTHERMOBILENUMBER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="MOTHEROCCUPATION" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MOTHERCOMPANYNAME" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MOTHERDESIGNATION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CREATEDBY" Type="Int64" />
+    <Property Name="CREATEDDATE" Type="DateTime" Precision="3" />
+    <Property Name="MODIFIEDBY" Type="Int64" />
+    <Property Name="MODIFIEDDATE" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TBL_USER_LOGIN" Relationship="Self.FK_TBL_USER_PARENTS_DETAILS_TBL_USER_LOGIN" FromRole="TBL_USER_PARENTS_DETAILS" ToRole="TBL_USER_LOGIN" />
+  </EntityType>
+  <EntityType Name="TBL_USER_PROFESSIONAL_DETAILS">
+    <Key>
+      <PropertyRef Name="PROFESSIONALDETAILID" />
+    </Key>
+    <Property Name="PROFESSIONALDETAILID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USERID" Type="Int64" />
+    <Property Name="COMPANYNAME" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="DESIGNATION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EMPLOYEETYPE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="REMARKS" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CREATEBY" Type="Int64" />
+    <Property Name="CREATEDDATE" Type="DateTime" Precision="3" />
+    <Property Name="MODIFIEDDBY" Type="Int64" />
+    <Property Name="MODIFIEDDATE" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TBL_USER_LOGIN" Relationship="Self.FK_TBL_USER_PROFESSIONAL_DETAILS_TBL_USER_LOGIN" FromRole="TBL_USER_PROFESSIONAL_DETAILS" ToRole="TBL_USER_LOGIN" />
+  </EntityType>
+  <EntityType Name="TBL_USER_ROLE">
+    <Key>
+      <PropertyRef Name="ROLE_ID" />
+    </Key>
+    <Property Name="ROLE_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USERTYPEID" Type="Int32" />
+    <Property Name="USERID" Type="Int64" />
+    <Property Name="CREATEDBY" Type="Int64" />
+    <Property Name="CREATEDDATE" Type="DateTime" Precision="3" />
+    <Property Name="MODIFIEDBY" Type="Int64" />
+    <Property Name="MODIFIEDDATE" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TBL_MASTER_USERTYPE" Relationship="Self.FK_TBL_USER_ROLE_TBL_MASTER_USERTYPE" FromRole="TBL_USER_ROLE" ToRole="TBL_MASTER_USERTYPE" />
+    <NavigationProperty Name="TBL_USER_LOGIN" Relationship="Self.FK_TBL_USER_ROLE_TBL_USER_LOGIN" FromRole="TBL_USER_ROLE" ToRole="TBL_USER_LOGIN" />
+  </EntityType>
+  <EntityType Name="TBL_USER_SUBJECTS">
+    <Key>
+      <PropertyRef Name="USERSUBJECTID" />
+    </Key>
+    <Property Name="USERSUBJECTID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SUBJECTID" Type="Int32" />
+    <Property Name="USERID" Type="Int64" />
+    <Property Name="CREATEDBY" Type="Int64" />
+    <Property Name="CREATEDDATE" Type="DateTime" Precision="3" />
+    <Property Name="MODIFIEDBY" Type="Int64" />
+    <Property Name="MODIFIEDDATE" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TBL_MASTER_SUBJECT" Relationship="Self.FK_TBL_USER_SUBJECTS_TBL_MASTER_SUBJECT" FromRole="TBL_USER_SUBJECTS" ToRole="TBL_MASTER_SUBJECT" />
+    <NavigationProperty Name="TBL_USER_LOGIN" Relationship="Self.FK_TBL_USER_SUBJECTS_TBL_USER_LOGIN" FromRole="TBL_USER_SUBJECTS" ToRole="TBL_USER_LOGIN" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="56" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FullName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="EmailID" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="webpages_Roles" Relationship="Self.webpages_UsersInRoles" FromRole="Users" ToRole="webpages_Roles" />
+  </EntityType>
+  <EntityType Name="webpages_Membership">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="ConfirmationToken" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="IsConfirmed" Type="Boolean" />
+    <Property Name="LastPasswordFailureDate" Type="DateTime" Precision="3" />
+    <Property Name="PasswordFailuresSinceLastSuccess" Type="Int32" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PasswordChangedDate" Type="DateTime" Precision="3" />
+    <Property Name="PasswordSalt" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PasswordVerificationToken" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="PasswordVerificationTokenExpirationDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="webpages_OAuthMembership">
+    <Key>
+      <PropertyRef Name="Provider" />
+      <PropertyRef Name="ProviderUserId" />
+    </Key>
+    <Property Name="Provider" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProviderUserId" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="webpages_Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Users" Relationship="Self.webpages_UsersInRoles" FromRole="webpages_Roles" ToRole="Users" />
+  </EntityType>
+  <Association Name="FK_TBL_GN_DIGITALDOC_DETAILS_TBL_MASTER_SUBJECT">
+    <End Role="TBL_MASTER_SUBJECT" Type="Self.TBL_MASTER_SUBJECT" Multiplicity="0..1" />
+    <End Role="TBL_GN_DIGITALDOC_DETAILS" Type="Self.TBL_GN_DIGITALDOC_DETAILS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_MASTER_SUBJECT">
+        <PropertyRef Name="SUBJECTID" />
+      </Principal>
+      <Dependent Role="TBL_GN_DIGITALDOC_DETAILS">
+        <PropertyRef Name="SUBJECTID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_GN_DIGITALDOC_VIEWDETAILS_TBL_GN_DIGITALDOC_DETAILS">
+    <End Role="TBL_GN_DIGITALDOC_DETAILS" Type="Self.TBL_GN_DIGITALDOC_DETAILS" Multiplicity="0..1" />
+    <End Role="TBL_GN_DIGITALDOC_VIEWDETAILS" Type="Self.TBL_GN_DIGITALDOC_VIEWDETAILS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_GN_DIGITALDOC_DETAILS">
+        <PropertyRef Name="DIGITALDOCID" />
+      </Principal>
+      <Dependent Role="TBL_GN_DIGITALDOC_VIEWDETAILS">
+        <PropertyRef Name="DIGITALDOCID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_USER_INSTITUTION_DETAILS_TBL_MASTER_BOARDS">
+    <End Role="TBL_MASTER_BOARDS" Type="Self.TBL_MASTER_BOARDS" Multiplicity="1" />
+    <End Role="TBL_USER_INSTITUTION_DETAILS" Type="Self.TBL_USER_INSTITUTION_DETAILS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_MASTER_BOARDS">
+        <PropertyRef Name="BOARDID" />
+      </Principal>
+      <Dependent Role="TBL_USER_INSTITUTION_DETAILS">
+        <PropertyRef Name="BOARDID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_MASTER_CITY_TBL_MASTER_STATE">
+    <End Role="TBL_MASTER_STATE" Type="Self.TBL_MASTER_STATE" Multiplicity="0..1" />
+    <End Role="TBL_MASTER_CITY" Type="Self.TBL_MASTER_CITY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_MASTER_STATE">
+        <PropertyRef Name="STATEID" />
+      </Principal>
+      <Dependent Role="TBL_MASTER_CITY">
+        <PropertyRef Name="STATEID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_USER_INSTITUTION_DETAILS_TBL_MASTER_CLASS">
+    <End Role="TBL_MASTER_CLASS" Type="Self.TBL_MASTER_CLASS" Multiplicity="0..1" />
+    <End Role="TBL_USER_INSTITUTION_DETAILS" Type="Self.TBL_USER_INSTITUTION_DETAILS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_MASTER_CLASS">
+        <PropertyRef Name="CLASSID" />
+      </Principal>
+      <Dependent Role="TBL_USER_INSTITUTION_DETAILS">
+        <PropertyRef Name="CLASSID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_MASTER_STATE_TBL_MASTER_COUNTRY">
+    <End Role="TBL_MASTER_COUNTRY" Type="Self.TBL_MASTER_COUNTRY" Multiplicity="0..1" />
+    <End Role="TBL_MASTER_STATE" Type="Self.TBL_MASTER_STATE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_MASTER_COUNTRY">
+        <PropertyRef Name="COUNTRYID" />
+      </Principal>
+      <Dependent Role="TBL_MASTER_STATE">
+        <PropertyRef Name="COUNTRYID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_USER_COURSE_DETAILS_TBL_MASTER_COURSE">
+    <End Role="TBL_MASTER_COURSE" Type="Self.TBL_MASTER_COURSE" Multiplicity="0..1" />
+    <End Role="TBL_USER_COURSE_DETAILS" Type="Self.TBL_USER_COURSE_DETAILS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_MASTER_COURSE">
+        <PropertyRef Name="COURSEID" />
+      </Principal>
+      <Dependent Role="TBL_USER_COURSE_DETAILS">
+        <PropertyRef Name="COURSEID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_USER_DOCUMENTS_DETAILS_TBL_MASTER_DOCUMENTTYPE">
+    <End Role="TBL_MASTER_DOCUMENTTYPE" Type="Self.TBL_MASTER_DOCUMENTTYPE" Multiplicity="0..1" />
+    <End Role="TBL_USER_DOCUMENTS_DETAILS" Type="Self.TBL_USER_DOCUMENTS_DETAILS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_MASTER_DOCUMENTTYPE">
+        <PropertyRef Name="DocumentTypeID" />
+      </Principal>
+      <Dependent Role="TBL_USER_DOCUMENTS_DETAILS">
+        <PropertyRef Name="DOCUMENTTYPEID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_USER_LOGIN_TBL_MASTER_STATUS">
+    <End Role="TBL_MASTER_STATUS" Type="Self.TBL_MASTER_STATUS" Multiplicity="1" />
+    <End Role="TBL_USER_LOGIN" Type="Self.TBL_USER_LOGIN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_MASTER_STATUS">
+        <PropertyRef Name="STATUSID" />
+      </Principal>
+      <Dependent Role="TBL_USER_LOGIN">
+        <PropertyRef Name="STATUSID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_TEST_TESTDETAIL_TBL_MASTER_SUBJECT">
+    <End Role="TBL_MASTER_SUBJECT" Type="Self.TBL_MASTER_SUBJECT" Multiplicity="0..1" />
+    <End Role="TBL_TEST_TESTDETAIL" Type="Self.TBL_TEST_TESTDETAIL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_MASTER_SUBJECT">
+        <PropertyRef Name="SUBJECTID" />
+      </Principal>
+      <Dependent Role="TBL_TEST_TESTDETAIL">
+        <PropertyRef Name="SUBJECTID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_USER_SUBJECTS_TBL_MASTER_SUBJECT">
+    <End Role="TBL_MASTER_SUBJECT" Type="Self.TBL_MASTER_SUBJECT" Multiplicity="0..1" />
+    <End Role="TBL_USER_SUBJECTS" Type="Self.TBL_USER_SUBJECTS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_MASTER_SUBJECT">
+        <PropertyRef Name="SUBJECTID" />
+      </Principal>
+      <Dependent Role="TBL_USER_SUBJECTS">
+        <PropertyRef Name="SUBJECTID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_TEST_QUESTIONS_TBL_MASTER_TESTQUESTIONTYPE">
+    <End Role="TBL_MASTER_TESTQUESTIONTYPE" Type="Self.TBL_MASTER_TESTQUESTIONTYPE" Multiplicity="1" />
+    <End Role="TBL_TEST_QUESTIONS" Type="Self.TBL_TEST_QUESTIONS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_MASTER_TESTQUESTIONTYPE">
+        <PropertyRef Name="QUESTIONTYPEID" />
+      </Principal>
+      <Dependent Role="TBL_TEST_QUESTIONS">
+        <PropertyRef Name="QUESTIONTYPEID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_USER_LOGIN_TBL_MASTER_USERTYPE">
+    <End Role="TBL_MASTER_USERTYPE" Type="Self.TBL_MASTER_USERTYPE" Multiplicity="1" />
+    <End Role="TBL_USER_LOGIN" Type="Self.TBL_USER_LOGIN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_MASTER_USERTYPE">
+        <PropertyRef Name="USERTYPEID" />
+      </Principal>
+      <Dependent Role="TBL_USER_LOGIN">
+        <PropertyRef Name="USERTYPEID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_USER_ROLE_TBL_MASTER_USERTYPE">
+    <End Role="TBL_MASTER_USERTYPE" Type="Self.TBL_MASTER_USERTYPE" Multiplicity="0..1" />
+    <End Role="TBL_USER_ROLE" Type="Self.TBL_USER_ROLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_MASTER_USERTYPE">
+        <PropertyRef Name="USERTYPEID" />
+      </Principal>
+      <Dependent Role="TBL_USER_ROLE">
+        <PropertyRef Name="USERTYPEID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_TEST_ANSWERS_TBL_TEST_QUESTIONS">
+    <End Role="TBL_TEST_QUESTIONS" Type="Self.TBL_TEST_QUESTIONS" Multiplicity="0..1" />
+    <End Role="TBL_TEST_ANSWERS" Type="Self.TBL_TEST_ANSWERS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_TEST_QUESTIONS">
+        <PropertyRef Name="QUESTIONID" />
+      </Principal>
+      <Dependent Role="TBL_TEST_ANSWERS">
+        <PropertyRef Name="QUESTIONID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_TEST_ANSWERS_TBL_TEST_TESTDETAIL">
+    <End Role="TBL_TEST_TESTDETAIL" Type="Self.TBL_TEST_TESTDETAIL" Multiplicity="0..1" />
+    <End Role="TBL_TEST_ANSWERS" Type="Self.TBL_TEST_ANSWERS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_TEST_TESTDETAIL">
+        <PropertyRef Name="TESTID" />
+      </Principal>
+      <Dependent Role="TBL_TEST_ANSWERS">
+        <PropertyRef Name="TESTID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_TEST_ATAMPT_TBL_TEST_TESTDETAIL">
+    <End Role="TBL_TEST_TESTDETAIL" Type="Self.TBL_TEST_TESTDETAIL" Multiplicity="0..1" />
+    <End Role="TBL_TEST_ATAMPT" Type="Self.TBL_TEST_ATAMPT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_TEST_TESTDETAIL">
+        <PropertyRef Name="TESTID" />
+      </Principal>
+      <Dependent Role="TBL_TEST_ATAMPT">
+        <PropertyRef Name="TESTID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_TEST_ATAMPT_TBL_USER_LOGIN">
+    <End Role="TBL_USER_LOGIN" Type="Self.TBL_USER_LOGIN" Multiplicity="0..1" />
+    <End Role="TBL_TEST_ATAMPT" Type="Self.TBL_TEST_ATAMPT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_USER_LOGIN">
+        <PropertyRef Name="USERID" />
+      </Principal>
+      <Dependent Role="TBL_TEST_ATAMPT">
+        <PropertyRef Name="USERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_TEST_ATAMPT_QUESTION_ANSWER_TBL_TEST_QUESTIONS">
+    <End Role="TBL_TEST_QUESTIONS" Type="Self.TBL_TEST_QUESTIONS" Multiplicity="0..1" />
+    <End Role="TBL_TEST_ATAMPT_QUESTION_ANSWER" Type="Self.TBL_TEST_ATAMPT_QUESTION_ANSWER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_TEST_QUESTIONS">
+        <PropertyRef Name="QUESTIONID" />
+      </Principal>
+      <Dependent Role="TBL_TEST_ATAMPT_QUESTION_ANSWER">
+        <PropertyRef Name="QUESTIONID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_TEST_ATAMPT_QUESTION_ANSWER_TBL_TEST_TESTDETAIL">
+    <End Role="TBL_TEST_TESTDETAIL" Type="Self.TBL_TEST_TESTDETAIL" Multiplicity="0..1" />
+    <End Role="TBL_TEST_ATAMPT_QUESTION_ANSWER" Type="Self.TBL_TEST_ATAMPT_QUESTION_ANSWER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_TEST_TESTDETAIL">
+        <PropertyRef Name="TESTID" />
+      </Principal>
+      <Dependent Role="TBL_TEST_ATAMPT_QUESTION_ANSWER">
+        <PropertyRef Name="TESTID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_1_TBL_TEST_TESTDETAIL">
+    <End Role="TBL_TEST_TESTDETAIL" Type="Self.TBL_TEST_TESTDETAIL" Multiplicity="1" />
+    <End Role="TBL_TEST_QUESTIONS" Type="Self.TBL_TEST_QUESTIONS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_TEST_TESTDETAIL">
+        <PropertyRef Name="TESTID" />
+      </Principal>
+      <Dependent Role="TBL_TEST_QUESTIONS">
+        <PropertyRef Name="TESTID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_USER_ADDRESS_DETAILS_TBL_USER_LOGIN">
+    <End Role="TBL_USER_LOGIN" Type="Self.TBL_USER_LOGIN" Multiplicity="1" />
+    <End Role="TBL_USER_ADDRESS_DETAILS" Type="Self.TBL_USER_ADDRESS_DETAILS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_USER_LOGIN">
+        <PropertyRef Name="USERID" />
+      </Principal>
+      <Dependent Role="TBL_USER_ADDRESS_DETAILS">
+        <PropertyRef Name="USERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_USER_COURSE_DETAILS_TBL_USER_LOGIN">
+    <End Role="TBL_USER_LOGIN" Type="Self.TBL_USER_LOGIN" Multiplicity="0..1" />
+    <End Role="TBL_USER_COURSE_DETAILS" Type="Self.TBL_USER_COURSE_DETAILS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_USER_LOGIN">
+        <PropertyRef Name="USERID" />
+      </Principal>
+      <Dependent Role="TBL_USER_COURSE_DETAILS">
+        <PropertyRef Name="USERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_USER_DETAILS_TBL_USER_DETAILS">
+    <End Role="TBL_USER_LOGIN" Type="Self.TBL_USER_LOGIN" Multiplicity="1" />
+    <End Role="TBL_USER_DETAILS" Type="Self.TBL_USER_DETAILS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_USER_LOGIN">
+        <PropertyRef Name="USERID" />
+      </Principal>
+      <Dependent Role="TBL_USER_DETAILS">
+        <PropertyRef Name="USERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_USER_DOCUMENTS_DETAILS_TBL_USER_LOGIN">
+    <End Role="TBL_USER_LOGIN" Type="Self.TBL_USER_LOGIN" Multiplicity="1" />
+    <End Role="TBL_USER_DOCUMENTS_DETAILS" Type="Self.TBL_USER_DOCUMENTS_DETAILS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_USER_LOGIN">
+        <PropertyRef Name="USERID" />
+      </Principal>
+      <Dependent Role="TBL_USER_DOCUMENTS_DETAILS">
+        <PropertyRef Name="USERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_USER_INSTITUTION_DETAILS_TBL_USER_LOGIN">
+    <End Role="TBL_USER_LOGIN" Type="Self.TBL_USER_LOGIN" Multiplicity="0..1" />
+    <End Role="TBL_USER_INSTITUTION_DETAILS" Type="Self.TBL_USER_INSTITUTION_DETAILS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_USER_LOGIN">
+        <PropertyRef Name="USERID" />
+      </Principal>
+      <Dependent Role="TBL_USER_INSTITUTION_DETAILS">
+        <PropertyRef Name="USERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_USER_LOGIN_TRAIL_TBL_USER_LOGIN">
+    <End Role="TBL_USER_LOGIN" Type="Self.TBL_USER_LOGIN" Multiplicity="1" />
+    <End Role="TBL_USER_LOGIN_TRAIL" Type="Self.TBL_USER_LOGIN_TRAIL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_USER_LOGIN">
+        <PropertyRef Name="USERID" />
+      </Principal>
+      <Dependent Role="TBL_USER_LOGIN_TRAIL">
+        <PropertyRef Name="USERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_USER_PARENTS_DETAILS_TBL_USER_LOGIN">
+    <End Role="TBL_USER_LOGIN" Type="Self.TBL_USER_LOGIN" Multiplicity="0..1" />
+    <End Role="TBL_USER_PARENTS_DETAILS" Type="Self.TBL_USER_PARENTS_DETAILS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_USER_LOGIN">
+        <PropertyRef Name="USERID" />
+      </Principal>
+      <Dependent Role="TBL_USER_PARENTS_DETAILS">
+        <PropertyRef Name="USERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_USER_PROFESSIONAL_DETAILS_TBL_USER_LOGIN">
+    <End Role="TBL_USER_LOGIN" Type="Self.TBL_USER_LOGIN" Multiplicity="0..1" />
+    <End Role="TBL_USER_PROFESSIONAL_DETAILS" Type="Self.TBL_USER_PROFESSIONAL_DETAILS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_USER_LOGIN">
+        <PropertyRef Name="USERID" />
+      </Principal>
+      <Dependent Role="TBL_USER_PROFESSIONAL_DETAILS">
+        <PropertyRef Name="USERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_USER_ROLE_TBL_USER_LOGIN">
+    <End Role="TBL_USER_LOGIN" Type="Self.TBL_USER_LOGIN" Multiplicity="0..1" />
+    <End Role="TBL_USER_ROLE" Type="Self.TBL_USER_ROLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_USER_LOGIN">
+        <PropertyRef Name="USERID" />
+      </Principal>
+      <Dependent Role="TBL_USER_ROLE">
+        <PropertyRef Name="USERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_USER_SUBJECTS_TBL_USER_LOGIN">
+    <End Role="TBL_USER_LOGIN" Type="Self.TBL_USER_LOGIN" Multiplicity="0..1" />
+    <End Role="TBL_USER_SUBJECTS" Type="Self.TBL_USER_SUBJECTS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_USER_LOGIN">
+        <PropertyRef Name="USERID" />
+      </Principal>
+      <Dependent Role="TBL_USER_SUBJECTS">
+        <PropertyRef Name="USERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="webpages_UsersInRoles">
+    <End Role="webpages_Roles" Type="Self.webpages_Roles" Multiplicity="*" />
+    <End Role="Users" Type="Self.User" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="ajay_dbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Fiscalyears" EntityType="Self.Fiscalyear" />
+    <EntitySet Name="MemberRegistrations" EntityType="Self.MemberRegistration" />
+    <EntitySet Name="PaymentDetails" EntityType="Self.PaymentDetail" />
+    <EntitySet Name="PlanMasters" EntityType="Self.PlanMaster" />
+    <EntitySet Name="ReceiptDetails" EntityType="Self.ReceiptDetail" />
+    <EntitySet Name="SchemeMasters" EntityType="Self.SchemeMaster" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="TBL_COURSE_SUBJECT_MAPPING_DETAILS" EntityType="Self.TBL_COURSE_SUBJECT_MAPPING_DETAILS" />
+    <EntitySet Name="TBL_GN_ANNAUNCMENT" EntityType="Self.TBL_GN_ANNAUNCMENT" />
+    <EntitySet Name="TBL_GN_DIGITALDOC_DETAILS" EntityType="Self.TBL_GN_DIGITALDOC_DETAILS" />
+    <EntitySet Name="TBL_GN_DIGITALDOC_VIEWDETAILS" EntityType="Self.TBL_GN_DIGITALDOC_VIEWDETAILS" />
+    <EntitySet Name="TBL_MASTER_BOARDS" EntityType="Self.TBL_MASTER_BOARDS" />
+    <EntitySet Name="TBL_MASTER_CITY" EntityType="Self.TBL_MASTER_CITY" />
+    <EntitySet Name="TBL_MASTER_CLASS" EntityType="Self.TBL_MASTER_CLASS" />
+    <EntitySet Name="TBL_MASTER_COUNTRY" EntityType="Self.TBL_MASTER_COUNTRY" />
+    <EntitySet Name="TBL_MASTER_COURSE" EntityType="Self.TBL_MASTER_COURSE" />
+    <EntitySet Name="TBL_MASTER_DIGITALDOC" EntityType="Self.TBL_MASTER_DIGITALDOC" />
+    <EntitySet Name="TBL_MASTER_DOCUMENTTYPE" EntityType="Self.TBL_MASTER_DOCUMENTTYPE" />
+    <EntitySet Name="TBL_MASTER_STATE" EntityType="Self.TBL_MASTER_STATE" />
+    <EntitySet Name="TBL_MASTER_STATUS" EntityType="Self.TBL_MASTER_STATUS" />
+    <EntitySet Name="TBL_MASTER_SUBJECT" EntityType="Self.TBL_MASTER_SUBJECT" />
+    <EntitySet Name="TBL_MASTER_TEACHER" EntityType="Self.TBL_MASTER_TEACHER" />
+    <EntitySet Name="TBL_MASTER_TEST_TYPE" EntityType="Self.TBL_MASTER_TEST_TYPE" />
+    <EntitySet Name="TBL_MASTER_TESTQUESTIONTYPE" EntityType="Self.TBL_MASTER_TESTQUESTIONTYPE" />
+    <EntitySet Name="TBL_MASTER_USERTYPE" EntityType="Self.TBL_MASTER_USERTYPE" />
+    <EntitySet Name="TBL_STUDENT_MASTER_MAPPING" EntityType="Self.TBL_STUDENT_MASTER_MAPPING" />
+    <EntitySet Name="TBL_TEACHER_COURSE_MAPPING_DETAILS" EntityType="Self.TBL_TEACHER_COURSE_MAPPING_DETAILS" />
+    <EntitySet Name="TBL_TEACHER_SUBJECT_MAPPING_DETAILS" EntityType="Self.TBL_TEACHER_SUBJECT_MAPPING_DETAILS" />
+    <EntitySet Name="TBL_TEST_ANSWERS" EntityType="Self.TBL_TEST_ANSWERS" />
+    <EntitySet Name="TBL_TEST_ATAMPT" EntityType="Self.TBL_TEST_ATAMPT" />
+    <EntitySet Name="TBL_TEST_ATAMPT_QUESTION_ANSWER" EntityType="Self.TBL_TEST_ATAMPT_QUESTION_ANSWER" />
+    <EntitySet Name="TBL_TEST_QUESTIONS" EntityType="Self.TBL_TEST_QUESTIONS" />
+    <EntitySet Name="TBL_TEST_TESTDETAIL" EntityType="Self.TBL_TEST_TESTDETAIL" />
+    <EntitySet Name="TBL_USER_ADDRESS_DETAILS" EntityType="Self.TBL_USER_ADDRESS_DETAILS" />
+    <EntitySet Name="TBL_USER_COURSE_DETAILS" EntityType="Self.TBL_USER_COURSE_DETAILS" />
+    <EntitySet Name="TBL_USER_COURSE_MAPPING_DETAILS" EntityType="Self.TBL_USER_COURSE_MAPPING_DETAILS" />
+    <EntitySet Name="TBL_USER_DETAILS" EntityType="Self.TBL_USER_DETAILS" />
+    <EntitySet Name="TBL_USER_DOCUMENTS_DETAILS" EntityType="Self.TBL_USER_DOCUMENTS_DETAILS" />
+    <EntitySet Name="TBL_USER_INSTITUTION_DETAILS" EntityType="Self.TBL_USER_INSTITUTION_DETAILS" />
+    <EntitySet Name="TBL_USER_LOGIN" EntityType="Self.TBL_USER_LOGIN" />
+    <EntitySet Name="TBL_USER_LOGIN_TRAIL" EntityType="Self.TBL_USER_LOGIN_TRAIL" />
+    <EntitySet Name="TBL_USER_PARENTS_DETAILS" EntityType="Self.TBL_USER_PARENTS_DETAILS" />
+    <EntitySet Name="TBL_USER_PROFESSIONAL_DETAILS" EntityType="Self.TBL_USER_PROFESSIONAL_DETAILS" />
+    <EntitySet Name="TBL_USER_ROLE" EntityType="Self.TBL_USER_ROLE" />
+    <EntitySet Name="TBL_USER_SUBJECTS" EntityType="Self.TBL_USER_SUBJECTS" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="webpages_Membership" EntityType="Self.webpages_Membership" />
+    <EntitySet Name="webpages_OAuthMembership" EntityType="Self.webpages_OAuthMembership" />
+    <EntitySet Name="webpages_Roles" EntityType="Self.webpages_Roles" />
+    <AssociationSet Name="FK_TBL_GN_DIGITALDOC_DETAILS_TBL_MASTER_SUBJECT" Association="Self.FK_TBL_GN_DIGITALDOC_DETAILS_TBL_MASTER_SUBJECT">
+      <End Role="TBL_MASTER_SUBJECT" EntitySet="TBL_MASTER_SUBJECT" />
+      <End Role="TBL_GN_DIGITALDOC_DETAILS" EntitySet="TBL_GN_DIGITALDOC_DETAILS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_GN_DIGITALDOC_VIEWDETAILS_TBL_GN_DIGITALDOC_DETAILS" Association="Self.FK_TBL_GN_DIGITALDOC_VIEWDETAILS_TBL_GN_DIGITALDOC_DETAILS">
+      <End Role="TBL_GN_DIGITALDOC_DETAILS" EntitySet="TBL_GN_DIGITALDOC_DETAILS" />
+      <End Role="TBL_GN_DIGITALDOC_VIEWDETAILS" EntitySet="TBL_GN_DIGITALDOC_VIEWDETAILS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_USER_INSTITUTION_DETAILS_TBL_MASTER_BOARDS" Association="Self.FK_TBL_USER_INSTITUTION_DETAILS_TBL_MASTER_BOARDS">
+      <End Role="TBL_MASTER_BOARDS" EntitySet="TBL_MASTER_BOARDS" />
+      <End Role="TBL_USER_INSTITUTION_DETAILS" EntitySet="TBL_USER_INSTITUTION_DETAILS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_MASTER_CITY_TBL_MASTER_STATE" Association="Self.FK_TBL_MASTER_CITY_TBL_MASTER_STATE">
+      <End Role="TBL_MASTER_STATE" EntitySet="TBL_MASTER_STATE" />
+      <End Role="TBL_MASTER_CITY" EntitySet="TBL_MASTER_CITY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_USER_INSTITUTION_DETAILS_TBL_MASTER_CLASS" Association="Self.FK_TBL_USER_INSTITUTION_DETAILS_TBL_MASTER_CLASS">
+      <End Role="TBL_MASTER_CLASS" EntitySet="TBL_MASTER_CLASS" />
+      <End Role="TBL_USER_INSTITUTION_DETAILS" EntitySet="TBL_USER_INSTITUTION_DETAILS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_MASTER_STATE_TBL_MASTER_COUNTRY" Association="Self.FK_TBL_MASTER_STATE_TBL_MASTER_COUNTRY">
+      <End Role="TBL_MASTER_COUNTRY" EntitySet="TBL_MASTER_COUNTRY" />
+      <End Role="TBL_MASTER_STATE" EntitySet="TBL_MASTER_STATE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_USER_COURSE_DETAILS_TBL_MASTER_COURSE" Association="Self.FK_TBL_USER_COURSE_DETAILS_TBL_MASTER_COURSE">
+      <End Role="TBL_MASTER_COURSE" EntitySet="TBL_MASTER_COURSE" />
+      <End Role="TBL_USER_COURSE_DETAILS" EntitySet="TBL_USER_COURSE_DETAILS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_USER_DOCUMENTS_DETAILS_TBL_MASTER_DOCUMENTTYPE" Association="Self.FK_TBL_USER_DOCUMENTS_DETAILS_TBL_MASTER_DOCUMENTTYPE">
+      <End Role="TBL_MASTER_DOCUMENTTYPE" EntitySet="TBL_MASTER_DOCUMENTTYPE" />
+      <End Role="TBL_USER_DOCUMENTS_DETAILS" EntitySet="TBL_USER_DOCUMENTS_DETAILS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_USER_LOGIN_TBL_MASTER_STATUS" Association="Self.FK_TBL_USER_LOGIN_TBL_MASTER_STATUS">
+      <End Role="TBL_MASTER_STATUS" EntitySet="TBL_MASTER_STATUS" />
+      <End Role="TBL_USER_LOGIN" EntitySet="TBL_USER_LOGIN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_TEST_TESTDETAIL_TBL_MASTER_SUBJECT" Association="Self.FK_TBL_TEST_TESTDETAIL_TBL_MASTER_SUBJECT">
+      <End Role="TBL_MASTER_SUBJECT" EntitySet="TBL_MASTER_SUBJECT" />
+      <End Role="TBL_TEST_TESTDETAIL" EntitySet="TBL_TEST_TESTDETAIL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_USER_SUBJECTS_TBL_MASTER_SUBJECT" Association="Self.FK_TBL_USER_SUBJECTS_TBL_MASTER_SUBJECT">
+      <End Role="TBL_MASTER_SUBJECT" EntitySet="TBL_MASTER_SUBJECT" />
+      <End Role="TBL_USER_SUBJECTS" EntitySet="TBL_USER_SUBJECTS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_TEST_QUESTIONS_TBL_MASTER_TESTQUESTIONTYPE" Association="Self.FK_TBL_TEST_QUESTIONS_TBL_MASTER_TESTQUESTIONTYPE">
+      <End Role="TBL_MASTER_TESTQUESTIONTYPE" EntitySet="TBL_MASTER_TESTQUESTIONTYPE" />
+      <End Role="TBL_TEST_QUESTIONS" EntitySet="TBL_TEST_QUESTIONS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_USER_LOGIN_TBL_MASTER_USERTYPE" Association="Self.FK_TBL_USER_LOGIN_TBL_MASTER_USERTYPE">
+      <End Role="TBL_MASTER_USERTYPE" EntitySet="TBL_MASTER_USERTYPE" />
+      <End Role="TBL_USER_LOGIN" EntitySet="TBL_USER_LOGIN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_USER_ROLE_TBL_MASTER_USERTYPE" Association="Self.FK_TBL_USER_ROLE_TBL_MASTER_USERTYPE">
+      <End Role="TBL_MASTER_USERTYPE" EntitySet="TBL_MASTER_USERTYPE" />
+      <End Role="TBL_USER_ROLE" EntitySet="TBL_USER_ROLE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_TEST_ANSWERS_TBL_TEST_QUESTIONS" Association="Self.FK_TBL_TEST_ANSWERS_TBL_TEST_QUESTIONS">
+      <End Role="TBL_TEST_QUESTIONS" EntitySet="TBL_TEST_QUESTIONS" />
+      <End Role="TBL_TEST_ANSWERS" EntitySet="TBL_TEST_ANSWERS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_TEST_ANSWERS_TBL_TEST_TESTDETAIL" Association="Self.FK_TBL_TEST_ANSWERS_TBL_TEST_TESTDETAIL">
+      <End Role="TBL_TEST_TESTDETAIL" EntitySet="TBL_TEST_TESTDETAIL" />
+      <End Role="TBL_TEST_ANSWERS" EntitySet="TBL_TEST_ANSWERS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_TEST_ATAMPT_TBL_TEST_TESTDETAIL" Association="Self.FK_TBL_TEST_ATAMPT_TBL_TEST_TESTDETAIL">
+      <End Role="TBL_TEST_TESTDETAIL" EntitySet="TBL_TEST_TESTDETAIL" />
+      <End Role="TBL_TEST_ATAMPT" EntitySet="TBL_TEST_ATAMPT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_TEST_ATAMPT_TBL_USER_LOGIN" Association="Self.FK_TBL_TEST_ATAMPT_TBL_USER_LOGIN">
+      <End Role="TBL_USER_LOGIN" EntitySet="TBL_USER_LOGIN" />
+      <End Role="TBL_TEST_ATAMPT" EntitySet="TBL_TEST_ATAMPT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_TEST_ATAMPT_QUESTION_ANSWER_TBL_TEST_QUESTIONS" Association="Self.FK_TBL_TEST_ATAMPT_QUESTION_ANSWER_TBL_TEST_QUESTIONS">
+      <End Role="TBL_TEST_QUESTIONS" EntitySet="TBL_TEST_QUESTIONS" />
+      <End Role="TBL_TEST_ATAMPT_QUESTION_ANSWER" EntitySet="TBL_TEST_ATAMPT_QUESTION_ANSWER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_TEST_ATAMPT_QUESTION_ANSWER_TBL_TEST_TESTDETAIL" Association="Self.FK_TBL_TEST_ATAMPT_QUESTION_ANSWER_TBL_TEST_TESTDETAIL">
+      <End Role="TBL_TEST_TESTDETAIL" EntitySet="TBL_TEST_TESTDETAIL" />
+      <End Role="TBL_TEST_ATAMPT_QUESTION_ANSWER" EntitySet="TBL_TEST_ATAMPT_QUESTION_ANSWER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_1_TBL_TEST_TESTDETAIL" Association="Self.FK_Table_1_TBL_TEST_TESTDETAIL">
+      <End Role="TBL_TEST_TESTDETAIL" EntitySet="TBL_TEST_TESTDETAIL" />
+      <End Role="TBL_TEST_QUESTIONS" EntitySet="TBL_TEST_QUESTIONS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_USER_ADDRESS_DETAILS_TBL_USER_LOGIN" Association="Self.FK_TBL_USER_ADDRESS_DETAILS_TBL_USER_LOGIN">
+      <End Role="TBL_USER_LOGIN" EntitySet="TBL_USER_LOGIN" />
+      <End Role="TBL_USER_ADDRESS_DETAILS" EntitySet="TBL_USER_ADDRESS_DETAILS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_USER_COURSE_DETAILS_TBL_USER_LOGIN" Association="Self.FK_TBL_USER_COURSE_DETAILS_TBL_USER_LOGIN">
+      <End Role="TBL_USER_LOGIN" EntitySet="TBL_USER_LOGIN" />
+      <End Role="TBL_USER_COURSE_DETAILS" EntitySet="TBL_USER_COURSE_DETAILS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_USER_DETAILS_TBL_USER_DETAILS" Association="Self.FK_TBL_USER_DETAILS_TBL_USER_DETAILS">
+      <End Role="TBL_USER_LOGIN" EntitySet="TBL_USER_LOGIN" />
+      <End Role="TBL_USER_DETAILS" EntitySet="TBL_USER_DETAILS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_USER_DOCUMENTS_DETAILS_TBL_USER_LOGIN" Association="Self.FK_TBL_USER_DOCUMENTS_DETAILS_TBL_USER_LOGIN">
+      <End Role="TBL_USER_LOGIN" EntitySet="TBL_USER_LOGIN" />
+      <End Role="TBL_USER_DOCUMENTS_DETAILS" EntitySet="TBL_USER_DOCUMENTS_DETAILS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_USER_INSTITUTION_DETAILS_TBL_USER_LOGIN" Association="Self.FK_TBL_USER_INSTITUTION_DETAILS_TBL_USER_LOGIN">
+      <End Role="TBL_USER_LOGIN" EntitySet="TBL_USER_LOGIN" />
+      <End Role="TBL_USER_INSTITUTION_DETAILS" EntitySet="TBL_USER_INSTITUTION_DETAILS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_USER_LOGIN_TRAIL_TBL_USER_LOGIN" Association="Self.FK_TBL_USER_LOGIN_TRAIL_TBL_USER_LOGIN">
+      <End Role="TBL_USER_LOGIN" EntitySet="TBL_USER_LOGIN" />
+      <End Role="TBL_USER_LOGIN_TRAIL" EntitySet="TBL_USER_LOGIN_TRAIL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_USER_PARENTS_DETAILS_TBL_USER_LOGIN" Association="Self.FK_TBL_USER_PARENTS_DETAILS_TBL_USER_LOGIN">
+      <End Role="TBL_USER_LOGIN" EntitySet="TBL_USER_LOGIN" />
+      <End Role="TBL_USER_PARENTS_DETAILS" EntitySet="TBL_USER_PARENTS_DETAILS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_USER_PROFESSIONAL_DETAILS_TBL_USER_LOGIN" Association="Self.FK_TBL_USER_PROFESSIONAL_DETAILS_TBL_USER_LOGIN">
+      <End Role="TBL_USER_LOGIN" EntitySet="TBL_USER_LOGIN" />
+      <End Role="TBL_USER_PROFESSIONAL_DETAILS" EntitySet="TBL_USER_PROFESSIONAL_DETAILS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_USER_ROLE_TBL_USER_LOGIN" Association="Self.FK_TBL_USER_ROLE_TBL_USER_LOGIN">
+      <End Role="TBL_USER_LOGIN" EntitySet="TBL_USER_LOGIN" />
+      <End Role="TBL_USER_ROLE" EntitySet="TBL_USER_ROLE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_USER_SUBJECTS_TBL_USER_LOGIN" Association="Self.FK_TBL_USER_SUBJECTS_TBL_USER_LOGIN">
+      <End Role="TBL_USER_LOGIN" EntitySet="TBL_USER_LOGIN" />
+      <End Role="TBL_USER_SUBJECTS" EntitySet="TBL_USER_SUBJECTS" />
+    </AssociationSet>
+    <AssociationSet Name="webpages_UsersInRoles" Association="Self.webpages_UsersInRoles">
+      <End Role="webpages_Roles" EntitySet="webpages_Roles" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <FunctionImport Name="DeleteTBL_MASTER_BOARDS" />
+    <FunctionImport Name="DeleteTBL_MASTER_CITY">
+      <Parameter Name="NAME" Mode="In" Type="String" />
+      <Parameter Name="CITYID" Mode="In" Type="Int32" />
+      <Parameter Name="STATEID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteTBL_MASTER_CLASS">
+      <Parameter Name="CLASSID" Mode="In" Type="Int32" />
+      <Parameter Name="NAME" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteTBL_MASTER_COUNTRY">
+      <Parameter Name="NAME" Mode="In" Type="String" />
+      <Parameter Name="COUNTRYID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteTBL_MASTER_COURSE">
+      <Parameter Name="NAME" Mode="In" Type="String" />
+      <Parameter Name="COURSEID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteTBL_MASTER_DOCUMENTTYPE">
+      <Parameter Name="DocumentTypeName" Mode="In" Type="String" />
+      <Parameter Name="DocumentTypeID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteTBL_MASTER_STATE">
+      <Parameter Name="NAME" Mode="In" Type="String" />
+      <Parameter Name="COUNTRYID" Mode="In" Type="Int32" />
+      <Parameter Name="STATEID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteTBL_MASTER_STATUS">
+      <Parameter Name="STATUSID" Mode="In" Type="Int32" />
+      <Parameter Name="NAME" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteTBL_MASTER_SUBJECT">
+      <Parameter Name="NAME" Mode="In" Type="String" />
+      <Parameter Name="SUBJECTID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteTBL_MASTER_USERTYPE">
+      <Parameter Name="TYPENAME" Mode="In" Type="String" />
+      <Parameter Name="USERTYPEID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteTBL_USER_ADDRESS_DETAILS">
+      <Parameter Name="CITY" Mode="In" Type="Int32" />
+      <Parameter Name="ADDRESSTYPEID" Mode="In" Type="Int32" />
+      <Parameter Name="MODIFIEDBY" Mode="In" Type="Int64" />
+      <Parameter Name="ADDRESSLINE2" Mode="In" Type="String" />
+      <Parameter Name="STATUS" Mode="In" Type="Boolean" />
+      <Parameter Name="COUNTRY" Mode="In" Type="Int32" />
+      <Parameter Name="ADDRESSLINE1" Mode="In" Type="String" />
+      <Parameter Name="CREATEDBY" Mode="In" Type="Int64" />
+      <Parameter Name="STATE" Mode="In" Type="Int32" />
+      <Parameter Name="USERID" Mode="In" Type="Int64" />
+      <Parameter Name="ADDRESSDETAILID" Mode="In" Type="Int64" />
+      <Parameter Name="PINCODE" Mode="In" Type="String" />
+      <Parameter Name="CREATEDDATE" Mode="In" Type="DateTime" />
+      <Parameter Name="MODIFIEDDATE" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteTBL_USER_COURSE_DETAILS">
+      <Parameter Name="MODIFIEDBY" Mode="In" Type="Int64" />
+      <Parameter Name="JOINDATE" Mode="In" Type="DateTime" />
+      <Parameter Name="CREATEDDATE" Mode="In" Type="DateTime" />
+      <Parameter Name="CREATEDBY" Mode="In" Type="Int64" />
+      <Parameter Name="COURSEID" Mode="In" Type="Int32" />
+      <Parameter Name="USERID" Mode="In" Type="Int64" />
+      <Parameter Name="MODIFIEDDATE" Mode="In" Type="DateTime" />
+      <Parameter Name="STUDENTCOURSEID" Mode="In" Type="Int64" />
+      <Parameter Name="COMPLETEDATE" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteTBL_USER_DETAILS">
+      <Parameter Name="NATIONALITY" Mode="In" Type="String" />
+      <Parameter Name="GENDER" Mode="In" Type="String" />
+      <Parameter Name="USERID" Mode="In" Type="Int64" />
+      <Parameter Name="ENROLNMENTID" Mode="In" Type="String" />
+      <Parameter Name="DISABILITY" Mode="In" Type="String" />
+      <Parameter Name="DOB" Mode="In" Type="DateTime" />
+      <Parameter Name="FIRSTNAME" Mode="In" Type="String" />
+      <Parameter Name="MOTHERNAME" Mode="In" Type="String" />
+      <Parameter Name="LASTNAME" Mode="In" Type="String" />
+      <Parameter Name="FATHERNAME" Mode="In" Type="String" />
+      <Parameter Name="PERSONALDETAILID" Mode="In" Type="Int64" />
+      <Parameter Name="MIDDLENAME" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteTBL_USER_DOCUMENTS_DETAILS">
+      <Parameter Name="MODIFIEDBY" Mode="In" Type="Int64" />
+      <Parameter Name="STATUS" Mode="In" Type="Boolean" />
+      <Parameter Name="CREATEDBY" Mode="In" Type="Int64" />
+      <Parameter Name="USERID" Mode="In" Type="Int64" />
+      <Parameter Name="CREATEDDATE" Mode="In" Type="DateTime" />
+      <Parameter Name="MODIFIEDDATE" Mode="In" Type="DateTime" />
+      <Parameter Name="DOCUMENTTYPEID" Mode="In" Type="Int32" />
+      <Parameter Name="USERDOCUMENTID" Mode="In" Type="Int64" />
+      <Parameter Name="DOCUMENTNAME" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteTBL_USER_INSTITUTION_DETAILS">
+      <Parameter Name="MODIFIEDBY" Mode="In" Type="Int64" />
+      <Parameter Name="INSTITUTIONID" Mode="In" Type="Int64" />
+      <Parameter Name="BOARDID" Mode="In" Type="Int32" />
+      <Parameter Name="MODIFIEDDATE" Mode="In" Type="DateTime" />
+      <Parameter Name="GRADE_PERCENT" Mode="In" Type="String" />
+      <Parameter Name="INSTITUTIONNAME" Mode="In" Type="String" />
+      <Parameter Name="CLASSID" Mode="In" Type="Int32" />
+      <Parameter Name="USERID" Mode="In" Type="Int64" />
+      <Parameter Name="PASSINGYEAR" Mode="In" Type="Int32" />
+      <Parameter Name="CREATEDBY" Mode="In" Type="Int64" />
+      <Parameter Name="CREATEDDATE" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteTBL_USER_LOGIN">
+      <Parameter Name="PASSWORD" Mode="In" Type="String" />
+      <Parameter Name="PASSWORDRETRYCOUNT" Mode="In" Type="Int32" />
+      <Parameter Name="LOGIN_MOBILE" Mode="In" Type="String" />
+      <Parameter Name="USERID" Mode="In" Type="Int64" />
+      <Parameter Name="MODIFIEDDATE" Mode="In" Type="DateTime" />
+      <Parameter Name="LOGIN_EMAIL" Mode="In" Type="String" />
+      <Parameter Name="STATUSID" Mode="In" Type="Int32" />
+      <Parameter Name="CREATEDDATE" Mode="In" Type="DateTime" />
+      <Parameter Name="USERTYPEID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteTBL_USER_LOGIN_TRAIL">
+      <Parameter Name="IPADDRESS" Mode="In" Type="String" />
+      <Parameter Name="LATITUTE" Mode="In" Type="String" />
+      <Parameter Name="USERID" Mode="In" Type="Int64" />
+      <Parameter Name="LONGITUTE" Mode="In" Type="String" />
+      <Parameter Name="LOGINDATETIME" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteTBL_USER_PARENTS_DETAILS">
+      <Parameter Name="CREATEDBY" Mode="In" Type="Int64" />
+      <Parameter Name="MOTHEROCCUPATION" Mode="In" Type="String" />
+      <Parameter Name="CREATEDDATE" Mode="In" Type="DateTime" />
+      <Parameter Name="MODIFIEDDATE" Mode="In" Type="DateTime" />
+      <Parameter Name="FATHERNAME" Mode="In" Type="String" />
+      <Parameter Name="MODIFIEDBY" Mode="In" Type="Int64" />
+      <Parameter Name="MOTHEREMAIL" Mode="In" Type="String" />
+      <Parameter Name="MOTHERCOMPANYNAME" Mode="In" Type="String" />
+      <Parameter Name="FATHERDESIGNATION" Mode="In" Type="String" />
+      <Parameter Name="FATHEROCCUPATION" Mode="In" Type="String" />
+      <Parameter Name="FATHEREMAIL" Mode="In" Type="String" />
+      <Parameter Name="USERID" Mode="In" Type="Int64" />
+      <Parameter Name="PARENTID" Mode="In" Type="Int64" />
+      <Parameter Name="FATHERMOBILENUMBER" Mode="In" Type="String" />
+      <Parameter Name="MOTHERMOBILENUMBER" Mode="In" Type="String" />
+      <Parameter Name="MOTHERNAME" Mode="In" Type="String" />
+      <Parameter Name="MOTHERDESIGNATION" Mode="In" Type="String" />
+      <Parameter Name="FATHERCOMPANYNAME" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteTBL_USER_PROFESSIONAL_DETAILS">
+      <Parameter Name="MODIFIEDDBY" Mode="In" Type="Int64" />
+      <Parameter Name="CREATEDDATE" Mode="In" Type="DateTime" />
+      <Parameter Name="DESIGNATION" Mode="In" Type="String" />
+      <Parameter Name="CREATEBY" Mode="In" Type="Int64" />
+      <Parameter Name="REMARKS" Mode="In" Type="String" />
+      <Parameter Name="USERID" Mode="In" Type="Int64" />
+      <Parameter Name="MODIFIEDDATE" Mode="In" Type="DateTime" />
+      <Parameter Name="EMPLOYEETYPE" Mode="In" Type="String" />
+      <Parameter Name="PROFESSIONALDETAILID" Mode="In" Type="Int64" />
+      <Parameter Name="COMPANYNAME" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteTBL_USER_SUBJECTS">
+      <Parameter Name="MODIFIEDBY" Mode="In" Type="Int64" />
+      <Parameter Name="USERID" Mode="In" Type="Int64" />
+      <Parameter Name="USERSUBJECTID" Mode="In" Type="Int64" />
+      <Parameter Name="CREATEDDATE" Mode="In" Type="DateTime" />
+      <Parameter Name="CREATEDBY" Mode="In" Type="Int64" />
+      <Parameter Name="MODIFIEDDATE" Mode="In" Type="DateTime" />
+      <Parameter Name="SUBJECTID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetAllTBL_MASTER_BOARDS" ReturnType="Collection(ajay_dbModel.GetAllTBL_MASTER_BOARDS_Result)" />
+    <FunctionImport Name="GetAllTBL_MASTER_CLASS" ReturnType="Collection(Int32)" />
+    <FunctionImport Name="GetAllTBL_MASTER_COUNTRY" ReturnType="Collection(Int32)" />
+    <FunctionImport Name="GetAllTBL_MASTER_COURSE" ReturnType="Collection(Int32)" />
+    <FunctionImport Name="GetAllTBL_MASTER_DOCUMENTTYPE" ReturnType="Collection(Int32)" />
+    <FunctionImport Name="GetAllTBL_MASTER_STATUS" ReturnType="Collection(Int32)" />
+    <FunctionImport Name="GetAllTBL_MASTER_SUBJECT" ReturnType="Collection(Int32)" />
+    <FunctionImport Name="GetAllTBL_MASTER_USERTYPE" ReturnType="Collection(Int32)" />
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(ajay_dbModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(ajay_dbModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="sprocMemberRegistrationDeleteSingleItem">
+      <Parameter Name="MemID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="sprocMemberRegistrationInsertUpdateSingleItem">
+      <Parameter Name="MemID" Mode="In" Type="Int64" />
+      <Parameter Name="MemberFName" Mode="In" Type="String" />
+      <Parameter Name="MemberLName" Mode="In" Type="String" />
+      <Parameter Name="MemberMName" Mode="In" Type="String" />
+      <Parameter Name="Address" Mode="In" Type="String" />
+      <Parameter Name="DOB" Mode="In" Type="DateTime" />
+      <Parameter Name="Age" Mode="In" Type="String" />
+      <Parameter Name="Contactno" Mode="In" Type="String" />
+      <Parameter Name="EmailID" Mode="In" Type="String" />
+      <Parameter Name="Gender" Mode="In" Type="String" />
+      <Parameter Name="PlantypeID" Mode="In" Type="Int32" />
+      <Parameter Name="WorkouttypeID" Mode="In" Type="Int32" />
+      <Parameter Name="Createdby" Mode="In" Type="Int64" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="Int64" />
+      <Parameter Name="JoiningDate" Mode="In" Type="DateTime" />
+      <Parameter Name="MemIDOUT" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sprocMemberRegistrationSelectList" ReturnType="Collection(ajay_dbModel.sprocMemberRegistrationSelectList_Result)" />
+    <FunctionImport Name="sprocMemberRegistrationSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocMemberRegistrationSelectSingleItem_Result)">
+      <Parameter Name="MemID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="sprocMemberRegistrationUpdateSingleItem">
+      <Parameter Name="PaymentID" Mode="In" Type="Int64" />
+      <Parameter Name="PlanID" Mode="In" Type="Int32" />
+      <Parameter Name="WorkouttypeID" Mode="In" Type="Int32" />
+      <Parameter Name="Paymenttype" Mode="In" Type="String" />
+      <Parameter Name="PaymentFromdt" Mode="In" Type="DateTime" />
+      <Parameter Name="PaymentAmount" Mode="In" Type="Decimal" />
+      <Parameter Name="ModifyUserID" Mode="In" Type="Int32" />
+      <Parameter Name="RecStatus" Mode="In" Type="String" />
+      <Parameter Name="MemberID" Mode="In" Type="Int64" />
+      <Parameter Name="PaymentIDOUT" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sprocPaymentDetailsDeleteSingleItem">
+      <Parameter Name="PaymentID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="sprocPaymentDetailsInsertUpdateSingleItem">
+      <Parameter Name="PaymentID" Mode="In" Type="Int64" />
+      <Parameter Name="PlanID" Mode="In" Type="Int32" />
+      <Parameter Name="WorkouttypeID" Mode="In" Type="Int32" />
+      <Parameter Name="Paymenttype" Mode="In" Type="String" />
+      <Parameter Name="PaymentFromdt" Mode="In" Type="DateTime" />
+      <Parameter Name="PaymentAmount" Mode="In" Type="Decimal" />
+      <Parameter Name="CreateUserID" Mode="In" Type="Int32" />
+      <Parameter Name="ModifyUserID" Mode="In" Type="Int32" />
+      <Parameter Name="RecStatus" Mode="In" Type="String" />
+      <Parameter Name="MemberID" Mode="In" Type="Int64" />
+      <Parameter Name="PaymentIDOUT" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sprocPaymentDetailsSelectList" ReturnType="Collection(ajay_dbModel.sprocPaymentDetailsSelectList_Result)" />
+    <FunctionImport Name="sprocPaymentDetailsSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocPaymentDetailsSelectSingleItem_Result)">
+      <Parameter Name="PaymentID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="sprocPlanMasterDeleteSingleItem">
+      <Parameter Name="PlanID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sprocPlanMasterInsertUpdateSingleItem">
+      <Parameter Name="PlanID" Mode="In" Type="Int32" />
+      <Parameter Name="SchemeID" Mode="In" Type="Int32" />
+      <Parameter Name="PeriodID" Mode="In" Type="Int32" />
+      <Parameter Name="PlanName" Mode="In" Type="String" />
+      <Parameter Name="PlanAmount" Mode="In" Type="Decimal" />
+      <Parameter Name="ServiceTax" Mode="In" Type="Decimal" />
+      <Parameter Name="CreateDate" Mode="In" Type="DateTime" />
+      <Parameter Name="CreateUserID" Mode="In" Type="Int32" />
+      <Parameter Name="ModifyDate" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifyUserID" Mode="In" Type="Int32" />
+      <Parameter Name="RecStatus" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sprocPlanMasterSelectList" ReturnType="Collection(ajay_dbModel.sprocPlanMasterSelectList_Result)" />
+    <FunctionImport Name="sprocPlanMasterSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocPlanMasterSelectSingleItem_Result)">
+      <Parameter Name="PlanID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sprocRecepitTBInsertUpdateSingleItem">
+      <Parameter Name="RecepitID" Mode="In" Type="Int64" />
+      <Parameter Name="Memberid" Mode="In" Type="Int64" />
+      <Parameter Name="generateby" Mode="In" Type="Int64" />
+      <Parameter Name="createdby" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="sprocSchemeMasterDeleteSingleItem">
+      <Parameter Name="SchemeID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sprocSchemeMasterInsertUpdateSingleItem">
+      <Parameter Name="SchemeID" Mode="In" Type="Int32" />
+      <Parameter Name="SchemeName" Mode="In" Type="String" />
+      <Parameter Name="Createdby" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_MASTER_BOARDSDeleteSingleItem">
+      <Parameter Name="BOARDID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_MASTER_BOARDSInsertUpdateSingleItem">
+      <Parameter Name="BOARDID" Mode="In" Type="Int32" />
+      <Parameter Name="NAME" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_MASTER_BOARDSSelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_BOARDSSelectList_Result)" />
+    <FunctionImport Name="sprocTBL_MASTER_BOARDSSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_BOARDSSelectSingleItem_Result)">
+      <Parameter Name="BOARDID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_MASTER_CITYDeleteSingleItem">
+      <Parameter Name="CITYID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_MASTER_CITYInsertUpdateSingleItem">
+      <Parameter Name="CITYID" Mode="In" Type="Int32" />
+      <Parameter Name="NAME" Mode="In" Type="String" />
+      <Parameter Name="STATEID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_MASTER_CITYSelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_CITYSelectList_Result)" />
+    <FunctionImport Name="sprocTBL_MASTER_CITYSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_CITYSelectSingleItem_Result)">
+      <Parameter Name="CITYID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_MASTER_CLASSDeleteSingleItem">
+      <Parameter Name="CLASSID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_MASTER_CLASSInsertUpdateSingleItem">
+      <Parameter Name="CLASSID" Mode="In" Type="Int32" />
+      <Parameter Name="NAME" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_MASTER_CLASSSelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_CLASSSelectList_Result)" />
+    <FunctionImport Name="sprocTBL_MASTER_CLASSSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_CLASSSelectSingleItem_Result)">
+      <Parameter Name="CLASSID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_MASTER_COUNTRYDeleteSingleItem">
+      <Parameter Name="COUNTRYID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_MASTER_COUNTRYInsertUpdateSingleItem">
+      <Parameter Name="COUNTRYID" Mode="In" Type="Int32" />
+      <Parameter Name="NAME" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_MASTER_COUNTRYSelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_COUNTRYSelectList_Result)" />
+    <FunctionImport Name="sprocTBL_MASTER_COUNTRYSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_COUNTRYSelectSingleItem_Result)">
+      <Parameter Name="COUNTRYID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_MASTER_COURSEDeleteSingleItem">
+      <Parameter Name="COURSEID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_MASTER_COURSEInsertUpdateSingleItem">
+      <Parameter Name="COURSEID" Mode="In" Type="Int32" />
+      <Parameter Name="NAME" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_MASTER_COURSESelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_COURSESelectList_Result)" />
+    <FunctionImport Name="sprocTBL_MASTER_COURSESelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_COURSESelectSingleItem_Result)">
+      <Parameter Name="COURSEID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_MASTER_DOCUMENTTYPEDeleteSingleItem">
+      <Parameter Name="DocumentTypeID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_MASTER_DOCUMENTTYPEInsertUpdateSingleItem">
+      <Parameter Name="DocumentTypeID" Mode="In" Type="Int32" />
+      <Parameter Name="DocumentTypeName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_MASTER_DOCUMENTTYPESelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_DOCUMENTTYPESelectList_Result)" />
+    <FunctionImport Name="sprocTBL_MASTER_DOCUMENTTYPESelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_DOCUMENTTYPESelectSingleItem_Result)">
+      <Parameter Name="DocumentTypeID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_MASTER_STATEDeleteSingleItem">
+      <Parameter Name="STATEID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_MASTER_STATEInsertUpdateSingleItem">
+      <Parameter Name="STATEID" Mode="In" Type="Int32" />
+      <Parameter Name="NAME" Mode="In" Type="String" />
+      <Parameter Name="COUNTRYID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_MASTER_STATESelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_STATESelectList_Result)" />
+    <FunctionImport Name="sprocTBL_MASTER_STATESelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_STATESelectSingleItem_Result)">
+      <Parameter Name="STATEID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_MASTER_STATUSDeleteSingleItem">
+      <Parameter Name="STATUSID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_MASTER_STATUSInsertUpdateSingleItem">
+      <Parameter Name="STATUSID" Mode="In" Type="Int32" />
+      <Parameter Name="NAME" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_MASTER_STATUSSelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_STATUSSelectList_Result)" />
+    <FunctionImport Name="sprocTBL_MASTER_STATUSSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_STATUSSelectSingleItem_Result)">
+      <Parameter Name="STATUSID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_MASTER_SUBJECTDeleteSingleItem">
+      <Parameter Name="SUBJECTID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_MASTER_SUBJECTInsertUpdateSingleItem">
+      <Parameter Name="SUBJECTID" Mode="In" Type="Int32" />
+      <Parameter Name="NAME" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_MASTER_SUBJECTSelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_SUBJECTSelectList_Result)" />
+    <FunctionImport Name="sprocTBL_MASTER_SUBJECTSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_SUBJECTSelectSingleItem_Result)">
+      <Parameter Name="SUBJECTID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_MASTER_USERTYPEDeleteSingleItem">
+      <Parameter Name="USERTYPEID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_MASTER_USERTYPEInsertUpdateSingleItem">
+      <Parameter Name="USERTYPEID" Mode="In" Type="Int32" />
+      <Parameter Name="TYPENAME" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_MASTER_USERTYPESelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_USERTYPESelectList_Result)" />
+    <FunctionImport Name="sprocTBL_MASTER_USERTYPESelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_USERTYPESelectSingleItem_Result)">
+      <Parameter Name="USERTYPEID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_USER_ADDRESS_DETAILSDeleteSingleItem">
+      <Parameter Name="ADDRESSDETAILID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_USER_ADDRESS_DETAILSInsertUpdateSingleItem">
+      <Parameter Name="ADDRESSDETAILID" Mode="In" Type="Int64" />
+      <Parameter Name="USERID" Mode="In" Type="Int64" />
+      <Parameter Name="ADDRESSTYPEID" Mode="In" Type="Int32" />
+      <Parameter Name="ADDRESSLINE1" Mode="In" Type="String" />
+      <Parameter Name="ADDRESSLINE2" Mode="In" Type="String" />
+      <Parameter Name="CITY" Mode="In" Type="Int32" />
+      <Parameter Name="STATE" Mode="In" Type="Int32" />
+      <Parameter Name="COUNTRY" Mode="In" Type="Int32" />
+      <Parameter Name="PINCODE" Mode="In" Type="String" />
+      <Parameter Name="STATUS" Mode="In" Type="Boolean" />
+      <Parameter Name="CREATEDBY" Mode="In" Type="Int64" />
+      <Parameter Name="CREATEDDATE" Mode="In" Type="DateTime" />
+      <Parameter Name="MODIFIEDDATE" Mode="In" Type="DateTime" />
+      <Parameter Name="MODIFIEDBY" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_USER_ADDRESS_DETAILSSelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_ADDRESS_DETAILSSelectList_Result)" />
+    <FunctionImport Name="sprocTBL_USER_ADDRESS_DETAILSSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_ADDRESS_DETAILSSelectSingleItem_Result)">
+      <Parameter Name="ADDRESSDETAILID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_USER_COURSE_DETAILSDeleteSingleItem">
+      <Parameter Name="STUDENTCOURSEID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_USER_COURSE_DETAILSInsertUpdateSingleItem">
+      <Parameter Name="STUDENTCOURSEID" Mode="In" Type="Int64" />
+      <Parameter Name="USERID" Mode="In" Type="Int64" />
+      <Parameter Name="COURSEID" Mode="In" Type="Int32" />
+      <Parameter Name="JOINDATE" Mode="In" Type="DateTime" />
+      <Parameter Name="COMPLETEDATE" Mode="In" Type="DateTime" />
+      <Parameter Name="CREATEDBY" Mode="In" Type="Int64" />
+      <Parameter Name="MODIFIEDBY" Mode="In" Type="Int64" />
+      <Parameter Name="CREATEDDATE" Mode="In" Type="DateTime" />
+      <Parameter Name="MODIFIEDDATE" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_USER_COURSE_DETAILSSelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_COURSE_DETAILSSelectList_Result)" />
+    <FunctionImport Name="sprocTBL_USER_COURSE_DETAILSSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_COURSE_DETAILSSelectSingleItem_Result)">
+      <Parameter Name="STUDENTCOURSEID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_USER_DETAILSDeleteSingleItem">
+      <Parameter Name="PERSONALDETAILID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_USER_DETAILSSelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_DETAILSSelectList_Result)" />
+    <FunctionImport Name="sprocTBL_USER_DETAILSSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_DETAILSSelectSingleItem_Result)">
+      <Parameter Name="PERSONALDETAILID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_USER_DOCUMENTS_DETAILSDeleteSingleItem">
+      <Parameter Name="USERDOCUMENTID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_USER_DOCUMENTS_DETAILSInsertUpdateSingleItem">
+      <Parameter Name="USERDOCUMENTID" Mode="In" Type="Int64" />
+      <Parameter Name="DOCUMENTTYPEID" Mode="In" Type="Int32" />
+      <Parameter Name="DOCUMENTNAME" Mode="In" Type="String" />
+      <Parameter Name="USERID" Mode="In" Type="Int64" />
+      <Parameter Name="STATUS" Mode="In" Type="Boolean" />
+      <Parameter Name="CREATEDBY" Mode="In" Type="Int64" />
+      <Parameter Name="CREATEDDATE" Mode="In" Type="DateTime" />
+      <Parameter Name="MODIFIEDBY" Mode="In" Type="Int64" />
+      <Parameter Name="MODIFIEDDATE" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_USER_DOCUMENTS_DETAILSSelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_DOCUMENTS_DETAILSSelectList_Result)" />
+    <FunctionImport Name="sprocTBL_USER_DOCUMENTS_DETAILSSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_DOCUMENTS_DETAILSSelectSingleItem_Result)">
+      <Parameter Name="USERDOCUMENTID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_USER_INSTITUTION_DETAILSDeleteSingleItem">
+      <Parameter Name="INSTITUTIONID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_USER_INSTITUTION_DETAILSInsertUpdateSingleItem">
+      <Parameter Name="INSTITUTIONID" Mode="In" Type="Int64" />
+      <Parameter Name="INSTITUTIONNAME" Mode="In" Type="String" />
+      <Parameter Name="USERID" Mode="In" Type="Int64" />
+      <Parameter Name="CLASSID" Mode="In" Type="Int32" />
+      <Parameter Name="BOARDID" Mode="In" Type="Int32" />
+      <Parameter Name="PASSINGYEAR" Mode="In" Type="Int32" />
+      <Parameter Name="GRADE_PERCENT" Mode="In" Type="String" />
+      <Parameter Name="CREATEDBY" Mode="In" Type="Int64" />
+      <Parameter Name="CREATEDDATE" Mode="In" Type="DateTime" />
+      <Parameter Name="MODIFIEDBY" Mode="In" Type="Int64" />
+      <Parameter Name="MODIFIEDDATE" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_USER_INSTITUTION_DETAILSSelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_INSTITUTION_DETAILSSelectList_Result)" />
+    <FunctionImport Name="sprocTBL_USER_INSTITUTION_DETAILSSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_INSTITUTION_DETAILSSelectSingleItem_Result)">
+      <Parameter Name="INSTITUTIONID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_USER_LOGIN_TRAILDeleteSingleItem">
+      <Parameter Name="LOGIN_TRAIL_ID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_USER_LOGIN_TRAILInsertUpdateSingleItem">
+      <Parameter Name="LOGIN_TRAIL_ID" Mode="In" Type="Int64" />
+      <Parameter Name="USERID" Mode="In" Type="Int64" />
+      <Parameter Name="IPADDRESS" Mode="In" Type="String" />
+      <Parameter Name="LATITUTE" Mode="In" Type="String" />
+      <Parameter Name="LONGITUTE" Mode="In" Type="String" />
+      <Parameter Name="LOGINDATETIME" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_USER_LOGIN_TRAILSelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_LOGIN_TRAILSelectList_Result)" />
+    <FunctionImport Name="sprocTBL_USER_LOGIN_TRAILSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_LOGIN_TRAILSelectSingleItem_Result)">
+      <Parameter Name="LOGIN_TRAIL_ID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_USER_LOGINDeleteSingleItem">
+      <Parameter Name="USERID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_USER_LOGINInsertUpdateSingleItem">
+      <Parameter Name="USERID" Mode="In" Type="Int64" />
+      <Parameter Name="LOGIN_EMAIL" Mode="In" Type="String" />
+      <Parameter Name="LOGIN_MOBILE" Mode="In" Type="String" />
+      <Parameter Name="PASSWORD" Mode="In" Type="String" />
+      <Parameter Name="STATUSID" Mode="In" Type="Int32" />
+      <Parameter Name="USERTYPEID" Mode="In" Type="Int32" />
+      <Parameter Name="PASSWORDRETRYCOUNT" Mode="In" Type="Int32" />
+      <Parameter Name="CREATEDDATE" Mode="In" Type="DateTime" />
+      <Parameter Name="MODIFIEDDATE" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_USER_LOGINSelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_LOGINSelectList_Result)" />
+    <FunctionImport Name="sprocTBL_USER_LOGINSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_LOGINSelectSingleItem_Result)">
+      <Parameter Name="USERID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_USER_PARENTS_DETAILSDeleteSingleItem">
+      <Parameter Name="PARENTID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_USER_PARENTS_DETAILSInsertUpdateSingleItem">
+      <Parameter Name="PARENTID" Mode="In" Type="Int64" />
+      <Parameter Name="USERID" Mode="In" Type="Int64" />
+      <Parameter Name="FATHERNAME" Mode="In" Type="String" />
+      <Parameter Name="FATHEREMAIL" Mode="In" Type="String" />
+      <Parameter Name="FATHERMOBILENUMBER" Mode="In" Type="String" />
+      <Parameter Name="FATHEROCCUPATION" Mode="In" Type="String" />
+      <Parameter Name="FATHERCOMPANYNAME" Mode="In" Type="String" />
+      <Parameter Name="FATHERDESIGNATION" Mode="In" Type="String" />
+      <Parameter Name="MOTHERNAME" Mode="In" Type="String" />
+      <Parameter Name="MOTHEREMAIL" Mode="In" Type="String" />
+      <Parameter Name="MOTHERMOBILENUMBER" Mode="In" Type="String" />
+      <Parameter Name="MOTHEROCCUPATION" Mode="In" Type="String" />
+      <Parameter Name="MOTHERCOMPANYNAME" Mode="In" Type="String" />
+      <Parameter Name="MOTHERDESIGNATION" Mode="In" Type="String" />
+      <Parameter Name="CREATEDBY" Mode="In" Type="Int64" />
+      <Parameter Name="CREATEDDATE" Mode="In" Type="DateTime" />
+      <Parameter Name="MODIFIEDBY" Mode="In" Type="Int64" />
+      <Parameter Name="MODIFIEDDATE" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_USER_PARENTS_DETAILSSelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_PARENTS_DETAILSSelectList_Result)" />
+    <FunctionImport Name="sprocTBL_USER_PARENTS_DETAILSSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_PARENTS_DETAILSSelectSingleItem_Result)">
+      <Parameter Name="PARENTID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_USER_PROFESSIONAL_DETAILSDeleteSingleItem">
+      <Parameter Name="PROFESSIONALDETAILID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_USER_PROFESSIONAL_DETAILSInsertUpdateSingleItem">
+      <Parameter Name="PROFESSIONALDETAILID" Mode="In" Type="Int64" />
+      <Parameter Name="USERID" Mode="In" Type="Int64" />
+      <Parameter Name="COMPANYNAME" Mode="In" Type="String" />
+      <Parameter Name="DESIGNATION" Mode="In" Type="String" />
+      <Parameter Name="EMPLOYEETYPE" Mode="In" Type="String" />
+      <Parameter Name="REMARKS" Mode="In" Type="String" />
+      <Parameter Name="CREATEBY" Mode="In" Type="Int64" />
+      <Parameter Name="CREATEDDATE" Mode="In" Type="DateTime" />
+      <Parameter Name="MODIFIEDDBY" Mode="In" Type="Int64" />
+      <Parameter Name="MODIFIEDDATE" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_USER_PROFESSIONAL_DETAILSSelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_PROFESSIONAL_DETAILSSelectList_Result)" />
+    <FunctionImport Name="sprocTBL_USER_PROFESSIONAL_DETAILSSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_PROFESSIONAL_DETAILSSelectSingleItem_Result)">
+      <Parameter Name="PROFESSIONALDETAILID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_USER_SUBJECTSDeleteSingleItem">
+      <Parameter Name="USERSUBJECTID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_USER_SUBJECTSInsertUpdateSingleItem">
+      <Parameter Name="USERSUBJECTID" Mode="In" Type="Int64" />
+      <Parameter Name="SUBJECTID" Mode="In" Type="Int32" />
+      <Parameter Name="USERID" Mode="In" Type="Int64" />
+      <Parameter Name="CREATEDBY" Mode="In" Type="Int64" />
+      <Parameter Name="CREATEDDATE" Mode="In" Type="DateTime" />
+      <Parameter Name="MODIFIEDBY" Mode="In" Type="Int64" />
+      <Parameter Name="MODIFIEDDATE" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="sprocTBL_USER_SUBJECTSSelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_SUBJECTSSelectList_Result)" />
+    <FunctionImport Name="sprocTBL_USER_SUBJECTSSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_SUBJECTSSelectSingleItem_Result)">
+      <Parameter Name="USERSUBJECTID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="Usp_ALLPaymentDetailinfo" ReturnType="Collection(ajay_dbModel.Usp_ALLPaymentDetailinfo_Result)" />
+    <FunctionImport Name="Usp_checkplan" ReturnType="Collection(String)">
+      <Parameter Name="Planmaster" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Usp_checkscheme" ReturnType="Collection(String)">
+      <Parameter Name="SchemeName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Usp_checkUsernameExits" ReturnType="Collection(Int32)">
+      <Parameter Name="UserName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Usp_CheckUserRoles" ReturnType="Collection(Int32)">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Usp_DisplayAllUser_And_Roles" ReturnType="Collection(ajay_dbModel.Usp_DisplayAllUser_And_Roles_Result)" />
+    <FunctionImport Name="Usp_Generatenumber" ReturnType="Collection(ajay_dbModel.Usp_Generatenumber_Result)" />
+    <FunctionImport Name="Usp_GenerateRecepit" ReturnType="Collection(ajay_dbModel.Usp_GenerateRecepit_Result)">
+      <Parameter Name="Memberid" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="Usp_GetAllRenwalrecords" ReturnType="Collection(ajay_dbModel.Usp_GetAllRenwalrecords_Result)" />
+    <FunctionImport Name="Usp_GetAllRenwalrecordsFromBetweenDate" ReturnType="Collection(ajay_dbModel.Usp_GetAllRenwalrecordsFromBetweenDate_Result)">
+      <Parameter Name="Paymentfromdt" Mode="In" Type="DateTime" />
+      <Parameter Name="Paymenttodt" Mode="In" Type="DateTime" />
+      <Parameter Name="exactdate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="Usp_GetAllUsers" ReturnType="Collection(ajay_dbModel.Usp_GetAllUsers_Result)" />
+    <FunctionImport Name="Usp_GetAmount_reg" ReturnType="Collection(Decimal)">
+      <Parameter Name="PlanID" Mode="In" Type="Int32" />
+      <Parameter Name="SchemeID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Usp_GetDataofMemberbyID" ReturnType="Collection(ajay_dbModel.Usp_GetDataofMemberbyID_Result)">
+      <Parameter Name="MainMemberID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="Usp_getDec" ReturnType="Collection(ajay_dbModel.Usp_getDec_Result)">
+      <Parameter Name="Memberid" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="Usp_GetMonthwisepaymentdetails" ReturnType="Collection(ajay_dbModel.Usp_GetMonthwisepaymentdetails_Result)">
+      <Parameter Name="month" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="Usp_GetPlanByWorkTypeID" ReturnType="Collection(ajay_dbModel.Usp_GetPlanByWorkTypeID_Result)">
+      <Parameter Name="SchemeID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Usp_getPlanPeriodID" ReturnType="Collection(Int32)">
+      <Parameter Name="PlanID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Usp_getRoleByUserID" ReturnType="Collection(String)">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Usp_GetRoles" ReturnType="Collection(ajay_dbModel.Usp_GetRoles_Result)" />
+    <FunctionImport Name="Usp_GetYearwisepaymentdetails" ReturnType="Collection(ajay_dbModel.Usp_GetYearwisepaymentdetails_Result)">
+      <Parameter Name="year" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="USP_listofMemberName" ReturnType="Collection(ajay_dbModel.USP_listofMemberName_Result)">
+      <Parameter Name="MemberFName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="USP_listofMemberno" ReturnType="Collection(ajay_dbModel.USP_listofMemberno_Result)">
+      <Parameter Name="MemberID" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Usp_PaymentDetailinfo" ReturnType="Collection(ajay_dbModel.Usp_PaymentDetailinfo_Result)">
+      <Parameter Name="MemberID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="Usp_PaymentDetailinfo_Name" ReturnType="Collection(ajay_dbModel.Usp_PaymentDetailinfo_Name_Result)">
+      <Parameter Name="MemberFName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Usp_UserIDbyUserName" ReturnType="Collection(Int32)">
+      <Parameter Name="UserName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Usp_UserNamebyUserID" ReturnType="Collection(String)">
+      <Parameter Name="UserId" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="GetAllTBL_MASTER_BOARDS_Result">
+    <Property Type="Int32" Name="BOARDID" Nullable="false" />
+    <Property Type="String" Name="NAME" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sprocMemberRegistrationSelectList_Result">
+    <Property Type="Int64" Name="MemID" Nullable="false" />
+    <Property Type="String" Name="MemberNo" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="MemberFName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="MemberLName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="MemberMName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="FullName" Nullable="true" MaxLength="302" />
+    <Property Type="DateTime" Name="DOB" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Age" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Contactno" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="EmailID" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Gender" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="PlantypeID" Nullable="true" />
+    <Property Type="Int32" Name="WorkouttypeID" Nullable="true" />
+    <Property Type="Int64" Name="Createdby" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="ModifiedDate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="ModifiedBy" Nullable="true" />
+    <Property Type="String" Name="MemImagename" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="MemImagePath" Nullable="true" MaxLength="500" />
+    <Property Type="DateTime" Name="JoiningDate" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="sprocMemberRegistrationSelectSingleItem_Result">
+    <Property Type="Int64" Name="MemID" Nullable="false" />
+    <Property Type="String" Name="s" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="MemberFName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="MemberLName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="MemberMName" Nullable="true" MaxLength="100" />
+    <Property Type="DateTime" Name="DOB" Nullable="true" />
+    <Property Type="String" Name="Age" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Contactno" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="EmailID" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Gender" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="PlantypeID" Nullable="true" />
+    <Property Type="Int32" Name="WorkouttypeID" Nullable="true" />
+    <Property Type="Int64" Name="Createdby" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="ModifiedDate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="ModifiedBy" Nullable="true" />
+    <Property Type="String" Name="MemImagename" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="MemImagePath" Nullable="true" MaxLength="500" />
+    <Property Type="DateTime" Name="JoiningDate" Nullable="true" />
+    <Property Type="Decimal" Name="Amount" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="500" />
+    <Property Type="Int64" Name="PaymentID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sprocPaymentDetailsSelectList_Result">
+    <Property Type="Int64" Name="PaymentID" Nullable="false" />
+    <Property Type="Int32" Name="PlanID" Nullable="true" />
+    <Property Type="Int32" Name="WorkouttypeID" Nullable="true" />
+    <Property Type="String" Name="Paymenttype" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="PaymentFromdt" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="PaymentTodt" Nullable="true" Precision="23" />
+    <Property Type="Decimal" Name="PaymentAmount" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="DateTime" Name="NextRenwalDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="CreateUserID" Nullable="true" />
+    <Property Type="DateTime" Name="ModifyDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="ModifyUserID" Nullable="true" />
+    <Property Type="String" Name="RecStatus" Nullable="true" MaxLength="1" />
+    <Property Type="Int64" Name="MemberID" Nullable="true" />
+    <Property Type="String" Name="MemberNo" Nullable="true" MaxLength="30" />
+  </ComplexType>
+  <ComplexType Name="sprocPaymentDetailsSelectSingleItem_Result">
+    <Property Type="Int64" Name="PaymentID" Nullable="false" />
+    <Property Type="Int32" Name="PlanID" Nullable="true" />
+    <Property Type="Int32" Name="WorkouttypeID" Nullable="true" />
+    <Property Type="String" Name="Paymenttype" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="PaymentFromdt" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="PaymentTodt" Nullable="true" Precision="23" />
+    <Property Type="Decimal" Name="PaymentAmount" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="DateTime" Name="NextRenwalDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="CreateUserID" Nullable="true" />
+    <Property Type="DateTime" Name="ModifyDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="ModifyUserID" Nullable="true" />
+    <Property Type="String" Name="RecStatus" Nullable="true" MaxLength="1" />
+    <Property Type="Int64" Name="MemberID" Nullable="true" />
+    <Property Type="String" Name="MemberNo" Nullable="true" MaxLength="30" />
+  </ComplexType>
+  <ComplexType Name="sprocPlanMasterSelectList_Result">
+    <Property Type="Int32" Name="PlanID" Nullable="false" />
+    <Property Type="String" Name="PlanName" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="PlanAmount" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="String" Name="ServiceTax" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="CreateUserID" Nullable="true" />
+    <Property Type="DateTime" Name="ModifyDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="ModifyUserID" Nullable="true" />
+    <Property Type="String" Name="RecStatus" Nullable="true" MaxLength="1" />
+    <Property Type="Decimal" Name="TotalAmout" Nullable="true" Precision="18" Scale="0" />
+  </ComplexType>
+  <ComplexType Name="sprocPlanMasterSelectSingleItem_Result">
+    <Property Type="Int32" Name="PlanID" Nullable="false" />
+    <Property Type="String" Name="PlanName" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="PlanAmount" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ServicetaxAmout" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="String" Name="ServiceTax" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="CreateUserID" Nullable="true" />
+    <Property Type="DateTime" Name="ModifyDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="ModifyUserID" Nullable="true" />
+    <Property Type="String" Name="RecStatus" Nullable="true" MaxLength="1" />
+    <Property Type="Int32" Name="SchemeID" Nullable="true" />
+    <Property Type="Int32" Name="PeriodID" Nullable="true" />
+    <Property Type="Decimal" Name="TotalAmout" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="String" Name="ServicetaxNo" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sprocTBL_MASTER_BOARDSSelectList_Result">
+    <Property Type="Int32" Name="BOARDID" Nullable="false" />
+    <Property Type="String" Name="NAME" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="sprocTBL_MASTER_BOARDSSelectSingleItem_Result">
+    <Property Type="Int32" Name="BOARDID" Nullable="false" />
+    <Property Type="String" Name="NAME" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="sprocTBL_MASTER_CITYSelectList_Result">
+    <Property Type="Int32" Name="CITYID" Nullable="false" />
+    <Property Type="String" Name="NAME" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="STATEID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sprocTBL_MASTER_CITYSelectSingleItem_Result">
+    <Property Type="Int32" Name="CITYID" Nullable="false" />
+    <Property Type="String" Name="NAME" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="STATEID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sprocTBL_MASTER_CLASSSelectList_Result">
+    <Property Type="Int32" Name="CLASSID" Nullable="false" />
+    <Property Type="String" Name="NAME" Nullable="false" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="sprocTBL_MASTER_CLASSSelectSingleItem_Result">
+    <Property Type="Int32" Name="CLASSID" Nullable="false" />
+    <Property Type="String" Name="NAME" Nullable="false" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="sprocTBL_MASTER_COUNTRYSelectList_Result">
+    <Property Type="Int32" Name="COUNTRYID" Nullable="false" />
+    <Property Type="String" Name="NAME" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sprocTBL_MASTER_COUNTRYSelectSingleItem_Result">
+    <Property Type="Int32" Name="COUNTRYID" Nullable="false" />
+    <Property Type="String" Name="NAME" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sprocTBL_MASTER_COURSESelectList_Result">
+    <Property Type="Int32" Name="COURSEID" Nullable="false" />
+    <Property Type="String" Name="NAME" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="sprocTBL_MASTER_COURSESelectSingleItem_Result">
+    <Property Type="Int32" Name="COURSEID" Nullable="false" />
+    <Property Type="String" Name="NAME" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="sprocTBL_MASTER_DOCUMENTTYPESelectList_Result">
+    <Property Type="Int32" Name="DocumentTypeID" Nullable="false" />
+    <Property Type="String" Name="DocumentTypeName" Nullable="false" MaxLength="70" />
+  </ComplexType>
+  <ComplexType Name="sprocTBL_MASTER_DOCUMENTTYPESelectSingleItem_Result">
+    <Property Type="Int32" Name="DocumentTypeID" Nullable="false" />
+    <Property Type="String" Name="DocumentTypeName" Nullable="false" MaxLength="70" />
+  </ComplexType>
+  <ComplexType Name="sprocTBL_MASTER_STATESelectList_Result">
+    <Property Type="Int32" Name="STATEID" Nullable="false" />
+    <Property Type="String" Name="NAME" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="COUNTRYID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sprocTBL_MASTER_STATESelectSingleItem_Result">
+    <Property Type="Int32" Name="STATEID" Nullable="false" />
+    <Property Type="String" Name="NAME" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="COUNTRYID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sprocTBL_MASTER_STATUSSelectList_Result">
+    <Property Type="Int32" Name="STATUSID" Nullable="false" />
+    <Property Type="String" Name="NAME" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="sprocTBL_MASTER_STATUSSelectSingleItem_Result">
+    <Property Type="Int32" Name="STATUSID" Nullable="false" />
+    <Property Type="String" Name="NAME" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="sprocTBL_MASTER_SUBJECTSelectList_Result">
+    <Property Type="Int32" Name="SUBJECTID" Nullable="false" />
+    <Property Type="String" Name="NAME" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="sprocTBL_MASTER_SUBJECTSelectSingleItem_Result">
+    <Property Type="Int32" Name="SUBJECTID" Nullable="false" />
+    <Property Type="String" Name="NAME" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="sprocTBL_MASTER_USERTYPESelectList_Result">
+    <Property Type="Int32" Name="USERTYPEID" Nullable="false" />
+    <Property Type="String" Name="TYPENAME" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="sprocTBL_MASTER_USERTYPESelectSingleItem_Result">
+    <Property Type="Int32" Name="USERTYPEID" Nullable="false" />
+    <Property Type="String" Name="TYPENAME" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="sprocTBL_USER_ADDRESS_DETAILSSelectList_Result">
+    <Property Type="Int64" Name="ADDRESSDETAILID" Nullable="false" />
+    <Property Type="Int64" Name="USERID" Nullable="false" />
+    <Property Type="Int32" Name="ADDRESSTYPEID" Nullable="false" />
+    <Property Type="String" Name="ADDRESSLINE1" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="ADDRESSLINE2" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="CITY" Nullable="true" />
+    <Property Type="Int32" Name="STATE" Nullable="true" />
+    <Property Type="Int32" Name="COUNTRY" Nullable="true" />
+    <Property Type="String" Name="PINCODE" Nullable="true" MaxLength="10" />
+    <Property Type="Boolean" Name="STATUS" Nullable="true" />
+    <Property Type="Int64" Name="CREATEDBY" Nullable="true" />
+    <Property Type="DateTime" Name="CREATEDDATE" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="MODIFIEDDATE" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="MODIFIEDBY" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sprocTBL_USER_ADDRESS_DETAILSSelectSingleItem_Result">
+    <Property Type="Int64" Name="ADDRESSDETAILID" Nullable="false" />
+    <Property Type="Int64" Name="USERID" Nullable="false" />
+    <Property Type="Int32" Name="ADDRESSTYPEID" Nullable="false" />
+    <Property Type="String" Name="ADDRESSLINE1" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="ADDRESSLINE2" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="CITY" Nullable="true" />
+    <Property Type="Int32" Name="STATE" Nullable="true" />
+    <Property Type="Int32" Name="COUNTRY" Nullable="true" />
+    <Property Type="String" Name="PINCODE" Nullable="true" MaxLength="10" />
+    <Property Type="Boolean" Name="STATUS" Nullable="true" />
+    <Property Type="Int64" Name="CREATEDBY" Nullable="true" />
+    <Property Type="DateTime" Name="CREATEDDATE" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="MODIFIEDDATE" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="MODIFIEDBY" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sprocTBL_USER_COURSE_DETAILSSelectList_Result">
+    <Property Type="Int64" Name="STUDENTCOURSEID" Nullable="false" />
+    <Property Type="Int64" Name="USERID" Nullable="true" />
+    <Property Type="Int32" Name="COURSEID" Nullable="true" />
+    <Property Type="DateTime" Name="JOINDATE" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="COMPLETEDATE" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="CREATEDBY" Nullable="true" />
+    <Property Type="Int64" Name="MODIFIEDBY" Nullable="true" />
+    <Property Type="DateTime" Name="CREATEDDATE" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="MODIFIEDDATE" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="sprocTBL_USER_COURSE_DETAILSSelectSingleItem_Result">
+    <Property Type="Int64" Name="STUDENTCOURSEID" Nullable="false" />
+    <Property Type="Int64" Name="USERID" Nullable="true" />
+    <Property Type="Int32" Name="COURSEID" Nullable="true" />
+    <Property Type="DateTime" Name="JOINDATE" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="COMPLETEDATE" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="CREATEDBY" Nullable="true" />
+    <Property Type="Int64" Name="MODIFIEDBY" Nullable="true" />
+    <Property Type="DateTime" Name="CREATEDDATE" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="MODIFIEDDATE" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="sprocTBL_USER_DETAILSSelectList_Result">
+    <Property Type="Int64" Name="PERSONALDETAILID" Nullable="false" />
+    <Property Type="Int64" Name="USERID" Nullable="false" />
+    <Property Type="String" Name="FIRSTNAME" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MIDDLENAME" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LASTNAME" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MOTHERNAME" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="FATHERNAME" Nullable="true" MaxLength="150" />
+    <Property Type="DateTime" Name="DOB" Nullable="true" Precision="23" />
+    <Property Type="String" Name="DISABILITY" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="ENROLNMENTID" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="GENDER" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="NATIONALITY" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sprocTBL_USER_DETAILSSelectSingleItem_Result">
+    <Property Type="Int64" Name="PERSONALDETAILID" Nullable="false" />
+    <Property Type="Int64" Name="USERID" Nullable="false" />
+    <Property Type="String" Name="FIRSTNAME" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MIDDLENAME" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LASTNAME" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MOTHERNAME" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="FATHERNAME" Nullable="true" MaxLength="150" />
+    <Property Type="DateTime" Name="DOB" Nullable="true" Precision="23" />
+    <Property Type="String" Name="DISABILITY" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="ENROLNMENTID" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="GENDER" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="NATIONALITY" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sprocTBL_USER_DOCUMENTS_DETAILSSelectList_Result">
+    <Property Type="Int64" Name="USERDOCUMENTID" Nullable="false" />
+    <Property Type="Int32" Name="DOCUMENTTYPEID" Nullable="true" />
+    <Property Type="String" Name="DOCUMENTNAME" Nullable="true" MaxLength="100" />
+    <Property Type="Int64" Name="USERID" Nullable="false" />
+    <Property Type="Boolean" Name="STATUS" Nullable="true" />
+    <Property Type="Int64" Name="CREATEDBY" Nullable="true" />
+    <Property Type="DateTime" Name="CREATEDDATE" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="MODIFIEDBY" Nullable="true" />
+    <Property Type="DateTime" Name="MODIFIEDDATE" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="sprocTBL_USER_DOCUMENTS_DETAILSSelectSingleItem_Result">
+    <Property Type="Int64" Name="USERDOCUMENTID" Nullable="false" />
+    <Property Type="Int32" Name="DOCUMENTTYPEID" Nullable="true" />
+    <Property Type="String" Name="DOCUMENTNAME" Nullable="true" MaxLength="100" />
+    <Property Type="Int64" Name="USERID" Nullable="false" />
+    <Property Type="Boolean" Name="STATUS" Nullable="true" />
+    <Property Type="Int64" Name="CREATEDBY" Nullable="true" />
+    <Property Type="DateTime" Name="CREATEDDATE" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="MODIFIEDBY" Nullable="true" />
+    <Property Type="DateTime" Name="MODIFIEDDATE" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="sprocTBL_USER_INSTITUTION_DETAILSSelectList_Result">
+    <Property Type="Int64" Name="INSTITUTIONID" Nullable="false" />
+    <Property Type="String" Name="INSTITUTIONNAME" Nullable="true" MaxLength="1000" />
+    <Property Type="Int64" Name="USERID" Nullable="true" />
+    <Property Type="Int32" Name="CLASSID" Nullable="true" />
+    <Property Type="Int32" Name="BOARDID" Nullable="false" />
+    <Property Type="Int32" Name="PASSINGYEAR" Nullable="true" />
+    <Property Type="String" Name="GRADE_PERCENT" Nullable="true" MaxLength="10" />
+    <Property Type="Int64" Name="CREATEDBY" Nullable="true" />
+    <Property Type="DateTime" Name="CREATEDDATE" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="MODIFIEDBY" Nullable="true" />
+    <Property Type="DateTime" Name="MODIFIEDDATE" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="sprocTBL_USER_INSTITUTION_DETAILSSelectSingleItem_Result">
+    <Property Type="Int64" Name="INSTITUTIONID" Nullable="false" />
+    <Property Type="String" Name="INSTITUTIONNAME" Nullable="true" MaxLength="1000" />
+    <Property Type="Int64" Name="USERID" Nullable="true" />
+    <Property Type="Int32" Name="CLASSID" Nullable="true" />
+    <Property Type="Int32" Name="BOARDID" Nullable="false" />
+    <Property Type="Int32" Name="PASSINGYEAR" Nullable="true" />
+    <Property Type="String" Name="GRADE_PERCENT" Nullable="true" MaxLength="10" />
+    <Property Type="Int64" Name="CREATEDBY" Nullable="true" />
+    <Property Type="DateTime" Name="CREATEDDATE" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="MODIFIEDBY" Nullable="true" />
+    <Property Type="DateTime" Name="MODIFIEDDATE" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="sprocTBL_USER_LOGIN_TRAILSelectList_Result">
+    <Property Type="Int64" Name="LOGIN_TRAIL_ID" Nullable="false" />
+    <Property Type="Int64" Name="USERID" Nullable="false" />
+    <Property Type="String" Name="IPADDRESS" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="LATITUTE" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LONGITUTE" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="LOGINDATETIME" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="sprocTBL_USER_LOGIN_TRAILSelectSingleItem_Result">
+    <Property Type="Int64" Name="LOGIN_TRAIL_ID" Nullable="false" />
+    <Property Type="Int64" Name="USERID" Nullable="false" />
+    <Property Type="String" Name="IPADDRESS" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="LATITUTE" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LONGITUTE" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="LOGINDATETIME" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="sprocTBL_USER_LOGINSelectList_Result">
+    <Property Type="Int64" Name="USERID" Nullable="false" />
+    <Property Type="String" Name="LOGIN_EMAIL" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="LOGIN_MOBILE" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="PASSWORD" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="STATUSID" Nullable="false" />
+    <Property Type="Int32" Name="USERTYPEID" Nullable="false" />
+    <Property Type="Int32" Name="PASSWORDRETRYCOUNT" Nullable="false" />
+    <Property Type="DateTime" Name="CREATEDDATE" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="MODIFIEDDATE" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="sprocTBL_USER_LOGINSelectSingleItem_Result">
+    <Property Type="Int64" Name="USERID" Nullable="false" />
+    <Property Type="String" Name="LOGIN_EMAIL" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="LOGIN_MOBILE" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="PASSWORD" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="STATUSID" Nullable="false" />
+    <Property Type="Int32" Name="USERTYPEID" Nullable="false" />
+    <Property Type="Int32" Name="PASSWORDRETRYCOUNT" Nullable="false" />
+    <Property Type="DateTime" Name="CREATEDDATE" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="MODIFIEDDATE" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="sprocTBL_USER_PARENTS_DETAILSSelectList_Result">
+    <Property Type="Int64" Name="PARENTID" Nullable="false" />
+    <Property Type="Int64" Name="USERID" Nullable="true" />
+    <Property Type="String" Name="FATHERNAME" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="FATHEREMAIL" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="FATHERMOBILENUMBER" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="FATHEROCCUPATION" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="FATHERCOMPANYNAME" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="FATHERDESIGNATION" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MOTHERNAME" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="MOTHEREMAIL" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="MOTHERMOBILENUMBER" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="MOTHEROCCUPATION" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="MOTHERCOMPANYNAME" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="MOTHERDESIGNATION" Nullable="true" MaxLength="50" />
+    <Property Type="Int64" Name="CREATEDBY" Nullable="true" />
+    <Property Type="DateTime" Name="CREATEDDATE" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="MODIFIEDBY" Nullable="true" />
+    <Property Type="DateTime" Name="MODIFIEDDATE" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="sprocTBL_USER_PARENTS_DETAILSSelectSingleItem_Result">
+    <Property Type="Int64" Name="PARENTID" Nullable="false" />
+    <Property Type="Int64" Name="USERID" Nullable="true" />
+    <Property Type="String" Name="FATHERNAME" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="FATHEREMAIL" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="FATHERMOBILENUMBER" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="FATHEROCCUPATION" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="FATHERCOMPANYNAME" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="FATHERDESIGNATION" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MOTHERNAME" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="MOTHEREMAIL" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="MOTHERMOBILENUMBER" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="MOTHEROCCUPATION" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="MOTHERCOMPANYNAME" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="MOTHERDESIGNATION" Nullable="true" MaxLength="50" />
+    <Property Type="Int64" Name="CREATEDBY" Nullable="true" />
+    <Property Type="DateTime" Name="CREATEDDATE" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="MODIFIEDBY" Nullable="true" />
+    <Property Type="DateTime" Name="MODIFIEDDATE" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="sprocTBL_USER_PROFESSIONAL_DETAILSSelectList_Result">
+    <Property Type="Int64" Name="PROFESSIONALDETAILID" Nullable="false" />
+    <Property Type="Int64" Name="USERID" Nullable="true" />
+    <Property Type="String" Name="COMPANYNAME" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="DESIGNATION" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="EMPLOYEETYPE" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="REMARKS" Nullable="true" MaxLength="100" />
+    <Property Type="Int64" Name="CREATEBY" Nullable="true" />
+    <Property Type="DateTime" Name="CREATEDDATE" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="MODIFIEDDBY" Nullable="true" />
+    <Property Type="DateTime" Name="MODIFIEDDATE" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="sprocTBL_USER_PROFESSIONAL_DETAILSSelectSingleItem_Result">
+    <Property Type="Int64" Name="PROFESSIONALDETAILID" Nullable="false" />
+    <Property Type="Int64" Name="USERID" Nullable="true" />
+    <Property Type="String" Name="COMPANYNAME" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="DESIGNATION" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="EMPLOYEETYPE" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="REMARKS" Nullable="true" MaxLength="100" />
+    <Property Type="Int64" Name="CREATEBY" Nullable="true" />
+    <Property Type="DateTime" Name="CREATEDDATE" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="MODIFIEDDBY" Nullable="true" />
+    <Property Type="DateTime" Name="MODIFIEDDATE" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="sprocTBL_USER_SUBJECTSSelectList_Result">
+    <Property Type="Int64" Name="USERSUBJECTID" Nullable="false" />
+    <Property Type="Int32" Name="SUBJECTID" Nullable="true" />
+    <Property Type="Int64" Name="USERID" Nullable="true" />
+    <Property Type="Int64" Name="CREATEDBY" Nullable="true" />
+    <Property Type="DateTime" Name="CREATEDDATE" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="MODIFIEDBY" Nullable="true" />
+    <Property Type="DateTime" Name="MODIFIEDDATE" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="sprocTBL_USER_SUBJECTSSelectSingleItem_Result">
+    <Property Type="Int64" Name="USERSUBJECTID" Nullable="false" />
+    <Property Type="Int32" Name="SUBJECTID" Nullable="true" />
+    <Property Type="Int64" Name="USERID" Nullable="true" />
+    <Property Type="Int64" Name="CREATEDBY" Nullable="true" />
+    <Property Type="DateTime" Name="CREATEDDATE" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="MODIFIEDBY" Nullable="true" />
+    <Property Type="DateTime" Name="MODIFIEDDATE" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="Usp_ALLPaymentDetailinfo_Result">
+    <Property Type="String" Name="MemberReg" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="306" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Contactno" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="EmailID" Nullable="true" MaxLength="30" />
+    <Property Type="Int64" Name="Memberno" Nullable="true" />
+    <Property Type="String" Name="PlanName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SchemeName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="JoiningDate" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="RenwalDate" Nullable="true" MaxLength="30" />
+    <Property Type="Decimal" Name="PaymentAmount" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="WorkouttypeID" Nullable="true" />
+    <Property Type="Int32" Name="PlantypeID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Usp_DisplayAllUser_And_Roles_Result">
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="56" />
+    <Property Type="String" Name="RoleName" Nullable="true" MaxLength="256" />
+  </ComplexType>
+  <ComplexType Name="Usp_Generatenumber_Result">
+    <Property Type="String" Name="MemberNo" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Memnumber" Nullable="true" MaxLength="4" />
+  </ComplexType>
+  <ComplexType Name="Usp_GenerateRecepit_Result">
+    <Property Type="Int64" Name="MemberID" Nullable="true" />
+    <Property Type="Int64" Name="PaymentID" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="202" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Contactno" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="EmailID" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="MemberNo" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="PlanName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SchemeName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="JoiningDate" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="RenwalDate" Nullable="true" MaxLength="30" />
+    <Property Type="Decimal" Name="PaymentAmount" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="String" Name="AMtWords" Nullable="true" />
+    <Property Type="Decimal" Name="PlanAmount" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="ServicetaxAmout" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="String" Name="ServiceTax" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ServicetaxNo" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="TotalAmout" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="WorkouttypeID" Nullable="true" />
+    <Property Type="Int32" Name="PlantypeID" Nullable="true" />
+    <Property Type="String" Name="Recivedby" Nullable="false" MaxLength="56" />
+    <Property Type="Int64" Name="Recepitno" Nullable="true" />
+    <Property Type="DateTime" Name="PaymentTodt" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="Usp_GetAllRenwalrecords_Result">
+    <Property Type="Int64" Name="MemberID" Nullable="true" />
+    <Property Type="Int64" Name="PaymentID" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="203" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Contactno" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="EmailID" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="MemberNo" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="PlanName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SchemeName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="JoiningDate" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="RenwalDate" Nullable="true" MaxLength="30" />
+    <Property Type="Decimal" Name="PaymentAmount" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="WorkouttypeID" Nullable="true" />
+    <Property Type="Int32" Name="PlantypeID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Usp_GetAllRenwalrecordsFromBetweenDate_Result">
+    <Property Type="Int64" Name="MemberID" Nullable="true" />
+    <Property Type="Int64" Name="PaymentID" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="203" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Contactno" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="EmailID" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="MemberNo" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="PlanName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SchemeName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="JoiningDate" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="RenwalDate" Nullable="true" MaxLength="30" />
+    <Property Type="Decimal" Name="PaymentAmount" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="WorkouttypeID" Nullable="true" />
+    <Property Type="Int32" Name="PlantypeID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Usp_GetAllUsers_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="56" />
+    <Property Type="String" Name="FullName" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="EmailID" Nullable="true" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="Usp_GetDataofMemberbyID_Result">
+    <Property Type="String" Name="MemberNo" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="306" />
+    <Property Type="Int64" Name="MainMemberID" Nullable="true" />
+    <Property Type="String" Name="JoiningDate" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="RenwalDate" Nullable="true" MaxLength="10" />
+    <Property Type="Decimal" Name="PaymentAmount" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="WorkouttypeID" Nullable="true" />
+    <Property Type="Int32" Name="PlantypeID" Nullable="true" />
+    <Property Type="Int64" Name="MemberID" Nullable="true" />
+    <Property Type="Int64" Name="PaymentID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="Usp_getDec_Result">
+    <Property Type="String" Name="MemberNo" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="DOB" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="FName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="LName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Gender" Nullable="false" MaxLength="6" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Contactno" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="EmailID" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="PlanName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SchemeName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="JoiningDate" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="RenwalDate" Nullable="true" MaxLength="30" />
+    <Property Type="Decimal" Name="PaymentAmount" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="String" Name="Recivedby" Nullable="true" MaxLength="56" />
+  </ComplexType>
+  <ComplexType Name="Usp_GetMonthwisepaymentdetails_Result">
+    <Property Type="String" Name="MemberFName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="MemberNo" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="MemberLName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="MemberMName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CreateDate" Nullable="true" MaxLength="30" />
+    <Property Type="Int64" Name="Total" Nullable="true" />
+    <Property Type="String" Name="Paymentmonth" Nullable="true" MaxLength="30" />
+    <Property Type="Decimal" Name="PaymentAmount" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="String" Name="Username" Nullable="false" MaxLength="56" />
+  </ComplexType>
+  <ComplexType Name="Usp_GetPlanByWorkTypeID_Result">
+    <Property Type="Int32" Name="PlanID" Nullable="false" />
+    <Property Type="String" Name="PlanName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="Usp_GetRoles_Result">
+    <Property Type="Int32" Name="RoleId" Nullable="false" />
+    <Property Type="String" Name="RoleName" Nullable="false" MaxLength="256" />
+  </ComplexType>
+  <ComplexType Name="Usp_GetYearwisepaymentdetails_Result">
+    <Property Type="String" Name="CurrentYear" Nullable="true" MaxLength="30" />
+    <Property Type="Decimal" Name="april" Nullable="true" Precision="19" Scale="2" />
+    <Property Type="Decimal" Name="may" Nullable="true" Precision="19" Scale="2" />
+    <Property Type="Decimal" Name="june" Nullable="true" Precision="19" Scale="2" />
+    <Property Type="Decimal" Name="july" Nullable="true" Precision="19" Scale="2" />
+    <Property Type="Decimal" Name="august" Nullable="true" Precision="19" Scale="2" />
+    <Property Type="Decimal" Name="sept" Nullable="true" Precision="19" Scale="2" />
+    <Property Type="Decimal" Name="oct" Nullable="true" Precision="19" Scale="2" />
+    <Property Type="Decimal" Name="nov" Nullable="true" Precision="19" Scale="2" />
+    <Property Type="Decimal" Name="Decm" Nullable="true" Precision="19" Scale="2" />
+    <Property Type="Decimal" Name="jan" Nullable="true" Precision="19" Scale="2" />
+    <Property Type="Decimal" Name="feb" Nullable="true" Precision="19" Scale="2" />
+    <Property Type="Decimal" Name="march" Nullable="true" Precision="19" Scale="2" />
+    <Property Type="Decimal" Name="Total" Nullable="true" Precision="18" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="USP_listofMemberName_Result">
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="339" />
+    <Property Type="Int64" Name="MainMemberID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="USP_listofMemberno_Result">
+    <Property Type="Int64" Name="MemberNo" Nullable="false" />
+    <Property Type="Int64" Name="MemID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="Usp_PaymentDetailinfo_Result">
+    <Property Type="String" Name="MemberReg" Nullable="true" MaxLength="20" />
+    <Property Type="Int64" Name="MemberID" Nullable="true" />
+    <Property Type="Int64" Name="PaymentID" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="306" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Contactno" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="EmailID" Nullable="true" MaxLength="30" />
+    <Property Type="Int64" Name="Memberno" Nullable="true" />
+    <Property Type="String" Name="PlanName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SchemeName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="JoiningDate" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="RenwalDate" Nullable="true" MaxLength="30" />
+    <Property Type="Decimal" Name="PaymentAmount" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="WorkouttypeID" Nullable="true" />
+    <Property Type="Int32" Name="PlantypeID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Usp_PaymentDetailinfo_Name_Result">
+    <Property Type="Int64" Name="MemberID" Nullable="true" />
+    <Property Type="Int64" Name="PaymentID" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="306" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Contactno" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="EmailID" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="MemberNo" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="PlanName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SchemeName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="JoiningDate" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="RenwalDate" Nullable="true" MaxLength="30" />
+    <Property Type="Decimal" Name="PaymentAmount" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="WorkouttypeID" Nullable="true" />
+    <Property Type="Int32" Name="PlantypeID" Nullable="true" />
+  </ComplexType>
+</Schema>

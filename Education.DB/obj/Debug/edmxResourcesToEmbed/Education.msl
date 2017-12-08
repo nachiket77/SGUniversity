@@ -1,0 +1,1639 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ajay_dbModelStoreContainer" CdmEntityContainer="ajay_dbEntities">
+    <EntitySetMapping Name="Fiscalyears">
+      <EntityTypeMapping TypeName="ajay_dbModel.Fiscalyear">
+        <MappingFragment StoreEntitySet="Fiscalyear">
+          <ScalarProperty Name="Fid" ColumnName="Fid" />
+          <ScalarProperty Name="FiscalyearFromDate" ColumnName="FiscalyearFromDate" />
+          <ScalarProperty Name="FiscalyearToDate" ColumnName="FiscalyearToDate" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MemberRegistrations">
+      <EntityTypeMapping TypeName="ajay_dbModel.MemberRegistration">
+        <MappingFragment StoreEntitySet="MemberRegistration">
+          <ScalarProperty Name="MemID" ColumnName="MemID" />
+          <ScalarProperty Name="MemberNo" ColumnName="MemberNo" />
+          <ScalarProperty Name="MemberFName" ColumnName="MemberFName" />
+          <ScalarProperty Name="MemberLName" ColumnName="MemberLName" />
+          <ScalarProperty Name="MemberMName" ColumnName="MemberMName" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Contactno" ColumnName="Contactno" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="PlantypeID" ColumnName="PlantypeID" />
+          <ScalarProperty Name="WorkouttypeID" ColumnName="WorkouttypeID" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="MemImagename" ColumnName="MemImagename" />
+          <ScalarProperty Name="MemImagePath" ColumnName="MemImagePath" />
+          <ScalarProperty Name="JoiningDate" ColumnName="JoiningDate" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="MainMemberID" ColumnName="MainMemberID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaymentDetails">
+      <EntityTypeMapping TypeName="ajay_dbModel.PaymentDetail">
+        <MappingFragment StoreEntitySet="PaymentDetails">
+          <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+          <ScalarProperty Name="PlanID" ColumnName="PlanID" />
+          <ScalarProperty Name="WorkouttypeID" ColumnName="WorkouttypeID" />
+          <ScalarProperty Name="Paymenttype" ColumnName="Paymenttype" />
+          <ScalarProperty Name="PaymentFromdt" ColumnName="PaymentFromdt" />
+          <ScalarProperty Name="PaymentTodt" ColumnName="PaymentTodt" />
+          <ScalarProperty Name="PaymentAmount" ColumnName="PaymentAmount" />
+          <ScalarProperty Name="NextRenwalDate" ColumnName="NextRenwalDate" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateUserID" ColumnName="CreateUserID" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="ModifyUserID" ColumnName="ModifyUserID" />
+          <ScalarProperty Name="RecStatus" ColumnName="RecStatus" />
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="MemberNo" ColumnName="MemberNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PlanMasters">
+      <EntityTypeMapping TypeName="ajay_dbModel.PlanMaster">
+        <MappingFragment StoreEntitySet="PlanMaster">
+          <ScalarProperty Name="PlanID" ColumnName="PlanID" />
+          <ScalarProperty Name="PlanName" ColumnName="PlanName" />
+          <ScalarProperty Name="PlanAmount" ColumnName="PlanAmount" />
+          <ScalarProperty Name="ServicetaxAmout" ColumnName="ServicetaxAmout" />
+          <ScalarProperty Name="ServiceTax" ColumnName="ServiceTax" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateUserID" ColumnName="CreateUserID" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="ModifyUserID" ColumnName="ModifyUserID" />
+          <ScalarProperty Name="RecStatus" ColumnName="RecStatus" />
+          <ScalarProperty Name="SchemeID" ColumnName="SchemeID" />
+          <ScalarProperty Name="PeriodID" ColumnName="PeriodID" />
+          <ScalarProperty Name="TotalAmout" ColumnName="TotalAmout" />
+          <ScalarProperty Name="ServicetaxNo" ColumnName="ServicetaxNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReceiptDetails">
+      <EntityTypeMapping TypeName="ajay_dbModel.ReceiptDetail">
+        <MappingFragment StoreEntitySet="ReceiptDetails">
+          <ScalarProperty Name="ReceiptID" ColumnName="ReceiptID" />
+          <ScalarProperty Name="Memberid" ColumnName="Memberid" />
+          <ScalarProperty Name="generateby" ColumnName="generateby" />
+          <ScalarProperty Name="createdby" ColumnName="createdby" />
+          <ScalarProperty Name="createddate" ColumnName="createddate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SchemeMasters">
+      <EntityTypeMapping TypeName="ajay_dbModel.SchemeMaster">
+        <MappingFragment StoreEntitySet="SchemeMaster">
+          <ScalarProperty Name="SchemeID" ColumnName="SchemeID" />
+          <ScalarProperty Name="SchemeName" ColumnName="SchemeName" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="Createddate" ColumnName="Createddate" />
+          <ScalarProperty Name="schemebit" ColumnName="schemebit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="ajay_dbModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_COURSE_SUBJECT_MAPPING_DETAILS">
+      <EntityTypeMapping TypeName="ajay_dbModel.TBL_COURSE_SUBJECT_MAPPING_DETAILS">
+        <MappingFragment StoreEntitySet="TBL_COURSE_SUBJECT_MAPPING_DETAILS">
+          <ScalarProperty Name="SUBCORID" ColumnName="SUBCORID" />
+          <ScalarProperty Name="COURSEID" ColumnName="COURSEID" />
+          <ScalarProperty Name="SUBJECTID" ColumnName="SUBJECTID" />
+          <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+          <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_GN_ANNAUNCMENT">
+      <EntityTypeMapping TypeName="ajay_dbModel.TBL_GN_ANNAUNCMENT">
+        <MappingFragment StoreEntitySet="TBL_GN_ANNAUNCMENT">
+          <ScalarProperty Name="ANNAUNCMENTID" ColumnName="ANNAUNCMENTID" />
+          <ScalarProperty Name="SUMMARY" ColumnName="SUMMARY" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="PUBLISHDATE" ColumnName="PUBLISHDATE" />
+          <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+          <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_GN_DIGITALDOC_DETAILS">
+      <EntityTypeMapping TypeName="ajay_dbModel.TBL_GN_DIGITALDOC_DETAILS">
+        <MappingFragment StoreEntitySet="TBL_GN_DIGITALDOC_DETAILS">
+          <ScalarProperty Name="DIGITALDOCID" ColumnName="DIGITALDOCID" />
+          <ScalarProperty Name="DIGITALDOCTYPEID" ColumnName="DIGITALDOCTYPEID" />
+          <ScalarProperty Name="DOCUMENTNAME" ColumnName="DOCUMENTNAME" />
+          <ScalarProperty Name="SUBJECTID" ColumnName="SUBJECTID" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+          <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+          <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="ALLOWANONYMOUS" ColumnName="ALLOWANONYMOUS" />
+          <ScalarProperty Name="DOWNLOADCOUNT" ColumnName="DOWNLOADCOUNT" />
+          <ScalarProperty Name="VIEWCOUNT" ColumnName="VIEWCOUNT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_GN_DIGITALDOC_VIEWDETAILS">
+      <EntityTypeMapping TypeName="ajay_dbModel.TBL_GN_DIGITALDOC_VIEWDETAILS">
+        <MappingFragment StoreEntitySet="TBL_GN_DIGITALDOC_VIEWDETAILS">
+          <ScalarProperty Name="DOCVIEWID" ColumnName="DOCVIEWID" />
+          <ScalarProperty Name="DIGITALDOCID" ColumnName="DIGITALDOCID" />
+          <ScalarProperty Name="VIEWBY" ColumnName="VIEWBY" />
+          <ScalarProperty Name="DOWNLOADBY" ColumnName="DOWNLOADBY" />
+          <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+          <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_MASTER_BOARDS">
+      <EntityTypeMapping TypeName="ajay_dbModel.TBL_MASTER_BOARDS">
+        <MappingFragment StoreEntitySet="TBL_MASTER_BOARDS">
+          <ScalarProperty Name="BOARDID" ColumnName="BOARDID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_MASTER_CITY">
+      <EntityTypeMapping TypeName="ajay_dbModel.TBL_MASTER_CITY">
+        <MappingFragment StoreEntitySet="TBL_MASTER_CITY">
+          <ScalarProperty Name="CITYID" ColumnName="CITYID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="STATEID" ColumnName="STATEID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_MASTER_CLASS">
+      <EntityTypeMapping TypeName="ajay_dbModel.TBL_MASTER_CLASS">
+        <MappingFragment StoreEntitySet="TBL_MASTER_CLASS">
+          <ScalarProperty Name="CLASSID" ColumnName="CLASSID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_MASTER_COUNTRY">
+      <EntityTypeMapping TypeName="ajay_dbModel.TBL_MASTER_COUNTRY">
+        <MappingFragment StoreEntitySet="TBL_MASTER_COUNTRY">
+          <ScalarProperty Name="COUNTRYID" ColumnName="COUNTRYID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_MASTER_COURSE">
+      <EntityTypeMapping TypeName="ajay_dbModel.TBL_MASTER_COURSE">
+        <MappingFragment StoreEntitySet="TBL_MASTER_COURSE">
+          <ScalarProperty Name="COURSEID" ColumnName="COURSEID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_MASTER_DIGITALDOC">
+      <EntityTypeMapping TypeName="ajay_dbModel.TBL_MASTER_DIGITALDOC">
+        <MappingFragment StoreEntitySet="TBL_MASTER_DIGITALDOC">
+          <ScalarProperty Name="DIGITALDOCTYPEID" ColumnName="DIGITALDOCTYPEID" />
+          <ScalarProperty Name="DIGITALDOCNAME" ColumnName="DIGITALDOCNAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_MASTER_DOCUMENTTYPE">
+      <EntityTypeMapping TypeName="ajay_dbModel.TBL_MASTER_DOCUMENTTYPE">
+        <MappingFragment StoreEntitySet="TBL_MASTER_DOCUMENTTYPE">
+          <ScalarProperty Name="DocumentTypeID" ColumnName="DocumentTypeID" />
+          <ScalarProperty Name="DocumentTypeName" ColumnName="DocumentTypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_MASTER_STATE">
+      <EntityTypeMapping TypeName="ajay_dbModel.TBL_MASTER_STATE">
+        <MappingFragment StoreEntitySet="TBL_MASTER_STATE">
+          <ScalarProperty Name="STATEID" ColumnName="STATEID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="COUNTRYID" ColumnName="COUNTRYID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_MASTER_STATUS">
+      <EntityTypeMapping TypeName="ajay_dbModel.TBL_MASTER_STATUS">
+        <MappingFragment StoreEntitySet="TBL_MASTER_STATUS">
+          <ScalarProperty Name="STATUSID" ColumnName="STATUSID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_MASTER_SUBJECT">
+      <EntityTypeMapping TypeName="ajay_dbModel.TBL_MASTER_SUBJECT">
+        <MappingFragment StoreEntitySet="TBL_MASTER_SUBJECT">
+          <ScalarProperty Name="SUBJECTID" ColumnName="SUBJECTID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_MASTER_TEACHER">
+      <EntityTypeMapping TypeName="ajay_dbModel.TBL_MASTER_TEACHER">
+        <MappingFragment StoreEntitySet="TBL_MASTER_TEACHER">
+          <ScalarProperty Name="TEACHERID" ColumnName="TEACHERID" />
+          <ScalarProperty Name="FIRSTNAME" ColumnName="FIRSTNAME" />
+          <ScalarProperty Name="MIDDLENAME" ColumnName="MIDDLENAME" />
+          <ScalarProperty Name="LASTNAME" ColumnName="LASTNAME" />
+          <ScalarProperty Name="EMAILID" ColumnName="EMAILID" />
+          <ScalarProperty Name="MOBILENUMBER" ColumnName="MOBILENUMBER" />
+          <ScalarProperty Name="COURSEID" ColumnName="COURSEID" />
+          <ScalarProperty Name="SUBJECTID" ColumnName="SUBJECTID" />
+          <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+          <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_MASTER_TEST_TYPE">
+      <EntityTypeMapping TypeName="ajay_dbModel.TBL_MASTER_TEST_TYPE">
+        <MappingFragment StoreEntitySet="TBL_MASTER_TEST_TYPE">
+          <ScalarProperty Name="TESTTYPEID" ColumnName="TESTTYPEID" />
+          <ScalarProperty Name="TESTTYPENAME" ColumnName="TESTTYPENAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_MASTER_TESTQUESTIONTYPE">
+      <EntityTypeMapping TypeName="ajay_dbModel.TBL_MASTER_TESTQUESTIONTYPE">
+        <MappingFragment StoreEntitySet="TBL_MASTER_TESTQUESTIONTYPE">
+          <ScalarProperty Name="QUESTIONTYPEID" ColumnName="QUESTIONTYPEID" />
+          <ScalarProperty Name="TYPENAME" ColumnName="TYPENAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_MASTER_USERTYPE">
+      <EntityTypeMapping TypeName="ajay_dbModel.TBL_MASTER_USERTYPE">
+        <MappingFragment StoreEntitySet="TBL_MASTER_USERTYPE">
+          <ScalarProperty Name="USERTYPEID" ColumnName="USERTYPEID" />
+          <ScalarProperty Name="TYPENAME" ColumnName="TYPENAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_STUDENT_MASTER_MAPPING">
+      <EntityTypeMapping TypeName="ajay_dbModel.TBL_STUDENT_MASTER_MAPPING">
+        <MappingFragment StoreEntitySet="TBL_STUDENT_MASTER_MAPPING">
+          <ScalarProperty Name="STUDENTMASTERID" ColumnName="STUDENTMASTERID" />
+          <ScalarProperty Name="COURSEID" ColumnName="COURSEID" />
+          <ScalarProperty Name="PARENTID" ColumnName="PARENTID" />
+          <ScalarProperty Name="PROFESSIONALDETAILID" ColumnName="PROFESSIONALDETAILID" />
+          <ScalarProperty Name="STUDENTID" ColumnName="STUDENTID" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="USERDOCUMENTID" ColumnName="USERDOCUMENTID" />
+          <ScalarProperty Name="ROLEID" ColumnName="ROLEID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_TEACHER_COURSE_MAPPING_DETAILS">
+      <EntityTypeMapping TypeName="ajay_dbModel.TBL_TEACHER_COURSE_MAPPING_DETAILS">
+        <MappingFragment StoreEntitySet="TBL_TEACHER_COURSE_MAPPING_DETAILS">
+          <ScalarProperty Name="TEACHERCOURSEID" ColumnName="TEACHERCOURSEID" />
+          <ScalarProperty Name="TEACHERID" ColumnName="TEACHERID" />
+          <ScalarProperty Name="COURSEID" ColumnName="COURSEID" />
+          <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+          <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+          <ScalarProperty Name="SUBJECTID" ColumnName="SUBJECTID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_TEACHER_SUBJECT_MAPPING_DETAILS">
+      <EntityTypeMapping TypeName="ajay_dbModel.TBL_TEACHER_SUBJECT_MAPPING_DETAILS">
+        <MappingFragment StoreEntitySet="TBL_TEACHER_SUBJECT_MAPPING_DETAILS">
+          <ScalarProperty Name="TEACHERSUBJECTID" ColumnName="TEACHERSUBJECTID" />
+          <ScalarProperty Name="TEACHERID" ColumnName="TEACHERID" />
+          <ScalarProperty Name="SUBJECTID" ColumnName="SUBJECTID" />
+          <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+          <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_TEST_ANSWERS">
+      <EntityTypeMapping TypeName="ajay_dbModel.TBL_TEST_ANSWERS">
+        <MappingFragment StoreEntitySet="TBL_TEST_ANSWERS">
+          <ScalarProperty Name="ANSWERID" ColumnName="ANSWERID" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="QUESTIONID" ColumnName="QUESTIONID" />
+          <ScalarProperty Name="TESTID" ColumnName="TESTID" />
+          <ScalarProperty Name="ISVALID" ColumnName="ISVALID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_TEST_ATAMPT">
+      <EntityTypeMapping TypeName="ajay_dbModel.TBL_TEST_ATAMPT">
+        <MappingFragment StoreEntitySet="TBL_TEST_ATAMPT">
+          <ScalarProperty Name="TESTATAMPTID" ColumnName="TESTATAMPTID" />
+          <ScalarProperty Name="TESTID" ColumnName="TESTID" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="STARTDATETIME" ColumnName="STARTDATETIME" />
+          <ScalarProperty Name="ENDDATETIME" ColumnName="ENDDATETIME" />
+          <ScalarProperty Name="TOTALMARKS" ColumnName="TOTALMARKS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_TEST_ATAMPT_QUESTION_ANSWER">
+      <EntityTypeMapping TypeName="ajay_dbModel.TBL_TEST_ATAMPT_QUESTION_ANSWER">
+        <MappingFragment StoreEntitySet="TBL_TEST_ATAMPT_QUESTION_ANSWER">
+          <ScalarProperty Name="ATAMPTTESTANSWERID" ColumnName="ATAMPTTESTANSWERID" />
+          <ScalarProperty Name="QUESTIONID" ColumnName="QUESTIONID" />
+          <ScalarProperty Name="ANSWERID" ColumnName="ANSWERID" />
+          <ScalarProperty Name="TESTID" ColumnName="TESTID" />
+          <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_TEST_QUESTIONS">
+      <EntityTypeMapping TypeName="ajay_dbModel.TBL_TEST_QUESTIONS">
+        <MappingFragment StoreEntitySet="TBL_TEST_QUESTIONS">
+          <ScalarProperty Name="QUESTIONID" ColumnName="QUESTIONID" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="ISMULTISELECT" ColumnName="ISMULTISELECT" />
+          <ScalarProperty Name="TESTID" ColumnName="TESTID" />
+          <ScalarProperty Name="QUESTIONTYPEID" ColumnName="QUESTIONTYPEID" />
+          <ScalarProperty Name="MARKS" ColumnName="MARKS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_TEST_TESTDETAIL">
+      <EntityTypeMapping TypeName="ajay_dbModel.TBL_TEST_TESTDETAIL">
+        <MappingFragment StoreEntitySet="TBL_TEST_TESTDETAIL">
+          <ScalarProperty Name="TESTID" ColumnName="TESTID" />
+          <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+          <ScalarProperty Name="SUBJECTID" ColumnName="SUBJECTID" />
+          <ScalarProperty Name="PUBLISHDATE" ColumnName="PUBLISHDATE" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="GIVENBY" ColumnName="GIVENBY" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+          <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+          <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+          <ScalarProperty Name="COURSEID" ColumnName="COURSEID" />
+          <ScalarProperty Name="TESTTYPEID" ColumnName="TESTTYPEID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_USER_ADDRESS_DETAILS">
+      <EntityTypeMapping TypeName="ajay_dbModel.TBL_USER_ADDRESS_DETAILS">
+        <MappingFragment StoreEntitySet="TBL_USER_ADDRESS_DETAILS">
+          <ScalarProperty Name="ADDRESSDETAILID" ColumnName="ADDRESSDETAILID" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="ADDRESSTYPEID" ColumnName="ADDRESSTYPEID" />
+          <ScalarProperty Name="ADDRESSLINE1" ColumnName="ADDRESSLINE1" />
+          <ScalarProperty Name="ADDRESSLINE2" ColumnName="ADDRESSLINE2" />
+          <ScalarProperty Name="CITY" ColumnName="CITY" />
+          <ScalarProperty Name="STATE" ColumnName="STATE" />
+          <ScalarProperty Name="COUNTRY" ColumnName="COUNTRY" />
+          <ScalarProperty Name="PINCODE" ColumnName="PINCODE" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+          <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+          <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_USER_COURSE_DETAILS">
+      <EntityTypeMapping TypeName="ajay_dbModel.TBL_USER_COURSE_DETAILS">
+        <MappingFragment StoreEntitySet="TBL_USER_COURSE_DETAILS">
+          <ScalarProperty Name="STUDENTCOURSEID" ColumnName="STUDENTCOURSEID" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="COURSEID" ColumnName="COURSEID" />
+          <ScalarProperty Name="JOINDATE" ColumnName="JOINDATE" />
+          <ScalarProperty Name="COMPLETEDATE" ColumnName="COMPLETEDATE" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+          <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+          <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_USER_COURSE_MAPPING_DETAILS">
+      <EntityTypeMapping TypeName="ajay_dbModel.TBL_USER_COURSE_MAPPING_DETAILS">
+        <MappingFragment StoreEntitySet="TBL_USER_COURSE_MAPPING_DETAILS">
+          <ScalarProperty Name="USERCOURSEID" ColumnName="USERCOURSEID" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="COURSEID" ColumnName="COURSEID" />
+          <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+          <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_USER_DETAILS">
+      <EntityTypeMapping TypeName="ajay_dbModel.TBL_USER_DETAILS">
+        <MappingFragment StoreEntitySet="TBL_USER_DETAILS">
+          <ScalarProperty Name="PERSONALDETAILID" ColumnName="PERSONALDETAILID" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="FIRSTNAME" ColumnName="FIRSTNAME" />
+          <ScalarProperty Name="MIDDLENAME" ColumnName="MIDDLENAME" />
+          <ScalarProperty Name="LASTNAME" ColumnName="LASTNAME" />
+          <ScalarProperty Name="MOTHERNAME" ColumnName="MOTHERNAME" />
+          <ScalarProperty Name="FATHERNAME" ColumnName="FATHERNAME" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="DISABILITY" ColumnName="DISABILITY" />
+          <ScalarProperty Name="ENROLNMENTID" ColumnName="ENROLNMENTID" />
+          <ScalarProperty Name="GENDER" ColumnName="GENDER" />
+          <ScalarProperty Name="NATIONALITY" ColumnName="NATIONALITY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_USER_DOCUMENTS_DETAILS">
+      <EntityTypeMapping TypeName="ajay_dbModel.TBL_USER_DOCUMENTS_DETAILS">
+        <MappingFragment StoreEntitySet="TBL_USER_DOCUMENTS_DETAILS">
+          <ScalarProperty Name="USERDOCUMENTID" ColumnName="USERDOCUMENTID" />
+          <ScalarProperty Name="DOCUMENTTYPEID" ColumnName="DOCUMENTTYPEID" />
+          <ScalarProperty Name="DOCUMENTNAME" ColumnName="DOCUMENTNAME" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+          <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+          <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_USER_INSTITUTION_DETAILS">
+      <EntityTypeMapping TypeName="ajay_dbModel.TBL_USER_INSTITUTION_DETAILS">
+        <MappingFragment StoreEntitySet="TBL_USER_INSTITUTION_DETAILS">
+          <ScalarProperty Name="INSTITUTIONID" ColumnName="INSTITUTIONID" />
+          <ScalarProperty Name="INSTITUTIONNAME" ColumnName="INSTITUTIONNAME" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="CLASSID" ColumnName="CLASSID" />
+          <ScalarProperty Name="BOARDID" ColumnName="BOARDID" />
+          <ScalarProperty Name="PASSINGYEAR" ColumnName="PASSINGYEAR" />
+          <ScalarProperty Name="GRADE_PERCENT" ColumnName="GRADE_PERCENT" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+          <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+          <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_USER_LOGIN">
+      <EntityTypeMapping TypeName="ajay_dbModel.TBL_USER_LOGIN">
+        <MappingFragment StoreEntitySet="TBL_USER_LOGIN">
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="LOGIN_EMAIL" ColumnName="LOGIN_EMAIL" />
+          <ScalarProperty Name="LOGIN_MOBILE" ColumnName="LOGIN_MOBILE" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="STATUSID" ColumnName="STATUSID" />
+          <ScalarProperty Name="USERTYPEID" ColumnName="USERTYPEID" />
+          <ScalarProperty Name="PASSWORDRETRYCOUNT" ColumnName="PASSWORDRETRYCOUNT" />
+          <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+          <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_USER_LOGIN_TRAIL">
+      <EntityTypeMapping TypeName="ajay_dbModel.TBL_USER_LOGIN_TRAIL">
+        <MappingFragment StoreEntitySet="TBL_USER_LOGIN_TRAIL">
+          <ScalarProperty Name="LOGIN_TRAIL_ID" ColumnName="LOGIN_TRAIL_ID" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="IPADDRESS" ColumnName="IPADDRESS" />
+          <ScalarProperty Name="LATITUTE" ColumnName="LATITUTE" />
+          <ScalarProperty Name="LONGITUTE" ColumnName="LONGITUTE" />
+          <ScalarProperty Name="LOGINDATETIME" ColumnName="LOGINDATETIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_USER_PARENTS_DETAILS">
+      <EntityTypeMapping TypeName="ajay_dbModel.TBL_USER_PARENTS_DETAILS">
+        <MappingFragment StoreEntitySet="TBL_USER_PARENTS_DETAILS">
+          <ScalarProperty Name="PARENTID" ColumnName="PARENTID" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="FATHERNAME" ColumnName="FATHERNAME" />
+          <ScalarProperty Name="FATHEREMAIL" ColumnName="FATHEREMAIL" />
+          <ScalarProperty Name="FATHERMOBILENUMBER" ColumnName="FATHERMOBILENUMBER" />
+          <ScalarProperty Name="FATHEROCCUPATION" ColumnName="FATHEROCCUPATION" />
+          <ScalarProperty Name="FATHERCOMPANYNAME" ColumnName="FATHERCOMPANYNAME" />
+          <ScalarProperty Name="FATHERDESIGNATION" ColumnName="FATHERDESIGNATION" />
+          <ScalarProperty Name="MOTHERNAME" ColumnName="MOTHERNAME" />
+          <ScalarProperty Name="MOTHEREMAIL" ColumnName="MOTHEREMAIL" />
+          <ScalarProperty Name="MOTHERMOBILENUMBER" ColumnName="MOTHERMOBILENUMBER" />
+          <ScalarProperty Name="MOTHEROCCUPATION" ColumnName="MOTHEROCCUPATION" />
+          <ScalarProperty Name="MOTHERCOMPANYNAME" ColumnName="MOTHERCOMPANYNAME" />
+          <ScalarProperty Name="MOTHERDESIGNATION" ColumnName="MOTHERDESIGNATION" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+          <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+          <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_USER_PROFESSIONAL_DETAILS">
+      <EntityTypeMapping TypeName="ajay_dbModel.TBL_USER_PROFESSIONAL_DETAILS">
+        <MappingFragment StoreEntitySet="TBL_USER_PROFESSIONAL_DETAILS">
+          <ScalarProperty Name="PROFESSIONALDETAILID" ColumnName="PROFESSIONALDETAILID" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="COMPANYNAME" ColumnName="COMPANYNAME" />
+          <ScalarProperty Name="DESIGNATION" ColumnName="DESIGNATION" />
+          <ScalarProperty Name="EMPLOYEETYPE" ColumnName="EMPLOYEETYPE" />
+          <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+          <ScalarProperty Name="CREATEBY" ColumnName="CREATEBY" />
+          <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+          <ScalarProperty Name="MODIFIEDDBY" ColumnName="MODIFIEDDBY" />
+          <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_USER_ROLE">
+      <EntityTypeMapping TypeName="ajay_dbModel.TBL_USER_ROLE">
+        <MappingFragment StoreEntitySet="TBL_USER_ROLE">
+          <ScalarProperty Name="ROLE_ID" ColumnName="ROLE_ID" />
+          <ScalarProperty Name="USERTYPEID" ColumnName="USERTYPEID" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+          <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+          <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_USER_SUBJECTS">
+      <EntityTypeMapping TypeName="ajay_dbModel.TBL_USER_SUBJECTS">
+        <MappingFragment StoreEntitySet="TBL_USER_SUBJECTS">
+          <ScalarProperty Name="USERSUBJECTID" ColumnName="USERSUBJECTID" />
+          <ScalarProperty Name="SUBJECTID" ColumnName="SUBJECTID" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+          <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+          <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="ajay_dbModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="webpages_Membership">
+      <EntityTypeMapping TypeName="ajay_dbModel.webpages_Membership">
+        <MappingFragment StoreEntitySet="webpages_Membership">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="ConfirmationToken" ColumnName="ConfirmationToken" />
+          <ScalarProperty Name="IsConfirmed" ColumnName="IsConfirmed" />
+          <ScalarProperty Name="LastPasswordFailureDate" ColumnName="LastPasswordFailureDate" />
+          <ScalarProperty Name="PasswordFailuresSinceLastSuccess" ColumnName="PasswordFailuresSinceLastSuccess" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="PasswordChangedDate" ColumnName="PasswordChangedDate" />
+          <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
+          <ScalarProperty Name="PasswordVerificationToken" ColumnName="PasswordVerificationToken" />
+          <ScalarProperty Name="PasswordVerificationTokenExpirationDate" ColumnName="PasswordVerificationTokenExpirationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="webpages_OAuthMembership">
+      <EntityTypeMapping TypeName="ajay_dbModel.webpages_OAuthMembership">
+        <MappingFragment StoreEntitySet="webpages_OAuthMembership">
+          <ScalarProperty Name="Provider" ColumnName="Provider" />
+          <ScalarProperty Name="ProviderUserId" ColumnName="ProviderUserId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="webpages_Roles">
+      <EntityTypeMapping TypeName="ajay_dbModel.webpages_Roles">
+        <MappingFragment StoreEntitySet="webpages_Roles">
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="webpages_UsersInRoles" TypeName="ajay_dbModel.webpages_UsersInRoles" StoreEntitySet="webpages_UsersInRoles">
+      <EndProperty Name="webpages_Roles">
+        <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+      </EndProperty>
+      <EndProperty Name="Users">
+        <ScalarProperty Name="Id" ColumnName="UserId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionImportName="DeleteTBL_MASTER_BOARDS" FunctionName="ajay_dbModel.Store.DeleteTBL_MASTER_BOARDS" />
+    <FunctionImportMapping FunctionImportName="DeleteTBL_MASTER_CITY" FunctionName="ajay_dbModel.Store.DeleteTBL_MASTER_CITY" />
+    <FunctionImportMapping FunctionImportName="DeleteTBL_MASTER_CLASS" FunctionName="ajay_dbModel.Store.DeleteTBL_MASTER_CLASS" />
+    <FunctionImportMapping FunctionImportName="DeleteTBL_MASTER_COUNTRY" FunctionName="ajay_dbModel.Store.DeleteTBL_MASTER_COUNTRY" />
+    <FunctionImportMapping FunctionImportName="DeleteTBL_MASTER_COURSE" FunctionName="ajay_dbModel.Store.DeleteTBL_MASTER_COURSE" />
+    <FunctionImportMapping FunctionImportName="DeleteTBL_MASTER_DOCUMENTTYPE" FunctionName="ajay_dbModel.Store.DeleteTBL_MASTER_DOCUMENTTYPE" />
+    <FunctionImportMapping FunctionImportName="DeleteTBL_MASTER_STATE" FunctionName="ajay_dbModel.Store.DeleteTBL_MASTER_STATE" />
+    <FunctionImportMapping FunctionImportName="DeleteTBL_MASTER_STATUS" FunctionName="ajay_dbModel.Store.DeleteTBL_MASTER_STATUS" />
+    <FunctionImportMapping FunctionImportName="DeleteTBL_MASTER_SUBJECT" FunctionName="ajay_dbModel.Store.DeleteTBL_MASTER_SUBJECT" />
+    <FunctionImportMapping FunctionImportName="DeleteTBL_MASTER_USERTYPE" FunctionName="ajay_dbModel.Store.DeleteTBL_MASTER_USERTYPE" />
+    <FunctionImportMapping FunctionImportName="DeleteTBL_USER_ADDRESS_DETAILS" FunctionName="ajay_dbModel.Store.DeleteTBL_USER_ADDRESS_DETAILS" />
+    <FunctionImportMapping FunctionImportName="DeleteTBL_USER_COURSE_DETAILS" FunctionName="ajay_dbModel.Store.DeleteTBL_USER_COURSE_DETAILS" />
+    <FunctionImportMapping FunctionImportName="DeleteTBL_USER_DETAILS" FunctionName="ajay_dbModel.Store.DeleteTBL_USER_DETAILS" />
+    <FunctionImportMapping FunctionImportName="DeleteTBL_USER_DOCUMENTS_DETAILS" FunctionName="ajay_dbModel.Store.DeleteTBL_USER_DOCUMENTS_DETAILS" />
+    <FunctionImportMapping FunctionImportName="DeleteTBL_USER_INSTITUTION_DETAILS" FunctionName="ajay_dbModel.Store.DeleteTBL_USER_INSTITUTION_DETAILS" />
+    <FunctionImportMapping FunctionImportName="DeleteTBL_USER_LOGIN" FunctionName="ajay_dbModel.Store.DeleteTBL_USER_LOGIN" />
+    <FunctionImportMapping FunctionImportName="DeleteTBL_USER_LOGIN_TRAIL" FunctionName="ajay_dbModel.Store.DeleteTBL_USER_LOGIN_TRAIL" />
+    <FunctionImportMapping FunctionImportName="DeleteTBL_USER_PARENTS_DETAILS" FunctionName="ajay_dbModel.Store.DeleteTBL_USER_PARENTS_DETAILS" />
+    <FunctionImportMapping FunctionImportName="DeleteTBL_USER_PROFESSIONAL_DETAILS" FunctionName="ajay_dbModel.Store.DeleteTBL_USER_PROFESSIONAL_DETAILS" />
+    <FunctionImportMapping FunctionImportName="DeleteTBL_USER_SUBJECTS" FunctionName="ajay_dbModel.Store.DeleteTBL_USER_SUBJECTS" />
+    <FunctionImportMapping FunctionImportName="GetAllTBL_MASTER_BOARDS" FunctionName="ajay_dbModel.Store.GetAllTBL_MASTER_BOARDS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.GetAllTBL_MASTER_BOARDS_Result">
+          <ScalarProperty Name="BOARDID" ColumnName="BOARDID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetAllTBL_MASTER_CLASS" FunctionName="ajay_dbModel.Store.GetAllTBL_MASTER_CLASS" />
+    <FunctionImportMapping FunctionImportName="GetAllTBL_MASTER_COUNTRY" FunctionName="ajay_dbModel.Store.GetAllTBL_MASTER_COUNTRY" />
+    <FunctionImportMapping FunctionImportName="GetAllTBL_MASTER_COURSE" FunctionName="ajay_dbModel.Store.GetAllTBL_MASTER_COURSE" />
+    <FunctionImportMapping FunctionImportName="GetAllTBL_MASTER_DOCUMENTTYPE" FunctionName="ajay_dbModel.Store.GetAllTBL_MASTER_DOCUMENTTYPE" />
+    <FunctionImportMapping FunctionImportName="GetAllTBL_MASTER_STATUS" FunctionName="ajay_dbModel.Store.GetAllTBL_MASTER_STATUS" />
+    <FunctionImportMapping FunctionImportName="GetAllTBL_MASTER_SUBJECT" FunctionName="ajay_dbModel.Store.GetAllTBL_MASTER_SUBJECT" />
+    <FunctionImportMapping FunctionImportName="GetAllTBL_MASTER_USERTYPE" FunctionName="ajay_dbModel.Store.GetAllTBL_MASTER_USERTYPE" />
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="ajay_dbModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="ajay_dbModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="ajay_dbModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="ajay_dbModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="ajay_dbModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="ajay_dbModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="ajay_dbModel.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="sprocMemberRegistrationDeleteSingleItem" FunctionName="ajay_dbModel.Store.sprocMemberRegistrationDeleteSingleItem" />
+    <FunctionImportMapping FunctionImportName="sprocMemberRegistrationInsertUpdateSingleItem" FunctionName="ajay_dbModel.Store.sprocMemberRegistrationInsertUpdateSingleItem" />
+    <FunctionImportMapping FunctionImportName="sprocMemberRegistrationSelectList" FunctionName="ajay_dbModel.Store.sprocMemberRegistrationSelectList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.sprocMemberRegistrationSelectList_Result">
+          <ScalarProperty Name="MemID" ColumnName="MemID" />
+          <ScalarProperty Name="MemberNo" ColumnName="MemberNo" />
+          <ScalarProperty Name="MemberFName" ColumnName="MemberFName" />
+          <ScalarProperty Name="MemberLName" ColumnName="MemberLName" />
+          <ScalarProperty Name="MemberMName" ColumnName="MemberMName" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Contactno" ColumnName="Contactno" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="PlantypeID" ColumnName="PlantypeID" />
+          <ScalarProperty Name="WorkouttypeID" ColumnName="WorkouttypeID" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="MemImagename" ColumnName="MemImagename" />
+          <ScalarProperty Name="MemImagePath" ColumnName="MemImagePath" />
+          <ScalarProperty Name="JoiningDate" ColumnName="JoiningDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sprocMemberRegistrationSelectSingleItem" FunctionName="ajay_dbModel.Store.sprocMemberRegistrationSelectSingleItem">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.sprocMemberRegistrationSelectSingleItem_Result">
+          <ScalarProperty Name="MemID" ColumnName="MemID" />
+          <ScalarProperty Name="s" ColumnName="s" />
+          <ScalarProperty Name="MemberFName" ColumnName="MemberFName" />
+          <ScalarProperty Name="MemberLName" ColumnName="MemberLName" />
+          <ScalarProperty Name="MemberMName" ColumnName="MemberMName" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Contactno" ColumnName="Contactno" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="PlantypeID" ColumnName="PlantypeID" />
+          <ScalarProperty Name="WorkouttypeID" ColumnName="WorkouttypeID" />
+          <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="MemImagename" ColumnName="MemImagename" />
+          <ScalarProperty Name="MemImagePath" ColumnName="MemImagePath" />
+          <ScalarProperty Name="JoiningDate" ColumnName="JoiningDate" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sprocMemberRegistrationUpdateSingleItem" FunctionName="ajay_dbModel.Store.sprocMemberRegistrationUpdateSingleItem" />
+    <FunctionImportMapping FunctionImportName="sprocPaymentDetailsDeleteSingleItem" FunctionName="ajay_dbModel.Store.sprocPaymentDetailsDeleteSingleItem" />
+    <FunctionImportMapping FunctionImportName="sprocPaymentDetailsInsertUpdateSingleItem" FunctionName="ajay_dbModel.Store.sprocPaymentDetailsInsertUpdateSingleItem" />
+    <FunctionImportMapping FunctionImportName="sprocPaymentDetailsSelectList" FunctionName="ajay_dbModel.Store.sprocPaymentDetailsSelectList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.sprocPaymentDetailsSelectList_Result">
+          <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+          <ScalarProperty Name="PlanID" ColumnName="PlanID" />
+          <ScalarProperty Name="WorkouttypeID" ColumnName="WorkouttypeID" />
+          <ScalarProperty Name="Paymenttype" ColumnName="Paymenttype" />
+          <ScalarProperty Name="PaymentFromdt" ColumnName="PaymentFromdt" />
+          <ScalarProperty Name="PaymentTodt" ColumnName="PaymentTodt" />
+          <ScalarProperty Name="PaymentAmount" ColumnName="PaymentAmount" />
+          <ScalarProperty Name="NextRenwalDate" ColumnName="NextRenwalDate" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateUserID" ColumnName="CreateUserID" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="ModifyUserID" ColumnName="ModifyUserID" />
+          <ScalarProperty Name="RecStatus" ColumnName="RecStatus" />
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="MemberNo" ColumnName="MemberNo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sprocPaymentDetailsSelectSingleItem" FunctionName="ajay_dbModel.Store.sprocPaymentDetailsSelectSingleItem">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.sprocPaymentDetailsSelectSingleItem_Result">
+          <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+          <ScalarProperty Name="PlanID" ColumnName="PlanID" />
+          <ScalarProperty Name="WorkouttypeID" ColumnName="WorkouttypeID" />
+          <ScalarProperty Name="Paymenttype" ColumnName="Paymenttype" />
+          <ScalarProperty Name="PaymentFromdt" ColumnName="PaymentFromdt" />
+          <ScalarProperty Name="PaymentTodt" ColumnName="PaymentTodt" />
+          <ScalarProperty Name="PaymentAmount" ColumnName="PaymentAmount" />
+          <ScalarProperty Name="NextRenwalDate" ColumnName="NextRenwalDate" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateUserID" ColumnName="CreateUserID" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="ModifyUserID" ColumnName="ModifyUserID" />
+          <ScalarProperty Name="RecStatus" ColumnName="RecStatus" />
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="MemberNo" ColumnName="MemberNo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sprocPlanMasterDeleteSingleItem" FunctionName="ajay_dbModel.Store.sprocPlanMasterDeleteSingleItem" />
+    <FunctionImportMapping FunctionImportName="sprocPlanMasterInsertUpdateSingleItem" FunctionName="ajay_dbModel.Store.sprocPlanMasterInsertUpdateSingleItem" />
+    <FunctionImportMapping FunctionImportName="sprocPlanMasterSelectList" FunctionName="ajay_dbModel.Store.sprocPlanMasterSelectList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.sprocPlanMasterSelectList_Result">
+          <ScalarProperty Name="PlanID" ColumnName="PlanID" />
+          <ScalarProperty Name="PlanName" ColumnName="PlanName" />
+          <ScalarProperty Name="PlanAmount" ColumnName="PlanAmount" />
+          <ScalarProperty Name="ServiceTax" ColumnName="ServiceTax" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateUserID" ColumnName="CreateUserID" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="ModifyUserID" ColumnName="ModifyUserID" />
+          <ScalarProperty Name="RecStatus" ColumnName="RecStatus" />
+          <ScalarProperty Name="TotalAmout" ColumnName="TotalAmout" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sprocPlanMasterSelectSingleItem" FunctionName="ajay_dbModel.Store.sprocPlanMasterSelectSingleItem">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.sprocPlanMasterSelectSingleItem_Result">
+          <ScalarProperty Name="PlanID" ColumnName="PlanID" />
+          <ScalarProperty Name="PlanName" ColumnName="PlanName" />
+          <ScalarProperty Name="PlanAmount" ColumnName="PlanAmount" />
+          <ScalarProperty Name="ServicetaxAmout" ColumnName="ServicetaxAmout" />
+          <ScalarProperty Name="ServiceTax" ColumnName="ServiceTax" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateUserID" ColumnName="CreateUserID" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="ModifyUserID" ColumnName="ModifyUserID" />
+          <ScalarProperty Name="RecStatus" ColumnName="RecStatus" />
+          <ScalarProperty Name="SchemeID" ColumnName="SchemeID" />
+          <ScalarProperty Name="PeriodID" ColumnName="PeriodID" />
+          <ScalarProperty Name="TotalAmout" ColumnName="TotalAmout" />
+          <ScalarProperty Name="ServicetaxNo" ColumnName="ServicetaxNo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sprocRecepitTBInsertUpdateSingleItem" FunctionName="ajay_dbModel.Store.sprocRecepitTBInsertUpdateSingleItem" />
+    <FunctionImportMapping FunctionImportName="sprocSchemeMasterDeleteSingleItem" FunctionName="ajay_dbModel.Store.sprocSchemeMasterDeleteSingleItem" />
+    <FunctionImportMapping FunctionImportName="sprocSchemeMasterInsertUpdateSingleItem" FunctionName="ajay_dbModel.Store.sprocSchemeMasterInsertUpdateSingleItem" />
+    <FunctionImportMapping FunctionImportName="sprocTBL_MASTER_BOARDSDeleteSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_MASTER_BOARDSDeleteSingleItem" />
+    <FunctionImportMapping FunctionImportName="sprocTBL_MASTER_BOARDSInsertUpdateSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_MASTER_BOARDSInsertUpdateSingleItem" />
+    <FunctionImportMapping FunctionImportName="sprocTBL_MASTER_BOARDSSelectList" FunctionName="ajay_dbModel.Store.sprocTBL_MASTER_BOARDSSelectList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.sprocTBL_MASTER_BOARDSSelectList_Result">
+          <ScalarProperty Name="BOARDID" ColumnName="BOARDID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sprocTBL_MASTER_BOARDSSelectSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_MASTER_BOARDSSelectSingleItem">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.sprocTBL_MASTER_BOARDSSelectSingleItem_Result">
+          <ScalarProperty Name="BOARDID" ColumnName="BOARDID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sprocTBL_MASTER_CITYDeleteSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_MASTER_CITYDeleteSingleItem" />
+    <FunctionImportMapping FunctionImportName="sprocTBL_MASTER_CITYInsertUpdateSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_MASTER_CITYInsertUpdateSingleItem" />
+    <FunctionImportMapping FunctionImportName="sprocTBL_MASTER_CITYSelectList" FunctionName="ajay_dbModel.Store.sprocTBL_MASTER_CITYSelectList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.sprocTBL_MASTER_CITYSelectList_Result">
+          <ScalarProperty Name="CITYID" ColumnName="CITYID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="STATEID" ColumnName="STATEID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sprocTBL_MASTER_CITYSelectSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_MASTER_CITYSelectSingleItem">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.sprocTBL_MASTER_CITYSelectSingleItem_Result">
+          <ScalarProperty Name="CITYID" ColumnName="CITYID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="STATEID" ColumnName="STATEID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sprocTBL_MASTER_CLASSDeleteSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_MASTER_CLASSDeleteSingleItem" />
+    <FunctionImportMapping FunctionImportName="sprocTBL_MASTER_CLASSInsertUpdateSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_MASTER_CLASSInsertUpdateSingleItem" />
+    <FunctionImportMapping FunctionImportName="sprocTBL_MASTER_CLASSSelectList" FunctionName="ajay_dbModel.Store.sprocTBL_MASTER_CLASSSelectList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.sprocTBL_MASTER_CLASSSelectList_Result">
+          <ScalarProperty Name="CLASSID" ColumnName="CLASSID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sprocTBL_MASTER_CLASSSelectSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_MASTER_CLASSSelectSingleItem">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.sprocTBL_MASTER_CLASSSelectSingleItem_Result">
+          <ScalarProperty Name="CLASSID" ColumnName="CLASSID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sprocTBL_MASTER_COUNTRYDeleteSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_MASTER_COUNTRYDeleteSingleItem" />
+    <FunctionImportMapping FunctionImportName="sprocTBL_MASTER_COUNTRYInsertUpdateSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_MASTER_COUNTRYInsertUpdateSingleItem" />
+    <FunctionImportMapping FunctionImportName="sprocTBL_MASTER_COUNTRYSelectList" FunctionName="ajay_dbModel.Store.sprocTBL_MASTER_COUNTRYSelectList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.sprocTBL_MASTER_COUNTRYSelectList_Result">
+          <ScalarProperty Name="COUNTRYID" ColumnName="COUNTRYID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sprocTBL_MASTER_COUNTRYSelectSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_MASTER_COUNTRYSelectSingleItem">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.sprocTBL_MASTER_COUNTRYSelectSingleItem_Result">
+          <ScalarProperty Name="COUNTRYID" ColumnName="COUNTRYID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sprocTBL_MASTER_COURSEDeleteSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_MASTER_COURSEDeleteSingleItem" />
+    <FunctionImportMapping FunctionImportName="sprocTBL_MASTER_COURSEInsertUpdateSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_MASTER_COURSEInsertUpdateSingleItem" />
+    <FunctionImportMapping FunctionImportName="sprocTBL_MASTER_COURSESelectList" FunctionName="ajay_dbModel.Store.sprocTBL_MASTER_COURSESelectList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.sprocTBL_MASTER_COURSESelectList_Result">
+          <ScalarProperty Name="COURSEID" ColumnName="COURSEID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sprocTBL_MASTER_COURSESelectSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_MASTER_COURSESelectSingleItem">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.sprocTBL_MASTER_COURSESelectSingleItem_Result">
+          <ScalarProperty Name="COURSEID" ColumnName="COURSEID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sprocTBL_MASTER_DOCUMENTTYPEDeleteSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_MASTER_DOCUMENTTYPEDeleteSingleItem" />
+    <FunctionImportMapping FunctionImportName="sprocTBL_MASTER_DOCUMENTTYPEInsertUpdateSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_MASTER_DOCUMENTTYPEInsertUpdateSingleItem" />
+    <FunctionImportMapping FunctionImportName="sprocTBL_MASTER_DOCUMENTTYPESelectList" FunctionName="ajay_dbModel.Store.sprocTBL_MASTER_DOCUMENTTYPESelectList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.sprocTBL_MASTER_DOCUMENTTYPESelectList_Result">
+          <ScalarProperty Name="DocumentTypeID" ColumnName="DocumentTypeID" />
+          <ScalarProperty Name="DocumentTypeName" ColumnName="DocumentTypeName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sprocTBL_MASTER_DOCUMENTTYPESelectSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_MASTER_DOCUMENTTYPESelectSingleItem">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.sprocTBL_MASTER_DOCUMENTTYPESelectSingleItem_Result">
+          <ScalarProperty Name="DocumentTypeID" ColumnName="DocumentTypeID" />
+          <ScalarProperty Name="DocumentTypeName" ColumnName="DocumentTypeName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sprocTBL_MASTER_STATEDeleteSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_MASTER_STATEDeleteSingleItem" />
+    <FunctionImportMapping FunctionImportName="sprocTBL_MASTER_STATEInsertUpdateSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_MASTER_STATEInsertUpdateSingleItem" />
+    <FunctionImportMapping FunctionImportName="sprocTBL_MASTER_STATESelectList" FunctionName="ajay_dbModel.Store.sprocTBL_MASTER_STATESelectList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.sprocTBL_MASTER_STATESelectList_Result">
+          <ScalarProperty Name="STATEID" ColumnName="STATEID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="COUNTRYID" ColumnName="COUNTRYID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sprocTBL_MASTER_STATESelectSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_MASTER_STATESelectSingleItem">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.sprocTBL_MASTER_STATESelectSingleItem_Result">
+          <ScalarProperty Name="STATEID" ColumnName="STATEID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="COUNTRYID" ColumnName="COUNTRYID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sprocTBL_MASTER_STATUSDeleteSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_MASTER_STATUSDeleteSingleItem" />
+    <FunctionImportMapping FunctionImportName="sprocTBL_MASTER_STATUSInsertUpdateSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_MASTER_STATUSInsertUpdateSingleItem" />
+    <FunctionImportMapping FunctionImportName="sprocTBL_MASTER_STATUSSelectList" FunctionName="ajay_dbModel.Store.sprocTBL_MASTER_STATUSSelectList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.sprocTBL_MASTER_STATUSSelectList_Result">
+          <ScalarProperty Name="STATUSID" ColumnName="STATUSID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sprocTBL_MASTER_STATUSSelectSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_MASTER_STATUSSelectSingleItem">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.sprocTBL_MASTER_STATUSSelectSingleItem_Result">
+          <ScalarProperty Name="STATUSID" ColumnName="STATUSID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sprocTBL_MASTER_SUBJECTDeleteSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_MASTER_SUBJECTDeleteSingleItem" />
+    <FunctionImportMapping FunctionImportName="sprocTBL_MASTER_SUBJECTInsertUpdateSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_MASTER_SUBJECTInsertUpdateSingleItem" />
+    <FunctionImportMapping FunctionImportName="sprocTBL_MASTER_SUBJECTSelectList" FunctionName="ajay_dbModel.Store.sprocTBL_MASTER_SUBJECTSelectList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.sprocTBL_MASTER_SUBJECTSelectList_Result">
+          <ScalarProperty Name="SUBJECTID" ColumnName="SUBJECTID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sprocTBL_MASTER_SUBJECTSelectSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_MASTER_SUBJECTSelectSingleItem">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.sprocTBL_MASTER_SUBJECTSelectSingleItem_Result">
+          <ScalarProperty Name="SUBJECTID" ColumnName="SUBJECTID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sprocTBL_MASTER_USERTYPEDeleteSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_MASTER_USERTYPEDeleteSingleItem" />
+    <FunctionImportMapping FunctionImportName="sprocTBL_MASTER_USERTYPEInsertUpdateSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_MASTER_USERTYPEInsertUpdateSingleItem" />
+    <FunctionImportMapping FunctionImportName="sprocTBL_MASTER_USERTYPESelectList" FunctionName="ajay_dbModel.Store.sprocTBL_MASTER_USERTYPESelectList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.sprocTBL_MASTER_USERTYPESelectList_Result">
+          <ScalarProperty Name="USERTYPEID" ColumnName="USERTYPEID" />
+          <ScalarProperty Name="TYPENAME" ColumnName="TYPENAME" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sprocTBL_MASTER_USERTYPESelectSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_MASTER_USERTYPESelectSingleItem">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.sprocTBL_MASTER_USERTYPESelectSingleItem_Result">
+          <ScalarProperty Name="USERTYPEID" ColumnName="USERTYPEID" />
+          <ScalarProperty Name="TYPENAME" ColumnName="TYPENAME" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sprocTBL_USER_ADDRESS_DETAILSDeleteSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_USER_ADDRESS_DETAILSDeleteSingleItem" />
+    <FunctionImportMapping FunctionImportName="sprocTBL_USER_ADDRESS_DETAILSInsertUpdateSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_USER_ADDRESS_DETAILSInsertUpdateSingleItem" />
+    <FunctionImportMapping FunctionImportName="sprocTBL_USER_ADDRESS_DETAILSSelectList" FunctionName="ajay_dbModel.Store.sprocTBL_USER_ADDRESS_DETAILSSelectList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.sprocTBL_USER_ADDRESS_DETAILSSelectList_Result">
+          <ScalarProperty Name="ADDRESSDETAILID" ColumnName="ADDRESSDETAILID" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="ADDRESSTYPEID" ColumnName="ADDRESSTYPEID" />
+          <ScalarProperty Name="ADDRESSLINE1" ColumnName="ADDRESSLINE1" />
+          <ScalarProperty Name="ADDRESSLINE2" ColumnName="ADDRESSLINE2" />
+          <ScalarProperty Name="CITY" ColumnName="CITY" />
+          <ScalarProperty Name="STATE" ColumnName="STATE" />
+          <ScalarProperty Name="COUNTRY" ColumnName="COUNTRY" />
+          <ScalarProperty Name="PINCODE" ColumnName="PINCODE" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+          <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+          <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sprocTBL_USER_ADDRESS_DETAILSSelectSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_USER_ADDRESS_DETAILSSelectSingleItem">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.sprocTBL_USER_ADDRESS_DETAILSSelectSingleItem_Result">
+          <ScalarProperty Name="ADDRESSDETAILID" ColumnName="ADDRESSDETAILID" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="ADDRESSTYPEID" ColumnName="ADDRESSTYPEID" />
+          <ScalarProperty Name="ADDRESSLINE1" ColumnName="ADDRESSLINE1" />
+          <ScalarProperty Name="ADDRESSLINE2" ColumnName="ADDRESSLINE2" />
+          <ScalarProperty Name="CITY" ColumnName="CITY" />
+          <ScalarProperty Name="STATE" ColumnName="STATE" />
+          <ScalarProperty Name="COUNTRY" ColumnName="COUNTRY" />
+          <ScalarProperty Name="PINCODE" ColumnName="PINCODE" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+          <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+          <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sprocTBL_USER_COURSE_DETAILSDeleteSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_USER_COURSE_DETAILSDeleteSingleItem" />
+    <FunctionImportMapping FunctionImportName="sprocTBL_USER_COURSE_DETAILSInsertUpdateSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_USER_COURSE_DETAILSInsertUpdateSingleItem" />
+    <FunctionImportMapping FunctionImportName="sprocTBL_USER_COURSE_DETAILSSelectList" FunctionName="ajay_dbModel.Store.sprocTBL_USER_COURSE_DETAILSSelectList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.sprocTBL_USER_COURSE_DETAILSSelectList_Result">
+          <ScalarProperty Name="STUDENTCOURSEID" ColumnName="STUDENTCOURSEID" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="COURSEID" ColumnName="COURSEID" />
+          <ScalarProperty Name="JOINDATE" ColumnName="JOINDATE" />
+          <ScalarProperty Name="COMPLETEDATE" ColumnName="COMPLETEDATE" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+          <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+          <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sprocTBL_USER_COURSE_DETAILSSelectSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_USER_COURSE_DETAILSSelectSingleItem">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.sprocTBL_USER_COURSE_DETAILSSelectSingleItem_Result">
+          <ScalarProperty Name="STUDENTCOURSEID" ColumnName="STUDENTCOURSEID" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="COURSEID" ColumnName="COURSEID" />
+          <ScalarProperty Name="JOINDATE" ColumnName="JOINDATE" />
+          <ScalarProperty Name="COMPLETEDATE" ColumnName="COMPLETEDATE" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+          <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+          <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sprocTBL_USER_DETAILSDeleteSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_USER_DETAILSDeleteSingleItem" />
+    <FunctionImportMapping FunctionImportName="sprocTBL_USER_DETAILSSelectList" FunctionName="ajay_dbModel.Store.sprocTBL_USER_DETAILSSelectList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.sprocTBL_USER_DETAILSSelectList_Result">
+          <ScalarProperty Name="PERSONALDETAILID" ColumnName="PERSONALDETAILID" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="FIRSTNAME" ColumnName="FIRSTNAME" />
+          <ScalarProperty Name="MIDDLENAME" ColumnName="MIDDLENAME" />
+          <ScalarProperty Name="LASTNAME" ColumnName="LASTNAME" />
+          <ScalarProperty Name="MOTHERNAME" ColumnName="MOTHERNAME" />
+          <ScalarProperty Name="FATHERNAME" ColumnName="FATHERNAME" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="DISABILITY" ColumnName="DISABILITY" />
+          <ScalarProperty Name="ENROLNMENTID" ColumnName="ENROLNMENTID" />
+          <ScalarProperty Name="GENDER" ColumnName="GENDER" />
+          <ScalarProperty Name="NATIONALITY" ColumnName="NATIONALITY" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sprocTBL_USER_DETAILSSelectSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_USER_DETAILSSelectSingleItem">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.sprocTBL_USER_DETAILSSelectSingleItem_Result">
+          <ScalarProperty Name="PERSONALDETAILID" ColumnName="PERSONALDETAILID" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="FIRSTNAME" ColumnName="FIRSTNAME" />
+          <ScalarProperty Name="MIDDLENAME" ColumnName="MIDDLENAME" />
+          <ScalarProperty Name="LASTNAME" ColumnName="LASTNAME" />
+          <ScalarProperty Name="MOTHERNAME" ColumnName="MOTHERNAME" />
+          <ScalarProperty Name="FATHERNAME" ColumnName="FATHERNAME" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="DISABILITY" ColumnName="DISABILITY" />
+          <ScalarProperty Name="ENROLNMENTID" ColumnName="ENROLNMENTID" />
+          <ScalarProperty Name="GENDER" ColumnName="GENDER" />
+          <ScalarProperty Name="NATIONALITY" ColumnName="NATIONALITY" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sprocTBL_USER_DOCUMENTS_DETAILSDeleteSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_USER_DOCUMENTS_DETAILSDeleteSingleItem" />
+    <FunctionImportMapping FunctionImportName="sprocTBL_USER_DOCUMENTS_DETAILSInsertUpdateSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_USER_DOCUMENTS_DETAILSInsertUpdateSingleItem" />
+    <FunctionImportMapping FunctionImportName="sprocTBL_USER_DOCUMENTS_DETAILSSelectList" FunctionName="ajay_dbModel.Store.sprocTBL_USER_DOCUMENTS_DETAILSSelectList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.sprocTBL_USER_DOCUMENTS_DETAILSSelectList_Result">
+          <ScalarProperty Name="USERDOCUMENTID" ColumnName="USERDOCUMENTID" />
+          <ScalarProperty Name="DOCUMENTTYPEID" ColumnName="DOCUMENTTYPEID" />
+          <ScalarProperty Name="DOCUMENTNAME" ColumnName="DOCUMENTNAME" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+          <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+          <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sprocTBL_USER_DOCUMENTS_DETAILSSelectSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_USER_DOCUMENTS_DETAILSSelectSingleItem">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.sprocTBL_USER_DOCUMENTS_DETAILSSelectSingleItem_Result">
+          <ScalarProperty Name="USERDOCUMENTID" ColumnName="USERDOCUMENTID" />
+          <ScalarProperty Name="DOCUMENTTYPEID" ColumnName="DOCUMENTTYPEID" />
+          <ScalarProperty Name="DOCUMENTNAME" ColumnName="DOCUMENTNAME" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+          <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+          <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sprocTBL_USER_INSTITUTION_DETAILSDeleteSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_USER_INSTITUTION_DETAILSDeleteSingleItem" />
+    <FunctionImportMapping FunctionImportName="sprocTBL_USER_INSTITUTION_DETAILSInsertUpdateSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_USER_INSTITUTION_DETAILSInsertUpdateSingleItem" />
+    <FunctionImportMapping FunctionImportName="sprocTBL_USER_INSTITUTION_DETAILSSelectList" FunctionName="ajay_dbModel.Store.sprocTBL_USER_INSTITUTION_DETAILSSelectList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.sprocTBL_USER_INSTITUTION_DETAILSSelectList_Result">
+          <ScalarProperty Name="INSTITUTIONID" ColumnName="INSTITUTIONID" />
+          <ScalarProperty Name="INSTITUTIONNAME" ColumnName="INSTITUTIONNAME" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="CLASSID" ColumnName="CLASSID" />
+          <ScalarProperty Name="BOARDID" ColumnName="BOARDID" />
+          <ScalarProperty Name="PASSINGYEAR" ColumnName="PASSINGYEAR" />
+          <ScalarProperty Name="GRADE_PERCENT" ColumnName="GRADE_PERCENT" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+          <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+          <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sprocTBL_USER_INSTITUTION_DETAILSSelectSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_USER_INSTITUTION_DETAILSSelectSingleItem">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.sprocTBL_USER_INSTITUTION_DETAILSSelectSingleItem_Result">
+          <ScalarProperty Name="INSTITUTIONID" ColumnName="INSTITUTIONID" />
+          <ScalarProperty Name="INSTITUTIONNAME" ColumnName="INSTITUTIONNAME" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="CLASSID" ColumnName="CLASSID" />
+          <ScalarProperty Name="BOARDID" ColumnName="BOARDID" />
+          <ScalarProperty Name="PASSINGYEAR" ColumnName="PASSINGYEAR" />
+          <ScalarProperty Name="GRADE_PERCENT" ColumnName="GRADE_PERCENT" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+          <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+          <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sprocTBL_USER_LOGIN_TRAILDeleteSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_USER_LOGIN_TRAILDeleteSingleItem" />
+    <FunctionImportMapping FunctionImportName="sprocTBL_USER_LOGIN_TRAILInsertUpdateSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_USER_LOGIN_TRAILInsertUpdateSingleItem" />
+    <FunctionImportMapping FunctionImportName="sprocTBL_USER_LOGIN_TRAILSelectList" FunctionName="ajay_dbModel.Store.sprocTBL_USER_LOGIN_TRAILSelectList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.sprocTBL_USER_LOGIN_TRAILSelectList_Result">
+          <ScalarProperty Name="LOGIN_TRAIL_ID" ColumnName="LOGIN_TRAIL_ID" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="IPADDRESS" ColumnName="IPADDRESS" />
+          <ScalarProperty Name="LATITUTE" ColumnName="LATITUTE" />
+          <ScalarProperty Name="LONGITUTE" ColumnName="LONGITUTE" />
+          <ScalarProperty Name="LOGINDATETIME" ColumnName="LOGINDATETIME" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sprocTBL_USER_LOGIN_TRAILSelectSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_USER_LOGIN_TRAILSelectSingleItem">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.sprocTBL_USER_LOGIN_TRAILSelectSingleItem_Result">
+          <ScalarProperty Name="LOGIN_TRAIL_ID" ColumnName="LOGIN_TRAIL_ID" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="IPADDRESS" ColumnName="IPADDRESS" />
+          <ScalarProperty Name="LATITUTE" ColumnName="LATITUTE" />
+          <ScalarProperty Name="LONGITUTE" ColumnName="LONGITUTE" />
+          <ScalarProperty Name="LOGINDATETIME" ColumnName="LOGINDATETIME" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sprocTBL_USER_LOGINDeleteSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_USER_LOGINDeleteSingleItem" />
+    <FunctionImportMapping FunctionImportName="sprocTBL_USER_LOGINInsertUpdateSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_USER_LOGINInsertUpdateSingleItem" />
+    <FunctionImportMapping FunctionImportName="sprocTBL_USER_LOGINSelectList" FunctionName="ajay_dbModel.Store.sprocTBL_USER_LOGINSelectList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.sprocTBL_USER_LOGINSelectList_Result">
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="LOGIN_EMAIL" ColumnName="LOGIN_EMAIL" />
+          <ScalarProperty Name="LOGIN_MOBILE" ColumnName="LOGIN_MOBILE" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="STATUSID" ColumnName="STATUSID" />
+          <ScalarProperty Name="USERTYPEID" ColumnName="USERTYPEID" />
+          <ScalarProperty Name="PASSWORDRETRYCOUNT" ColumnName="PASSWORDRETRYCOUNT" />
+          <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+          <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sprocTBL_USER_LOGINSelectSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_USER_LOGINSelectSingleItem">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.sprocTBL_USER_LOGINSelectSingleItem_Result">
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="LOGIN_EMAIL" ColumnName="LOGIN_EMAIL" />
+          <ScalarProperty Name="LOGIN_MOBILE" ColumnName="LOGIN_MOBILE" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="STATUSID" ColumnName="STATUSID" />
+          <ScalarProperty Name="USERTYPEID" ColumnName="USERTYPEID" />
+          <ScalarProperty Name="PASSWORDRETRYCOUNT" ColumnName="PASSWORDRETRYCOUNT" />
+          <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+          <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sprocTBL_USER_PARENTS_DETAILSDeleteSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_USER_PARENTS_DETAILSDeleteSingleItem" />
+    <FunctionImportMapping FunctionImportName="sprocTBL_USER_PARENTS_DETAILSInsertUpdateSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_USER_PARENTS_DETAILSInsertUpdateSingleItem" />
+    <FunctionImportMapping FunctionImportName="sprocTBL_USER_PARENTS_DETAILSSelectList" FunctionName="ajay_dbModel.Store.sprocTBL_USER_PARENTS_DETAILSSelectList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.sprocTBL_USER_PARENTS_DETAILSSelectList_Result">
+          <ScalarProperty Name="PARENTID" ColumnName="PARENTID" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="FATHERNAME" ColumnName="FATHERNAME" />
+          <ScalarProperty Name="FATHEREMAIL" ColumnName="FATHEREMAIL" />
+          <ScalarProperty Name="FATHERMOBILENUMBER" ColumnName="FATHERMOBILENUMBER" />
+          <ScalarProperty Name="FATHEROCCUPATION" ColumnName="FATHEROCCUPATION" />
+          <ScalarProperty Name="FATHERCOMPANYNAME" ColumnName="FATHERCOMPANYNAME" />
+          <ScalarProperty Name="FATHERDESIGNATION" ColumnName="FATHERDESIGNATION" />
+          <ScalarProperty Name="MOTHERNAME" ColumnName="MOTHERNAME" />
+          <ScalarProperty Name="MOTHEREMAIL" ColumnName="MOTHEREMAIL" />
+          <ScalarProperty Name="MOTHERMOBILENUMBER" ColumnName="MOTHERMOBILENUMBER" />
+          <ScalarProperty Name="MOTHEROCCUPATION" ColumnName="MOTHEROCCUPATION" />
+          <ScalarProperty Name="MOTHERCOMPANYNAME" ColumnName="MOTHERCOMPANYNAME" />
+          <ScalarProperty Name="MOTHERDESIGNATION" ColumnName="MOTHERDESIGNATION" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+          <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+          <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sprocTBL_USER_PARENTS_DETAILSSelectSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_USER_PARENTS_DETAILSSelectSingleItem">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.sprocTBL_USER_PARENTS_DETAILSSelectSingleItem_Result">
+          <ScalarProperty Name="PARENTID" ColumnName="PARENTID" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="FATHERNAME" ColumnName="FATHERNAME" />
+          <ScalarProperty Name="FATHEREMAIL" ColumnName="FATHEREMAIL" />
+          <ScalarProperty Name="FATHERMOBILENUMBER" ColumnName="FATHERMOBILENUMBER" />
+          <ScalarProperty Name="FATHEROCCUPATION" ColumnName="FATHEROCCUPATION" />
+          <ScalarProperty Name="FATHERCOMPANYNAME" ColumnName="FATHERCOMPANYNAME" />
+          <ScalarProperty Name="FATHERDESIGNATION" ColumnName="FATHERDESIGNATION" />
+          <ScalarProperty Name="MOTHERNAME" ColumnName="MOTHERNAME" />
+          <ScalarProperty Name="MOTHEREMAIL" ColumnName="MOTHEREMAIL" />
+          <ScalarProperty Name="MOTHERMOBILENUMBER" ColumnName="MOTHERMOBILENUMBER" />
+          <ScalarProperty Name="MOTHEROCCUPATION" ColumnName="MOTHEROCCUPATION" />
+          <ScalarProperty Name="MOTHERCOMPANYNAME" ColumnName="MOTHERCOMPANYNAME" />
+          <ScalarProperty Name="MOTHERDESIGNATION" ColumnName="MOTHERDESIGNATION" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+          <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+          <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sprocTBL_USER_PROFESSIONAL_DETAILSDeleteSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_USER_PROFESSIONAL_DETAILSDeleteSingleItem" />
+    <FunctionImportMapping FunctionImportName="sprocTBL_USER_PROFESSIONAL_DETAILSInsertUpdateSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_USER_PROFESSIONAL_DETAILSInsertUpdateSingleItem" />
+    <FunctionImportMapping FunctionImportName="sprocTBL_USER_PROFESSIONAL_DETAILSSelectList" FunctionName="ajay_dbModel.Store.sprocTBL_USER_PROFESSIONAL_DETAILSSelectList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.sprocTBL_USER_PROFESSIONAL_DETAILSSelectList_Result">
+          <ScalarProperty Name="PROFESSIONALDETAILID" ColumnName="PROFESSIONALDETAILID" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="COMPANYNAME" ColumnName="COMPANYNAME" />
+          <ScalarProperty Name="DESIGNATION" ColumnName="DESIGNATION" />
+          <ScalarProperty Name="EMPLOYEETYPE" ColumnName="EMPLOYEETYPE" />
+          <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+          <ScalarProperty Name="CREATEBY" ColumnName="CREATEBY" />
+          <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+          <ScalarProperty Name="MODIFIEDDBY" ColumnName="MODIFIEDDBY" />
+          <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sprocTBL_USER_PROFESSIONAL_DETAILSSelectSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_USER_PROFESSIONAL_DETAILSSelectSingleItem">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.sprocTBL_USER_PROFESSIONAL_DETAILSSelectSingleItem_Result">
+          <ScalarProperty Name="PROFESSIONALDETAILID" ColumnName="PROFESSIONALDETAILID" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="COMPANYNAME" ColumnName="COMPANYNAME" />
+          <ScalarProperty Name="DESIGNATION" ColumnName="DESIGNATION" />
+          <ScalarProperty Name="EMPLOYEETYPE" ColumnName="EMPLOYEETYPE" />
+          <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+          <ScalarProperty Name="CREATEBY" ColumnName="CREATEBY" />
+          <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+          <ScalarProperty Name="MODIFIEDDBY" ColumnName="MODIFIEDDBY" />
+          <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sprocTBL_USER_SUBJECTSDeleteSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_USER_SUBJECTSDeleteSingleItem" />
+    <FunctionImportMapping FunctionImportName="sprocTBL_USER_SUBJECTSInsertUpdateSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_USER_SUBJECTSInsertUpdateSingleItem" />
+    <FunctionImportMapping FunctionImportName="sprocTBL_USER_SUBJECTSSelectList" FunctionName="ajay_dbModel.Store.sprocTBL_USER_SUBJECTSSelectList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.sprocTBL_USER_SUBJECTSSelectList_Result">
+          <ScalarProperty Name="USERSUBJECTID" ColumnName="USERSUBJECTID" />
+          <ScalarProperty Name="SUBJECTID" ColumnName="SUBJECTID" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+          <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+          <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sprocTBL_USER_SUBJECTSSelectSingleItem" FunctionName="ajay_dbModel.Store.sprocTBL_USER_SUBJECTSSelectSingleItem">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.sprocTBL_USER_SUBJECTSSelectSingleItem_Result">
+          <ScalarProperty Name="USERSUBJECTID" ColumnName="USERSUBJECTID" />
+          <ScalarProperty Name="SUBJECTID" ColumnName="SUBJECTID" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+          <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+          <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Usp_ALLPaymentDetailinfo" FunctionName="ajay_dbModel.Store.Usp_ALLPaymentDetailinfo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.Usp_ALLPaymentDetailinfo_Result">
+          <ScalarProperty Name="MemberReg" ColumnName="MemberReg" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Contactno" ColumnName="Contactno" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="Memberno" ColumnName="Memberno" />
+          <ScalarProperty Name="PlanName" ColumnName="PlanName" />
+          <ScalarProperty Name="SchemeName" ColumnName="SchemeName" />
+          <ScalarProperty Name="JoiningDate" ColumnName="JoiningDate" />
+          <ScalarProperty Name="RenwalDate" ColumnName="RenwalDate" />
+          <ScalarProperty Name="PaymentAmount" ColumnName="PaymentAmount" />
+          <ScalarProperty Name="WorkouttypeID" ColumnName="WorkouttypeID" />
+          <ScalarProperty Name="PlantypeID" ColumnName="PlantypeID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Usp_checkplan" FunctionName="ajay_dbModel.Store.Usp_checkplan" />
+    <FunctionImportMapping FunctionImportName="Usp_checkscheme" FunctionName="ajay_dbModel.Store.Usp_checkscheme" />
+    <FunctionImportMapping FunctionImportName="Usp_checkUsernameExits" FunctionName="ajay_dbModel.Store.Usp_checkUsernameExits" />
+    <FunctionImportMapping FunctionImportName="Usp_CheckUserRoles" FunctionName="ajay_dbModel.Store.Usp_CheckUserRoles" />
+    <FunctionImportMapping FunctionImportName="Usp_DisplayAllUser_And_Roles" FunctionName="ajay_dbModel.Store.Usp_DisplayAllUser_And_Roles">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.Usp_DisplayAllUser_And_Roles_Result">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Usp_Generatenumber" FunctionName="ajay_dbModel.Store.Usp_Generatenumber">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.Usp_Generatenumber_Result">
+          <ScalarProperty Name="MemberNo" ColumnName="MemberNo" />
+          <ScalarProperty Name="Memnumber" ColumnName="Memnumber" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Usp_GenerateRecepit" FunctionName="ajay_dbModel.Store.Usp_GenerateRecepit">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.Usp_GenerateRecepit_Result">
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Contactno" ColumnName="Contactno" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="MemberNo" ColumnName="MemberNo" />
+          <ScalarProperty Name="PlanName" ColumnName="PlanName" />
+          <ScalarProperty Name="SchemeName" ColumnName="SchemeName" />
+          <ScalarProperty Name="JoiningDate" ColumnName="JoiningDate" />
+          <ScalarProperty Name="RenwalDate" ColumnName="RenwalDate" />
+          <ScalarProperty Name="PaymentAmount" ColumnName="PaymentAmount" />
+          <ScalarProperty Name="AMtWords" ColumnName="AMtWords" />
+          <ScalarProperty Name="PlanAmount" ColumnName="PlanAmount" />
+          <ScalarProperty Name="ServicetaxAmout" ColumnName="ServicetaxAmout" />
+          <ScalarProperty Name="ServiceTax" ColumnName="ServiceTax" />
+          <ScalarProperty Name="ServicetaxNo" ColumnName="ServicetaxNo" />
+          <ScalarProperty Name="TotalAmout" ColumnName="TotalAmout" />
+          <ScalarProperty Name="WorkouttypeID" ColumnName="WorkouttypeID" />
+          <ScalarProperty Name="PlantypeID" ColumnName="PlantypeID" />
+          <ScalarProperty Name="Recivedby" ColumnName="Recivedby" />
+          <ScalarProperty Name="Recepitno" ColumnName="Recepitno" />
+          <ScalarProperty Name="PaymentTodt" ColumnName="PaymentTodt" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Usp_GetAllRenwalrecords" FunctionName="ajay_dbModel.Store.Usp_GetAllRenwalrecords">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.Usp_GetAllRenwalrecords_Result">
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Contactno" ColumnName="Contactno" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="MemberNo" ColumnName="MemberNo" />
+          <ScalarProperty Name="PlanName" ColumnName="PlanName" />
+          <ScalarProperty Name="SchemeName" ColumnName="SchemeName" />
+          <ScalarProperty Name="JoiningDate" ColumnName="JoiningDate" />
+          <ScalarProperty Name="RenwalDate" ColumnName="RenwalDate" />
+          <ScalarProperty Name="PaymentAmount" ColumnName="PaymentAmount" />
+          <ScalarProperty Name="WorkouttypeID" ColumnName="WorkouttypeID" />
+          <ScalarProperty Name="PlantypeID" ColumnName="PlantypeID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Usp_GetAllRenwalrecordsFromBetweenDate" FunctionName="ajay_dbModel.Store.Usp_GetAllRenwalrecordsFromBetweenDate">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.Usp_GetAllRenwalrecordsFromBetweenDate_Result">
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Contactno" ColumnName="Contactno" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="MemberNo" ColumnName="MemberNo" />
+          <ScalarProperty Name="PlanName" ColumnName="PlanName" />
+          <ScalarProperty Name="SchemeName" ColumnName="SchemeName" />
+          <ScalarProperty Name="JoiningDate" ColumnName="JoiningDate" />
+          <ScalarProperty Name="RenwalDate" ColumnName="RenwalDate" />
+          <ScalarProperty Name="PaymentAmount" ColumnName="PaymentAmount" />
+          <ScalarProperty Name="WorkouttypeID" ColumnName="WorkouttypeID" />
+          <ScalarProperty Name="PlantypeID" ColumnName="PlantypeID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Usp_GetAllUsers" FunctionName="ajay_dbModel.Store.Usp_GetAllUsers">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.Usp_GetAllUsers_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Usp_GetAmount_reg" FunctionName="ajay_dbModel.Store.Usp_GetAmount_reg" />
+    <FunctionImportMapping FunctionImportName="Usp_GetDataofMemberbyID" FunctionName="ajay_dbModel.Store.Usp_GetDataofMemberbyID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.Usp_GetDataofMemberbyID_Result">
+          <ScalarProperty Name="MemberNo" ColumnName="MemberNo" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="MainMemberID" ColumnName="MainMemberID" />
+          <ScalarProperty Name="JoiningDate" ColumnName="JoiningDate" />
+          <ScalarProperty Name="RenwalDate" ColumnName="RenwalDate" />
+          <ScalarProperty Name="PaymentAmount" ColumnName="PaymentAmount" />
+          <ScalarProperty Name="WorkouttypeID" ColumnName="WorkouttypeID" />
+          <ScalarProperty Name="PlantypeID" ColumnName="PlantypeID" />
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Usp_getDec" FunctionName="ajay_dbModel.Store.Usp_getDec">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.Usp_getDec_Result">
+          <ScalarProperty Name="MemberNo" ColumnName="MemberNo" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="LName" ColumnName="LName" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Contactno" ColumnName="Contactno" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="PlanName" ColumnName="PlanName" />
+          <ScalarProperty Name="SchemeName" ColumnName="SchemeName" />
+          <ScalarProperty Name="JoiningDate" ColumnName="JoiningDate" />
+          <ScalarProperty Name="RenwalDate" ColumnName="RenwalDate" />
+          <ScalarProperty Name="PaymentAmount" ColumnName="PaymentAmount" />
+          <ScalarProperty Name="Recivedby" ColumnName="Recivedby" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Usp_GetMonthwisepaymentdetails" FunctionName="ajay_dbModel.Store.Usp_GetMonthwisepaymentdetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.Usp_GetMonthwisepaymentdetails_Result">
+          <ScalarProperty Name="MemberFName" ColumnName="MemberFName" />
+          <ScalarProperty Name="MemberNo" ColumnName="MemberNo" />
+          <ScalarProperty Name="MemberLName" ColumnName="MemberLName" />
+          <ScalarProperty Name="MemberMName" ColumnName="MemberMName" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Paymentmonth" ColumnName="Paymentmonth" />
+          <ScalarProperty Name="PaymentAmount" ColumnName="PaymentAmount" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Usp_GetPlanByWorkTypeID" FunctionName="ajay_dbModel.Store.Usp_GetPlanByWorkTypeID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.Usp_GetPlanByWorkTypeID_Result">
+          <ScalarProperty Name="PlanID" ColumnName="PlanID" />
+          <ScalarProperty Name="PlanName" ColumnName="PlanName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Usp_getPlanPeriodID" FunctionName="ajay_dbModel.Store.Usp_getPlanPeriodID" />
+    <FunctionImportMapping FunctionImportName="Usp_getRoleByUserID" FunctionName="ajay_dbModel.Store.Usp_getRoleByUserID" />
+    <FunctionImportMapping FunctionImportName="Usp_GetRoles" FunctionName="ajay_dbModel.Store.Usp_GetRoles">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.Usp_GetRoles_Result">
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Usp_GetYearwisepaymentdetails" FunctionName="ajay_dbModel.Store.Usp_GetYearwisepaymentdetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.Usp_GetYearwisepaymentdetails_Result">
+          <ScalarProperty Name="CurrentYear" ColumnName="CurrentYear" />
+          <ScalarProperty Name="april" ColumnName="april" />
+          <ScalarProperty Name="may" ColumnName="may" />
+          <ScalarProperty Name="june" ColumnName="june" />
+          <ScalarProperty Name="july" ColumnName="july" />
+          <ScalarProperty Name="august" ColumnName="august" />
+          <ScalarProperty Name="sept" ColumnName="sept" />
+          <ScalarProperty Name="oct" ColumnName="oct" />
+          <ScalarProperty Name="nov" ColumnName="nov" />
+          <ScalarProperty Name="Decm" ColumnName="Decm" />
+          <ScalarProperty Name="jan" ColumnName="jan" />
+          <ScalarProperty Name="feb" ColumnName="feb" />
+          <ScalarProperty Name="march" ColumnName="march" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_listofMemberName" FunctionName="ajay_dbModel.Store.USP_listofMemberName">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.USP_listofMemberName_Result">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="MainMemberID" ColumnName="MainMemberID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_listofMemberno" FunctionName="ajay_dbModel.Store.USP_listofMemberno">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.USP_listofMemberno_Result">
+          <ScalarProperty Name="MemberNo" ColumnName="MemberNo" />
+          <ScalarProperty Name="MemID" ColumnName="MemID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Usp_PaymentDetailinfo" FunctionName="ajay_dbModel.Store.Usp_PaymentDetailinfo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.Usp_PaymentDetailinfo_Result">
+          <ScalarProperty Name="MemberReg" ColumnName="MemberReg" />
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Contactno" ColumnName="Contactno" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="Memberno" ColumnName="Memberno" />
+          <ScalarProperty Name="PlanName" ColumnName="PlanName" />
+          <ScalarProperty Name="SchemeName" ColumnName="SchemeName" />
+          <ScalarProperty Name="JoiningDate" ColumnName="JoiningDate" />
+          <ScalarProperty Name="RenwalDate" ColumnName="RenwalDate" />
+          <ScalarProperty Name="PaymentAmount" ColumnName="PaymentAmount" />
+          <ScalarProperty Name="WorkouttypeID" ColumnName="WorkouttypeID" />
+          <ScalarProperty Name="PlantypeID" ColumnName="PlantypeID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Usp_PaymentDetailinfo_Name" FunctionName="ajay_dbModel.Store.Usp_PaymentDetailinfo_Name">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.Usp_PaymentDetailinfo_Name_Result">
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Contactno" ColumnName="Contactno" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="MemberNo" ColumnName="MemberNo" />
+          <ScalarProperty Name="PlanName" ColumnName="PlanName" />
+          <ScalarProperty Name="SchemeName" ColumnName="SchemeName" />
+          <ScalarProperty Name="JoiningDate" ColumnName="JoiningDate" />
+          <ScalarProperty Name="RenwalDate" ColumnName="RenwalDate" />
+          <ScalarProperty Name="PaymentAmount" ColumnName="PaymentAmount" />
+          <ScalarProperty Name="WorkouttypeID" ColumnName="WorkouttypeID" />
+          <ScalarProperty Name="PlantypeID" ColumnName="PlantypeID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Usp_UserIDbyUserName" FunctionName="ajay_dbModel.Store.Usp_UserIDbyUserName" />
+    <FunctionImportMapping FunctionImportName="Usp_UserNamebyUserID" FunctionName="ajay_dbModel.Store.Usp_UserNamebyUserID" />
+  </EntityContainerMapping>
+</Mapping>

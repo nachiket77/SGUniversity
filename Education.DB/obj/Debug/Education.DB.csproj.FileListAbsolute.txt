@@ -1,0 +1,29 @@
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.DB\bin\Debug\Education.DB.dll.config
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.DB\bin\Debug\Education.DB.dll
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.DB\bin\Debug\Education.DB.pdb
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.DB\bin\Debug\EntityFramework.dll
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.DB\bin\Debug\EntityFramework.SqlServer.dll
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.DB\bin\Debug\EntityFramework.xml
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.DB\bin\Debug\EntityFramework.SqlServer.xml
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.DB\obj\Debug\Education.DB.csprojResolveAssemblyReference.cache
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.DB\obj\Debug\Education.DB.dll
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.DB\obj\Debug\Education.DB.pdb
+G:\ProjectWork\MayurMane\EducationApp\Education.DB\bin\Debug\Education.DB.dll.config
+G:\ProjectWork\MayurMane\EducationApp\Education.DB\bin\Debug\Education.DB.dll
+G:\ProjectWork\MayurMane\EducationApp\Education.DB\bin\Debug\Education.DB.pdb
+G:\ProjectWork\MayurMane\EducationApp\Education.DB\bin\Debug\EntityFramework.dll
+G:\ProjectWork\MayurMane\EducationApp\Education.DB\bin\Debug\EntityFramework.SqlServer.dll
+G:\ProjectWork\MayurMane\EducationApp\Education.DB\bin\Debug\EntityFramework.xml
+G:\ProjectWork\MayurMane\EducationApp\Education.DB\bin\Debug\EntityFramework.SqlServer.xml
+G:\ProjectWork\MayurMane\EducationApp\Education.DB\obj\Debug\Education.DB.dll
+G:\ProjectWork\MayurMane\EducationApp\Education.DB\obj\Debug\Education.DB.pdb
+C:\TeacherFair\EducationApp\EducationApp\Education.DB\bin\Debug\Education.DB.dll.config
+C:\TeacherFair\EducationApp\EducationApp\Education.DB\bin\Debug\Education.DB.dll
+C:\TeacherFair\EducationApp\EducationApp\Education.DB\bin\Debug\Education.DB.pdb
+C:\TeacherFair\EducationApp\EducationApp\Education.DB\bin\Debug\EntityFramework.dll
+C:\TeacherFair\EducationApp\EducationApp\Education.DB\bin\Debug\EntityFramework.SqlServer.dll
+C:\TeacherFair\EducationApp\EducationApp\Education.DB\bin\Debug\EntityFramework.xml
+C:\TeacherFair\EducationApp\EducationApp\Education.DB\bin\Debug\EntityFramework.SqlServer.xml
+C:\TeacherFair\EducationApp\EducationApp\Education.DB\obj\Debug\Education.DB.csprojResolveAssemblyReference.cache
+C:\TeacherFair\EducationApp\EducationApp\Education.DB\obj\Debug\Education.DB.dll
+C:\TeacherFair\EducationApp\EducationApp\Education.DB\obj\Debug\Education.DB.pdb

@@ -1,0 +1,1826 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ajay_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Fiscalyear">
+    <Key>
+      <PropertyRef Name="Fid" />
+    </Key>
+    <Property Name="Fid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FiscalyearFromDate" Type="datetime" />
+    <Property Name="FiscalyearToDate" Type="datetime" />
+    <Property Name="Year" Type="varchar" MaxLength="4" />
+  </EntityType>
+  <EntityType Name="MemberRegistration">
+    <Key>
+      <PropertyRef Name="MemID" />
+    </Key>
+    <Property Name="MemID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MemberNo" Type="nvarchar" MaxLength="20" />
+    <Property Name="MemberFName" Type="nvarchar" MaxLength="100" />
+    <Property Name="MemberLName" Type="nvarchar" MaxLength="100" />
+    <Property Name="MemberMName" Type="nvarchar" MaxLength="100" />
+    <Property Name="DOB" Type="datetime" />
+    <Property Name="Age" Type="nvarchar" MaxLength="10" />
+    <Property Name="Contactno" Type="nvarchar" MaxLength="10" />
+    <Property Name="EmailID" Type="nvarchar" MaxLength="30" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="30" />
+    <Property Name="PlantypeID" Type="int" />
+    <Property Name="WorkouttypeID" Type="int" />
+    <Property Name="Createdby" Type="bigint" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="bigint" />
+    <Property Name="MemImagename" Type="nvarchar" MaxLength="500" />
+    <Property Name="MemImagePath" Type="nvarchar" MaxLength="500" />
+    <Property Name="JoiningDate" Type="datetime" />
+    <Property Name="Address" Type="nvarchar" MaxLength="500" />
+    <Property Name="MainMemberID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="PaymentDetails">
+    <Key>
+      <PropertyRef Name="PaymentID" />
+    </Key>
+    <Property Name="PaymentID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlanID" Type="int" />
+    <Property Name="WorkouttypeID" Type="int" />
+    <Property Name="Paymenttype" Type="nvarchar" MaxLength="50" />
+    <Property Name="PaymentFromdt" Type="datetime" />
+    <Property Name="PaymentTodt" Type="datetime" />
+    <Property Name="PaymentAmount" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="NextRenwalDate" Type="datetime" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateUserID" Type="int" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyUserID" Type="int" />
+    <Property Name="RecStatus" Type="char" MaxLength="1" />
+    <Property Name="MemberID" Type="bigint" />
+    <Property Name="MemberNo" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="PlanMaster">
+    <Key>
+      <PropertyRef Name="PlanID" />
+    </Key>
+    <Property Name="PlanID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlanName" Type="varchar" MaxLength="50" />
+    <Property Name="PlanAmount" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="ServicetaxAmout" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="ServiceTax" Type="varchar" MaxLength="50" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateUserID" Type="int" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="ModifyUserID" Type="int" />
+    <Property Name="RecStatus" Type="char" MaxLength="1" />
+    <Property Name="SchemeID" Type="int" />
+    <Property Name="PeriodID" Type="int" />
+    <Property Name="TotalAmout" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="ServicetaxNo" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ReceiptDetails">
+    <Key>
+      <PropertyRef Name="ReceiptID" />
+    </Key>
+    <Property Name="ReceiptID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Memberid" Type="bigint" />
+    <Property Name="generateby" Type="bigint" />
+    <Property Name="createdby" Type="bigint" />
+    <Property Name="createddate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SchemeMaster">
+    <Key>
+      <PropertyRef Name="SchemeID" />
+    </Key>
+    <Property Name="SchemeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SchemeName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Createdby" Type="int" />
+    <Property Name="Createddate" Type="datetime" />
+    <Property Name="schemebit" Type="bit" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TBL_COURSE_SUBJECT_MAPPING_DETAILS">
+    <Key>
+      <PropertyRef Name="SUBCORID" />
+    </Key>
+    <Property Name="SUBCORID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="COURSEID" Type="int" />
+    <Property Name="SUBJECTID" Type="int" />
+    <Property Name="CREATEDDATE" Type="datetime" />
+    <Property Name="MODIFIEDDATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBL_GN_ANNAUNCMENT">
+    <Key>
+      <PropertyRef Name="ANNAUNCMENTID" />
+    </Key>
+    <Property Name="ANNAUNCMENTID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SUMMARY" Type="nvarchar" MaxLength="100" />
+    <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="2000" />
+    <Property Name="PUBLISHDATE" Type="datetime" />
+    <Property Name="CREATEDDATE" Type="datetime" />
+    <Property Name="CREATEDBY" Type="bigint" />
+    <Property Name="MODIFIEDBY" Type="bigint" />
+    <Property Name="MODIFIEDDATE" Type="datetime" />
+    <Property Name="STATUS" Type="bit" />
+  </EntityType>
+  <EntityType Name="TBL_GN_DIGITALDOC_DETAILS">
+    <Key>
+      <PropertyRef Name="DIGITALDOCID" />
+    </Key>
+    <Property Name="DIGITALDOCID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DIGITALDOCTYPEID" Type="int" />
+    <Property Name="DOCUMENTNAME" Type="nvarchar" MaxLength="100" />
+    <Property Name="SUBJECTID" Type="int" />
+    <Property Name="CREATEDBY" Type="bigint" />
+    <Property Name="CREATEDDATE" Type="datetime" />
+    <Property Name="MODIFIEDBY" Type="bigint" />
+    <Property Name="MODIFIEDDATE" Type="datetime" />
+    <Property Name="STATUS" Type="bit" />
+    <Property Name="ALLOWANONYMOUS" Type="bit" />
+    <Property Name="DOWNLOADCOUNT" Type="int" />
+    <Property Name="VIEWCOUNT" Type="int" />
+  </EntityType>
+  <EntityType Name="TBL_GN_DIGITALDOC_VIEWDETAILS">
+    <Key>
+      <PropertyRef Name="DOCVIEWID" />
+    </Key>
+    <Property Name="DOCVIEWID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DIGITALDOCID" Type="bigint" />
+    <Property Name="VIEWBY" Type="bigint" />
+    <Property Name="DOWNLOADBY" Type="bigint" />
+    <Property Name="CREATEDDATE" Type="datetime" />
+    <Property Name="MODIFIEDDATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBL_MASTER_BOARDS">
+    <Key>
+      <PropertyRef Name="BOARDID" />
+    </Key>
+    <Property Name="BOARDID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAME" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="TBL_MASTER_CITY">
+    <Key>
+      <PropertyRef Name="CITYID" />
+    </Key>
+    <Property Name="CITYID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAME" Type="nchar" MaxLength="10" />
+    <Property Name="STATEID" Type="int" />
+  </EntityType>
+  <EntityType Name="TBL_MASTER_CLASS">
+    <Key>
+      <PropertyRef Name="CLASSID" />
+    </Key>
+    <Property Name="CLASSID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAME" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_MASTER_COUNTRY">
+    <Key>
+      <PropertyRef Name="COUNTRYID" />
+    </Key>
+    <Property Name="COUNTRYID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAME" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TBL_MASTER_COURSE">
+    <Key>
+      <PropertyRef Name="COURSEID" />
+    </Key>
+    <Property Name="COURSEID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAME" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="TBL_MASTER_DIGITALDOC">
+    <Key>
+      <PropertyRef Name="DIGITALDOCTYPEID" />
+    </Key>
+    <Property Name="DIGITALDOCTYPEID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DIGITALDOCNAME" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="TBL_MASTER_DOCUMENTTYPE">
+    <Key>
+      <PropertyRef Name="DocumentTypeID" />
+    </Key>
+    <Property Name="DocumentTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DocumentTypeName" Type="nvarchar" MaxLength="70" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_MASTER_STATE">
+    <Key>
+      <PropertyRef Name="STATEID" />
+    </Key>
+    <Property Name="STATEID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAME" Type="nvarchar" MaxLength="100" />
+    <Property Name="COUNTRYID" Type="int" />
+  </EntityType>
+  <EntityType Name="TBL_MASTER_STATUS">
+    <Key>
+      <PropertyRef Name="STATUSID" />
+    </Key>
+    <Property Name="STATUSID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAME" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="TBL_MASTER_SUBJECT">
+    <Key>
+      <PropertyRef Name="SUBJECTID" />
+    </Key>
+    <Property Name="SUBJECTID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAME" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="TBL_MASTER_TEACHER">
+    <Key>
+      <PropertyRef Name="TEACHERID" />
+    </Key>
+    <Property Name="TEACHERID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FIRSTNAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="MIDDLENAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="LASTNAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="EMAILID" Type="nvarchar" MaxLength="50" />
+    <Property Name="MOBILENUMBER" Type="nvarchar" MaxLength="50" />
+    <Property Name="COURSEID" Type="int" />
+    <Property Name="SUBJECTID" Type="int" />
+    <Property Name="CREATEDDATE" Type="datetime" />
+    <Property Name="CREATEDBY" Type="nvarchar" MaxLength="50" />
+    <Property Name="MODIFIEDDATE" Type="datetime" />
+    <Property Name="MODIFIEDBY" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TBL_MASTER_TEST_TYPE">
+    <Key>
+      <PropertyRef Name="TESTTYPEID" />
+    </Key>
+    <Property Name="TESTTYPEID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TESTTYPENAME" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TBL_MASTER_TESTQUESTIONTYPE">
+    <Key>
+      <PropertyRef Name="QUESTIONTYPEID" />
+    </Key>
+    <Property Name="QUESTIONTYPEID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TYPENAME" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TBL_MASTER_USERTYPE">
+    <Key>
+      <PropertyRef Name="USERTYPEID" />
+    </Key>
+    <Property Name="USERTYPEID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TYPENAME" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="TBL_STUDENT_MASTER_MAPPING">
+    <Key>
+      <PropertyRef Name="STUDENTMASTERID" />
+    </Key>
+    <Property Name="STUDENTMASTERID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="COURSEID" Type="bigint" />
+    <Property Name="PARENTID" Type="bigint" />
+    <Property Name="PROFESSIONALDETAILID" Type="bigint" />
+    <Property Name="STUDENTID" Type="bigint" />
+    <Property Name="USERID" Type="bigint" />
+    <Property Name="USERDOCUMENTID" Type="bigint" />
+    <Property Name="ROLEID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="TBL_TEACHER_COURSE_MAPPING_DETAILS">
+    <Key>
+      <PropertyRef Name="TEACHERCOURSEID" />
+    </Key>
+    <Property Name="TEACHERCOURSEID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TEACHERID" Type="bigint" />
+    <Property Name="COURSEID" Type="int" />
+    <Property Name="CREATEDDATE" Type="datetime" />
+    <Property Name="MODIFIEDDATE" Type="datetime" />
+    <Property Name="SUBJECTID" Type="int" />
+  </EntityType>
+  <EntityType Name="TBL_TEACHER_SUBJECT_MAPPING_DETAILS">
+    <Key>
+      <PropertyRef Name="TEACHERSUBJECTID" />
+    </Key>
+    <Property Name="TEACHERSUBJECTID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TEACHERID" Type="bigint" />
+    <Property Name="SUBJECTID" Type="int" />
+    <Property Name="CREATEDDATE" Type="datetime" />
+    <Property Name="MODIFIEDDATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBL_TEST_ANSWERS">
+    <Key>
+      <PropertyRef Name="ANSWERID" />
+    </Key>
+    <Property Name="ANSWERID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="1000" />
+    <Property Name="QUESTIONID" Type="bigint" />
+    <Property Name="TESTID" Type="bigint" />
+    <Property Name="ISVALID" Type="bit" />
+  </EntityType>
+  <EntityType Name="TBL_TEST_ATAMPT">
+    <Key>
+      <PropertyRef Name="TESTATAMPTID" />
+    </Key>
+    <Property Name="TESTATAMPTID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TESTID" Type="bigint" />
+    <Property Name="USERID" Type="bigint" />
+    <Property Name="STARTDATETIME" Type="datetime" />
+    <Property Name="ENDDATETIME" Type="datetime" />
+    <Property Name="TOTALMARKS" Type="int" />
+  </EntityType>
+  <EntityType Name="TBL_TEST_ATAMPT_QUESTION_ANSWER">
+    <Key>
+      <PropertyRef Name="ATAMPTTESTANSWERID" />
+    </Key>
+    <Property Name="ATAMPTTESTANSWERID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="QUESTIONID" Type="bigint" />
+    <Property Name="ANSWERID" Type="bigint" />
+    <Property Name="TESTID" Type="bigint" />
+    <Property Name="REMARKS" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="TBL_TEST_QUESTIONS">
+    <Key>
+      <PropertyRef Name="QUESTIONID" />
+    </Key>
+    <Property Name="QUESTIONID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DESCRIPTION" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ISMULTISELECT" Type="bit" Nullable="false" />
+    <Property Name="TESTID" Type="bigint" Nullable="false" />
+    <Property Name="QUESTIONTYPEID" Type="int" Nullable="false" />
+    <Property Name="MARKS" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_TEST_TESTDETAIL">
+    <Key>
+      <PropertyRef Name="TESTID" />
+    </Key>
+    <Property Name="TESTID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TITLE" Type="nvarchar" MaxLength="100" />
+    <Property Name="SUBJECTID" Type="int" />
+    <Property Name="PUBLISHDATE" Type="datetime" />
+    <Property Name="STATUS" Type="bit" />
+    <Property Name="GIVENBY" Type="bigint" />
+    <Property Name="CREATEDBY" Type="bigint" />
+    <Property Name="CREATEDDATE" Type="datetime" />
+    <Property Name="MODIFIEDBY" Type="bigint" />
+    <Property Name="MODIFIEDDATE" Type="datetime" />
+    <Property Name="COURSEID" Type="int" />
+    <Property Name="TESTTYPEID" Type="int" />
+  </EntityType>
+  <EntityType Name="TBL_USER_ADDRESS_DETAILS">
+    <Key>
+      <PropertyRef Name="ADDRESSDETAILID" />
+    </Key>
+    <Property Name="ADDRESSDETAILID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USERID" Type="bigint" Nullable="false" />
+    <Property Name="ADDRESSTYPEID" Type="int" Nullable="false" />
+    <Property Name="ADDRESSLINE1" Type="nvarchar" MaxLength="100" />
+    <Property Name="ADDRESSLINE2" Type="nvarchar" MaxLength="100" />
+    <Property Name="CITY" Type="int" />
+    <Property Name="STATE" Type="int" />
+    <Property Name="COUNTRY" Type="int" />
+    <Property Name="PINCODE" Type="nvarchar" MaxLength="10" />
+    <Property Name="STATUS" Type="bit" />
+    <Property Name="CREATEDBY" Type="bigint" />
+    <Property Name="CREATEDDATE" Type="datetime" />
+    <Property Name="MODIFIEDDATE" Type="datetime" />
+    <Property Name="MODIFIEDBY" Type="bigint" />
+  </EntityType>
+  <EntityType Name="TBL_USER_COURSE_DETAILS">
+    <Key>
+      <PropertyRef Name="STUDENTCOURSEID" />
+    </Key>
+    <Property Name="STUDENTCOURSEID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USERID" Type="bigint" />
+    <Property Name="COURSEID" Type="int" />
+    <Property Name="JOINDATE" Type="datetime" />
+    <Property Name="COMPLETEDATE" Type="datetime" />
+    <Property Name="CREATEDBY" Type="bigint" />
+    <Property Name="MODIFIEDBY" Type="bigint" />
+    <Property Name="CREATEDDATE" Type="datetime" />
+    <Property Name="MODIFIEDDATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBL_USER_COURSE_MAPPING_DETAILS">
+    <Key>
+      <PropertyRef Name="USERCOURSEID" />
+    </Key>
+    <Property Name="USERCOURSEID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USERID" Type="bigint" />
+    <Property Name="COURSEID" Type="int" />
+    <Property Name="CREATEDDATE" Type="datetime" />
+    <Property Name="MODIFIEDDATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBL_USER_DETAILS">
+    <Key>
+      <PropertyRef Name="PERSONALDETAILID" />
+    </Key>
+    <Property Name="PERSONALDETAILID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USERID" Type="bigint" Nullable="false" />
+    <Property Name="FIRSTNAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="MIDDLENAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="LASTNAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="MOTHERNAME" Type="nvarchar" MaxLength="150" />
+    <Property Name="FATHERNAME" Type="nvarchar" MaxLength="150" />
+    <Property Name="DOB" Type="datetime" />
+    <Property Name="DISABILITY" Type="nvarchar" MaxLength="100" />
+    <Property Name="ENROLNMENTID" Type="nvarchar" MaxLength="20" />
+    <Property Name="GENDER" Type="nvarchar" MaxLength="10" />
+    <Property Name="NATIONALITY" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TBL_USER_DOCUMENTS_DETAILS">
+    <Key>
+      <PropertyRef Name="USERDOCUMENTID" />
+    </Key>
+    <Property Name="USERDOCUMENTID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DOCUMENTTYPEID" Type="int" />
+    <Property Name="DOCUMENTNAME" Type="nvarchar" MaxLength="100" />
+    <Property Name="USERID" Type="bigint" Nullable="false" />
+    <Property Name="STATUS" Type="bit" />
+    <Property Name="CREATEDBY" Type="bigint" />
+    <Property Name="CREATEDDATE" Type="datetime" />
+    <Property Name="MODIFIEDBY" Type="bigint" />
+    <Property Name="MODIFIEDDATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBL_USER_INSTITUTION_DETAILS">
+    <Key>
+      <PropertyRef Name="INSTITUTIONID" />
+    </Key>
+    <Property Name="INSTITUTIONID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="INSTITUTIONNAME" Type="nvarchar" MaxLength="1000" />
+    <Property Name="USERID" Type="bigint" />
+    <Property Name="CLASSID" Type="int" />
+    <Property Name="BOARDID" Type="int" Nullable="false" />
+    <Property Name="PASSINGYEAR" Type="int" />
+    <Property Name="GRADE_PERCENT" Type="nvarchar" MaxLength="10" />
+    <Property Name="CREATEDBY" Type="bigint" />
+    <Property Name="CREATEDDATE" Type="datetime" />
+    <Property Name="MODIFIEDBY" Type="bigint" />
+    <Property Name="MODIFIEDDATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBL_USER_LOGIN">
+    <Key>
+      <PropertyRef Name="USERID" />
+    </Key>
+    <Property Name="USERID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LOGIN_EMAIL" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="LOGIN_MOBILE" Type="nvarchar" MaxLength="10" />
+    <Property Name="PASSWORD" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="STATUSID" Type="int" Nullable="false" />
+    <Property Name="USERTYPEID" Type="int" Nullable="false" />
+    <Property Name="PASSWORDRETRYCOUNT" Type="int" Nullable="false" />
+    <Property Name="CREATEDDATE" Type="datetime" />
+    <Property Name="MODIFIEDDATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBL_USER_LOGIN_TRAIL">
+    <Key>
+      <PropertyRef Name="LOGIN_TRAIL_ID" />
+    </Key>
+    <Property Name="LOGIN_TRAIL_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USERID" Type="bigint" Nullable="false" />
+    <Property Name="IPADDRESS" Type="nvarchar" MaxLength="15" />
+    <Property Name="LATITUTE" Type="nvarchar" MaxLength="50" />
+    <Property Name="LONGITUTE" Type="nvarchar" MaxLength="50" />
+    <Property Name="LOGINDATETIME" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBL_USER_PARENTS_DETAILS">
+    <Key>
+      <PropertyRef Name="PARENTID" />
+    </Key>
+    <Property Name="PARENTID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USERID" Type="bigint" />
+    <Property Name="FATHERNAME" Type="nvarchar" MaxLength="150" />
+    <Property Name="FATHEREMAIL" Type="nvarchar" MaxLength="100" />
+    <Property Name="FATHERMOBILENUMBER" Type="nchar" MaxLength="10" />
+    <Property Name="FATHEROCCUPATION" Type="nvarchar" MaxLength="100" />
+    <Property Name="FATHERCOMPANYNAME" Type="nvarchar" MaxLength="200" />
+    <Property Name="FATHERDESIGNATION" Type="nvarchar" MaxLength="50" />
+    <Property Name="MOTHERNAME" Type="nvarchar" MaxLength="150" />
+    <Property Name="MOTHEREMAIL" Type="nchar" MaxLength="10" />
+    <Property Name="MOTHERMOBILENUMBER" Type="nvarchar" MaxLength="10" />
+    <Property Name="MOTHEROCCUPATION" Type="nvarchar" MaxLength="100" />
+    <Property Name="MOTHERCOMPANYNAME" Type="nvarchar" MaxLength="200" />
+    <Property Name="MOTHERDESIGNATION" Type="nvarchar" MaxLength="50" />
+    <Property Name="CREATEDBY" Type="bigint" />
+    <Property Name="CREATEDDATE" Type="datetime" />
+    <Property Name="MODIFIEDBY" Type="bigint" />
+    <Property Name="MODIFIEDDATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBL_USER_PROFESSIONAL_DETAILS">
+    <Key>
+      <PropertyRef Name="PROFESSIONALDETAILID" />
+    </Key>
+    <Property Name="PROFESSIONALDETAILID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USERID" Type="bigint" />
+    <Property Name="COMPANYNAME" Type="nvarchar" MaxLength="200" />
+    <Property Name="DESIGNATION" Type="nvarchar" MaxLength="50" />
+    <Property Name="EMPLOYEETYPE" Type="nvarchar" MaxLength="10" />
+    <Property Name="REMARKS" Type="nvarchar" MaxLength="100" />
+    <Property Name="CREATEBY" Type="bigint" />
+    <Property Name="CREATEDDATE" Type="datetime" />
+    <Property Name="MODIFIEDDBY" Type="bigint" />
+    <Property Name="MODIFIEDDATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBL_USER_ROLE">
+    <Key>
+      <PropertyRef Name="ROLE_ID" />
+    </Key>
+    <Property Name="ROLE_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USERTYPEID" Type="int" />
+    <Property Name="USERID" Type="bigint" />
+    <Property Name="CREATEDBY" Type="bigint" />
+    <Property Name="CREATEDDATE" Type="datetime" />
+    <Property Name="MODIFIEDBY" Type="bigint" />
+    <Property Name="MODIFIEDDATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBL_USER_SUBJECTS">
+    <Key>
+      <PropertyRef Name="USERSUBJECTID" />
+    </Key>
+    <Property Name="USERSUBJECTID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SUBJECTID" Type="int" />
+    <Property Name="USERID" Type="bigint" />
+    <Property Name="CREATEDBY" Type="bigint" />
+    <Property Name="CREATEDDATE" Type="datetime" />
+    <Property Name="MODIFIEDBY" Type="bigint" />
+    <Property Name="MODIFIEDDATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="56" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="200" />
+    <Property Name="EmailID" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="webpages_Membership">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="ConfirmationToken" Type="nvarchar" MaxLength="128" />
+    <Property Name="IsConfirmed" Type="bit" />
+    <Property Name="LastPasswordFailureDate" Type="datetime" />
+    <Property Name="PasswordFailuresSinceLastSuccess" Type="int" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="PasswordChangedDate" Type="datetime" />
+    <Property Name="PasswordSalt" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="PasswordVerificationToken" Type="nvarchar" MaxLength="128" />
+    <Property Name="PasswordVerificationTokenExpirationDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="webpages_OAuthMembership">
+    <Key>
+      <PropertyRef Name="Provider" />
+      <PropertyRef Name="ProviderUserId" />
+    </Key>
+    <Property Name="Provider" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="ProviderUserId" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="webpages_Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="webpages_UsersInRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="fk_RoleId">
+    <End Role="webpages_Roles" Type="Self.webpages_Roles" Multiplicity="1" />
+    <End Role="webpages_UsersInRoles" Type="Self.webpages_UsersInRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="webpages_Roles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="webpages_UsersInRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_1_TBL_TEST_TESTDETAIL">
+    <End Role="TBL_TEST_TESTDETAIL" Type="Self.TBL_TEST_TESTDETAIL" Multiplicity="1" />
+    <End Role="TBL_TEST_QUESTIONS" Type="Self.TBL_TEST_QUESTIONS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_TEST_TESTDETAIL">
+        <PropertyRef Name="TESTID" />
+      </Principal>
+      <Dependent Role="TBL_TEST_QUESTIONS">
+        <PropertyRef Name="TESTID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_GN_DIGITALDOC_DETAILS_TBL_MASTER_SUBJECT">
+    <End Role="TBL_MASTER_SUBJECT" Type="Self.TBL_MASTER_SUBJECT" Multiplicity="0..1" />
+    <End Role="TBL_GN_DIGITALDOC_DETAILS" Type="Self.TBL_GN_DIGITALDOC_DETAILS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_MASTER_SUBJECT">
+        <PropertyRef Name="SUBJECTID" />
+      </Principal>
+      <Dependent Role="TBL_GN_DIGITALDOC_DETAILS">
+        <PropertyRef Name="SUBJECTID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_GN_DIGITALDOC_VIEWDETAILS_TBL_GN_DIGITALDOC_DETAILS">
+    <End Role="TBL_GN_DIGITALDOC_DETAILS" Type="Self.TBL_GN_DIGITALDOC_DETAILS" Multiplicity="0..1" />
+    <End Role="TBL_GN_DIGITALDOC_VIEWDETAILS" Type="Self.TBL_GN_DIGITALDOC_VIEWDETAILS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_GN_DIGITALDOC_DETAILS">
+        <PropertyRef Name="DIGITALDOCID" />
+      </Principal>
+      <Dependent Role="TBL_GN_DIGITALDOC_VIEWDETAILS">
+        <PropertyRef Name="DIGITALDOCID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_MASTER_CITY_TBL_MASTER_STATE">
+    <End Role="TBL_MASTER_STATE" Type="Self.TBL_MASTER_STATE" Multiplicity="0..1" />
+    <End Role="TBL_MASTER_CITY" Type="Self.TBL_MASTER_CITY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_MASTER_STATE">
+        <PropertyRef Name="STATEID" />
+      </Principal>
+      <Dependent Role="TBL_MASTER_CITY">
+        <PropertyRef Name="STATEID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_MASTER_STATE_TBL_MASTER_COUNTRY">
+    <End Role="TBL_MASTER_COUNTRY" Type="Self.TBL_MASTER_COUNTRY" Multiplicity="0..1" />
+    <End Role="TBL_MASTER_STATE" Type="Self.TBL_MASTER_STATE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_MASTER_COUNTRY">
+        <PropertyRef Name="COUNTRYID" />
+      </Principal>
+      <Dependent Role="TBL_MASTER_STATE">
+        <PropertyRef Name="COUNTRYID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_TEST_ANSWERS_TBL_TEST_QUESTIONS">
+    <End Role="TBL_TEST_QUESTIONS" Type="Self.TBL_TEST_QUESTIONS" Multiplicity="0..1" />
+    <End Role="TBL_TEST_ANSWERS" Type="Self.TBL_TEST_ANSWERS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_TEST_QUESTIONS">
+        <PropertyRef Name="QUESTIONID" />
+      </Principal>
+      <Dependent Role="TBL_TEST_ANSWERS">
+        <PropertyRef Name="QUESTIONID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_TEST_ANSWERS_TBL_TEST_TESTDETAIL">
+    <End Role="TBL_TEST_TESTDETAIL" Type="Self.TBL_TEST_TESTDETAIL" Multiplicity="0..1" />
+    <End Role="TBL_TEST_ANSWERS" Type="Self.TBL_TEST_ANSWERS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_TEST_TESTDETAIL">
+        <PropertyRef Name="TESTID" />
+      </Principal>
+      <Dependent Role="TBL_TEST_ANSWERS">
+        <PropertyRef Name="TESTID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_TEST_ATAMPT_QUESTION_ANSWER_TBL_TEST_QUESTIONS">
+    <End Role="TBL_TEST_QUESTIONS" Type="Self.TBL_TEST_QUESTIONS" Multiplicity="0..1" />
+    <End Role="TBL_TEST_ATAMPT_QUESTION_ANSWER" Type="Self.TBL_TEST_ATAMPT_QUESTION_ANSWER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_TEST_QUESTIONS">
+        <PropertyRef Name="QUESTIONID" />
+      </Principal>
+      <Dependent Role="TBL_TEST_ATAMPT_QUESTION_ANSWER">
+        <PropertyRef Name="QUESTIONID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_TEST_ATAMPT_QUESTION_ANSWER_TBL_TEST_TESTDETAIL">
+    <End Role="TBL_TEST_TESTDETAIL" Type="Self.TBL_TEST_TESTDETAIL" Multiplicity="0..1" />
+    <End Role="TBL_TEST_ATAMPT_QUESTION_ANSWER" Type="Self.TBL_TEST_ATAMPT_QUESTION_ANSWER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_TEST_TESTDETAIL">
+        <PropertyRef Name="TESTID" />
+      </Principal>
+      <Dependent Role="TBL_TEST_ATAMPT_QUESTION_ANSWER">
+        <PropertyRef Name="TESTID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_TEST_ATAMPT_TBL_TEST_TESTDETAIL">
+    <End Role="TBL_TEST_TESTDETAIL" Type="Self.TBL_TEST_TESTDETAIL" Multiplicity="0..1" />
+    <End Role="TBL_TEST_ATAMPT" Type="Self.TBL_TEST_ATAMPT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_TEST_TESTDETAIL">
+        <PropertyRef Name="TESTID" />
+      </Principal>
+      <Dependent Role="TBL_TEST_ATAMPT">
+        <PropertyRef Name="TESTID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_TEST_ATAMPT_TBL_USER_LOGIN">
+    <End Role="TBL_USER_LOGIN" Type="Self.TBL_USER_LOGIN" Multiplicity="0..1" />
+    <End Role="TBL_TEST_ATAMPT" Type="Self.TBL_TEST_ATAMPT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_USER_LOGIN">
+        <PropertyRef Name="USERID" />
+      </Principal>
+      <Dependent Role="TBL_TEST_ATAMPT">
+        <PropertyRef Name="USERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_TEST_QUESTIONS_TBL_MASTER_TESTQUESTIONTYPE">
+    <End Role="TBL_MASTER_TESTQUESTIONTYPE" Type="Self.TBL_MASTER_TESTQUESTIONTYPE" Multiplicity="1" />
+    <End Role="TBL_TEST_QUESTIONS" Type="Self.TBL_TEST_QUESTIONS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_MASTER_TESTQUESTIONTYPE">
+        <PropertyRef Name="QUESTIONTYPEID" />
+      </Principal>
+      <Dependent Role="TBL_TEST_QUESTIONS">
+        <PropertyRef Name="QUESTIONTYPEID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_TEST_TESTDETAIL_TBL_MASTER_SUBJECT">
+    <End Role="TBL_MASTER_SUBJECT" Type="Self.TBL_MASTER_SUBJECT" Multiplicity="0..1" />
+    <End Role="TBL_TEST_TESTDETAIL" Type="Self.TBL_TEST_TESTDETAIL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_MASTER_SUBJECT">
+        <PropertyRef Name="SUBJECTID" />
+      </Principal>
+      <Dependent Role="TBL_TEST_TESTDETAIL">
+        <PropertyRef Name="SUBJECTID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_USER_ADDRESS_DETAILS_TBL_USER_LOGIN">
+    <End Role="TBL_USER_LOGIN" Type="Self.TBL_USER_LOGIN" Multiplicity="1" />
+    <End Role="TBL_USER_ADDRESS_DETAILS" Type="Self.TBL_USER_ADDRESS_DETAILS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_USER_LOGIN">
+        <PropertyRef Name="USERID" />
+      </Principal>
+      <Dependent Role="TBL_USER_ADDRESS_DETAILS">
+        <PropertyRef Name="USERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_USER_COURSE_DETAILS_TBL_MASTER_COURSE">
+    <End Role="TBL_MASTER_COURSE" Type="Self.TBL_MASTER_COURSE" Multiplicity="0..1" />
+    <End Role="TBL_USER_COURSE_DETAILS" Type="Self.TBL_USER_COURSE_DETAILS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_MASTER_COURSE">
+        <PropertyRef Name="COURSEID" />
+      </Principal>
+      <Dependent Role="TBL_USER_COURSE_DETAILS">
+        <PropertyRef Name="COURSEID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_USER_COURSE_DETAILS_TBL_USER_LOGIN">
+    <End Role="TBL_USER_LOGIN" Type="Self.TBL_USER_LOGIN" Multiplicity="0..1" />
+    <End Role="TBL_USER_COURSE_DETAILS" Type="Self.TBL_USER_COURSE_DETAILS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_USER_LOGIN">
+        <PropertyRef Name="USERID" />
+      </Principal>
+      <Dependent Role="TBL_USER_COURSE_DETAILS">
+        <PropertyRef Name="USERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_USER_DETAILS_TBL_USER_DETAILS">
+    <End Role="TBL_USER_LOGIN" Type="Self.TBL_USER_LOGIN" Multiplicity="1" />
+    <End Role="TBL_USER_DETAILS" Type="Self.TBL_USER_DETAILS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_USER_LOGIN">
+        <PropertyRef Name="USERID" />
+      </Principal>
+      <Dependent Role="TBL_USER_DETAILS">
+        <PropertyRef Name="USERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_USER_DOCUMENTS_DETAILS_TBL_MASTER_DOCUMENTTYPE">
+    <End Role="TBL_MASTER_DOCUMENTTYPE" Type="Self.TBL_MASTER_DOCUMENTTYPE" Multiplicity="0..1" />
+    <End Role="TBL_USER_DOCUMENTS_DETAILS" Type="Self.TBL_USER_DOCUMENTS_DETAILS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_MASTER_DOCUMENTTYPE">
+        <PropertyRef Name="DocumentTypeID" />
+      </Principal>
+      <Dependent Role="TBL_USER_DOCUMENTS_DETAILS">
+        <PropertyRef Name="DOCUMENTTYPEID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_USER_DOCUMENTS_DETAILS_TBL_USER_LOGIN">
+    <End Role="TBL_USER_LOGIN" Type="Self.TBL_USER_LOGIN" Multiplicity="1" />
+    <End Role="TBL_USER_DOCUMENTS_DETAILS" Type="Self.TBL_USER_DOCUMENTS_DETAILS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_USER_LOGIN">
+        <PropertyRef Name="USERID" />
+      </Principal>
+      <Dependent Role="TBL_USER_DOCUMENTS_DETAILS">
+        <PropertyRef Name="USERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_USER_INSTITUTION_DETAILS_TBL_MASTER_BOARDS">
+    <End Role="TBL_MASTER_BOARDS" Type="Self.TBL_MASTER_BOARDS" Multiplicity="1" />
+    <End Role="TBL_USER_INSTITUTION_DETAILS" Type="Self.TBL_USER_INSTITUTION_DETAILS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_MASTER_BOARDS">
+        <PropertyRef Name="BOARDID" />
+      </Principal>
+      <Dependent Role="TBL_USER_INSTITUTION_DETAILS">
+        <PropertyRef Name="BOARDID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_USER_INSTITUTION_DETAILS_TBL_MASTER_CLASS">
+    <End Role="TBL_MASTER_CLASS" Type="Self.TBL_MASTER_CLASS" Multiplicity="0..1" />
+    <End Role="TBL_USER_INSTITUTION_DETAILS" Type="Self.TBL_USER_INSTITUTION_DETAILS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_MASTER_CLASS">
+        <PropertyRef Name="CLASSID" />
+      </Principal>
+      <Dependent Role="TBL_USER_INSTITUTION_DETAILS">
+        <PropertyRef Name="CLASSID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_USER_INSTITUTION_DETAILS_TBL_USER_LOGIN">
+    <End Role="TBL_USER_LOGIN" Type="Self.TBL_USER_LOGIN" Multiplicity="0..1" />
+    <End Role="TBL_USER_INSTITUTION_DETAILS" Type="Self.TBL_USER_INSTITUTION_DETAILS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_USER_LOGIN">
+        <PropertyRef Name="USERID" />
+      </Principal>
+      <Dependent Role="TBL_USER_INSTITUTION_DETAILS">
+        <PropertyRef Name="USERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_USER_LOGIN_TBL_MASTER_STATUS">
+    <End Role="TBL_MASTER_STATUS" Type="Self.TBL_MASTER_STATUS" Multiplicity="1" />
+    <End Role="TBL_USER_LOGIN" Type="Self.TBL_USER_LOGIN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_MASTER_STATUS">
+        <PropertyRef Name="STATUSID" />
+      </Principal>
+      <Dependent Role="TBL_USER_LOGIN">
+        <PropertyRef Name="STATUSID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_USER_LOGIN_TBL_MASTER_USERTYPE">
+    <End Role="TBL_MASTER_USERTYPE" Type="Self.TBL_MASTER_USERTYPE" Multiplicity="1" />
+    <End Role="TBL_USER_LOGIN" Type="Self.TBL_USER_LOGIN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_MASTER_USERTYPE">
+        <PropertyRef Name="USERTYPEID" />
+      </Principal>
+      <Dependent Role="TBL_USER_LOGIN">
+        <PropertyRef Name="USERTYPEID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_USER_LOGIN_TRAIL_TBL_USER_LOGIN">
+    <End Role="TBL_USER_LOGIN" Type="Self.TBL_USER_LOGIN" Multiplicity="1" />
+    <End Role="TBL_USER_LOGIN_TRAIL" Type="Self.TBL_USER_LOGIN_TRAIL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_USER_LOGIN">
+        <PropertyRef Name="USERID" />
+      </Principal>
+      <Dependent Role="TBL_USER_LOGIN_TRAIL">
+        <PropertyRef Name="USERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_USER_PARENTS_DETAILS_TBL_USER_LOGIN">
+    <End Role="TBL_USER_LOGIN" Type="Self.TBL_USER_LOGIN" Multiplicity="0..1" />
+    <End Role="TBL_USER_PARENTS_DETAILS" Type="Self.TBL_USER_PARENTS_DETAILS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_USER_LOGIN">
+        <PropertyRef Name="USERID" />
+      </Principal>
+      <Dependent Role="TBL_USER_PARENTS_DETAILS">
+        <PropertyRef Name="USERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_USER_PROFESSIONAL_DETAILS_TBL_USER_LOGIN">
+    <End Role="TBL_USER_LOGIN" Type="Self.TBL_USER_LOGIN" Multiplicity="0..1" />
+    <End Role="TBL_USER_PROFESSIONAL_DETAILS" Type="Self.TBL_USER_PROFESSIONAL_DETAILS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_USER_LOGIN">
+        <PropertyRef Name="USERID" />
+      </Principal>
+      <Dependent Role="TBL_USER_PROFESSIONAL_DETAILS">
+        <PropertyRef Name="USERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_USER_ROLE_TBL_MASTER_USERTYPE">
+    <End Role="TBL_MASTER_USERTYPE" Type="Self.TBL_MASTER_USERTYPE" Multiplicity="0..1" />
+    <End Role="TBL_USER_ROLE" Type="Self.TBL_USER_ROLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_MASTER_USERTYPE">
+        <PropertyRef Name="USERTYPEID" />
+      </Principal>
+      <Dependent Role="TBL_USER_ROLE">
+        <PropertyRef Name="USERTYPEID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_USER_ROLE_TBL_USER_LOGIN">
+    <End Role="TBL_USER_LOGIN" Type="Self.TBL_USER_LOGIN" Multiplicity="0..1" />
+    <End Role="TBL_USER_ROLE" Type="Self.TBL_USER_ROLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_USER_LOGIN">
+        <PropertyRef Name="USERID" />
+      </Principal>
+      <Dependent Role="TBL_USER_ROLE">
+        <PropertyRef Name="USERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_USER_SUBJECTS_TBL_MASTER_SUBJECT">
+    <End Role="TBL_MASTER_SUBJECT" Type="Self.TBL_MASTER_SUBJECT" Multiplicity="0..1" />
+    <End Role="TBL_USER_SUBJECTS" Type="Self.TBL_USER_SUBJECTS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_MASTER_SUBJECT">
+        <PropertyRef Name="SUBJECTID" />
+      </Principal>
+      <Dependent Role="TBL_USER_SUBJECTS">
+        <PropertyRef Name="SUBJECTID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_USER_SUBJECTS_TBL_USER_LOGIN">
+    <End Role="TBL_USER_LOGIN" Type="Self.TBL_USER_LOGIN" Multiplicity="0..1" />
+    <End Role="TBL_USER_SUBJECTS" Type="Self.TBL_USER_SUBJECTS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_USER_LOGIN">
+        <PropertyRef Name="USERID" />
+      </Principal>
+      <Dependent Role="TBL_USER_SUBJECTS">
+        <PropertyRef Name="USERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_UserId">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="webpages_UsersInRoles" Type="Self.webpages_UsersInRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="webpages_UsersInRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="DeleteTBL_MASTER_BOARDS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="DeleteTBL_MASTER_CITY" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NAME" Type="nchar" Mode="In" />
+    <Parameter Name="CITYID" Type="int" Mode="In" />
+    <Parameter Name="STATEID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DeleteTBL_MASTER_CLASS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CLASSID" Type="int" Mode="In" />
+    <Parameter Name="NAME" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="DeleteTBL_MASTER_COUNTRY" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NAME" Type="nvarchar" Mode="In" />
+    <Parameter Name="COUNTRYID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DeleteTBL_MASTER_COURSE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NAME" Type="nvarchar" Mode="In" />
+    <Parameter Name="COURSEID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DeleteTBL_MASTER_DOCUMENTTYPE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DocumentTypeName" Type="nvarchar" Mode="In" />
+    <Parameter Name="DocumentTypeID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DeleteTBL_MASTER_STATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NAME" Type="nvarchar" Mode="In" />
+    <Parameter Name="COUNTRYID" Type="int" Mode="In" />
+    <Parameter Name="STATEID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DeleteTBL_MASTER_STATUS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="STATUSID" Type="int" Mode="In" />
+    <Parameter Name="NAME" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="DeleteTBL_MASTER_SUBJECT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NAME" Type="nvarchar" Mode="In" />
+    <Parameter Name="SUBJECTID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DeleteTBL_MASTER_USERTYPE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TYPENAME" Type="nvarchar" Mode="In" />
+    <Parameter Name="USERTYPEID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DeleteTBL_USER_ADDRESS_DETAILS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CITY" Type="int" Mode="In" />
+    <Parameter Name="ADDRESSTYPEID" Type="int" Mode="In" />
+    <Parameter Name="MODIFIEDBY" Type="bigint" Mode="In" />
+    <Parameter Name="ADDRESSLINE2" Type="nvarchar" Mode="In" />
+    <Parameter Name="STATUS" Type="bit" Mode="In" />
+    <Parameter Name="COUNTRY" Type="int" Mode="In" />
+    <Parameter Name="ADDRESSLINE1" Type="nvarchar" Mode="In" />
+    <Parameter Name="CREATEDBY" Type="bigint" Mode="In" />
+    <Parameter Name="STATE" Type="int" Mode="In" />
+    <Parameter Name="USERID" Type="bigint" Mode="In" />
+    <Parameter Name="ADDRESSDETAILID" Type="bigint" Mode="In" />
+    <Parameter Name="PINCODE" Type="nvarchar" Mode="In" />
+    <Parameter Name="CREATEDDATE" Type="datetime" Mode="In" />
+    <Parameter Name="MODIFIEDDATE" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="DeleteTBL_USER_COURSE_DETAILS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MODIFIEDBY" Type="bigint" Mode="In" />
+    <Parameter Name="JOINDATE" Type="datetime" Mode="In" />
+    <Parameter Name="CREATEDDATE" Type="datetime" Mode="In" />
+    <Parameter Name="CREATEDBY" Type="bigint" Mode="In" />
+    <Parameter Name="COURSEID" Type="int" Mode="In" />
+    <Parameter Name="USERID" Type="bigint" Mode="In" />
+    <Parameter Name="MODIFIEDDATE" Type="datetime" Mode="In" />
+    <Parameter Name="STUDENTCOURSEID" Type="bigint" Mode="In" />
+    <Parameter Name="COMPLETEDATE" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="DeleteTBL_USER_DETAILS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NATIONALITY" Type="nvarchar" Mode="In" />
+    <Parameter Name="GENDER" Type="nvarchar" Mode="In" />
+    <Parameter Name="USERID" Type="bigint" Mode="In" />
+    <Parameter Name="ENROLNMENTID" Type="nvarchar" Mode="In" />
+    <Parameter Name="DISABILITY" Type="nvarchar" Mode="In" />
+    <Parameter Name="DOB" Type="datetime" Mode="In" />
+    <Parameter Name="FIRSTNAME" Type="nvarchar" Mode="In" />
+    <Parameter Name="MOTHERNAME" Type="nvarchar" Mode="In" />
+    <Parameter Name="LASTNAME" Type="nvarchar" Mode="In" />
+    <Parameter Name="FATHERNAME" Type="nvarchar" Mode="In" />
+    <Parameter Name="PERSONALDETAILID" Type="bigint" Mode="In" />
+    <Parameter Name="MIDDLENAME" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="DeleteTBL_USER_DOCUMENTS_DETAILS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MODIFIEDBY" Type="bigint" Mode="In" />
+    <Parameter Name="STATUS" Type="bit" Mode="In" />
+    <Parameter Name="CREATEDBY" Type="bigint" Mode="In" />
+    <Parameter Name="USERID" Type="bigint" Mode="In" />
+    <Parameter Name="CREATEDDATE" Type="datetime" Mode="In" />
+    <Parameter Name="MODIFIEDDATE" Type="datetime" Mode="In" />
+    <Parameter Name="DOCUMENTTYPEID" Type="int" Mode="In" />
+    <Parameter Name="USERDOCUMENTID" Type="bigint" Mode="In" />
+    <Parameter Name="DOCUMENTNAME" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="DeleteTBL_USER_INSTITUTION_DETAILS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MODIFIEDBY" Type="bigint" Mode="In" />
+    <Parameter Name="INSTITUTIONID" Type="bigint" Mode="In" />
+    <Parameter Name="BOARDID" Type="int" Mode="In" />
+    <Parameter Name="MODIFIEDDATE" Type="datetime" Mode="In" />
+    <Parameter Name="GRADE_PERCENT" Type="nvarchar" Mode="In" />
+    <Parameter Name="INSTITUTIONNAME" Type="nvarchar" Mode="In" />
+    <Parameter Name="CLASSID" Type="int" Mode="In" />
+    <Parameter Name="USERID" Type="bigint" Mode="In" />
+    <Parameter Name="PASSINGYEAR" Type="int" Mode="In" />
+    <Parameter Name="CREATEDBY" Type="bigint" Mode="In" />
+    <Parameter Name="CREATEDDATE" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="DeleteTBL_USER_LOGIN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PASSWORD" Type="nchar" Mode="In" />
+    <Parameter Name="PASSWORDRETRYCOUNT" Type="int" Mode="In" />
+    <Parameter Name="LOGIN_MOBILE" Type="nvarchar" Mode="In" />
+    <Parameter Name="USERID" Type="bigint" Mode="In" />
+    <Parameter Name="MODIFIEDDATE" Type="datetime" Mode="In" />
+    <Parameter Name="LOGIN_EMAIL" Type="nvarchar" Mode="In" />
+    <Parameter Name="STATUSID" Type="int" Mode="In" />
+    <Parameter Name="CREATEDDATE" Type="datetime" Mode="In" />
+    <Parameter Name="USERTYPEID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DeleteTBL_USER_LOGIN_TRAIL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IPADDRESS" Type="nvarchar" Mode="In" />
+    <Parameter Name="LATITUTE" Type="nvarchar" Mode="In" />
+    <Parameter Name="USERID" Type="bigint" Mode="In" />
+    <Parameter Name="LONGITUTE" Type="nvarchar" Mode="In" />
+    <Parameter Name="LOGINDATETIME" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="DeleteTBL_USER_PARENTS_DETAILS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CREATEDBY" Type="bigint" Mode="In" />
+    <Parameter Name="MOTHEROCCUPATION" Type="nvarchar" Mode="In" />
+    <Parameter Name="CREATEDDATE" Type="datetime" Mode="In" />
+    <Parameter Name="MODIFIEDDATE" Type="datetime" Mode="In" />
+    <Parameter Name="FATHERNAME" Type="nvarchar" Mode="In" />
+    <Parameter Name="MODIFIEDBY" Type="bigint" Mode="In" />
+    <Parameter Name="MOTHEREMAIL" Type="nchar" Mode="In" />
+    <Parameter Name="MOTHERCOMPANYNAME" Type="nvarchar" Mode="In" />
+    <Parameter Name="FATHERDESIGNATION" Type="nvarchar" Mode="In" />
+    <Parameter Name="FATHEROCCUPATION" Type="nvarchar" Mode="In" />
+    <Parameter Name="FATHEREMAIL" Type="nvarchar" Mode="In" />
+    <Parameter Name="USERID" Type="bigint" Mode="In" />
+    <Parameter Name="PARENTID" Type="bigint" Mode="In" />
+    <Parameter Name="FATHERMOBILENUMBER" Type="nchar" Mode="In" />
+    <Parameter Name="MOTHERMOBILENUMBER" Type="nvarchar" Mode="In" />
+    <Parameter Name="MOTHERNAME" Type="nvarchar" Mode="In" />
+    <Parameter Name="MOTHERDESIGNATION" Type="nvarchar" Mode="In" />
+    <Parameter Name="FATHERCOMPANYNAME" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="DeleteTBL_USER_PROFESSIONAL_DETAILS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MODIFIEDDBY" Type="bigint" Mode="In" />
+    <Parameter Name="CREATEDDATE" Type="datetime" Mode="In" />
+    <Parameter Name="DESIGNATION" Type="nvarchar" Mode="In" />
+    <Parameter Name="CREATEBY" Type="bigint" Mode="In" />
+    <Parameter Name="REMARKS" Type="nvarchar" Mode="In" />
+    <Parameter Name="USERID" Type="bigint" Mode="In" />
+    <Parameter Name="MODIFIEDDATE" Type="datetime" Mode="In" />
+    <Parameter Name="EMPLOYEETYPE" Type="nvarchar" Mode="In" />
+    <Parameter Name="PROFESSIONALDETAILID" Type="bigint" Mode="In" />
+    <Parameter Name="COMPANYNAME" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="DeleteTBL_USER_SUBJECTS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MODIFIEDBY" Type="bigint" Mode="In" />
+    <Parameter Name="USERID" Type="bigint" Mode="In" />
+    <Parameter Name="USERSUBJECTID" Type="bigint" Mode="In" />
+    <Parameter Name="CREATEDDATE" Type="datetime" Mode="In" />
+    <Parameter Name="CREATEDBY" Type="bigint" Mode="In" />
+    <Parameter Name="MODIFIEDDATE" Type="datetime" Mode="In" />
+    <Parameter Name="SUBJECTID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="fnNumberToWords" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar(max)">
+    <Parameter Name="Number" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="GetAllTBL_MASTER_BOARDS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetAllTBL_MASTER_CLASS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetAllTBL_MASTER_COUNTRY" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetAllTBL_MASTER_COURSE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetAllTBL_MASTER_DOCUMENTTYPE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetAllTBL_MASTER_STATUS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetAllTBL_MASTER_SUBJECT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetAllTBL_MASTER_USERTYPE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sprocMemberRegistrationDeleteSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MemID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="sprocMemberRegistrationInsertUpdateSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MemID" Type="bigint" Mode="In" />
+    <Parameter Name="MemberFName" Type="nvarchar" Mode="In" />
+    <Parameter Name="MemberLName" Type="nvarchar" Mode="In" />
+    <Parameter Name="MemberMName" Type="nvarchar" Mode="In" />
+    <Parameter Name="Address" Type="nvarchar" Mode="In" />
+    <Parameter Name="DOB" Type="datetime" Mode="In" />
+    <Parameter Name="Age" Type="nvarchar" Mode="In" />
+    <Parameter Name="Contactno" Type="nvarchar" Mode="In" />
+    <Parameter Name="EmailID" Type="nvarchar" Mode="In" />
+    <Parameter Name="Gender" Type="nvarchar" Mode="In" />
+    <Parameter Name="PlantypeID" Type="int" Mode="In" />
+    <Parameter Name="WorkouttypeID" Type="int" Mode="In" />
+    <Parameter Name="Createdby" Type="bigint" Mode="In" />
+    <Parameter Name="ModifiedBy" Type="bigint" Mode="In" />
+    <Parameter Name="JoiningDate" Type="datetime" Mode="In" />
+    <Parameter Name="MemIDOUT" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="sprocMemberRegistrationSelectList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sprocMemberRegistrationSelectSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MemID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="sprocMemberRegistrationUpdateSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PaymentID" Type="bigint" Mode="In" />
+    <Parameter Name="PlanID" Type="int" Mode="In" />
+    <Parameter Name="WorkouttypeID" Type="int" Mode="In" />
+    <Parameter Name="Paymenttype" Type="nvarchar" Mode="In" />
+    <Parameter Name="PaymentFromdt" Type="datetime" Mode="In" />
+    <Parameter Name="PaymentAmount" Type="numeric" Mode="In" />
+    <Parameter Name="ModifyUserID" Type="int" Mode="In" />
+    <Parameter Name="RecStatus" Type="char" Mode="In" />
+    <Parameter Name="MemberID" Type="bigint" Mode="In" />
+    <Parameter Name="PaymentIDOUT" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="sprocPaymentDetailsDeleteSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PaymentID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="sprocPaymentDetailsInsertUpdateSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PaymentID" Type="bigint" Mode="In" />
+    <Parameter Name="PlanID" Type="int" Mode="In" />
+    <Parameter Name="WorkouttypeID" Type="int" Mode="In" />
+    <Parameter Name="Paymenttype" Type="nvarchar" Mode="In" />
+    <Parameter Name="PaymentFromdt" Type="datetime" Mode="In" />
+    <Parameter Name="PaymentAmount" Type="numeric" Mode="In" />
+    <Parameter Name="CreateUserID" Type="int" Mode="In" />
+    <Parameter Name="ModifyUserID" Type="int" Mode="In" />
+    <Parameter Name="RecStatus" Type="char" Mode="In" />
+    <Parameter Name="MemberID" Type="bigint" Mode="In" />
+    <Parameter Name="PaymentIDOUT" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="sprocPaymentDetailsSelectList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sprocPaymentDetailsSelectSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PaymentID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="sprocPlanMasterDeleteSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PlanID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sprocPlanMasterInsertUpdateSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PlanID" Type="int" Mode="In" />
+    <Parameter Name="SchemeID" Type="int" Mode="In" />
+    <Parameter Name="PeriodID" Type="int" Mode="In" />
+    <Parameter Name="PlanName" Type="varchar" Mode="In" />
+    <Parameter Name="PlanAmount" Type="decimal" Mode="In" />
+    <Parameter Name="ServiceTax" Type="decimal" Mode="In" />
+    <Parameter Name="CreateDate" Type="datetime" Mode="In" />
+    <Parameter Name="CreateUserID" Type="int" Mode="In" />
+    <Parameter Name="ModifyDate" Type="datetime" Mode="In" />
+    <Parameter Name="ModifyUserID" Type="int" Mode="In" />
+    <Parameter Name="RecStatus" Type="char" Mode="In" />
+  </Function>
+  <Function Name="sprocPlanMasterSelectList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sprocPlanMasterSelectSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PlanID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sprocRecepitTBInsertUpdateSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RecepitID" Type="bigint" Mode="In" />
+    <Parameter Name="Memberid" Type="bigint" Mode="In" />
+    <Parameter Name="generateby" Type="bigint" Mode="In" />
+    <Parameter Name="createdby" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="sprocSchemeMasterDeleteSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SchemeID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sprocSchemeMasterInsertUpdateSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SchemeID" Type="int" Mode="In" />
+    <Parameter Name="SchemeName" Type="nvarchar" Mode="In" />
+    <Parameter Name="Createdby" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_MASTER_BOARDSDeleteSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BOARDID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_MASTER_BOARDSInsertUpdateSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BOARDID" Type="int" Mode="In" />
+    <Parameter Name="NAME" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_MASTER_BOARDSSelectList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sprocTBL_MASTER_BOARDSSelectSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BOARDID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_MASTER_CITYDeleteSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CITYID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_MASTER_CITYInsertUpdateSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CITYID" Type="int" Mode="In" />
+    <Parameter Name="NAME" Type="nchar" Mode="In" />
+    <Parameter Name="STATEID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_MASTER_CITYSelectList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sprocTBL_MASTER_CITYSelectSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CITYID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_MASTER_CLASSDeleteSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CLASSID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_MASTER_CLASSInsertUpdateSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CLASSID" Type="int" Mode="In" />
+    <Parameter Name="NAME" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_MASTER_CLASSSelectList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sprocTBL_MASTER_CLASSSelectSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CLASSID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_MASTER_COUNTRYDeleteSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="COUNTRYID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_MASTER_COUNTRYInsertUpdateSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="COUNTRYID" Type="int" Mode="In" />
+    <Parameter Name="NAME" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_MASTER_COUNTRYSelectList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sprocTBL_MASTER_COUNTRYSelectSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="COUNTRYID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_MASTER_COURSEDeleteSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="COURSEID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_MASTER_COURSEInsertUpdateSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="COURSEID" Type="int" Mode="In" />
+    <Parameter Name="NAME" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_MASTER_COURSESelectList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sprocTBL_MASTER_COURSESelectSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="COURSEID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_MASTER_DOCUMENTTYPEDeleteSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DocumentTypeID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_MASTER_DOCUMENTTYPEInsertUpdateSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DocumentTypeID" Type="int" Mode="In" />
+    <Parameter Name="DocumentTypeName" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_MASTER_DOCUMENTTYPESelectList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sprocTBL_MASTER_DOCUMENTTYPESelectSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DocumentTypeID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_MASTER_STATEDeleteSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="STATEID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_MASTER_STATEInsertUpdateSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="STATEID" Type="int" Mode="In" />
+    <Parameter Name="NAME" Type="nvarchar" Mode="In" />
+    <Parameter Name="COUNTRYID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_MASTER_STATESelectList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sprocTBL_MASTER_STATESelectSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="STATEID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_MASTER_STATUSDeleteSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="STATUSID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_MASTER_STATUSInsertUpdateSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="STATUSID" Type="int" Mode="In" />
+    <Parameter Name="NAME" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_MASTER_STATUSSelectList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sprocTBL_MASTER_STATUSSelectSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="STATUSID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_MASTER_SUBJECTDeleteSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SUBJECTID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_MASTER_SUBJECTInsertUpdateSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SUBJECTID" Type="int" Mode="In" />
+    <Parameter Name="NAME" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_MASTER_SUBJECTSelectList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sprocTBL_MASTER_SUBJECTSelectSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SUBJECTID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_MASTER_USERTYPEDeleteSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="USERTYPEID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_MASTER_USERTYPEInsertUpdateSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="USERTYPEID" Type="int" Mode="In" />
+    <Parameter Name="TYPENAME" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_MASTER_USERTYPESelectList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sprocTBL_MASTER_USERTYPESelectSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="USERTYPEID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_USER_ADDRESS_DETAILSDeleteSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ADDRESSDETAILID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_USER_ADDRESS_DETAILSInsertUpdateSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ADDRESSDETAILID" Type="bigint" Mode="In" />
+    <Parameter Name="USERID" Type="bigint" Mode="In" />
+    <Parameter Name="ADDRESSTYPEID" Type="int" Mode="In" />
+    <Parameter Name="ADDRESSLINE1" Type="nvarchar" Mode="In" />
+    <Parameter Name="ADDRESSLINE2" Type="nvarchar" Mode="In" />
+    <Parameter Name="CITY" Type="int" Mode="In" />
+    <Parameter Name="STATE" Type="int" Mode="In" />
+    <Parameter Name="COUNTRY" Type="int" Mode="In" />
+    <Parameter Name="PINCODE" Type="nvarchar" Mode="In" />
+    <Parameter Name="STATUS" Type="bit" Mode="In" />
+    <Parameter Name="CREATEDBY" Type="bigint" Mode="In" />
+    <Parameter Name="CREATEDDATE" Type="datetime" Mode="In" />
+    <Parameter Name="MODIFIEDDATE" Type="datetime" Mode="In" />
+    <Parameter Name="MODIFIEDBY" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_USER_ADDRESS_DETAILSSelectList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sprocTBL_USER_ADDRESS_DETAILSSelectSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ADDRESSDETAILID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_USER_COURSE_DETAILSDeleteSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="STUDENTCOURSEID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_USER_COURSE_DETAILSInsertUpdateSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="STUDENTCOURSEID" Type="bigint" Mode="In" />
+    <Parameter Name="USERID" Type="bigint" Mode="In" />
+    <Parameter Name="COURSEID" Type="int" Mode="In" />
+    <Parameter Name="JOINDATE" Type="datetime" Mode="In" />
+    <Parameter Name="COMPLETEDATE" Type="datetime" Mode="In" />
+    <Parameter Name="CREATEDBY" Type="bigint" Mode="In" />
+    <Parameter Name="MODIFIEDBY" Type="bigint" Mode="In" />
+    <Parameter Name="CREATEDDATE" Type="datetime" Mode="In" />
+    <Parameter Name="MODIFIEDDATE" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_USER_COURSE_DETAILSSelectList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sprocTBL_USER_COURSE_DETAILSSelectSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="STUDENTCOURSEID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_USER_DETAILSDeleteSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PERSONALDETAILID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_USER_DETAILSSelectList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sprocTBL_USER_DETAILSSelectSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PERSONALDETAILID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_USER_DOCUMENTS_DETAILSDeleteSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="USERDOCUMENTID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_USER_DOCUMENTS_DETAILSInsertUpdateSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="USERDOCUMENTID" Type="bigint" Mode="In" />
+    <Parameter Name="DOCUMENTTYPEID" Type="int" Mode="In" />
+    <Parameter Name="DOCUMENTNAME" Type="nvarchar" Mode="In" />
+    <Parameter Name="USERID" Type="bigint" Mode="In" />
+    <Parameter Name="STATUS" Type="bit" Mode="In" />
+    <Parameter Name="CREATEDBY" Type="bigint" Mode="In" />
+    <Parameter Name="CREATEDDATE" Type="datetime" Mode="In" />
+    <Parameter Name="MODIFIEDBY" Type="bigint" Mode="In" />
+    <Parameter Name="MODIFIEDDATE" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_USER_DOCUMENTS_DETAILSSelectList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sprocTBL_USER_DOCUMENTS_DETAILSSelectSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="USERDOCUMENTID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_USER_INSTITUTION_DETAILSDeleteSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="INSTITUTIONID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_USER_INSTITUTION_DETAILSInsertUpdateSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="INSTITUTIONID" Type="bigint" Mode="In" />
+    <Parameter Name="INSTITUTIONNAME" Type="nvarchar" Mode="In" />
+    <Parameter Name="USERID" Type="bigint" Mode="In" />
+    <Parameter Name="CLASSID" Type="int" Mode="In" />
+    <Parameter Name="BOARDID" Type="int" Mode="In" />
+    <Parameter Name="PASSINGYEAR" Type="int" Mode="In" />
+    <Parameter Name="GRADE_PERCENT" Type="nvarchar" Mode="In" />
+    <Parameter Name="CREATEDBY" Type="bigint" Mode="In" />
+    <Parameter Name="CREATEDDATE" Type="datetime" Mode="In" />
+    <Parameter Name="MODIFIEDBY" Type="bigint" Mode="In" />
+    <Parameter Name="MODIFIEDDATE" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_USER_INSTITUTION_DETAILSSelectList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sprocTBL_USER_INSTITUTION_DETAILSSelectSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="INSTITUTIONID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_USER_LOGIN_TRAILDeleteSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LOGIN_TRAIL_ID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_USER_LOGIN_TRAILInsertUpdateSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LOGIN_TRAIL_ID" Type="bigint" Mode="In" />
+    <Parameter Name="USERID" Type="bigint" Mode="In" />
+    <Parameter Name="IPADDRESS" Type="nvarchar" Mode="In" />
+    <Parameter Name="LATITUTE" Type="nvarchar" Mode="In" />
+    <Parameter Name="LONGITUTE" Type="nvarchar" Mode="In" />
+    <Parameter Name="LOGINDATETIME" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_USER_LOGIN_TRAILSelectList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sprocTBL_USER_LOGIN_TRAILSelectSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LOGIN_TRAIL_ID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_USER_LOGINDeleteSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="USERID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_USER_LOGINInsertUpdateSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="USERID" Type="bigint" Mode="In" />
+    <Parameter Name="LOGIN_EMAIL" Type="nvarchar" Mode="In" />
+    <Parameter Name="LOGIN_MOBILE" Type="nvarchar" Mode="In" />
+    <Parameter Name="PASSWORD" Type="nchar" Mode="In" />
+    <Parameter Name="STATUSID" Type="int" Mode="In" />
+    <Parameter Name="USERTYPEID" Type="int" Mode="In" />
+    <Parameter Name="PASSWORDRETRYCOUNT" Type="int" Mode="In" />
+    <Parameter Name="CREATEDDATE" Type="datetime" Mode="In" />
+    <Parameter Name="MODIFIEDDATE" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_USER_LOGINSelectList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sprocTBL_USER_LOGINSelectSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="USERID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_USER_PARENTS_DETAILSDeleteSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PARENTID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_USER_PARENTS_DETAILSInsertUpdateSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PARENTID" Type="bigint" Mode="In" />
+    <Parameter Name="USERID" Type="bigint" Mode="In" />
+    <Parameter Name="FATHERNAME" Type="nvarchar" Mode="In" />
+    <Parameter Name="FATHEREMAIL" Type="nvarchar" Mode="In" />
+    <Parameter Name="FATHERMOBILENUMBER" Type="nchar" Mode="In" />
+    <Parameter Name="FATHEROCCUPATION" Type="nvarchar" Mode="In" />
+    <Parameter Name="FATHERCOMPANYNAME" Type="nvarchar" Mode="In" />
+    <Parameter Name="FATHERDESIGNATION" Type="nvarchar" Mode="In" />
+    <Parameter Name="MOTHERNAME" Type="nvarchar" Mode="In" />
+    <Parameter Name="MOTHEREMAIL" Type="nchar" Mode="In" />
+    <Parameter Name="MOTHERMOBILENUMBER" Type="nvarchar" Mode="In" />
+    <Parameter Name="MOTHEROCCUPATION" Type="nvarchar" Mode="In" />
+    <Parameter Name="MOTHERCOMPANYNAME" Type="nvarchar" Mode="In" />
+    <Parameter Name="MOTHERDESIGNATION" Type="nvarchar" Mode="In" />
+    <Parameter Name="CREATEDBY" Type="bigint" Mode="In" />
+    <Parameter Name="CREATEDDATE" Type="datetime" Mode="In" />
+    <Parameter Name="MODIFIEDBY" Type="bigint" Mode="In" />
+    <Parameter Name="MODIFIEDDATE" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_USER_PARENTS_DETAILSSelectList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sprocTBL_USER_PARENTS_DETAILSSelectSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PARENTID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_USER_PROFESSIONAL_DETAILSDeleteSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PROFESSIONALDETAILID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_USER_PROFESSIONAL_DETAILSInsertUpdateSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PROFESSIONALDETAILID" Type="bigint" Mode="In" />
+    <Parameter Name="USERID" Type="bigint" Mode="In" />
+    <Parameter Name="COMPANYNAME" Type="nvarchar" Mode="In" />
+    <Parameter Name="DESIGNATION" Type="nvarchar" Mode="In" />
+    <Parameter Name="EMPLOYEETYPE" Type="nvarchar" Mode="In" />
+    <Parameter Name="REMARKS" Type="nvarchar" Mode="In" />
+    <Parameter Name="CREATEBY" Type="bigint" Mode="In" />
+    <Parameter Name="CREATEDDATE" Type="datetime" Mode="In" />
+    <Parameter Name="MODIFIEDDBY" Type="bigint" Mode="In" />
+    <Parameter Name="MODIFIEDDATE" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_USER_PROFESSIONAL_DETAILSSelectList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sprocTBL_USER_PROFESSIONAL_DETAILSSelectSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PROFESSIONALDETAILID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_USER_SUBJECTSDeleteSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="USERSUBJECTID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_USER_SUBJECTSInsertUpdateSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="USERSUBJECTID" Type="bigint" Mode="In" />
+    <Parameter Name="SUBJECTID" Type="int" Mode="In" />
+    <Parameter Name="USERID" Type="bigint" Mode="In" />
+    <Parameter Name="CREATEDBY" Type="bigint" Mode="In" />
+    <Parameter Name="CREATEDDATE" Type="datetime" Mode="In" />
+    <Parameter Name="MODIFIEDBY" Type="bigint" Mode="In" />
+    <Parameter Name="MODIFIEDDATE" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sprocTBL_USER_SUBJECTSSelectList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sprocTBL_USER_SUBJECTSSelectSingleItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="USERSUBJECTID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="Usp_ALLPaymentDetailinfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Usp_checkplan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Planmaster" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Usp_checkscheme" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SchemeName" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Usp_checkUsernameExits" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserName" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Usp_CheckUserRoles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Usp_DisplayAllUser_And_Roles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Usp_Generatenumber" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Usp_GenerateRecepit" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Memberid" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="Usp_GetAllRenwalrecords" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Usp_GetAllRenwalrecordsFromBetweenDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Paymentfromdt" Type="datetime" Mode="In" />
+    <Parameter Name="Paymenttodt" Type="datetime" Mode="In" />
+    <Parameter Name="exactdate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="Usp_GetAllUsers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Usp_GetAmount_reg" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PlanID" Type="int" Mode="In" />
+    <Parameter Name="SchemeID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Usp_GetDataofMemberbyID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MainMemberID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="Usp_getDec" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Memberid" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="Usp_GetMonthwisepaymentdetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="month" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="Usp_GetPlanByWorkTypeID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SchemeID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Usp_getPlanPeriodID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PlanID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Usp_getRoleByUserID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Usp_GetRoles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Usp_GetYearwisepaymentdetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="year" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="USP_listofMemberName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MemberFName" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="USP_listofMemberno" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MemberID" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Usp_PaymentDetailinfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MemberID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="Usp_PaymentDetailinfo_Name" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MemberFName" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Usp_UserIDbyUserName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserName" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Usp_UserNamebyUserID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="ajay_dbModelStoreContainer">
+    <EntitySet Name="Fiscalyear" EntityType="Self.Fiscalyear" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MemberRegistration" EntityType="Self.MemberRegistration" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PaymentDetails" EntityType="Self.PaymentDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PlanMaster" EntityType="Self.PlanMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReceiptDetails" EntityType="Self.ReceiptDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SchemeMaster" EntityType="Self.SchemeMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_COURSE_SUBJECT_MAPPING_DETAILS" EntityType="Self.TBL_COURSE_SUBJECT_MAPPING_DETAILS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_GN_ANNAUNCMENT" EntityType="Self.TBL_GN_ANNAUNCMENT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_GN_DIGITALDOC_DETAILS" EntityType="Self.TBL_GN_DIGITALDOC_DETAILS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_GN_DIGITALDOC_VIEWDETAILS" EntityType="Self.TBL_GN_DIGITALDOC_VIEWDETAILS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_MASTER_BOARDS" EntityType="Self.TBL_MASTER_BOARDS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_MASTER_CITY" EntityType="Self.TBL_MASTER_CITY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_MASTER_CLASS" EntityType="Self.TBL_MASTER_CLASS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_MASTER_COUNTRY" EntityType="Self.TBL_MASTER_COUNTRY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_MASTER_COURSE" EntityType="Self.TBL_MASTER_COURSE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_MASTER_DIGITALDOC" EntityType="Self.TBL_MASTER_DIGITALDOC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_MASTER_DOCUMENTTYPE" EntityType="Self.TBL_MASTER_DOCUMENTTYPE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_MASTER_STATE" EntityType="Self.TBL_MASTER_STATE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_MASTER_STATUS" EntityType="Self.TBL_MASTER_STATUS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_MASTER_SUBJECT" EntityType="Self.TBL_MASTER_SUBJECT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_MASTER_TEACHER" EntityType="Self.TBL_MASTER_TEACHER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_MASTER_TEST_TYPE" EntityType="Self.TBL_MASTER_TEST_TYPE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_MASTER_TESTQUESTIONTYPE" EntityType="Self.TBL_MASTER_TESTQUESTIONTYPE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_MASTER_USERTYPE" EntityType="Self.TBL_MASTER_USERTYPE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_STUDENT_MASTER_MAPPING" EntityType="Self.TBL_STUDENT_MASTER_MAPPING" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_TEACHER_COURSE_MAPPING_DETAILS" EntityType="Self.TBL_TEACHER_COURSE_MAPPING_DETAILS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_TEACHER_SUBJECT_MAPPING_DETAILS" EntityType="Self.TBL_TEACHER_SUBJECT_MAPPING_DETAILS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_TEST_ANSWERS" EntityType="Self.TBL_TEST_ANSWERS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_TEST_ATAMPT" EntityType="Self.TBL_TEST_ATAMPT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_TEST_ATAMPT_QUESTION_ANSWER" EntityType="Self.TBL_TEST_ATAMPT_QUESTION_ANSWER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_TEST_QUESTIONS" EntityType="Self.TBL_TEST_QUESTIONS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_TEST_TESTDETAIL" EntityType="Self.TBL_TEST_TESTDETAIL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_USER_ADDRESS_DETAILS" EntityType="Self.TBL_USER_ADDRESS_DETAILS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_USER_COURSE_DETAILS" EntityType="Self.TBL_USER_COURSE_DETAILS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_USER_COURSE_MAPPING_DETAILS" EntityType="Self.TBL_USER_COURSE_MAPPING_DETAILS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_USER_DETAILS" EntityType="Self.TBL_USER_DETAILS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_USER_DOCUMENTS_DETAILS" EntityType="Self.TBL_USER_DOCUMENTS_DETAILS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_USER_INSTITUTION_DETAILS" EntityType="Self.TBL_USER_INSTITUTION_DETAILS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_USER_LOGIN" EntityType="Self.TBL_USER_LOGIN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_USER_LOGIN_TRAIL" EntityType="Self.TBL_USER_LOGIN_TRAIL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_USER_PARENTS_DETAILS" EntityType="Self.TBL_USER_PARENTS_DETAILS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_USER_PROFESSIONAL_DETAILS" EntityType="Self.TBL_USER_PROFESSIONAL_DETAILS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_USER_ROLE" EntityType="Self.TBL_USER_ROLE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_USER_SUBJECTS" EntityType="Self.TBL_USER_SUBJECTS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="webpages_Membership" EntityType="Self.webpages_Membership" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="webpages_OAuthMembership" EntityType="Self.webpages_OAuthMembership" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="webpages_Roles" EntityType="Self.webpages_Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="webpages_UsersInRoles" EntityType="Self.webpages_UsersInRoles" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="fk_RoleId" Association="Self.fk_RoleId">
+      <End Role="webpages_Roles" EntitySet="webpages_Roles" />
+      <End Role="webpages_UsersInRoles" EntitySet="webpages_UsersInRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_1_TBL_TEST_TESTDETAIL" Association="Self.FK_Table_1_TBL_TEST_TESTDETAIL">
+      <End Role="TBL_TEST_TESTDETAIL" EntitySet="TBL_TEST_TESTDETAIL" />
+      <End Role="TBL_TEST_QUESTIONS" EntitySet="TBL_TEST_QUESTIONS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_GN_DIGITALDOC_DETAILS_TBL_MASTER_SUBJECT" Association="Self.FK_TBL_GN_DIGITALDOC_DETAILS_TBL_MASTER_SUBJECT">
+      <End Role="TBL_MASTER_SUBJECT" EntitySet="TBL_MASTER_SUBJECT" />
+      <End Role="TBL_GN_DIGITALDOC_DETAILS" EntitySet="TBL_GN_DIGITALDOC_DETAILS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_GN_DIGITALDOC_VIEWDETAILS_TBL_GN_DIGITALDOC_DETAILS" Association="Self.FK_TBL_GN_DIGITALDOC_VIEWDETAILS_TBL_GN_DIGITALDOC_DETAILS">
+      <End Role="TBL_GN_DIGITALDOC_DETAILS" EntitySet="TBL_GN_DIGITALDOC_DETAILS" />
+      <End Role="TBL_GN_DIGITALDOC_VIEWDETAILS" EntitySet="TBL_GN_DIGITALDOC_VIEWDETAILS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_MASTER_CITY_TBL_MASTER_STATE" Association="Self.FK_TBL_MASTER_CITY_TBL_MASTER_STATE">
+      <End Role="TBL_MASTER_STATE" EntitySet="TBL_MASTER_STATE" />
+      <End Role="TBL_MASTER_CITY" EntitySet="TBL_MASTER_CITY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_MASTER_STATE_TBL_MASTER_COUNTRY" Association="Self.FK_TBL_MASTER_STATE_TBL_MASTER_COUNTRY">
+      <End Role="TBL_MASTER_COUNTRY" EntitySet="TBL_MASTER_COUNTRY" />
+      <End Role="TBL_MASTER_STATE" EntitySet="TBL_MASTER_STATE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_TEST_ANSWERS_TBL_TEST_QUESTIONS" Association="Self.FK_TBL_TEST_ANSWERS_TBL_TEST_QUESTIONS">
+      <End Role="TBL_TEST_QUESTIONS" EntitySet="TBL_TEST_QUESTIONS" />
+      <End Role="TBL_TEST_ANSWERS" EntitySet="TBL_TEST_ANSWERS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_TEST_ANSWERS_TBL_TEST_TESTDETAIL" Association="Self.FK_TBL_TEST_ANSWERS_TBL_TEST_TESTDETAIL">
+      <End Role="TBL_TEST_TESTDETAIL" EntitySet="TBL_TEST_TESTDETAIL" />
+      <End Role="TBL_TEST_ANSWERS" EntitySet="TBL_TEST_ANSWERS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_TEST_ATAMPT_QUESTION_ANSWER_TBL_TEST_QUESTIONS" Association="Self.FK_TBL_TEST_ATAMPT_QUESTION_ANSWER_TBL_TEST_QUESTIONS">
+      <End Role="TBL_TEST_QUESTIONS" EntitySet="TBL_TEST_QUESTIONS" />
+      <End Role="TBL_TEST_ATAMPT_QUESTION_ANSWER" EntitySet="TBL_TEST_ATAMPT_QUESTION_ANSWER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_TEST_ATAMPT_QUESTION_ANSWER_TBL_TEST_TESTDETAIL" Association="Self.FK_TBL_TEST_ATAMPT_QUESTION_ANSWER_TBL_TEST_TESTDETAIL">
+      <End Role="TBL_TEST_TESTDETAIL" EntitySet="TBL_TEST_TESTDETAIL" />
+      <End Role="TBL_TEST_ATAMPT_QUESTION_ANSWER" EntitySet="TBL_TEST_ATAMPT_QUESTION_ANSWER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_TEST_ATAMPT_TBL_TEST_TESTDETAIL" Association="Self.FK_TBL_TEST_ATAMPT_TBL_TEST_TESTDETAIL">
+      <End Role="TBL_TEST_TESTDETAIL" EntitySet="TBL_TEST_TESTDETAIL" />
+      <End Role="TBL_TEST_ATAMPT" EntitySet="TBL_TEST_ATAMPT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_TEST_ATAMPT_TBL_USER_LOGIN" Association="Self.FK_TBL_TEST_ATAMPT_TBL_USER_LOGIN">
+      <End Role="TBL_USER_LOGIN" EntitySet="TBL_USER_LOGIN" />
+      <End Role="TBL_TEST_ATAMPT" EntitySet="TBL_TEST_ATAMPT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_TEST_QUESTIONS_TBL_MASTER_TESTQUESTIONTYPE" Association="Self.FK_TBL_TEST_QUESTIONS_TBL_MASTER_TESTQUESTIONTYPE">
+      <End Role="TBL_MASTER_TESTQUESTIONTYPE" EntitySet="TBL_MASTER_TESTQUESTIONTYPE" />
+      <End Role="TBL_TEST_QUESTIONS" EntitySet="TBL_TEST_QUESTIONS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_TEST_TESTDETAIL_TBL_MASTER_SUBJECT" Association="Self.FK_TBL_TEST_TESTDETAIL_TBL_MASTER_SUBJECT">
+      <End Role="TBL_MASTER_SUBJECT" EntitySet="TBL_MASTER_SUBJECT" />
+      <End Role="TBL_TEST_TESTDETAIL" EntitySet="TBL_TEST_TESTDETAIL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_USER_ADDRESS_DETAILS_TBL_USER_LOGIN" Association="Self.FK_TBL_USER_ADDRESS_DETAILS_TBL_USER_LOGIN">
+      <End Role="TBL_USER_LOGIN" EntitySet="TBL_USER_LOGIN" />
+      <End Role="TBL_USER_ADDRESS_DETAILS" EntitySet="TBL_USER_ADDRESS_DETAILS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_USER_COURSE_DETAILS_TBL_MASTER_COURSE" Association="Self.FK_TBL_USER_COURSE_DETAILS_TBL_MASTER_COURSE">
+      <End Role="TBL_MASTER_COURSE" EntitySet="TBL_MASTER_COURSE" />
+      <End Role="TBL_USER_COURSE_DETAILS" EntitySet="TBL_USER_COURSE_DETAILS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_USER_COURSE_DETAILS_TBL_USER_LOGIN" Association="Self.FK_TBL_USER_COURSE_DETAILS_TBL_USER_LOGIN">
+      <End Role="TBL_USER_LOGIN" EntitySet="TBL_USER_LOGIN" />
+      <End Role="TBL_USER_COURSE_DETAILS" EntitySet="TBL_USER_COURSE_DETAILS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_USER_DETAILS_TBL_USER_DETAILS" Association="Self.FK_TBL_USER_DETAILS_TBL_USER_DETAILS">
+      <End Role="TBL_USER_LOGIN" EntitySet="TBL_USER_LOGIN" />
+      <End Role="TBL_USER_DETAILS" EntitySet="TBL_USER_DETAILS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_USER_DOCUMENTS_DETAILS_TBL_MASTER_DOCUMENTTYPE" Association="Self.FK_TBL_USER_DOCUMENTS_DETAILS_TBL_MASTER_DOCUMENTTYPE">
+      <End Role="TBL_MASTER_DOCUMENTTYPE" EntitySet="TBL_MASTER_DOCUMENTTYPE" />
+      <End Role="TBL_USER_DOCUMENTS_DETAILS" EntitySet="TBL_USER_DOCUMENTS_DETAILS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_USER_DOCUMENTS_DETAILS_TBL_USER_LOGIN" Association="Self.FK_TBL_USER_DOCUMENTS_DETAILS_TBL_USER_LOGIN">
+      <End Role="TBL_USER_LOGIN" EntitySet="TBL_USER_LOGIN" />
+      <End Role="TBL_USER_DOCUMENTS_DETAILS" EntitySet="TBL_USER_DOCUMENTS_DETAILS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_USER_INSTITUTION_DETAILS_TBL_MASTER_BOARDS" Association="Self.FK_TBL_USER_INSTITUTION_DETAILS_TBL_MASTER_BOARDS">
+      <End Role="TBL_MASTER_BOARDS" EntitySet="TBL_MASTER_BOARDS" />
+      <End Role="TBL_USER_INSTITUTION_DETAILS" EntitySet="TBL_USER_INSTITUTION_DETAILS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_USER_INSTITUTION_DETAILS_TBL_MASTER_CLASS" Association="Self.FK_TBL_USER_INSTITUTION_DETAILS_TBL_MASTER_CLASS">
+      <End Role="TBL_MASTER_CLASS" EntitySet="TBL_MASTER_CLASS" />
+      <End Role="TBL_USER_INSTITUTION_DETAILS" EntitySet="TBL_USER_INSTITUTION_DETAILS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_USER_INSTITUTION_DETAILS_TBL_USER_LOGIN" Association="Self.FK_TBL_USER_INSTITUTION_DETAILS_TBL_USER_LOGIN">
+      <End Role="TBL_USER_LOGIN" EntitySet="TBL_USER_LOGIN" />
+      <End Role="TBL_USER_INSTITUTION_DETAILS" EntitySet="TBL_USER_INSTITUTION_DETAILS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_USER_LOGIN_TBL_MASTER_STATUS" Association="Self.FK_TBL_USER_LOGIN_TBL_MASTER_STATUS">
+      <End Role="TBL_MASTER_STATUS" EntitySet="TBL_MASTER_STATUS" />
+      <End Role="TBL_USER_LOGIN" EntitySet="TBL_USER_LOGIN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_USER_LOGIN_TBL_MASTER_USERTYPE" Association="Self.FK_TBL_USER_LOGIN_TBL_MASTER_USERTYPE">
+      <End Role="TBL_MASTER_USERTYPE" EntitySet="TBL_MASTER_USERTYPE" />
+      <End Role="TBL_USER_LOGIN" EntitySet="TBL_USER_LOGIN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_USER_LOGIN_TRAIL_TBL_USER_LOGIN" Association="Self.FK_TBL_USER_LOGIN_TRAIL_TBL_USER_LOGIN">
+      <End Role="TBL_USER_LOGIN" EntitySet="TBL_USER_LOGIN" />
+      <End Role="TBL_USER_LOGIN_TRAIL" EntitySet="TBL_USER_LOGIN_TRAIL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_USER_PARENTS_DETAILS_TBL_USER_LOGIN" Association="Self.FK_TBL_USER_PARENTS_DETAILS_TBL_USER_LOGIN">
+      <End Role="TBL_USER_LOGIN" EntitySet="TBL_USER_LOGIN" />
+      <End Role="TBL_USER_PARENTS_DETAILS" EntitySet="TBL_USER_PARENTS_DETAILS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_USER_PROFESSIONAL_DETAILS_TBL_USER_LOGIN" Association="Self.FK_TBL_USER_PROFESSIONAL_DETAILS_TBL_USER_LOGIN">
+      <End Role="TBL_USER_LOGIN" EntitySet="TBL_USER_LOGIN" />
+      <End Role="TBL_USER_PROFESSIONAL_DETAILS" EntitySet="TBL_USER_PROFESSIONAL_DETAILS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_USER_ROLE_TBL_MASTER_USERTYPE" Association="Self.FK_TBL_USER_ROLE_TBL_MASTER_USERTYPE">
+      <End Role="TBL_MASTER_USERTYPE" EntitySet="TBL_MASTER_USERTYPE" />
+      <End Role="TBL_USER_ROLE" EntitySet="TBL_USER_ROLE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_USER_ROLE_TBL_USER_LOGIN" Association="Self.FK_TBL_USER_ROLE_TBL_USER_LOGIN">
+      <End Role="TBL_USER_LOGIN" EntitySet="TBL_USER_LOGIN" />
+      <End Role="TBL_USER_ROLE" EntitySet="TBL_USER_ROLE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_USER_SUBJECTS_TBL_MASTER_SUBJECT" Association="Self.FK_TBL_USER_SUBJECTS_TBL_MASTER_SUBJECT">
+      <End Role="TBL_MASTER_SUBJECT" EntitySet="TBL_MASTER_SUBJECT" />
+      <End Role="TBL_USER_SUBJECTS" EntitySet="TBL_USER_SUBJECTS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_USER_SUBJECTS_TBL_USER_LOGIN" Association="Self.FK_TBL_USER_SUBJECTS_TBL_USER_LOGIN">
+      <End Role="TBL_USER_LOGIN" EntitySet="TBL_USER_LOGIN" />
+      <End Role="TBL_USER_SUBJECTS" EntitySet="TBL_USER_SUBJECTS" />
+    </AssociationSet>
+    <AssociationSet Name="fk_UserId" Association="Self.fk_UserId">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="webpages_UsersInRoles" EntitySet="webpages_UsersInRoles" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

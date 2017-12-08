@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link href="~/assets/css/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="~/assets/css/style.css" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-default nav-style display-flex pad-top-40">
+        <div class="navbar-header">
+            <a class="navbar-brand pad-top-0" href="#">
+                <div class="navbar-item">
+                    <div>
+                        <img src="~/assets/images/navlogo.png" alt="logo">
+                    </div>
+                    <div class="pad-left-10">
+                        <p class="no-bottom text-color lin-height">Sou. Shusila Danchad Ghodawat Charitable Trust's</p>
+                        <p class="no-bottom text-color lin-height"><b>Sanjay Ghodawat Group of Institutions</b></p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <ul class="nav navbar-nav right-align pad50 navbar-item">
+            <li><a href="#" class="nav-link"><i class="fa fa-2x fa-bell-o font20" aria-hidden="true"></i></a></li>
+            <li>
+                <div class="dropdown white-bg">
+                    <button class="profile-btn btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="nav-link"><i class="fa fa-2x fa-user-o font20" aria-hidden="true"></i><p class="chevron-mr"><i class="fa fa-chevron-down small-i" aria-hidden="true"></i></p></span>
+                    </button>
+                    <div class="dropdown-menu profile-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        </div>
+        </div>
+    </nav>
+    <div class="col-xs-12 div-pad">
+        <div class="col-xs-12 div-bg home-pad white-color fw-bold">
+            <ul class="breadcrumb-style no-bottom breadcrumb-pad">
+                <li><a href="">Home</a></li>
+            </ul>
+        </div>
+        <div class="col-xs-12 home-bg">
+            @RenderBody()
+        </div>
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</html>

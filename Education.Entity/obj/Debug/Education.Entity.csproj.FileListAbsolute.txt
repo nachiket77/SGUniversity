@@ -1,0 +1,54 @@
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.Entity\bin\Debug\Education.Entity.dll
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.Entity\bin\Debug\Education.Entity.pdb
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.Entity\obj\Debug\Education.Entity.csprojResolveAssemblyReference.cache
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.Entity\obj\Debug\Education.Entity.dll
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.Entity\obj\Debug\Education.Entity.pdb
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.Entity\bin\Debug\Education.Entity.dll
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.Entity\bin\Debug\Education.Entity.pdb
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.Entity\obj\Debug\Education.Entity.dll
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.Entity\obj\Debug\Education.Entity.pdb
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.Entity\bin\Debug\Education.DB.dll
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.Entity\bin\Debug\EntityFramework.dll
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.Entity\bin\Debug\Education.DB.pdb
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.Entity\bin\Debug\EntityFramework.xml
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.Entity\bin\Debug\System.Web.Mvc.dll
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.Entity\bin\Debug\System.Web.Razor.dll
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.Entity\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.Entity\bin\Debug\System.Web.WebPages.dll
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.Entity\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.Entity\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.Entity\bin\Debug\System.Web.Mvc.xml
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.Entity\bin\Debug\System.Web.Razor.xml
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.Entity\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.Entity\bin\Debug\System.Web.WebPages.xml
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.Entity\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.Entity\obj\Debug\Education.Entity.csprojResolveAssemblyReference.cache
+G:\ProjectWork\MayurMane\EducationApp\Education.Entity\bin\Debug\Education.Entity.dll
+G:\ProjectWork\MayurMane\EducationApp\Education.Entity\bin\Debug\Education.Entity.pdb
+G:\ProjectWork\MayurMane\EducationApp\Education.Entity\bin\Debug\Education.DB.dll
+G:\ProjectWork\MayurMane\EducationApp\Education.Entity\bin\Debug\EntityFramework.dll
+G:\ProjectWork\MayurMane\EducationApp\Education.Entity\bin\Debug\Education.DB.pdb
+G:\ProjectWork\MayurMane\EducationApp\Education.Entity\bin\Debug\EntityFramework.xml
+G:\ProjectWork\MayurMane\EducationApp\Education.Entity\obj\Debug\Education.Entity.csprojResolveAssemblyReference.cache
+G:\ProjectWork\MayurMane\EducationApp\Education.Entity\obj\Debug\Education.Entity.dll
+G:\ProjectWork\MayurMane\EducationApp\Education.Entity\obj\Debug\Education.Entity.pdb
+C:\TeacherFair\EducationApp\EducationApp\Education.Entity\bin\Debug\Education.Entity.dll
+C:\TeacherFair\EducationApp\EducationApp\Education.Entity\bin\Debug\Education.Entity.pdb
+C:\TeacherFair\EducationApp\EducationApp\Education.Entity\bin\Debug\Education.DB.dll
+C:\TeacherFair\EducationApp\EducationApp\Education.Entity\bin\Debug\System.Web.Mvc.dll
+C:\TeacherFair\EducationApp\EducationApp\Education.Entity\bin\Debug\EntityFramework.dll
+C:\TeacherFair\EducationApp\EducationApp\Education.Entity\bin\Debug\System.Web.Razor.dll
+C:\TeacherFair\EducationApp\EducationApp\Education.Entity\bin\Debug\System.Web.WebPages.Razor.dll
+C:\TeacherFair\EducationApp\EducationApp\Education.Entity\bin\Debug\System.Web.WebPages.dll
+C:\TeacherFair\EducationApp\EducationApp\Education.Entity\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\TeacherFair\EducationApp\EducationApp\Education.Entity\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\TeacherFair\EducationApp\EducationApp\Education.Entity\bin\Debug\Education.DB.pdb
+C:\TeacherFair\EducationApp\EducationApp\Education.Entity\bin\Debug\System.Web.Mvc.xml
+C:\TeacherFair\EducationApp\EducationApp\Education.Entity\bin\Debug\EntityFramework.xml
+C:\TeacherFair\EducationApp\EducationApp\Education.Entity\bin\Debug\System.Web.Razor.xml
+C:\TeacherFair\EducationApp\EducationApp\Education.Entity\bin\Debug\System.Web.WebPages.Razor.xml
+C:\TeacherFair\EducationApp\EducationApp\Education.Entity\bin\Debug\System.Web.WebPages.xml
+C:\TeacherFair\EducationApp\EducationApp\Education.Entity\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\TeacherFair\EducationApp\EducationApp\Education.Entity\obj\Debug\Education.Entity.csprojResolveAssemblyReference.cache
+C:\TeacherFair\EducationApp\EducationApp\Education.Entity\obj\Debug\Education.Entity.dll
+C:\TeacherFair\EducationApp\EducationApp\Education.Entity\obj\Debug\Education.Entity.pdb

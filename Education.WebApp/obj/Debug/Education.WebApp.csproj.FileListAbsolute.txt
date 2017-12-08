@@ -1,0 +1,270 @@
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\ApplicationInsights.config
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\roslyn\csc.exe
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\roslyn\Microsoft.CodeAnalysis.dll
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\roslyn\Microsoft.CSharp.Core.targets
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\roslyn\Microsoft.VisualBasic.Core.targets
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\roslyn\System.Collections.Immutable.dll
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\roslyn\System.Reflection.Metadata.dll
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\roslyn\vbc.exe
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\roslyn\VBCSCompiler.exe
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\roslyn\VBCSCompiler.exe.config
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\Education.WebApp.dll.config
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\Education.WebApp.dll
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\Education.WebApp.pdb
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\Education.Core.dll
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\Education.Entity.dll
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.AI.Agent.Intercept.dll
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.AI.DependencyCollector.dll
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.AI.PerfCounterCollector.dll
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.AI.ServerTelemetryChannel.dll
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.AI.Web.dll
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.AI.WindowsServer.dll
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.ApplicationInsights.dll
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.Practices.ServiceLocation.dll
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.Practices.Unity.Configuration.dll
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.Practices.Unity.dll
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.Practices.Unity.RegistrationByConvention.dll
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.Web.Infrastructure.dll
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\System.Web.Helpers.dll
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\System.Web.Mvc.dll
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\System.Web.Razor.dll
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\System.Web.Webpages.Deployment.dll
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\System.Web.Webpages.dll
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\System.Web.Webpages.Razor.dll
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\Unity.Mvc5.dll
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\Education.DB.dll
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\EntityFramework.dll
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\Education.Core.pdb
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\Education.Entity.pdb
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.AI.DependencyCollector.xml
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.AI.ServerTelemetryChannel.xml
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.AI.Web.xml
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.AI.WindowsServer.xml
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.ApplicationInsights.xml
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.Practices.ServiceLocation.pdb
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.Practices.ServiceLocation.xml
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.Practices.Unity.xml
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.Practices.Unity.Configuration.xml
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.Practices.Unity.RegistrationByConvention.xml
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\System.Web.Razor.xml
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\System.Web.Webpages.xml
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\System.Web.Webpages.Deployment.xml
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\System.Web.Webpages.Razor.xml
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\System.Web.Helpers.xml
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\System.Web.Mvc.xml
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\Education.DB.pdb
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\bin\EntityFramework.xml
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\obj\Debug\Education.WebApp.csprojResolveAssemblyReference.cache
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\obj\Debug\Education.WebApp.dll
+G:\ProjectWork\MayurMane\EducationApp\EducationApp\Education.WebApp\obj\Debug\Education.WebApp.pdb
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\ApplicationInsights.config
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\roslyn\csc.exe
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\roslyn\System.Collections.Immutable.dll
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\roslyn\System.Reflection.Metadata.dll
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\roslyn\vbc.exe
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\roslyn\VBCSCompiler.exe
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\roslyn\VBCSCompiler.exe.config
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\Education.WebApp.dll.config
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\Education.WebApp.dll
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\Education.WebApp.pdb
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\Education.Core.dll
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\Education.Entity.dll
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.AI.DependencyCollector.dll
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.AI.Web.dll
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.AI.WindowsServer.dll
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.ApplicationInsights.dll
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.Practices.ServiceLocation.dll
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.Practices.Unity.Configuration.dll
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.Practices.Unity.dll
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.Practices.Unity.RegistrationByConvention.dll
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.Web.Infrastructure.dll
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\System.Web.Helpers.dll
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\System.Web.Mvc.dll
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\System.Web.Razor.dll
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\System.Web.Webpages.Deployment.dll
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\System.Web.Webpages.dll
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\System.Web.Webpages.Razor.dll
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\Unity.Mvc5.dll
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\Education.DB.dll
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\EntityFramework.dll
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\Education.Core.pdb
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\Education.Entity.pdb
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.AI.DependencyCollector.xml
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.AI.Web.xml
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.AI.WindowsServer.xml
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.ApplicationInsights.xml
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.Practices.ServiceLocation.pdb
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.Practices.ServiceLocation.xml
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.Practices.Unity.xml
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.Practices.Unity.Configuration.xml
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.Practices.Unity.RegistrationByConvention.xml
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\System.Web.Razor.xml
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\System.Web.Webpages.xml
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\System.Web.Webpages.Deployment.xml
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\System.Web.Webpages.Razor.xml
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\System.Web.Helpers.xml
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\System.Web.Mvc.xml
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\Education.DB.pdb
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\obj\Debug\Education.WebApp.csprojResolveAssemblyReference.cache
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\obj\Debug\Education.WebApp.dll
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\obj\Debug\Education.WebApp.pdb
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\Excel.dll
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\ExcelUpload.dll
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\ICSharpCode.SharpZipLib.dll
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\System.Web.Optimization.dll
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\Excel.pdb
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\ExcelUpload.pdb
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\System.Web.Optimization.xml
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\EntityFramework.xml
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\System.Web.Http.dll
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\Owin.dll
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\Newtonsoft.Json.dll
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\System.Net.Http.Formatting.dll
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\System.Web.Http.xml
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\Newtonsoft.Json.xml
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\System.Net.Http.Formatting.xml
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\System.Web.Http.WebHost.dll
+C:\Ajay Education app\EducationAppnew\EducationApp\EducationApp\Education.WebApp\bin\System.Web.Http.WebHost.xml
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\obj\Debug\Education.WebApp.csprojResolveAssemblyReference.cache
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\ApplicationInsights.config
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\roslyn\csc.exe
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\roslyn\Microsoft.CodeAnalysis.dll
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\roslyn\Microsoft.CSharp.Core.targets
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\roslyn\Microsoft.VisualBasic.Core.targets
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\roslyn\System.Collections.Immutable.dll
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\roslyn\System.Reflection.Metadata.dll
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\roslyn\vbc.exe
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\roslyn\VBCSCompiler.exe
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\roslyn\VBCSCompiler.exe.config
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\Education.WebApp.dll.config
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\Education.WebApp.dll
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\Education.WebApp.pdb
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\Education.Core.dll
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\Education.Entity.dll
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\Microsoft.AI.Agent.Intercept.dll
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\Microsoft.AI.DependencyCollector.dll
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\Microsoft.AI.PerfCounterCollector.dll
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\Microsoft.AI.ServerTelemetryChannel.dll
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\Microsoft.AI.Web.dll
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\Microsoft.AI.WindowsServer.dll
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\Microsoft.ApplicationInsights.dll
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\Microsoft.Practices.ServiceLocation.dll
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\Microsoft.Practices.Unity.Configuration.dll
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\Microsoft.Practices.Unity.dll
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\Microsoft.Practices.Unity.RegistrationByConvention.dll
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\Microsoft.Web.Infrastructure.dll
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\Newtonsoft.Json.dll
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\System.Net.Http.Formatting.dll
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\System.Web.Helpers.dll
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\System.Web.Http.dll
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\System.Web.Http.WebHost.dll
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\System.Web.Mvc.dll
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\System.Web.Razor.dll
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\System.Web.Webpages.Deployment.dll
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\System.Web.Webpages.dll
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\System.Web.Webpages.Razor.dll
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\Unity.Mvc5.dll
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\Education.DB.dll
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\EntityFramework.dll
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\Education.Core.pdb
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\Education.Entity.pdb
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\Microsoft.AI.DependencyCollector.xml
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\Microsoft.AI.ServerTelemetryChannel.xml
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\Microsoft.AI.Web.xml
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\Microsoft.AI.WindowsServer.xml
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\Microsoft.ApplicationInsights.xml
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\Microsoft.Practices.ServiceLocation.pdb
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\Microsoft.Practices.ServiceLocation.xml
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\Microsoft.Practices.Unity.xml
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\Microsoft.Practices.Unity.Configuration.xml
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\Microsoft.Practices.Unity.RegistrationByConvention.xml
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\Newtonsoft.Json.xml
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\System.Net.Http.Formatting.xml
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\System.Web.Http.xml
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\System.Web.Http.WebHost.xml
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\System.Web.Razor.xml
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\System.Web.Webpages.xml
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\System.Web.Webpages.Deployment.xml
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\System.Web.Webpages.Razor.xml
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\System.Web.Helpers.xml
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\System.Web.Mvc.xml
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\Education.DB.pdb
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\bin\EntityFramework.xml
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\obj\Debug\Education.WebApp.dll
+G:\ProjectWork\MayurMane\EducationApp\Education.WebApp\obj\Debug\Education.WebApp.pdb
+C:\TeacherFair\EducationApp\EducationApp\Education.WebApp\bin\ApplicationInsights.config
+C:\TeacherFair\EducationApp\EducationApp\Education.WebApp\bin\roslyn\csc.exe
+C:\TeacherFair\EducationApp\EducationApp\Education.WebApp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\TeacherFair\EducationApp\EducationApp\Education.WebApp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\TeacherFair\EducationApp\EducationApp\Education.WebApp\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\TeacherFair\EducationApp\EducationApp\Education.WebApp\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\TeacherFair\EducationApp\EducationApp\Education.WebApp\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\TeacherFair\EducationApp\EducationApp\Education.WebApp\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\TeacherFair\EducationApp\EducationApp\Education.WebApp\bin\roslyn\System.Collections.Immutable.dll
+C:\TeacherFair\EducationApp\EducationApp\Education.WebApp\bin\roslyn\System.Reflection.Metadata.dll
+C:\TeacherFair\EducationApp\EducationApp\Education.WebApp\bin\roslyn\vbc.exe
+C:\TeacherFair\EducationApp\EducationApp\Education.WebApp\bin\roslyn\VBCSCompiler.exe
+C:\TeacherFair\EducationApp\EducationApp\Education.WebApp\bin\roslyn\VBCSCompiler.exe.config
+C:\TeacherFair\EducationApp\EducationApp\Education.WebApp\bin\Education.WebApp.dll.config
+C:\TeacherFair\EducationApp\EducationApp\Education.WebApp\bin\Education.WebApp.dll
+C:\TeacherFair\EducationApp\EducationApp\Education.WebApp\bin\Education.WebApp.pdb
+C:\TeacherFair\EducationApp\EducationApp\Education.WebApp\bin\Education.Core.dll
+C:\TeacherFair\EducationApp\EducationApp\Education.WebApp\bin\Education.Entity.dll
+C:\TeacherFair\EducationApp\EducationApp\Education.WebApp\bin\ExcelUpload.dll
+C:\TeacherFair\EducationApp\EducationApp\Education.WebApp\bin\Education.DB.dll
+C:\TeacherFair\EducationApp\EducationApp\Education.WebApp\bin\EntityFramework.dll
+C:\TeacherFair\EducationApp\EducationApp\Education.WebApp\bin\ICSharpCode.SharpZipLib.dll
+C:\TeacherFair\EducationApp\EducationApp\Education.WebApp\bin\System.Web.Optimization.dll
+C:\TeacherFair\EducationApp\EducationApp\Education.WebApp\bin\Education.Core.pdb
+C:\TeacherFair\EducationApp\EducationApp\Education.WebApp\bin\Education.Entity.pdb
+C:\TeacherFair\EducationApp\EducationApp\Education.WebApp\bin\Excel.pdb
+C:\TeacherFair\EducationApp\EducationApp\Education.WebApp\bin\ExcelUpload.pdb
+C:\TeacherFair\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.AI.DependencyCollector.xml
+C:\TeacherFair\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\TeacherFair\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.AI.Web.xml
+C:\TeacherFair\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.AI.WindowsServer.xml
+C:\TeacherFair\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.ApplicationInsights.xml
+C:\TeacherFair\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\TeacherFair\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.Practices.ServiceLocation.pdb
+C:\TeacherFair\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.Practices.ServiceLocation.xml
+C:\TeacherFair\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.Practices.Unity.xml
+C:\TeacherFair\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.Practices.Unity.Configuration.xml
+C:\TeacherFair\EducationApp\EducationApp\Education.WebApp\bin\Microsoft.Practices.Unity.RegistrationByConvention.xml
+C:\TeacherFair\EducationApp\EducationApp\Education.WebApp\bin\Newtonsoft.Json.xml
+C:\TeacherFair\EducationApp\EducationApp\Education.WebApp\bin\System.Net.Http.Formatting.xml
+C:\TeacherFair\EducationApp\EducationApp\Education.WebApp\bin\System.Web.Http.xml
+C:\TeacherFair\EducationApp\EducationApp\Education.WebApp\bin\System.Web.Http.WebHost.xml
+C:\TeacherFair\EducationApp\EducationApp\Education.WebApp\bin\System.Web.Razor.xml
+C:\TeacherFair\EducationApp\EducationApp\Education.WebApp\bin\System.Web.Webpages.xml
+C:\TeacherFair\EducationApp\EducationApp\Education.WebApp\bin\System.Web.Webpages.Deployment.xml
+C:\TeacherFair\EducationApp\EducationApp\Education.WebApp\bin\System.Web.Webpages.Razor.xml
+C:\TeacherFair\EducationApp\EducationApp\Education.WebApp\bin\System.Web.Helpers.xml
+C:\TeacherFair\EducationApp\EducationApp\Education.WebApp\bin\System.Web.Mvc.xml
+C:\TeacherFair\EducationApp\EducationApp\Education.WebApp\bin\Education.DB.pdb
+C:\TeacherFair\EducationApp\EducationApp\Education.WebApp\bin\EntityFramework.xml
+C:\TeacherFair\EducationApp\EducationApp\Education.WebApp\bin\System.Web.Optimization.xml
+C:\TeacherFair\EducationApp\EducationApp\Education.WebApp\obj\Debug\Education.WebApp.csprojResolveAssemblyReference.cache
+C:\TeacherFair\EducationApp\EducationApp\Education.WebApp\obj\Debug\Education.WebApp.dll
+C:\TeacherFair\EducationApp\EducationApp\Education.WebApp\obj\Debug\Education.WebApp.pdb
