@@ -26,7 +26,8 @@ namespace Education.WebApp.Controllers
             objalldetails.SubjectList = _VideoUpload.Getsubject();
 
             objalldetails.VideoUploaddetailsList = _VideoUpload.GetVideoUploaddetails();
-            objalldetails.VideoUploaddetails.DIGITALDOCTYPEID = 1;
+            VideoUploaddetails dt = new VideoUploaddetails();
+            dt.DIGITALDOCTYPEID = 1;
 
             // return View();
             return View(objalldetails);

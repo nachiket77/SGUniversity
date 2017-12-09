@@ -105,5 +105,31 @@ namespace Education.Core.Teacher
                 throw;
             }
         }
+
+        public List<TeacherDetails> GetteacherDetails()
+        {
+            try
+            {
+                return dbEntities.TBL_MASTER_TEACHER.OrderByDescending(x => x.TEACHERID).Select(X => new TeacherDetails() { TEACHERID = (X .TEACHERID), FIRSTNAME = X.FIRSTNAME, LASTNAME = X.LASTNAME, MIDDLENAME = X.MIDDLENAME }).ToList();
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
+
+        public void updateteacherDetail(int userid, string FirstName, string Last, string middle)
+        {
+            var teacherdata = dbEntities.TBL_MASTER_TEACHER.Where(x => x.TEACHERID == userid).FirstOrDefault();
+            if (teacherdata != null)
+            {
+                teacherdata.FIRSTNAME = FirstName;
+                teacherdata.LASTNAME = Last;
+                teacherdata.MIDDLENAME = middle;
+                teacherdata.MODIFIEDDATE = DateTime.Now;
+                dbEntities.SaveChanges();
+            }
+        }
     }
 }

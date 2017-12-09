@@ -49,6 +49,6 @@ C:\TeacherFair\EducationApp\EducationApp\Education.Entity\bin\Debug\System.Web.R
 C:\TeacherFair\EducationApp\EducationApp\Education.Entity\bin\Debug\System.Web.WebPages.Razor.xml
 C:\TeacherFair\EducationApp\EducationApp\Education.Entity\bin\Debug\System.Web.WebPages.xml
 C:\TeacherFair\EducationApp\EducationApp\Education.Entity\bin\Debug\System.Web.WebPages.Deployment.xml
-C:\TeacherFair\EducationApp\EducationApp\Education.Entity\obj\Debug\Education.Entity.csprojResolveAssemblyReference.cache
 C:\TeacherFair\EducationApp\EducationApp\Education.Entity\obj\Debug\Education.Entity.dll
 C:\TeacherFair\EducationApp\EducationApp\Education.Entity\obj\Debug\Education.Entity.pdb
+C:\TeacherFair\EducationApp\EducationApp\Education.Entity\obj\Debug\Education.Entity.csprojResolveAssemblyReference.cache

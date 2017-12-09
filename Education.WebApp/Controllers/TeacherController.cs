@@ -68,7 +68,7 @@ namespace Education.WebApp.Controllers
                     {
                         // RedirectToAction("AddStudent", objalldetails.StudentDetails.USERID);
                         ViewBag.message = "Success";
-                        return View("ListTeacher");
+                        RedirectToAction("Index", "Teacher");
                     }
                     else
                     {
@@ -86,7 +86,13 @@ namespace Education.WebApp.Controllers
 
                 // }
 
-                return View();
+                // }
+                AllTeacherDetails det = new AllTeacherDetails();
+                det.CourseList = _TeacherReposetory.GetCourse();
+                det.SubjectList = _TeacherReposetory.Getsubject();
+                
+                ModelState.Clear();
+                return View("AddTeacher", "_Layout", det);
             }
             catch (Exception ex)
             {
@@ -95,7 +101,9 @@ namespace Education.WebApp.Controllers
         }
         public ActionResult ListTeacher()
         {
-            return View();
+            AllTeacherDetails Details = new AllTeacherDetails();
+            Details.allteacherdetails = _TeacherReposetory.GetteacherDetails();
+            return View(Details);
         }
 
         string GeneratePassword(string Key)
@@ -103,6 +111,29 @@ namespace Education.WebApp.Controllers
             Random generator = new Random();
             Key = generator.Next(0, 1000000).ToString("D6");
             return Key;
+        }
+
+        [HttpPost]
+        public ActionResult UpdateTeacherDetails(int userid, string FirstName, string Last, string middle)
+        {
+            try
+            {
+
+                _TeacherReposetory.updateteacherDetail(userid, FirstName, Last, middle);
+                AllTeacherDetails Details = new AllTeacherDetails();
+                Details.allteacherdetails = _TeacherReposetory.GetteacherDetails();
+                ViewBag.message = "Record Updated Successfully";
+                return View("ListTeacher", "_Layout", Details);
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            //  string USERID = Convert.ToString(studentdetails.USERID);
+
+
         }
 
     }

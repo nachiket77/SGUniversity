@@ -16,5 +16,9 @@ namespace Education.Core.Teacher
         List<SubjectMaster> Getsubject();
 
         bool TeacherExist(TeacherDetails teacher);
+
+        List<TeacherDetails> GetteacherDetails();
+
+        void updateteacherDetail(int userid, string FirstName, string Last, string middle);
     }
 }

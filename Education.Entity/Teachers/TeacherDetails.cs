@@ -9,7 +9,7 @@ namespace Education.Entity.Teachers
     public class TeacherDetails
     {
 
-        public int TEACHERID { get; set; }
+        public long TEACHERID { get; set; }
         public string FIRSTNAME { get; set; }
         public string MIDDLENAME { get; set; }
         public string LASTNAME { get; set; }

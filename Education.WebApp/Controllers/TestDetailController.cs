@@ -163,20 +163,29 @@ namespace Education.WebApp.Controllers
 
 
                     _ITestDetailsRepository.CreateTestDetails(result, objalltestdetails);
-                    //Sending result data to View
-                    return View("ListTestDetail");
+                    ViewBag.message = "Success";
+                    ModelState.Clear();
+                    RedirectToAction("Index", "TestDetail");
                 }
             }
             else
             {
                 ModelState.AddModelError("File", "Please upload your file");
             }
-            return View();
+            AllTestDetails testdet = new AllTestDetails();
+            testdet.CourseList = _ITestDetailsRepository.GetCourse();
+            testdet.SubjectList = _ITestDetailsRepository.Getsubject();
+            testdet.QuestionTypeList = _ITestDetailsRepository.GetQuestionType();
+            testdet.TestTypeList = _ITestDetailsRepository.GetTestType();
+            ModelState.Clear();
+            return View("AddTestDetails", "_Layout", testdet);
         }
 
         public ActionResult ListTestDetail()
         {
-            return View();
+            AllTestDetails Details = new AllTestDetails();
+            Details.TestDetailsList = _ITestDetailsRepository.GetTestDetails();
+            return View(Details);
         }
 
     }

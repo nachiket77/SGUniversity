@@ -39,6 +39,7 @@ namespace Education.WebApp.Controllers
                 _StudentReposetory.updateStudentDetail(userid, FirstName, Last, middle);
                 AllDetails Details = new AllDetails();
                 Details.StudentList = _StudentReposetory.GetStudentDetails();
+                ViewBag.message = "Record Updated Successfully";
                 return View("ListStudent", "_Layout", Details);
 
             }

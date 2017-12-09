@@ -21,7 +21,7 @@ namespace Education.Core.Admin
             objtestdetails.SUBJECTID = allTestDetails.SubjectMaster.SUBJECTID;
             objtestdetails.TESTTYPEID = allTestDetails.TestTypeMaster.TESTTYPEID;
             objtestdetails.COURSEID = allTestDetails.CourseMaster.ID;
-            objtestdetails.PUBLISHDATE = DateTime.Now;//allTestDetails. TestDetails.PUBLISHDATE;
+            objtestdetails.PUBLISHDATE = DateTime.Now;
             objtestdetails.GIVENBY = allTestDetails.TestDetails.GIVENBY;
             objtestdetails.CREATEDDATE = DateTime.Now;
            
@@ -111,6 +111,19 @@ namespace Education.Core.Admin
 
             }
             catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public List<TestDetails> GetTestDetails()
+        {
+            try
+            {
+                return dbEntities.TBL_TEST_TESTDETAIL.OrderByDescending(x => x.TESTID).Select(X => new TestDetails() { TESTID = (X.TESTID), TITLE = X.TITLE, SUBJECTID = X.SUBJECTID, COURSEID = X.COURSEID, PUBLISHDATE = X.PUBLISHDATE }).ToList();
+            }
+            catch (Exception ex)
             {
 
                 throw;

@@ -22,14 +22,24 @@
         $('#FirstName').val(selectedName);
         $('#Lastname').val(selectedlastname);
         $('#middlename').val(selectedMiddleName);
-        
-        
+
+
         //$(".modal-body #bookId").val(myBookId);
         // As pointed out in comments,
         // it is superfluous to have to manually call the modal.
         // $('#addBookDialog').modal('show');
     });
 </script>
+
+ if (ViewBag.message != null)
+            {
+
+<script type="text/javascript">
+    window.onload = function () {
+        alert("@ViewBag.message");
+    };
+</script>
+            }
 <div class="col-xs-12 home-bg">
     <div class="col-xs-12 col-md-10 col-md-offset-1 side-no-pad liststudent-table">
         <div class="table-responsive">
@@ -88,9 +98,9 @@
     </div>
     <fieldset>
         @*@using (Ajax.BeginForm("UpdateStudentDetails", "List",
-                                                            new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "signinmodal" }))*@
-                                                            @using (Html.BeginForm("UpdateStudentDetails", "List", FormMethod.Post))
-                                                            {
+            new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "signinmodal" }))*@
+        @using (Html.BeginForm("UpdateStudentDetails", "List", FormMethod.Post))
+        {
             <div id="signinmodal" class="modal fade" role="dialog">
                 <div class="modal-dialog">
                     <!-- Modal content-->
@@ -132,7 +142,7 @@
                                     <div class="col-xs-12 col-sm-3">
                                         @*@Model.USERID*@
                                         @*@Html.TextBoxFor(model => model.USERID);*@
-                                        <input type="text" name="Last" id="Lastname"  />
+                                        <input type="text" name="Last" id="Lastname" />
                                     </div>
                                 </div>
                                 <div class="col-xs-12 side-no-pad mr-top-10">
@@ -142,7 +152,7 @@
                                     <div class="col-xs-12 col-sm-3">
                                         @*@Model.USERID*@
                                         @*@Html.TextBoxFor(model => model.USERID);*@
-                                        <input type="text" name="middle" id="middlename"/>
+                                        <input type="text" name="middle" id="middlename" />
                                     </div>
                                 </div>
                                 <div class="col-xs-12 side-no-pad mr-top-10">
@@ -151,10 +161,10 @@
                                     </div>
                                     <div class="col-xs-12 col-sm-3">
                                         @*<input type="button" name="id" value="Update"  />*@
-                                      
-                                            <input type="submit" class="btn btn-sucesss" style="background-color:dodgerblue" value="Update" />
-                                            @*<a href="">Add</a>*@
-                                       
+
+                                        <input type="submit" class="btn btn-sucesss" style="background-color:dodgerblue" value="Update" />
+                                        @*<a href="">Add</a>*@
+
                                     </div>
                                 </div>
 

@@ -49,6 +49,10 @@
     <Reference Include="ExcelUpload">
       <HintPath>..\..\..\..\..\EducationApp\EducationApp\EducationApp\Education.WebApp\bin\ExcelUpload.dll</HintPath>
     </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.85.5.452, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Educationnnnnnn\EducationApp(Video-Test)(28-10-2017)\EducationApp\Education.WebApp\bin\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.0.1011, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -320,6 +324,7 @@
     <Content Include="Views\Videos\ListVideo.cshtml" />
     <Content Include="Views\List\ListStudent.cshtml" />
     <Content Include="Views\List\UpdateStudentDetails.cshtml" />
+    <Content Include="Views\Teacher\UpdateTeacherDetails.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

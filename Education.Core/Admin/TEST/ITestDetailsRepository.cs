@@ -21,5 +21,9 @@ namespace Education.Core.Admin
 
         List<QuestionType> GetQuestionType();
 
+        List<TestDetails> GetTestDetails();
+
+        
+
     }
 }

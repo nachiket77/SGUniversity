@@ -20,5 +20,7 @@ namespace Education.Entity.Teachers
         public List<SubjectMaster> SubjectList { get; set; }
 
 
+        public List<TeacherDetails> allteacherdetails { get; set; }
+
     }
 }

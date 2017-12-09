@@ -10,7 +10,7 @@
                 <button class="tablinks" onclick="openCity(event, 'student')" id="defaultOpen">Student Details</button>
                 <button class="tablinks" onclick="openCity(event, 'parent')">Parent Details</button>
                 <button class="tablinks" onclick="openCity(event, 'professional')">Professional Details</button>
-                <button class="tablinks" onclick="openCity(event, 'other')">Other Details</button>
+                @*<button class="tablinks" onclick="openCity(event, 'other')">Other Details</button>*@
             </div>
         </div>
         @using (Html.BeginForm("AddStudentDetails", "Student", FormMethod.Post))
@@ -148,7 +148,7 @@
                         </div>
                         <div class="col-xs-12 side-no-pad mr-top-10 xs-details">
                             <div class="col-xs-12 col-md-5 side-no-pad pad7 wh">
-                                EMAILID
+                                Email Id:
                             </div>
                             <div class="col-xs-12 col-sm-7 col-md-7 xs-details">
                                 @*<input type="email" class="form-control" placeholder="First Name">*@

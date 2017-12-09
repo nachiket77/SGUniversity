@@ -37,6 +37,8 @@ namespace Education.Entity.Admin.Test
 
         public List<QuestionType> QuestionTypeList { get; set; }
 
+        public List<TestDetails> TestDetailsList { get; set; }
+
 
     }
 }
