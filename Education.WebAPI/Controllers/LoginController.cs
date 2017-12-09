@@ -16,6 +16,8 @@ namespace Education.WebAPI.Controllers
         
         public IUserReposetory _UserReporsetory;
 
+
+
         public LoginController(IUserReposetory _repo)
         {
             _UserReporsetory = _repo;
