@@ -115,6 +115,8 @@ namespace Education.WebApp.Controllers
             {
                 throw ex;
             }
+
+
         }
 
         public ActionResult AddParentDetails(AllDetails allDetails)
