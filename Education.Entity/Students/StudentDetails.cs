@@ -14,19 +14,37 @@ namespace Education.Entity.Students
         public long PERSONALDETAILID { get; set; }
         public string PASSWORD { get; set; }
         public long USERID { get; set; }
+        [Required]
+        [Display(Name = "Email Id")]
+        [DataType(DataType.EmailAddress)]
         public string EMAILID { get; set; }
+        [Required]
+        [Display(Name = "First Name")]
         public string FIRSTNAME { get; set; }
+        [Required]
+        [Display(Name = "Middle Name")]
         public string MIDDLENAME { get; set; }
+        [Required]
+        [Display(Name = "Last Name")]
         public string LASTNAME { get; set; }
+        [Required]
+        [Display(Name = "Mother Name")]
         public string MOTHERNAME { get; set; }
+
+        [Required]
+        [Display(Name = "Father Name")]
         public string FATHERNAME { get; set; }
         [Display(Name = "Date of Birth")]
         [DataType(DataType.Date)]
         public DateTime? DOB { get; set; }
         public string DISABILITY { get; set; }
         public string ENROLNMENTID { get; set; }
-
+        [Required]
+        [Display(Name = "Nationality")]
         public string NATIONALITY { get; set; }
+        [Required]
+        [Display(Name = "Mobile No")]
+        [DataType(DataType.PhoneNumber)]
         public string MOBILENO { get; set; }
         public long CREATEDBY { get; set; }
         public Education.Entity.Master.UserLoginStatus LoginStatus { get; set; }

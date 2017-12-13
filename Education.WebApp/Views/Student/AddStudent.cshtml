@@ -33,17 +33,17 @@
                         </div>
                         <div class="col-xs-12 col-sm-3 col-md-2 xs-details as-left">
                             @*<input type="email" class="form-control" placeholder="First Name">*@
-                            @Html.EditorFor(model => model.StudentDetails.FIRSTNAME, new { htmlAttributes = new { @class = "form-control", @placeholder = "First Name" } })
+                            @Html.EditorFor(model => model.StudentDetails.FIRSTNAME, new { htmlAttributes = new { @class = "form-control", @placeholder = "First Name", required = "required" } })
                             @Html.ValidationMessageFor(model => model.StudentDetails.FIRSTNAME, "", new { @class = "text-danger" })
                         </div>
                         <div class="col-xs-12 col-sm-3 col-md-2 xs-details">
                             @*<input type="email" class="form-control" placeholder="Middle Name">*@
-                            @Html.EditorFor(model => model.StudentDetails.MIDDLENAME, new { htmlAttributes = new { @class = "form-control", @placeholder = "Middle Name" } })
+                            @Html.EditorFor(model => model.StudentDetails.MIDDLENAME, new { htmlAttributes = new { @class = "form-control", @placeholder = "Middle Name", required = "required" } })
                             @Html.ValidationMessageFor(model => model.StudentDetails.MIDDLENAME, "", new { @class = "text-danger" })
                         </div>
                         <div class="col-xs-12 col-sm-3 col-md-2 xs-details">
                             @*<input type="email" class="form-control" placeholder="Last Name">*@
-                            @Html.EditorFor(model => model.StudentDetails.LASTNAME, new { htmlAttributes = new { @class = "form-control", @placeholder = "Last Name" } })
+                            @Html.EditorFor(model => model.StudentDetails.LASTNAME, new { htmlAttributes = new { @class = "form-control", @placeholder = "Last Name", required = "required" } })
                             @Html.ValidationMessageFor(model => model.StudentDetails.LASTNAME, "", new { @class = "text-danger" })
                         </div>
                     </div>
@@ -67,7 +67,7 @@
                                 Date of Birth:
                             </div>
                             <div class="col-xs-12 col-sm-7">
-                                @Html.EditorFor(model => model.StudentDetails.DOB, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.EditorFor(model => model.StudentDetails.DOB, new { htmlAttributes = new { @class = "form-control", required = "required" } })
                                 @Html.ValidationMessageFor(model => model.StudentDetails.DOB, "", new { @class = "text-danger" })
                             </div>
                         </div>
@@ -110,7 +110,7 @@
                                 @*<select class="form-control">
                                         <option>India</option>
                                     </select>*@
-                                @Html.EditorFor(model => model.StudentDetails.NATIONALITY, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.EditorFor(model => model.StudentDetails.NATIONALITY, new { htmlAttributes = new { @class = "form-control", required = "required" } })
                                 @Html.ValidationMessageFor(model => model.StudentDetails.NATIONALITY, "", new { @class = "text-danger" })
                             </div>
                         </div>
@@ -122,7 +122,7 @@
                             </div>
                             <div class="col-xs-12 col-sm-7 col-md-7 xs-details">
                                 @*<input type="email" class="form-control" placeholder="First Name">*@
-                                @Html.EditorFor(model => model.StudentDetails.FATHERNAME, new { htmlAttributes = new { @class = "form-control", @placeholder = "Father's Name" } })
+                                @Html.EditorFor(model => model.StudentDetails.FATHERNAME, new { htmlAttributes = new { @class = "form-control", @placeholder = "Father's Name", required = "required" } })
                                 @Html.ValidationMessageFor(model => model.StudentDetails.FATHERNAME, "", new { @class = "text-danger" })
                             </div>
                         </div>
@@ -132,7 +132,7 @@
                             </div>
                             <div class="col-xs-12 col-sm-7 col-md-7 xs-details">
                                 @*<input type="email" class="form-control" placeholder="First Name">*@
-                                @Html.EditorFor(model => model.StudentDetails.MOTHERNAME, new { htmlAttributes = new { @class = "form-control", @placeholder = "Mother's Name" } })
+                                @Html.EditorFor(model => model.StudentDetails.MOTHERNAME, new { htmlAttributes = new { @class = "form-control", @placeholder = "Mother's Name", required = "required" } })
                                 @Html.ValidationMessageFor(model => model.StudentDetails.MOTHERNAME, "", new { @class = "text-danger" })
                             </div>
                         </div>
@@ -142,7 +142,7 @@
                             </div>
                             <div class="col-xs-12 col-sm-7 col-md-7 xs-details">
                                 @*<input type="email" class="form-control" placeholder="First Name">*@
-                                @Html.EditorFor(model => model.StudentDetails.MOBILENO, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.EditorFor(model => model.StudentDetails.MOBILENO, new { htmlAttributes = new { @class = "form-control", required = "required" } })
                                 @Html.ValidationMessageFor(model => model.StudentDetails.MOBILENO, "", new { @class = "text-danger" })
                             </div>
                         </div>
@@ -152,7 +152,7 @@
                             </div>
                             <div class="col-xs-12 col-sm-7 col-md-7 xs-details">
                                 @*<input type="email" class="form-control" placeholder="First Name">*@
-                                @Html.EditorFor(model => model.StudentDetails.EMAILID, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.EditorFor(model => model.StudentDetails.EMAILID, new { htmlAttributes = new { @class = "form-control", required = "required" } })
                                 @Html.ValidationMessageFor(model => model.StudentDetails.EMAILID, "", new { @class = "text-danger" })
                             </div>
                         </div>
@@ -173,7 +173,7 @@
                                         @Html.DropDownListFor(model => model.ClassesMaster.ClassID, new SelectList(Model.ClassesList, "ClassID", "ClassName"), "Please select")
                                     </td>
                                     <td>
-                                        @Html.EditorFor(model => model.StudentDetails.INSTITUTIONNAME, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.EditorFor(model => model.StudentDetails.INSTITUTIONNAME, new { htmlAttributes = new { @class = "form-control" , required = "required" } })
                                     </td>
                                     @*<td><input type="text" name="" placeholder="Delhi University"></td>*@
                                     <td>
@@ -184,7 +184,7 @@
                                     </td>
                                     <td>
                                         @*<input type="text" name="" placeholder="80%" class="max-widthinput">*@
-                                        @Html.EditorFor(model => model.StudentDetails.percentage, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.EditorFor(model => model.StudentDetails.percentage, new { htmlAttributes = new { @class = "form-control", required = "required" } })
                                     </td>
                                     <td class="pad14"><a href="">Remove</a></td>
                                 </tr>
@@ -219,7 +219,7 @@
                                 </div>
                                 <div class="col-xs-12 col-sm-7 col-md-7 xs-details">
                                     @*<input type="email" class="form-control" placeholder="First Name">*@
-                                    @Html.EditorFor(model => model.ParentDetails.FATHERNAME, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.EditorFor(model => model.ParentDetails.FATHERNAME, new { htmlAttributes = new { @class = "form-control", required = "required" } })
                                     @Html.ValidationMessageFor(model => model.ParentDetails.FATHERNAME, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -231,7 +231,7 @@
                                 </div>
                                 <div class="col-xs-12 col-sm-7 col-md-7 xs-details">
                                     @*<input type="email" class="form-control" placeholder="First Name">*@
-                                    @Html.EditorFor(model => model.ParentDetails.FATHEREMAIL, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.EditorFor(model => model.ParentDetails.FATHEREMAIL, new { htmlAttributes = new { @class = "form-control", required = "required" } })
                                     @Html.ValidationMessageFor(model => model.ParentDetails.FATHEREMAIL, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -243,7 +243,7 @@
                                 </div>
                                 <div class="col-xs-12 col-sm-7 col-md-7 xs-details">
                                     @*<input type="email" class="form-control" placeholder="First Name">*@
-                                    @Html.EditorFor(model => model.ParentDetails.FATHERMOBILENUMBER, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.EditorFor(model => model.ParentDetails.FATHERMOBILENUMBER, new { htmlAttributes = new { @class = "form-control", required = "required" } })
                                     @Html.ValidationMessageFor(model => model.ParentDetails.FATHERMOBILENUMBER, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -255,7 +255,7 @@
                                 </div>
                                 <div class="col-xs-12 col-sm-7 col-md-7 xs-details">
                                     @*<input type="email" class="form-control" placeholder="First Name">*@
-                                    @Html.EditorFor(model => model.ParentDetails.FATHEROCCUPATION, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.EditorFor(model => model.ParentDetails.FATHEROCCUPATION, new { htmlAttributes = new { @class = "form-control", required = "required" } })
                                     @Html.ValidationMessageFor(model => model.ParentDetails.FATHEROCCUPATION, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -267,7 +267,7 @@
                                 </div>
                                 <div class="col-xs-12 col-sm-7 col-md-7 xs-details">
                                     @*<input type="email" class="form-control" placeholder="First Name">*@
-                                    @Html.EditorFor(model => model.ParentDetails.FATHERCOMPANYNAME, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.EditorFor(model => model.ParentDetails.FATHERCOMPANYNAME, new { htmlAttributes = new { @class = "form-control", required = "required" } })
                                     @Html.ValidationMessageFor(model => model.ParentDetails.FATHERCOMPANYNAME, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -279,7 +279,7 @@
                                 </div>
                                 <div class="col-xs-12 col-sm-7 col-md-7 xs-details">
                                     @*<input type="email" class="form-control" placeholder="First Name">*@
-                                    @Html.EditorFor(model => model.ParentDetails.FATHERDESIGNATION, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.EditorFor(model => model.ParentDetails.FATHERDESIGNATION, new { htmlAttributes = new { @class = "form-control", required = "required" } })
                                     @Html.ValidationMessageFor(model => model.ParentDetails.FATHERDESIGNATION, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -293,7 +293,7 @@
                                 </div>
                                 <div class="col-xs-12 col-sm-7 col-md-6 xs-details">
                                     @*<input type="email" class="form-control" placeholder="First Name">*@
-                                    @Html.EditorFor(model => model.ParentDetails.MOTHERNAME, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.EditorFor(model => model.ParentDetails.MOTHERNAME, new { htmlAttributes = new { @class = "form-control", required = "required" } })
                                     @Html.ValidationMessageFor(model => model.ParentDetails.MOTHERNAME, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -305,7 +305,7 @@
                                 </div>
                                 <div class="col-xs-12 col-sm-7 col-md-6 xs-details">
                                     @*<input type="email" class="form-control" placeholder="First Name">*@
-                                    @Html.EditorFor(model => model.ParentDetails.MOTHEREMAIL, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.EditorFor(model => model.ParentDetails.MOTHEREMAIL, new { htmlAttributes = new { @class = "form-control" , required = "required" } })
                                     @Html.ValidationMessageFor(model => model.ParentDetails.MOTHEREMAIL, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -317,7 +317,7 @@
                                 </div>
                                 <div class="col-xs-12 col-sm-7 col-md-6 xs-details">
                                     @*<input type="email" class="form-control" placeholder="First Name">*@
-                                    @Html.EditorFor(model => model.ParentDetails.MOTHERMOBILENUMBER, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.EditorFor(model => model.ParentDetails.MOTHERMOBILENUMBER, new { htmlAttributes = new { @class = "form-control", required = "required" } })
                                     @Html.ValidationMessageFor(model => model.ParentDetails.MOTHERMOBILENUMBER, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -329,7 +329,7 @@
                                 </div>
                                 <div class="col-xs-12 col-sm-7 col-md-6 xs-details">
                                     @*<input type="email" class="form-control" placeholder="First Name">*@
-                                    @Html.EditorFor(model => model.ParentDetails.MOTHEROCCUPATION, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.EditorFor(model => model.ParentDetails.MOTHEROCCUPATION, new { htmlAttributes = new { @class = "form-control", required = "required" } })
                                     @Html.ValidationMessageFor(model => model.ParentDetails.MOTHEROCCUPATION, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -341,7 +341,7 @@
                                 </div>
                                 <div class="col-xs-12 col-sm-7 col-md-6 xs-details">
                                     @*<input type="email" class="form-control" placeholder="First Name">*@
-                                    @Html.EditorFor(model => model.ParentDetails.MOTHERCOMPANYNAME, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.EditorFor(model => model.ParentDetails.MOTHERCOMPANYNAME, new { htmlAttributes = new { @class = "form-control", required = "required" } })
                                     @Html.ValidationMessageFor(model => model.ParentDetails.MOTHERCOMPANYNAME, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -353,7 +353,7 @@
                                 </div>
                                 <div class="col-xs-12 col-sm-7 col-md-6 xs-details">
                                     @*<input type="email" class="form-control" placeholder="First Name">*@
-                                    @Html.EditorFor(model => model.ParentDetails.MOTHERDESIGNATION, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.EditorFor(model => model.ParentDetails.MOTHERDESIGNATION, new { htmlAttributes = new { @class = "form-control", required = "required" } })
                                     @Html.ValidationMessageFor(model => model.ParentDetails.MOTHERDESIGNATION, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -382,7 +382,7 @@
                                 </div>
                                 <div class="col-xs-12 col-sm-7 col-md-7 xs-details">
                                     @*<input type="email" class="form-control" placeholder="First Name">*@
-                                    @Html.EditorFor(model => model.ProfessionalDetails.COMPANYNAME, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.EditorFor(model => model.ProfessionalDetails.COMPANYNAME, new { htmlAttributes = new { @class = "form-control", required = "required" } })
                                     @Html.ValidationMessageFor(model => model.ProfessionalDetails.COMPANYNAME, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -394,7 +394,7 @@
                                 </div>
                                 <div class="col-xs-12 col-sm-7 col-md-7 xs-details">
                                     @*<input type="email" class="form-control" placeholder="First Name">*@
-                                    @Html.EditorFor(model => model.ProfessionalDetails.COMPANYNAME, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.EditorFor(model => model.ProfessionalDetails.COMPANYNAME, new { htmlAttributes = new { @class = "form-control", required = "required" } })
                                     @Html.ValidationMessageFor(model => model.ProfessionalDetails.COMPANYNAME, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -406,7 +406,7 @@
                                 </div>
                                 <div class="col-xs-12 col-sm-7 col-md-7 xs-details">
                                     @*<input type="email" class="form-control" placeholder="First Name">*@
-                                    @Html.EditorFor(model => model.ProfessionalDetails.DESIGNATION, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.EditorFor(model => model.ProfessionalDetails.DESIGNATION, new { htmlAttributes = new { @class = "form-control", required = "required" } })
                                     @Html.ValidationMessageFor(model => model.ProfessionalDetails.DESIGNATION, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -420,7 +420,7 @@
                                 </div>
                                 <div class="col-xs-12 col-sm-7 col-md-7 xs-details">
                                     @*<input type="email" class="form-control" placeholder="First Name">*@
-                                    @Html.EditorFor(model => model.ProfessionalDetails.EMPLOYEETYPE, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.EditorFor(model => model.ProfessionalDetails.EMPLOYEETYPE, new { htmlAttributes = new { @class = "form-control", required = "required" } })
                                     @Html.ValidationMessageFor(model => model.ProfessionalDetails.EMPLOYEETYPE, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -432,7 +432,7 @@
                                 </div>
                                 <div class="col-xs-12 col-sm-7 col-md-7 xs-details">
                                     @*<input type="email" class="form-control" placeholder="First Name">*@
-                                    @Html.EditorFor(model => model.ProfessionalDetails.REMARKS, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.EditorFor(model => model.ProfessionalDetails.REMARKS, new { htmlAttributes = new { @class = "form-control", required = "required" } })
                                     @Html.ValidationMessageFor(model => model.ProfessionalDetails.REMARKS, "", new { @class = "text-danger" })
                                 </div>
                             </div>
