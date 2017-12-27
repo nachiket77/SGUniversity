@@ -12,18 +12,19 @@ namespace Education.Core.Admin
     public class VideoUpload : IVideoUpload
     {
         public ajay_dbEntities dbEntities = new ajay_dbEntities();
-
+        // public TeacherDBEntities dbEntities = new TeacherDBEntities();
         public AllVideosDetails CreateVideoDetails(AllVideosDetails objvideoDetails)
         {
             try
             {
                 TBL_GN_DIGITALDOC_DETAILS videodetails = new TBL_GN_DIGITALDOC_DETAILS();
                 //videodetails.DIGITALDOCTYPEID = objvideoDetails.VideoUploaddetails.DIGITALDOCTYPEID;
-               // videodetails.DOCUMENTNAME = objvideoDetails.VideoUploaddetails.DOCUMENTNAME;
-                //videodetails.SUBJECTID = objvideoDetails.VideoUploaddetails.SUBJECTID;
+                videodetails.DOCUMENTNAME = objvideoDetails.VideoUploaddetails.DOCUMENTNAME;
+                videodetails.SUBJECTID = objvideoDetails.VideoUploaddetails.SUBJECTID;
 
                 //videodetails.CREATEDBY = objvideoDetails.VideoUploaddetails.CREATEDBY;
                 videodetails.CREATEDDATE = DateTime.Now;
+                videodetails.VideoPath = objvideoDetails.VideoUploaddetails.VideoPath;
                 //videodetails.MODIFIEDBY = objvideoDetails.VideoUploaddetails.MODIFIEDBY;
                 //videodetails.MODIFIEDDATE = objvideoDetails.VideoUploaddetails.MODIFIEDDATE;
                 //videodetails.STATUS = objvideoDetails.VideoUploaddetails.STATUS;
@@ -50,8 +51,8 @@ namespace Education.Core.Admin
            new VideoUploaddetails()
            {
                DOCUMENTNAME = X.DOCUMENTNAME,
-               
-              
+
+
            }
 
                ).ToList();
@@ -65,7 +66,7 @@ namespace Education.Core.Admin
 
         public List<VideoUploaddetails> GetVideoUploaddetails()
         {
-           try
+            try
             {
                 //return dbEntities.TBL_GN_DIGITALDOC_DETAILS.Select(X =>
 
@@ -78,7 +79,7 @@ namespace Education.Core.Admin
                 // }
 
                 //).ToList();
-                return dbEntities.TBL_GN_DIGITALDOC_DETAILS.Select(X => new VideoUploaddetails() { DIGITALDOCTYPEID = X.DIGITALDOCTYPEID, DOCUMENTNAME = X.DOCUMENTNAME,DIGITALDOCID=X.DIGITALDOCID }).ToList();
+                return dbEntities.TBL_GN_DIGITALDOC_DETAILS.Select(X => new VideoUploaddetails() { DIGITALDOCTYPEID = X.DIGITALDOCTYPEID, DOCUMENTNAME = X.DOCUMENTNAME, DIGITALDOCID = X.DIGITALDOCID, VideoPath = X.VideoPath, CREATEDDATE = X.CREATEDDATE }).ToList();
             }
             catch (Exception)
             {
@@ -98,7 +99,7 @@ namespace Education.Core.Admin
                      DIGITALDOCTYPEID = X.DIGITALDOCTYPEID,
                      DOCUMENTNAME = X.DOCUMENTNAME,
                      SUBJECTID = X.SUBJECTID,
-                   
+
                  }
 
                 ).ToList();

@@ -20,6 +20,7 @@ namespace Education.Entity.Admin
         public Nullable<bool> ALLOWANONYMOUS { get; set; }
         public Nullable<int> DOWNLOADCOUNT { get; set; }
         public Nullable<int> VIEWCOUNT { get; set; }
+        public string VideoPath { get; set; }
 
     }
 

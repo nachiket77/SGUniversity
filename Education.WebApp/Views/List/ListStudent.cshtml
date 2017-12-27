@@ -1,4 +1,6 @@
-﻿@model Education.Entity.Students.AllDetails
+﻿@model PagedList.IPagedList<Education.Entity.Students.StudentDetails>
+@using PagedList.Mvc;
+
 @{
     ViewBag.Title = "ListStudent";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -31,30 +33,57 @@
     });
 </script>
 
- if (ViewBag.message != null)
-            {
 
-<script type="text/javascript">
-    window.onload = function () {
-        alert("@ViewBag.message");
-    };
-</script>
-            }
+
+@*<script type="text/javascript">
+    if (ViewBag.message != null) {
+        window.onload = function () {
+            alert("@ViewBag.message");
+        };
+    }
+</script>*@
+
 <div class="col-xs-12 home-bg">
     <div class="col-xs-12 col-md-10 col-md-offset-1 side-no-pad liststudent-table">
         <div class="table-responsive">
+            <br />
+            @if (TempData["Success"] != null)
+            {
+                <p class="alert alert-success" id="successMessage">@TempData["Success"]</p>
+            }
+            @if (TempData["Error"] != null)
+            {
+                <p class="alert alert-danger" id="successMessage">@TempData["Error"]</p>
+            }
+            @using (Html.BeginForm("ListStudent", "List", FormMethod.Post))
+            {
+              
+
+                    <div class="col-xs-12 side-no-pad mr-top-10">
+                       
+                            <label for="StudentName" style="color:white">Search-Name</label>
+                            @Html.TextBox("Search_Data", ViewBag.FilterValue as string)
+                        
+                                <input type="submit" class="btn btn-sucesss" value="Find" style="background-color:dodgerblue" />
+                          
+                    </div>
+               
+
+            }
             <table class="table">
                 <tr class="table-head">
-                    <td>UserID</td>
-                    <td>Student Name/Contact No.</td>
-                    <td>Parent Name/Contact No.</td>
-                    <td>Date of Birth</td>
+                    <td>@Html.ActionLink("UserID", "ListStudent", new { Sorting_Order = ViewBag.SortingUserID })  </td>
+                    <td>@Html.ActionLink("First Name", "ListStudent", new { Sorting_Order = ViewBag.SortingName })  </td>
+                    <td>@Html.ActionLink("Parent Name", "ListStudent", new { Sorting_Order = ViewBag.SortingName })  </td>
+                    <td>@Html.ActionLink("Dob", "ListStudent", new { Sorting_Order = ViewBag.SortingDate })  </td>
                     <td>Action</td>
                 </tr>
-                @foreach (var item in Model.StudentList)
+                @foreach (var item in Model)
                 {
+
                     <tr class="table-body">
                         <td class="idcol1">
+
                             @item.USERID
                             @{
                                 ViewBag.USERID = item.USERID;
@@ -67,14 +96,15 @@
                             @item.LASTNAME
                         </td>
                         <td>
-                            @item.MIDDLENAME
+                            @item.DOB
                         </td>
                         <td class="editChk1">
                             @*<a href='@Url.Action("UpdateStudentDetails","List", new {  USERID=product.USERID })'>Edit</a>*@
-                            <a id="todolink" class="editChk" data-todo='{"id":"@item.USERID","FirstName":"@item.FIRSTNAME","LASTNAME":"@item.LASTNAME","MIDDLENAME":"@item.MIDDLENAME"}' data-toggle="modal" data-target="#signinmodal">Edit</a>
+                            <a id="todolink" class="editChk" data-todo='{"id":"@item.USERID","FirstName":"@item.FIRSTNAME","LASTNAME":"@item.LASTNAME","Dob":"@item.DOB"}' data-toggle="modal" data-target="#signinmodal">Edit</a>
                             @*<i class="fa fa-cogs" aria-hidden="true"></i>*@
                         </td>
                     </tr>
+
                                 }
                 @*<tr class="table-body">
                         <td>1</td>
@@ -94,13 +124,17 @@
                         <td><i class="fa fa-cogs" aria-hidden="true"></i></td>
                     </tr>*@
             </table>
+            @*<br />*@
+            @*Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount*@
+            @Html.PagedListPager(Model, Page_No => Url.Action("ListStudent",new { Page_No, Sorting_Order = ViewBag.CurrentSortOrder, Filter_Value = ViewBag.FilterValue }))
+
         </div>
     </div>
     <fieldset>
         @*@using (Ajax.BeginForm("UpdateStudentDetails", "List",
             new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "signinmodal" }))*@
         @using (Html.BeginForm("UpdateStudentDetails", "List", FormMethod.Post))
-        {
+            {
             <div id="signinmodal" class="modal fade" role="dialog">
                 <div class="modal-dialog">
                     <!-- Modal content-->
@@ -145,16 +179,7 @@
                                         <input type="text" name="Last" id="Lastname" />
                                     </div>
                                 </div>
-                                <div class="col-xs-12 side-no-pad mr-top-10">
-                                    <div class="col-xs-12 col-sm-4 side-no-pad pad7 xs-details">
-                                        MiddleName:
-                                    </div>
-                                    <div class="col-xs-12 col-sm-3">
-                                        @*@Model.USERID*@
-                                        @*@Html.TextBoxFor(model => model.USERID);*@
-                                        <input type="text" name="middle" id="middlename" />
-                                    </div>
-                                </div>
+                              
                                 <div class="col-xs-12 side-no-pad mr-top-10">
                                     <div class="col-xs-12 col-sm-4 side-no-pad pad7 xs-details">
 

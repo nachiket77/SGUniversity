@@ -110,6 +110,14 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\EducationAPI\TeacherFairAPI\TeacherFairAPI\bin\Owin.dll</HintPath>
     </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
@@ -180,9 +188,13 @@
     <Content Include="assets\css\style.css" />
     <Content Include="assets\images\book.jpg" />
     <Content Include="assets\images\bottom.jpg" />
+    <Content Include="assets\images\giphy.gif" />
     <Content Include="assets\images\index_41.jpg" />
+    <Content Include="assets\images\loader4.gif" />
+    <Content Include="assets\images\loading_spinner.gif" />
     <Content Include="assets\images\logo.jpg" />
     <Content Include="assets\images\navlogo.png" />
+    <Content Include="assets\images\spinner.gif" />
     <Content Include="assets\images\student.png" />
     <Content Include="assets\js\bootstrap.min.js" />
     <Content Include="assets\js\index.js" />
@@ -253,9 +265,25 @@
     <Content Include="bin\System.Web.Webpages.Razor.xml" />
     <Content Include="bin\System.Web.Webpages.xml" />
     <Content Include="bin\Unity.Mvc5.dll" />
+    <Content Include="bootstrap-3.3.6-dist\css\bootstrap-theme.css" />
+    <Content Include="bootstrap-3.3.6-dist\css\bootstrap-theme.min.css" />
+    <Content Include="bootstrap-3.3.6-dist\css\bootstrap.css" />
+    <Content Include="bootstrap-3.3.6-dist\css\bootstrap.min.css" />
+    <Content Include="bootstrap-3.3.6-dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="bootstrap-3.3.6-dist\js\bootstrap.js" />
+    <Content Include="bootstrap-3.3.6-dist\js\bootstrap.min.js" />
+    <Content Include="bootstrap-3.3.6-dist\js\npm.js" />
+    <Content Include="build\css\demo.css" />
+    <Content Include="build\css\intlTelInput.css" />
+    <Content Include="build\img\flags%402x.png" />
+    <Content Include="build\img\flags.png" />
+    <Content Include="build\js\intlTelInput.js" />
+    <Content Include="build\js\intlTelInput.min.js" />
+    <Content Include="build\js\utils.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\files\Battle Los Angeles 2011 720p %28shirazpatogh%29.mkv" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="assets\css\bootstrap-grid.css.map" />
@@ -272,6 +300,14 @@
     <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
     <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
     <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
+    <Content Include="bootstrap-3.3.6-dist\css\bootstrap-theme.css.map" />
+    <Content Include="bootstrap-3.3.6-dist\css\bootstrap-theme.min.css.map" />
+    <Content Include="bootstrap-3.3.6-dist\css\bootstrap.css.map" />
+    <Content Include="bootstrap-3.3.6-dist\css\bootstrap.min.css.map" />
+    <Content Include="bootstrap-3.3.6-dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="bootstrap-3.3.6-dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="bootstrap-3.3.6-dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="bootstrap-3.3.6-dist\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Properties\PublishProfiles\edu.pubxml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>

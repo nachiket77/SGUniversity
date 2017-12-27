@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Education.Entity.CountryEntity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,6 +28,22 @@ namespace Education.Entity.Students
         public List<Boards> BoardsList { get; set; }
 
         public List<Classes> ClassesList { get; set; }
+
+        public List<City> citylist { get; set; }
+
+        public List<State> statelist { get; set; }
+
+        public List<Country> Countrylist { get; set; }
+
+        public City Citymaster { get; set; }
+
+        public State statemaster { get; set; }
+
+        public Country countrymaster { get; set; }
+
+        public List<InstituteDetails> InstitutionList { get; set; }
+
+        public InstituteDetails InstitutionMaster { get; set; }
 
     }
 }

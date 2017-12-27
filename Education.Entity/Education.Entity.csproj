@@ -60,6 +60,7 @@
     <Compile Include="CountryEntity\City.cs" />
     <Compile Include="CountryEntity\Country.cs" />
     <Compile Include="CountryEntity\State.cs" />
+    <Compile Include="Students\InstituteDetails.cs" />
     <Compile Include="Login\Login.cs" />
     <Compile Include="Login\LoginResponse.cs" />
     <Compile Include="Login\LoginView.cs" />

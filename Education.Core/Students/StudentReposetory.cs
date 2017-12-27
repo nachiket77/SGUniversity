@@ -116,7 +116,7 @@ namespace Education.Core.Students
             UserRole.USERID = userLogin.USERID;
             UserRole.USERTYPEID = Convert.ToInt16(alldetails.StudentDetails.UserType);
             UserRole.CREATEDBY = alldetails.StudentDetails.CREATEDBY;
-            //UserRole.CREATEDDATE = DateTime.Now;
+            UserRole.CREATEDDATE = DateTime.Now;
 
             userLogin.TBL_USER_ROLE.Add(UserRole);
 
@@ -127,7 +127,7 @@ namespace Education.Core.Students
             address.CITY = alldetails.StudentDetails.CityID;
             address.COUNTRY = alldetails.StudentDetails.CountryID;
             address.CREATEDBY = alldetails.StudentDetails.CREATEDBY;
-            //saddress.CREATEDDATE = DateTime.Now;
+            address.CREATEDDATE = DateTime.Now;
             address.PINCODE = alldetails.StudentDetails.Pincode.ToString();
             address.USERID = userLogin.USERID;
             userLogin.TBL_USER_ADDRESS_DETAILS.Add(address);
@@ -149,6 +149,8 @@ namespace Education.Core.Students
             dbEntities.TBL_USER_LOGIN.Add(userLogin);
             dbEntities.SaveChanges();
             alldetails.StudentDetails.USERID = userLogin.USERID;
+            
+
             TBL_USER_COURSE_MAPPING_DETAILS objusercourse = new TBL_USER_COURSE_MAPPING_DETAILS();
             foreach (var item in alldetails.CourseList)
             {
@@ -201,12 +203,13 @@ namespace Education.Core.Students
         public AllDetails CreateProfessionalDetails(AllDetails alldetails)
         {
 
-
+            
             TBL_USER_PROFESSIONAL_DETAILS professionaldetails = new TBL_USER_PROFESSIONAL_DETAILS();
             professionaldetails.COMPANYNAME = alldetails.ProfessionalDetails.COMPANYNAME;
             professionaldetails.DESIGNATION = alldetails.ProfessionalDetails.DESIGNATION;
             professionaldetails.EMPLOYEETYPE = alldetails.ProfessionalDetails.EMPLOYEETYPE;
             professionaldetails.REMARKS = alldetails.ProfessionalDetails.REMARKS;
+            professionaldetails.USERID = alldetails.ProfessionalDetails.USERID;
             //  professionaldetails.CREATEBY = 1234;
             professionaldetails.CREATEDDATE = DateTime.Now;
 

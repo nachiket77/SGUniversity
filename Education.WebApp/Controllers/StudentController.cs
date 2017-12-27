@@ -1,4 +1,5 @@
 ﻿using Education.Core.Admin.Master;
+using Education.Core.CountryStateCity;
 using Education.Core.Students;
 using Education.Entity.Master;
 using Education.Entity.Students;
@@ -15,11 +16,13 @@ namespace Education.WebApp.Controllers
     {
         IStudentReposetory _StudentReposetory;
         ICourse _ICourseDetailsRepository;
+        ICountryStateCityReposetory _ICountryStateCityReposetory;
 
-        public StudentController(IStudentReposetory repos, ICourse course)
+        public StudentController(IStudentReposetory repos, ICourse course, ICountryStateCityReposetory CSCity)
         {
             this._StudentReposetory = repos;
             this._ICourseDetailsRepository = course;
+            this._ICountryStateCityReposetory = CSCity;
         }
         // GET: Student
         public ActionResult Index()
@@ -28,6 +31,9 @@ namespace Education.WebApp.Controllers
             objalldetails.CourseList = _StudentReposetory.GetCourse();
             objalldetails.BoardsList = _StudentReposetory.GetBoards();
             objalldetails.ClassesList = _StudentReposetory.GetClasses();
+            objalldetails.Countrylist = _ICountryStateCityReposetory.GetCountry();
+            objalldetails.statelist = _ICountryStateCityReposetory.GetState(1);
+            objalldetails.citylist = _ICountryStateCityReposetory.GetCity(1);
             return View(objalldetails);
         }
 
@@ -37,6 +43,9 @@ namespace Education.WebApp.Controllers
             objalldetails.CourseList = _StudentReposetory.GetCourse();
             objalldetails.BoardsList = _StudentReposetory.GetBoards();
             objalldetails.ClassesList = _StudentReposetory.GetClasses();
+            objalldetails.Countrylist = _ICountryStateCityReposetory.GetCountry();
+            objalldetails.statelist = _ICountryStateCityReposetory.GetState(1);
+            objalldetails.citylist = _ICountryStateCityReposetory.GetCity(1);
             return View(objalldetails);
         }
         [HttpPost]
@@ -49,12 +58,13 @@ namespace Education.WebApp.Controllers
             objalldetails.StudentDetails = allDetails.StudentDetails;
             try
             {
-
+                objalldetails.InstitutionList = allDetails.InstitutionList;
                 objalldetails.StudentDetails.AddressLine1 = objalldetails.StudentDetails.AddressLine1;
                 objalldetails.StudentDetails.AddressLine2 = objalldetails.StudentDetails.AddressLine2;
                 objalldetails.StudentDetails.AddressTypeID = objalldetails.StudentDetails.AddressTypeID;
                 objalldetails.StudentDetails.CityID = objalldetails.StudentDetails.CityID;
                 objalldetails.StudentDetails.CountryID = objalldetails.StudentDetails.CountryID;
+                objalldetails.StudentDetails.StateID = objalldetails.StudentDetails.StateID;
 
                 objalldetails.StudentDetails.CREATEDBY = Convert.ToInt64(Session["UserID"]);
                 objalldetails.StudentDetails.DOB = objalldetails.StudentDetails.DOB;
@@ -73,10 +83,13 @@ namespace Education.WebApp.Controllers
                 objalldetails.StudentDetails.STATUSID = Convert.ToInt16(Entity.Master.UserLoginStatus.Active);
                 objalldetails.StudentDetails.CourseList = allDetails.CourseList;
                 objalldetails.StudentDetails.CourseName = objalldetails.StudentDetails.CourseName;
+
                 objalldetails.ClassesMaster = allDetails.ClassesMaster;
                 objalldetails.StudentDetails.INSTITUTIONNAME = allDetails.StudentDetails.INSTITUTIONNAME;
                 objalldetails.StudentDetails.PASSINGYEAR = allDetails.StudentDetails.PASSINGYEAR;
                 objalldetails.BoardsMaster = allDetails.BoardsMaster;
+
+
                 bool Result = _StudentReposetory.StudentExist(allDetails.StudentDetails);
                 if (!Result)
                 {
@@ -86,20 +99,22 @@ namespace Education.WebApp.Controllers
                     if (objalldetails.StudentDetails.USERID > 0)
                     {
                         // RedirectToAction("AddStudent", objalldetails.StudentDetails.USERID);
-                        ViewBag.message = "Success";
+                        //ViewBag.message = "Success";
+                        TempData["Success"] = "Student Details Added Successfully!" + "UserID:" + Session["USERID"];
                         RedirectToAction("Index", "Student");
                     }
                     else
                     {
-                        ModelState.AddModelError("EMAILID", "Unbale to add Student. Please try after some times or contact to tech team");
 
+                        TempData["Error"] = "Unbale to add Student. Please try after some times or contact to tech team!";
                     }
 
                 }
                 else
                 {
-                    ModelState.AddModelError("EMAILID", "Email number already Registered");
-                    ModelState.AddModelError("MOBILENO", "Mobile number already Registered");
+                    //ModelState.AddModelError("EMAILID", "Email number already Registered");
+                    //ModelState.AddModelError("MOBILENO", "Mobile number already Registered");
+                    TempData["Error"] = "Mobile number already Registered!";
                 }
 
 
@@ -108,6 +123,9 @@ namespace Education.WebApp.Controllers
                 det.CourseList = _StudentReposetory.GetCourse();
                 det.BoardsList = _StudentReposetory.GetBoards();
                 det.ClassesList = _StudentReposetory.GetClasses();
+                det.Countrylist = _ICountryStateCityReposetory.GetCountry();
+                det.statelist = _ICountryStateCityReposetory.GetState(1);
+                det.citylist = _ICountryStateCityReposetory.GetCity(1);
                 ModelState.Clear();
                 return View("AddStudent", "_Layout", det);
             }
@@ -146,18 +164,26 @@ namespace Education.WebApp.Controllers
                 if (Session["USERID"] != null)
                 {
                     allDetails.ParentDetails.USERID = Convert.ToInt16(Session["USERID"]);
-
-                }
-                objalldetails = _StudentReposetory.CreateParentDetails(allDetails);
-                if (objalldetails.StudentDetails.USERID > 0)
-                {
-                    // RedirectToAction("AddInstitute", objalldetails.StudentDetails.USERID);
-                    ViewBag.message = "Success";
-                    return View("AddStudent");
+                    objalldetails = _StudentReposetory.CreateParentDetails(allDetails);
                 }
                 else
                 {
-                    ModelState.AddModelError("EMAILID", "Unbale to add Student. Please try after some times or contact to tech team");
+                    allDetails.ParentDetails.USERID = objalldetails.ParentDetails.USERID;
+                    objalldetails = _StudentReposetory.CreateParentDetails(allDetails);
+                    // TempData["Error"] = "UserID is Null. Please try after some times or contact to tech team!";
+
+                }
+
+                if (objalldetails.ParentDetails.USERID > 0)
+                {
+                    // RedirectToAction("AddInstitute", objalldetails.StudentDetails.USERID);
+
+                    TempData["Success"] = "Parent details Added Successfully!";
+                    //return View("AddStudent");
+                }
+                else
+                {
+                    TempData["Error"] = "Unbale to add Student. Please try after some times or contact to tech team!";
 
                 }
 
@@ -171,7 +197,16 @@ namespace Education.WebApp.Controllers
 
                 // }
 
-                return View();
+                // }
+                AllDetails det = new AllDetails();
+                det.CourseList = _StudentReposetory.GetCourse();
+                det.BoardsList = _StudentReposetory.GetBoards();
+                det.ClassesList = _StudentReposetory.GetClasses();
+                det.Countrylist = _ICountryStateCityReposetory.GetCountry();
+                det.statelist = _ICountryStateCityReposetory.GetState(1);
+                det.citylist = _ICountryStateCityReposetory.GetCity(1);
+                ModelState.Clear();
+                return View("AddStudent", "_Layout", det);
             }
             catch (Exception ex)
             {
@@ -188,7 +223,7 @@ namespace Education.WebApp.Controllers
 
                 objalldetails.ProfessionalDetails.COMPANYNAME = objalldetails.ProfessionalDetails.COMPANYNAME;
                 objalldetails.ProfessionalDetails.DESIGNATION = objalldetails.ProfessionalDetails.DESIGNATION;
-                objalldetails.ProfessionalDetails.EMPLOYEETYPE = objalldetails.ProfessionalDetails.EMPLOYEETYPE;
+
                 objalldetails.ProfessionalDetails.REMARKS = objalldetails.ProfessionalDetails.REMARKS;
 
 
@@ -199,18 +234,28 @@ namespace Education.WebApp.Controllers
                 if (Session["USERID"] != null)
                 {
                     allDetails.ProfessionalDetails.USERID = Convert.ToInt16(Session["USERID"]);
-                }
-
-                objalldetails = _StudentReposetory.CreateProfessionalDetails(allDetails);
-                if (objalldetails.ProfessionalDetails.USERID > 0)
-                {
-                    // RedirectToAction("AddInstitute", objalldetails.StudentDetails.USERID);
-                    ViewBag.message = "Success";
-                    return View("AddStudent");
+                    objalldetails = _StudentReposetory.CreateProfessionalDetails(allDetails);
                 }
                 else
                 {
-                    ModelState.AddModelError("EMAILID", "Unbale to add Student. Please try after some times or contact to tech team");
+                    allDetails.ProfessionalDetails.USERID = objalldetails.ProfessionalDetails.USERID;
+                    objalldetails = _StudentReposetory.CreateProfessionalDetails(allDetails);
+                    // TempData["Error"] = "UserID is Null. Please try after some times or contact to tech team!";
+
+                }
+
+
+                if (objalldetails.ProfessionalDetails.USERID > 0)
+                {
+                    // RedirectToAction("AddInstitute", objalldetails.StudentDetails.USERID);
+
+                    TempData["Success"] = "Parent Professional details Added Successfully!";
+
+                    //return View("AddStudent");
+                }
+                else
+                {
+                    TempData["Error"] = "Unbale to add Student. Please try after some times or contact to tech team!";
 
                 }
 
@@ -224,7 +269,16 @@ namespace Education.WebApp.Controllers
 
                 // }
 
-                return View();
+                // }
+                AllDetails det = new AllDetails();
+                det.CourseList = _StudentReposetory.GetCourse();
+                det.BoardsList = _StudentReposetory.GetBoards();
+                det.ClassesList = _StudentReposetory.GetClasses();
+                det.Countrylist = _ICountryStateCityReposetory.GetCountry();
+                det.statelist = _ICountryStateCityReposetory.GetState(1);
+                det.citylist = _ICountryStateCityReposetory.GetCity(1);
+                ModelState.Clear();
+                return View("AddStudent", "_Layout", det);
             }
             catch (Exception ex)
             {
@@ -239,6 +293,29 @@ namespace Education.WebApp.Controllers
             return View();
         }
 
+        [HttpPost]
+        public JsonResult GetStates(int CountryId)
+        {
+            AllDetails StudentDetails = new AllDetails();
+            StudentDetails.CourseList = _StudentReposetory.GetCourse();
+            StudentDetails.BoardsList = _StudentReposetory.GetBoards();
+            StudentDetails.ClassesList = _StudentReposetory.GetClasses();
+            StudentDetails.Countrylist = _ICountryStateCityReposetory.GetCountry();
+            StudentDetails.statelist = _ICountryStateCityReposetory.GetState(CountryId);
+
+            return Json(StudentDetails.statelist);
+        }
+
+        [HttpPost]
+        public JsonResult InsertValue(InstituteDetails[] itemlist)
+        {
+            foreach (InstituteDetails i in itemlist)
+            {
+                //loop through the array and insert value into database.
+
+            }
+            return Json("Ok");
+        }
 
 
         string GeneratePassword(string Key)

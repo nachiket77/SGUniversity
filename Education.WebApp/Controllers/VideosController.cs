@@ -21,16 +21,16 @@ namespace Education.WebApp.Controllers
         // GET: Videos
         public ActionResult Index()
         {
-            AllVideosDetails objalldetails = new AllVideosDetails();
-            objalldetails.CourseList = _VideoUpload.GetCourse();
-            objalldetails.SubjectList = _VideoUpload.Getsubject();
+            //AllVideosDetails objalldetails = new AllVideosDetails();
+            //objalldetails.CourseList = _VideoUpload.GetCourse();
+            //objalldetails.SubjectList = _VideoUpload.Getsubject();
 
-            objalldetails.VideoUploaddetailsList = _VideoUpload.GetVideoUploaddetails();
-            VideoUploaddetails dt = new VideoUploaddetails();
-            dt.DIGITALDOCTYPEID = 1;
+            //objalldetails.VideoUploaddetailsList = _VideoUpload.GetVideoUploaddetails();
+            //VideoUploaddetails dt = new VideoUploaddetails();
+            //dt.DIGITALDOCTYPEID = 1;
 
-            // return View();
-            return View(objalldetails);
+            return View();
+            //return View(objalldetails);
         }
 
         public ActionResult AddVideo()
@@ -38,7 +38,7 @@ namespace Education.WebApp.Controllers
             AllVideosDetails objalldetails = new AllVideosDetails();
             objalldetails.CourseList = _VideoUpload.GetCourse();
             objalldetails.SubjectList = _VideoUpload.Getsubject();
-            objalldetails.VideoUploaddetailsList = _VideoUpload.GetVideoUploaddetails();
+            // objalldetails.VideoUploaddetailsList = _VideoUpload.GetVideoUploaddetails();
             //objalldetails.VideoUploaddetails.DIGITALDOCTYPEID = 1;
             return View(objalldetails);
         }
@@ -51,23 +51,35 @@ namespace Education.WebApp.Controllers
 
             if (ModelState.IsValid)
             {
+                string fileName = string.Empty;
+                string videoName = string.Empty;
+                string ext = string.Empty;
                 if (postedFile != null && postedFile.ContentLength > 0)
-                    try
+                {
+                    if (postedFile.ContentLength <= 1073741824)
                     {
-                        string path = Path.Combine(Server.MapPath("~/Content/files"),
-                        Path.GetFileName(postedFile.FileName));
-                        postedFile.SaveAs(path);
-                        ViewBag.Message = "File uploaded successfully";
+                        try
+                        {
+                            ext = Path.GetExtension(postedFile.FileName);
+                            fileName = Path.GetFileName(postedFile.FileName);
+                            videoName = "Video_" + DateTime.Now.Ticks + ext;
+
+                            string path = Path.Combine(Server.MapPath("~/Content/files"), videoName);
+                            postedFile.SaveAs(path);
+                            ViewBag.Message = "File uploaded successfully";
+                        }
+                        catch (Exception ex)
+                        {
+                            ViewBag.Message = "ERROR:" + ex.Message.ToString();
+                        }
                     }
-                    catch (Exception ex)
-                    {
-                        ViewBag.Message = "ERROR:" + ex.Message.ToString();
-                    }
+                    else
+                        ViewBag.Message = "Vedio size should not be greater than 1 GB.";
+                }
                 else
                 {
                     ViewBag.Message = "You have not specified a file.";
                 }
-
 
                 //   var selectedItem = objvideo.CourseMaster.ID;
                 //  objvideoupload.SubjectMaster.SUBJECTID = objvideo.SubjectMaster.SUBJECTID;
@@ -77,65 +89,70 @@ namespace Education.WebApp.Controllers
                 //    objvideoupload.VideoUploaddetails.DOCUMENTNAME = Path.GetFileName(postedFile.FileName);
                 //}
                 objvideodetails.DIGITALDOCTYPEID = 1;
-                objvideodetails.DOCUMENTNAME = Path.GetFileName(postedFile.FileName);
+                objvideodetails.DOCUMENTNAME = fileName;
+                objvideodetails.VideoPath = videoName;
                 objvideo.VideoUploaddetails = objvideodetails;
                 objvideo = _VideoUpload.CreateVideoDetails(objvideo);
 
             }
 
-            return View(GetFiles());
+            AllVideosDetails obj = new AllVideosDetails();
+            // List<VideoUploaddetails> objvideoDet = GetFiles();
+            // obj.VideoUploaddetailsList = objvideoDet;
+            obj.CourseList = _VideoUpload.GetCourse();
+            obj.SubjectList = _VideoUpload.Getsubject();
 
-
-
-
+            return View(obj);
 
             //return View(GetFiles());
         }
         public ActionResult ListVideo()
         {
-            return View();
+            AllVideosDetails obj = new AllVideosDetails();
+            obj.VideoUploaddetailsList = GetFiles();
+            return View(obj);
         }
 
-        [HttpGet]
-        public FileResult DownloadFile(int? DIGITALDOCID)
-        {
-            byte[] bytes;
-            string fileName, contentType;
-            byte[] value;
-                List<VideoUploaddetails> objvideoupload = new List<VideoUploaddetails>();
-            objvideoupload = _VideoUpload.GetFileName(Convert.ToInt32(DIGITALDOCID));
-            //fileName = objvideoupload.SingleOrDefault().DOCUMENTNAME;
-            foreach (var item in objvideoupload)
-            {
-                fileName = item.DOCUMENTNAME;
-                string path = Path.Combine(Server.MapPath("~/Content/files"), fileName);
-                //TransmitFile(path, fileName);
-                //readinchuks(path, Convert.ToInt32(DIGITALDOCID));
-                FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Read);
-                 value = ReadFullyvideo(fs, Convert.ToInt32(fs.Length));
-                break;
-            }
+        //[HttpGet]
+        //public FileResult DownloadFile(int? DIGITALDOCID)
+        //{
+        //    byte[] bytes;
+        //    string fileName, contentType;
+        //    byte[] value;
+        //    List<VideoUploaddetails> objvideoupload = new List<VideoUploaddetails>();
+        //    objvideoupload = _VideoUpload.GetFileName(Convert.ToInt32(DIGITALDOCID));
+        //    //fileName = objvideoupload.SingleOrDefault().DOCUMENTNAME;
+        //    foreach (var item in objvideoupload)
+        //    {
+        //        fileName = item.DOCUMENTNAME;
+        //        string path = Path.Combine(Server.MapPath("~/Content/files"), fileName);
+        //        //TransmitFile(path, fileName);
+        //        //readinchuks(path, Convert.ToInt32(DIGITALDOCID));
+        //        FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Read);
+        //        value = ReadFullyvideo(fs, Convert.ToInt32(fs.Length));
+        //        break;
+        //    }
 
-            //foreach (var item in objvideoupload)
-            //{
-            //    fileName = item.DOCUMENTNAME;
-            //}
-
-
+        //    //foreach (var item in objvideoupload)
+        //    //{
+        //    //    fileName = item.DOCUMENTNAME;
+        //    //}
 
 
-            byte[] byt;
-            //using (FileStream fs = new FileStream(path, FileMode.Open))
-            //{
-
-            // }
 
 
-            // bytes = System.IO.File.ReadAllBytes(path);
+        //    byte[] byt;
+        //    //using (FileStream fs = new FileStream(path, FileMode.Open))
+        //    //{
+
+        //    // }
 
 
-            return File("video/mp4", "");
-        }
+        //    // bytes = System.IO.File.ReadAllBytes(path);
+
+
+        //    return File("video/mp4", "");
+        //}
 
         public List<VideoUploaddetails> GetFiles()
         {

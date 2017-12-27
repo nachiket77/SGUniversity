@@ -32,6 +32,7 @@ namespace Education.DB
         public Nullable<bool> ALLOWANONYMOUS { get; set; }
         public Nullable<int> DOWNLOADCOUNT { get; set; }
         public Nullable<int> VIEWCOUNT { get; set; }
+        public string VideoPath { get; set; }
     
         public virtual TBL_MASTER_SUBJECT TBL_MASTER_SUBJECT { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

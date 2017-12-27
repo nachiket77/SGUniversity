@@ -1,4 +1,4 @@
-﻿
+﻿@model Education.Entity.Admin.Videos.AllVideosDetails
 @{
     ViewBag.Title = "ListVideo";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -57,82 +57,103 @@
                 </div>
             </div>
         </div>
-        <div class="col-xs-12 side-no-pad  pad-top-10 pad-bottom-20">
-            <div class="col-xs-12 col-md-12 col-lg-10 fw-bold">
-                <div class="col-xs-1 side-no-pad">
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input class="form-check-input div-checkbox" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
-                        </label>
+
+        @if (Model.VideoUploaddetailsList.Count() > 0)
+        {
+            foreach (var file in Model.VideoUploaddetailsList)
+            {
+                <div class="col-xs-12 side-no-pad  pad-top-10 pad-bottom-20">
+                    <div class="col-xs-12 col-md-12 col-lg-10 fw-bold">
+                        <div class="col-xs-1 side-no-pad">
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input div-checkbox" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-xs-10 side-no-pad white-bg border-rad">
+                            <div class="col-sm-3 col-xs-6 grey-bg-sm div-video">
+
+                                <div class="flowplayer">
+                                    <video width="200" height="150" controls>
+                                        <source src="~/Content/files/@file.VideoPath" type="video/3gpp">
+                                        <source src="~/Content/files/@file.VideoPath" type="video/m4v">
+                                        <source src="~/Content/files/@file.VideoPath" type="video/mp4">
+                                        <source src="~/Content/files/@file.VideoPath" type="video/mpeg">
+                                        <source src="~/Content/files/@file.VideoPath" type="video/ogg">
+                                        <source src="~/Content/files/@file.VideoPath" type="video/quicktime">
+                                        <source src="~/Content/files/@file.VideoPath" type="video/webm">
+                                        <source src="~/Content/files/@file.VideoPath" type="video/x-ms-wmv">
+
+
+                                    </video>
+                                </div>
+                                @*<video>
+                                        <source src="~/assets/videos/New Zealand.mp4" type="video/mp4">
+                                    </video>*@
+                            </div>
+                            <div class="col-sm-9 col-xs-12 black-color pad-left-20 pad-top-10">
+                                <p class="no-bottom text-color fw-bold">@file.DOCUMENTNAME</p>
+                                <p class="no-bottom small-font"><span>Course:</span><span> </span><span class="aqua-color">UPSC</span></p>
+                                <p class="no-bottom small-font"><span>Subject:</span><span> </span><span class="aqua-color">Anthroplolgy</span></p>
+                                <p class="no-bottom smaller-font text-color right-align">@file.CREATEDDATE</p>
+
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-xs-10 side-no-pad white-bg border-rad">
-                    <div class="col-sm-3 col-xs-6 grey-bg-sm div-video">
-                        <video>
-                            <source src="~/assets/videos/New Zealand.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="col-sm-9 col-xs-12 black-color pad-left-20 pad-top-10">
-                        <p class="no-bottom text-color fw-bold">Map based questions for MCQS</p>
-                        <p class="no-bottom small-font"><span>Course:</span><span> </span><span class="aqua-color">UPSC</span></p>
-                        <p class="no-bottom small-font"><span>Subject:</span><span> </span><span class="aqua-color">Anthroplolgy</span></p>
-                        <p class="no-bottom smaller-font text-color right-align">sep 26 2017 12:53 AM</p>
 
+            }
+        }
+        @*<div class="col-xs-12 side-no-pad  pad-top-10 pad-bottom-20">
+                <div class="col-xs-12 col-md-12 col-lg-10 fw-bold">
+                    <div class="col-xs-1 side-no-pad">
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input div-checkbox" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-xs-10 side-no-pad white-bg border-rad">
+                        <div class="col-sm-3 col-xs-6 grey-bg-sm div-video">
+                            <video>
+                                <source src="~/assets/videos/New Zealand.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="col-sm-9 col-xs-12 black-color pad-left-20 pad-top-10">
+                            <p class="no-bottom text-color fw-bold">Map based questions for MCQS</p>
+                            <p class="no-bottom small-font"><span>Course:</span><span> </span><span class="aqua-color">UPSC</span></p>
+                            <p class="no-bottom small-font"><span>Subject:</span><span> </span><span class="aqua-color">Anthroplolgy</span></p>
+                            <p class="no-bottom smaller-font text-color right-align">sep 26 2017 12:53 AM</p>
+
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-xs-12 side-no-pad  pad-top-10 pad-bottom-20">
-            <div class="col-xs-12 col-md-12 col-lg-10 fw-bold">
-                <div class="col-xs-1 side-no-pad">
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input class="form-check-input div-checkbox" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
-                        </label>
+            <div class="col-xs-12 side-no-pad  pad-top-10 pad-bottom-20">
+                <div class="col-xs-12 col-md-12 col-lg-10 fw-bold">
+                    <div class="col-xs-1 side-no-pad">
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input div-checkbox" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+                            </label>
+                        </div>
                     </div>
-                </div>
-                <div class="col-xs-10 side-no-pad white-bg border-rad">
-                    <div class="col-sm-3 col-xs-6 grey-bg-sm div-video">
-                        <video>
-                            <source src="~/assets/videos/New Zealand.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="col-sm-9 col-xs-12 black-color pad-left-20 pad-top-10">
-                        <p class="no-bottom text-color fw-bold">Map based questions for MCQS</p>
-                        <p class="no-bottom small-font"><span>Course:</span><span> </span><span class="aqua-color">UPSC</span></p>
-                        <p class="no-bottom small-font"><span>Subject:</span><span> </span><span class="aqua-color">Anthroplolgy</span></p>
-                        <p class="no-bottom smaller-font text-color right-align">sep 26 2017 12:53 AM</p>
+                    <div class="col-xs-10 side-no-pad white-bg border-rad">
+                        <div class="col-xs-6 col-sm-3 grey-bg-sm div-video">
+                            <video>
+                                <source src="~/assets/videos/New Zealand.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="col-sm-9 col-xs-12 black-color pad-left-20 pad-top-10">
+                            <p class="no-bottom text-color fw-bold">Map based questions for MCQS</p>
+                            <p class="no-bottom small-font"><span>Course:</span><span> </span><span class="aqua-color">UPSC</span></p>
+                            <p class="no-bottom small-font"><span>Subject:</span><span> </span><span class="aqua-color">Anthroplolgy</span></p>
+                            <p class="no-bottom smaller-font text-color right-align">sep 26 2017 12:53 AM</p>
 
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="col-xs-12 side-no-pad  pad-top-10 pad-bottom-20">
-            <div class="col-xs-12 col-md-12 col-lg-10 fw-bold">
-                <div class="col-xs-1 side-no-pad">
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input class="form-check-input div-checkbox" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
-                        </label>
-                    </div>
-                </div>
-                <div class="col-xs-10 side-no-pad white-bg border-rad">
-                    <div class="col-xs-6 col-sm-3 grey-bg-sm div-video">
-                        <video>
-                            <source src="~/assets/videos/New Zealand.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="col-sm-9 col-xs-12 black-color pad-left-20 pad-top-10">
-                        <p class="no-bottom text-color fw-bold">Map based questions for MCQS</p>
-                        <p class="no-bottom small-font"><span>Course:</span><span> </span><span class="aqua-color">UPSC</span></p>
-                        <p class="no-bottom small-font"><span>Subject:</span><span> </span><span class="aqua-color">Anthroplolgy</span></p>
-                        <p class="no-bottom smaller-font text-color right-align">sep 26 2017 12:53 AM</p>
-
-                    </div>
-                </div>
-            </div>
-        </div>
+            </div>*@
     </div>
 </div>
-
-

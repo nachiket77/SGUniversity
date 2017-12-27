@@ -1,4 +1,5 @@
-﻿@model Education.Entity.Admin.Test.AllTestDetails
+﻿@model PagedList.IPagedList<Education.Entity.Admin.TestDetails>
+@using PagedList.Mvc;
 @{
     ViewBag.Title = "ListTest";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -30,26 +31,43 @@
         // $('#addBookDialog').modal('show');
     });
 </script>*@
- if (ViewBag.message != null)
-            {
-<script type="text/javascript">
-    window.onload = function () {
-        alert("@ViewBag.message");
-    };
-</script>
-            }
+ 
+@*<script type="text/javascript">
+    if (ViewBag.message != null) {
+        window.onload = function () {
+            alert("@ViewBag.message");
+        };
+    }
+</script>*@
+           
 <div class="col-xs-12 home-bg">
     <div class="col-xs-12 col-md-10 col-md-offset-1 side-no-pad liststudent-table">
         <div class="table-responsive">
+            @using (Html.BeginForm("ListTestDetail", "TestDetail", FormMethod.Post))
+            {
+
+
+                <div class="col-xs-12 side-no-pad mr-top-10">
+
+                    <label for="StudentName" style="color:white">Search-Name</label>
+                    @Html.TextBox("Search_Data", ViewBag.FilterValue as string)
+
+                    <input type="submit" class="btn btn-sucesss" value="Find" style="background-color:dodgerblue" />
+
+                </div>
+
+
+            }
             <table class="table">
                 <tr class="table-head">
-                    <td>TESTID</td>
-                    <td>TITLE.</td>
-                    <td>SUBJECTID</td>
-                    <td>PUBLISHDATE</td>
-                    <td>COURSEID</td>
+                   
+                    <td>@Html.ActionLink("TESTID", "ListTestDetail", new { Sorting_Order = ViewBag.SortingUserID })  </td>
+                    <td>@Html.ActionLink("TITLE", "ListTestDetail", new { Sorting_Order = ViewBag.SortingName })  </td>
+                    <td>@Html.ActionLink("SUBJECTID", "ListTestDetail", new { Sorting_Order = ViewBag.SortingName })  </td>
+                    <td>@Html.ActionLink("PUBLISHDATE", "ListTestDetail", new { Sorting_Order = ViewBag.SortingDate })  </td>
+                    @*<td>Action</td>*@
                 </tr>
-                @foreach (var item in Model.TestDetailsList)
+                @foreach (var item in Model)
                 {
                     <tr class="table-body">
                         <td class="idcol1">
@@ -67,9 +85,9 @@
                         <td>
                             @item.PUBLISHDATE
                         </td>
-                        <td>
+                        @*<td>
                             @item.COURSEID
-                        </td>
+                        </td>*@
                         
                     </tr>
                                 }
@@ -91,6 +109,7 @@
                         <td><i class="fa fa-cogs" aria-hidden="true"></i></td>
                     </tr>*@
             </table>
+            @Html.PagedListPager(Model, Page_No => Url.Action("ListTestDetail", new { Page_No, Sorting_Order = ViewBag.CurrentSortOrder, Filter_Value = ViewBag.FilterValue }))
         </div>
     </div>
     

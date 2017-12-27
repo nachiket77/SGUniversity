@@ -1,4 +1,6 @@
-﻿@model Education.Entity.Teachers.AllTeacherDetails
+﻿@model PagedList.IPagedList<Education.Entity.Teachers.TeacherDetails>
+@using PagedList.Mvc;
+
 @{
     ViewBag.Title = "ListTeachers";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -30,26 +32,50 @@
         // $('#addBookDialog').modal('show');
     });
 </script>
- if (ViewBag.message != null)
-            {
-<script type="text/javascript">
-    window.onload = function () {
-        alert("@ViewBag.message");
-    };
-</script>
-            }
+
+@*<script type="text/javascript">
+    if (ViewBag.message != null) {
+        window.onload = function () {
+            alert("@ViewBag.message");
+        };
+    }
+</script>*@
+
 <div class="col-xs-12 home-bg">
     <div class="col-xs-12 col-md-10 col-md-offset-1 side-no-pad liststudent-table">
         <div class="table-responsive">
+            <br />
+            @if (TempData["Success"] != null)
+            {
+                <p class="alert alert-success" id="successMessage">@TempData["Success"]</p>
+            }
+            @if (TempData["Error"] != null)
+            {
+                <p class="alert alert-danger" id="successMessage">@TempData["Error"]</p>
+            }
+            @using (Html.BeginForm("ListTeacher", "Teacher", FormMethod.Post))
+            {
+                <div class="col-xs-12 side-no-pad mr-top-10">
+
+
+                    <label for="StudentName" style="color:white">Search-Name</label>
+                    @Html.TextBox("Search_Data", ViewBag.FilterValue as string)
+
+                    <input type="submit" class="btn btn-sucesss" value="Find" style="background-color:dodgerblue" />
+                </div>
+
+
+
+            }
             <table class="table">
                 <tr class="table-head">
-                    <td>TeacherID</td>
-                    <td>Student Name/Contact No.</td>
-                    <td>Parent Name/Contact No.</td>
-                    <td>Date of Birth</td>
+                    <td>@Html.ActionLink("UserID", "ListTeacher", new { Sorting_Order = ViewBag.SortingUserID })  </td>
+                    <td>@Html.ActionLink("First Name", "ListTeacher", new { Sorting_Order = ViewBag.SortingName })  </td>
+                    <td>@Html.ActionLink("Middle Name", "ListTeacher", new { Sorting_Order = ViewBag.SortingDate })  </td>
+                    <td>@Html.ActionLink("Last Name", "ListTeacher", new { Sorting_Order = ViewBag.SortingDate })  </td>
                     <td>Action</td>
                 </tr>
-                @foreach (var item in Model.allteacherdetails)
+                @foreach (var item in Model)
                 {
                     <tr class="table-body">
                         <td class="idcol1">
@@ -92,6 +118,10 @@
                         <td><i class="fa fa-cogs" aria-hidden="true"></i></td>
                     </tr>*@
             </table>
+            @*<br />
+            Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount*@
+            @Html.PagedListPager(Model, Page_No => Url.Action("ListTeacher",
+    new { Page_No, Sorting_Order = ViewBag.CurrentSortOrder, Filter_Value = ViewBag.FilterValue }))
         </div>
     </div>
     <fieldset>

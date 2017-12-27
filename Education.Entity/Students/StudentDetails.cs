@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Education.Entity.Master;
 using Education.DB;
 using System.ComponentModel.DataAnnotations;
+using Education.Entity.CountryEntity;
 
 namespace Education.Entity.Students
 {
@@ -42,9 +43,9 @@ namespace Education.Entity.Students
         [Required]
         [Display(Name = "Nationality")]
         public string NATIONALITY { get; set; }
-        [Required]
-        [Display(Name = "Mobile No")]
-        [DataType(DataType.PhoneNumber)]
+        [Display(Name = "Mobile Number:")]
+        [Required(ErrorMessage = "Mobile Number is required.")]
+        [RegularExpression(@"^([0-9]{10})$", ErrorMessage = "Invalid Mobile Number.")]
         public string MOBILENO { get; set; }
         public long CREATEDBY { get; set; }
         public Education.Entity.Master.UserLoginStatus LoginStatus { get; set; }
@@ -79,11 +80,21 @@ namespace Education.Entity.Students
 
         public List<CourseMaster> CourseList { get; set; }
 
-        public string PASSINGYEAR { get; set; }
 
         public string percentage { get; set; }
 
         public string INSTITUTIONNAME { get; set; }
+
+        public string PASSINGYEAR { get; set; }
+
+        public List<City> citylist { get; set; }
+
+        public List<State> statelist { get; set; }
+
+        public List<Country> Countrylist { get; set; }
+
+
+
 
 
     }
@@ -205,5 +216,7 @@ namespace Education.Entity.Students
         public int Count { get; set; }
 
     }
+
+  
 
 }

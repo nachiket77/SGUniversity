@@ -6,6 +6,7 @@ using Education.Core.Students;
 using Education.Core.Admin.Master;
 using Education.Core.Teacher;
 using Education.Core.Admin;
+using Education.Core.CountryStateCity;
 
 namespace Education.WebApp
 {
@@ -37,6 +38,10 @@ namespace Education.WebApp
 
             container.RegisterType<ITestDetailsRepository, TestDetailsRepository>();
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
+
+            container.RegisterType<ICountryStateCityReposetory, CountryStateCityReposetory>();
+            DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }
+
     }
 }

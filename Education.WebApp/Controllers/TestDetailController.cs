@@ -2,6 +2,7 @@
 using Education.Entity.Admin;
 using Education.Entity.Admin.Test;
 using Excel;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -163,14 +164,15 @@ namespace Education.WebApp.Controllers
 
 
                     _ITestDetailsRepository.CreateTestDetails(result, objalltestdetails);
-                    ViewBag.message = "Success";
+                    TempData["Success"] = "Test Paper Uploaded Successfully!";
                     ModelState.Clear();
                     RedirectToAction("Index", "TestDetail");
                 }
             }
             else
             {
-                ModelState.AddModelError("File", "Please upload your file");
+               // ModelState.AddModelError("File", "Please upload your file");
+                TempData["Error"] = "Please upload your file!";
             }
             AllTestDetails testdet = new AllTestDetails();
             testdet.CourseList = _ITestDetailsRepository.GetCourse();
@@ -181,11 +183,111 @@ namespace Education.WebApp.Controllers
             return View("AddTestDetails", "_Layout", testdet);
         }
 
-        public ActionResult ListTestDetail()
+        //public ActionResult ListTestDetail()
+        //{
+        //    AllTestDetails Details = new AllTestDetails();
+        //    Details.TestDetailsList = _ITestDetailsRepository.GetTestDetails();
+        //    return View(Details);
+        //}
+
+        public ActionResult ListTestDetail(string Search_Data, string Filter_Value, int? Page_No)
         {
-            AllTestDetails Details = new AllTestDetails();
-            Details.TestDetailsList = _ITestDetailsRepository.GetTestDetails();
-            return View(Details);
+            //RedirectToAction("ListStudent");
+            //return View();
+            //ViewBag.SortingName = String.IsNullOrEmpty(Sorting_Order) ? "Name_Description" : "";
+            //ViewBag.SortingDate = Sorting_Order == "Date_Enroll" ? "Date_Description" : "Date";
+            //ViewBag.SortingUserID = String.IsNullOrEmpty(Sorting_Order) ? "UserID" : "";
+
+            if (Search_Data != null)
+            {
+                Page_No = 1;
+            }
+            else
+            {
+                Search_Data = Filter_Value;
+            }
+
+            ViewBag.FilterValue = Search_Data;
+
+            List<TestDetails> Details = new List<TestDetails>();
+            Details = _ITestDetailsRepository.GetTestDetails();
+            var tests = from stu in Details select stu;
+            {
+                if (Search_Data != null)
+                {
+                    tests = tests.Where(stu => stu.TITLE.ToUpper().Contains(Search_Data.ToUpper())).ToList();
+                }
+
+            }
+            //Details.StudentList.AddRange(students);
+            Details = tests.ToList();
+            //switch (Sorting_Order)
+            //{
+            //    case "Name_Description":
+            //        Details.StudentList.OrderByDescending(stu => stu.FIRSTNAME);
+            //        break;
+            //    case "Date":
+            //        Details.StudentList.OrderBy(stu => stu.DOB);
+            //        break;
+            //    case "UserID":
+            //        Details.StudentList.OrderBy(stu => stu.USERID);
+            //        break;
+            //    default:
+            //        Details.StudentList.OrderByDescending(stu => stu.FIRSTNAME);
+            //        break;
+            //}
+            int Size_Of_Page = 10;
+            int No_Of_Page = (Page_No ?? 1);
+            return View(Details.ToPagedList(No_Of_Page, Size_Of_Page));
+        }
+
+        [HttpPost]
+        public ActionResult ListTestDetail(string Sorting_Order, string Search_Data, string Filter_Value, int? Page_No)
+        {
+            ViewBag.SortingName = String.IsNullOrEmpty(Sorting_Order) ? "Name_Description" : "";
+            ViewBag.SortingDate = Sorting_Order == "Date_Enroll" ? "Date_Description" : "Date";
+            ViewBag.SortingUserID = String.IsNullOrEmpty(Sorting_Order) ? "UserID" : "";
+
+            if (Search_Data != null)
+            {
+                Page_No = 1;
+            }
+            else
+            {
+                Search_Data = Filter_Value;
+            }
+
+            ViewBag.FilterValue = Search_Data;
+
+            List<TestDetails> Details = new List<TestDetails>();
+            Details = _ITestDetailsRepository.GetTestDetails();
+            var tests = from stu in Details select stu;
+            {
+                if (Search_Data != null)
+                {
+                    tests = tests.Where(stu => stu.TITLE.ToUpper().Contains(Search_Data.ToUpper())).ToList();
+                }
+            }
+            Details.AddRange(tests);
+            Details = tests.ToList();
+            //switch (Sorting_Order)
+            //{
+            //    case "Name_Description":
+            //        Details.StudentList.OrderByDescending(stu => stu.FIRSTNAME);
+            //        break;
+            //    case "Date":
+            //        Details.StudentList.OrderBy(stu => stu.DOB);
+            //        break;
+            //    case "UserID":
+            //        Details.StudentList.OrderBy(stu => stu.USERID);
+            //        break;
+            //    default:
+            //        Details.StudentList.OrderByDescending(stu => stu.FIRSTNAME);
+            //        break;
+            //}
+            int Size_Of_Page = 10;
+            int No_Of_Page = (Page_No ?? 1);
+            return View(Details.ToPagedList(No_Of_Page, Size_Of_Page));
         }
 
     }
