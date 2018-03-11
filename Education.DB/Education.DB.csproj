@@ -69,6 +69,9 @@
     <Compile Include="Fiscalyear.cs">
       <DependentUpon>Education.tt</DependentUpon>
     </Compile>
+    <Compile Include="LogDetail.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
     <Compile Include="MemberRegistration.cs">
       <DependentUpon>Education.tt</DependentUpon>
     </Compile>

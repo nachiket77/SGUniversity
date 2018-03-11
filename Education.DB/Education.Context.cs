@@ -27,6 +27,7 @@ namespace Education.DB
     
         public virtual DbSet<RegisterUser> RegisterUsers { get; set; }
         public virtual DbSet<Fiscalyear> Fiscalyears { get; set; }
+        public virtual DbSet<LogDetail> LogDetails { get; set; }
         public virtual DbSet<MemberRegistration> MemberRegistrations { get; set; }
         public virtual DbSet<PaymentDetail> PaymentDetails { get; set; }
         public virtual DbSet<PlanMaster> PlanMasters { get; set; }

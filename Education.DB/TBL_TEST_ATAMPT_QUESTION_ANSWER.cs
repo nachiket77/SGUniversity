@@ -19,6 +19,9 @@ namespace Education.DB
         public Nullable<long> ANSWERID { get; set; }
         public Nullable<long> TESTID { get; set; }
         public string REMARKS { get; set; }
+        public System.DateTime CreatedDate { get; set; }
+        public Nullable<long> TestAttampId { get; set; }
+        public Nullable<long> StudentId { get; set; }
     
         public virtual TBL_TEST_QUESTIONS TBL_TEST_QUESTIONS { get; set; }
         public virtual TBL_TEST_TESTDETAIL TBL_TEST_TESTDETAIL { get; set; }

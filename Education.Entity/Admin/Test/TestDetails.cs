@@ -52,5 +52,8 @@ namespace Education.Entity.Admin
 
         public Nullable<int> TESTTYPEID { get; set; }
 
+        public int TotalMarks { get; set; }
+
+        public int TotalTime { get; set; }
     }
 }

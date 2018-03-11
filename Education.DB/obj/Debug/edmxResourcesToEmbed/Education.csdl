@@ -20,6 +20,16 @@
     <Property Name="FiscalyearToDate" Type="DateTime" Precision="3" />
     <Property Name="Year" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
   </EntityType>
+  <EntityType Name="LogDetail">
+    <Key>
+      <PropertyRef Name="LogId" />
+    </Key>
+    <Property Name="LogId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Message" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
+    <Property Name="MessageDate" Type="DateTime" Precision="3" />
+    <Property Name="MessageId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MessageMethod" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
   <EntityType Name="MemberRegistration">
     <Key>
       <PropertyRef Name="MemID" />
@@ -156,6 +166,9 @@
     <Property Name="DOWNLOADCOUNT" Type="Int32" />
     <Property Name="VIEWCOUNT" Type="Int32" />
     <Property Name="VideoPath" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="CourseId" Type="Int32" />
+    <Property Name="VideoDesc" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="RefDocs" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="TBL_MASTER_SUBJECT" Relationship="Self.FK_TBL_GN_DIGITALDOC_DETAILS_TBL_MASTER_SUBJECT" FromRole="TBL_GN_DIGITALDOC_DETAILS" ToRole="TBL_MASTER_SUBJECT" />
     <NavigationProperty Name="TBL_GN_DIGITALDOC_VIEWDETAILS" Relationship="Self.FK_TBL_GN_DIGITALDOC_VIEWDETAILS_TBL_GN_DIGITALDOC_DETAILS" FromRole="TBL_GN_DIGITALDOC_DETAILS" ToRole="TBL_GN_DIGITALDOC_VIEWDETAILS" />
   </EntityType>
@@ -352,6 +365,10 @@
     <Property Name="STARTDATETIME" Type="DateTime" Precision="3" />
     <Property Name="ENDDATETIME" Type="DateTime" Precision="3" />
     <Property Name="TOTALMARKS" Type="Int32" />
+    <Property Name="TotalObtainedMarks" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="TotalAttamptedQues" Type="Int32" />
+    <Property Name="TotalCorrectAnswer" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
     <NavigationProperty Name="TBL_TEST_TESTDETAIL" Relationship="Self.FK_TBL_TEST_ATAMPT_TBL_TEST_TESTDETAIL" FromRole="TBL_TEST_ATAMPT" ToRole="TBL_TEST_TESTDETAIL" />
     <NavigationProperty Name="TBL_USER_LOGIN" Relationship="Self.FK_TBL_TEST_ATAMPT_TBL_USER_LOGIN" FromRole="TBL_TEST_ATAMPT" ToRole="TBL_USER_LOGIN" />
   </EntityType>
@@ -364,6 +381,9 @@
     <Property Name="ANSWERID" Type="Int64" />
     <Property Name="TESTID" Type="Int64" />
     <Property Name="REMARKS" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TestAttampId" Type="Int64" />
+    <Property Name="StudentId" Type="Int64" />
     <NavigationProperty Name="TBL_TEST_QUESTIONS" Relationship="Self.FK_TBL_TEST_ATAMPT_QUESTION_ANSWER_TBL_TEST_QUESTIONS" FromRole="TBL_TEST_ATAMPT_QUESTION_ANSWER" ToRole="TBL_TEST_QUESTIONS" />
     <NavigationProperty Name="TBL_TEST_TESTDETAIL" Relationship="Self.FK_TBL_TEST_ATAMPT_QUESTION_ANSWER_TBL_TEST_TESTDETAIL" FromRole="TBL_TEST_ATAMPT_QUESTION_ANSWER" ToRole="TBL_TEST_TESTDETAIL" />
   </EntityType>
@@ -398,6 +418,8 @@
     <Property Name="MODIFIEDDATE" Type="DateTime" Precision="3" />
     <Property Name="COURSEID" Type="Int32" />
     <Property Name="TESTTYPEID" Type="Int32" />
+    <Property Name="TOTALMARKS" Type="Int32" />
+    <Property Name="TOTALTIME" Type="Int32" />
     <NavigationProperty Name="TBL_MASTER_SUBJECT" Relationship="Self.FK_TBL_TEST_TESTDETAIL_TBL_MASTER_SUBJECT" FromRole="TBL_TEST_TESTDETAIL" ToRole="TBL_MASTER_SUBJECT" />
     <NavigationProperty Name="TBL_TEST_ANSWERS" Relationship="Self.FK_TBL_TEST_ANSWERS_TBL_TEST_TESTDETAIL" FromRole="TBL_TEST_TESTDETAIL" ToRole="TBL_TEST_ANSWERS" />
     <NavigationProperty Name="TBL_TEST_ATAMPT" Relationship="Self.FK_TBL_TEST_ATAMPT_TBL_TEST_TESTDETAIL" FromRole="TBL_TEST_TESTDETAIL" ToRole="TBL_TEST_ATAMPT" />
@@ -1032,6 +1054,7 @@
   <EntityContainer Name="ajay_dbEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="RegisterUsers" EntityType="Self.RegisterUser" />
     <EntitySet Name="Fiscalyears" EntityType="Self.Fiscalyear" />
+    <EntitySet Name="LogDetails" EntityType="Self.LogDetail" />
     <EntitySet Name="MemberRegistrations" EntityType="Self.MemberRegistration" />
     <EntitySet Name="PaymentDetails" EntityType="Self.PaymentDetail" />
     <EntitySet Name="PlanMasters" EntityType="Self.PlanMaster" />

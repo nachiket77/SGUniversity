@@ -129,11 +129,11 @@
 
                     </div>*@
             }
-            <script type="text/javascript">
+            @*<script type="text/javascript">
 
                 $(document).ready(function () {
                     $(document).on("click", "#btnSubmit", function () { //
-                        //  debugger;
+                        debugger;
                         var rowCount = $('.table-body').length + 1;
                         var trHtml = $('.table-body').html();
                         var button = '<button type="button" id="btnDelete" class="deleteContact btn btn btn-danger btn-xs" style="margin-top:12%">Remove</button>';
@@ -143,17 +143,95 @@
                        '<td>' + button + '</td>' +
                         '</tr>';
                         $('#tblstudent').append(contactdiv); // Adding these controls to Main table class
-                    });
 
-
-                    $(document).on("click", "#btnDelete", function () { //
-                        // debugger;
-                        $(this).closest('tr').remove();
-                        return false;
+                        $(document).on("click", "#btnDelete", function () { //
+                            // debugger;
+                            $(this).closest('tr').remove();
+                            return false;
+                        });
                     });
                 });
+            </script>*@
+
+            <script type="text/javascript">
+    $(document).ready(function () {
+        $(document).on("click", "#btnSubmit", function () { //on is used for getting click event for dynamically created buttons
+
+            var rowCount = $('.table-body').length + 1;
+            var contactdiv = '<tr class="table-body">' +
+                '<td><input type="text" name="f-name' + rowCount + '" class="form-control f-name01" /></td>' +
+                '<td><input type="text" name="l-name' + rowCount + '" class="form-control l-name01" /></td>' +
+                '<td><input type="text" name="email' + rowCount + '" class="form-control email01" /></td>' +
+                '<td><button type="button" id="btnAdd" class="btn btn-xs btn-primary classAdd">Add More</button>' +
+                '<button type="button" id="btnDelete" class="deleteContact btn btn btn-danger btn-xs">Remove</button></td>' +
+                '</tr>';
+            $('#tblstudent').append(contactdiv); // Adding these controls to Main table class
+        });
+
+        $(document).on("click", ".deleteContact", function () {
+            $(this).closest("tr").remove(); // closest used to remove the respective 'tr' in which I have my controls
+        });
+
+        function getAllEmpData() {
+            var data = [];
+            $('tr.table-body').each(function () {
+                var firstName = $(this).find('.f-name01').val();
+                var lastName = $(this).find('.l-name01').val();
+                var emailId = $(this).find('.email01').val();
+                var alldata = {
+                    'FName': firstName,
+                    'LName': lastName,
+                    'EmailId': emailId
+                }
+                data.push(alldata);
+            });
+            console.log(data);
+            return data;
+        }
+
+        $("#mobileno").click(function () {
+            debugger;
+            var data = JSON.stringify(getAllEmpData());
+            //console.log(data);
+            $.ajax({
+                url: 'Student/AddStudentDetails',
+                type: 'POST',
+                dataType: 'json',
+                contentType: 'application/json; charset=utf-8',
+                data: JSON.stringify({ 'empdata': data }),
+                success: function () {
+                    alert("Data Added Successfully");
+                },
+                error: function () {
+                    alert("Error while inserting data");
+                }
+            });
+        });
+    });
             </script>
 
+            <script type="text/javascript">
+
+
+
+                $(document).ready(function () {
+                    $(document).on("click", "#mobileno", function () { //
+                        debugger;
+                        //var n = $("tblstudent").find("tr").length;
+                        var $row = jQuery(this).closest('tr');
+                        var $columns = $row.find('td');
+
+                        $columns.addClass('row-highlight');
+                        var values = "";
+
+                        jQuery.each($columns, function (i, item) {
+                            values = values + 'td' + (i + 1) + ':' + item.innerHTML + '<br/>';
+                            alert(values);
+                        });
+                    });
+                });
+                
+            </script>
             @*<script type="text/javascript">
                     // debugger;
                     $(document).ready(function () {
@@ -446,25 +524,27 @@
                                     <td>Percentage</td>
                                     <td></td>
                                 </tr>
+                               
+
                                 <tr class="table-body">
                                     <td>
-                                        @Html.DropDownListFor(model => model.ClassesMaster.ClassID, new SelectList(Model.ClassesList, "ClassID", "ClassName"), "Please select", new { @id = "Classmaster" })
+                                        <input type="text" name="f-class" class="form-control f-name01" />
                                     </td>
                                     <td>
-                                        @Html.EditorFor(model => model.StudentDetails.INSTITUTIONNAME, new { htmlAttributes = new { @class = "form-control", required = "required", maxlength = "30" } })
-                                    </td>
-                                    @*<td><input type="text" name="" placeholder="Delhi University"></td>*@
-                                    <td>
-                                        @Html.DropDownListFor(model => model.BoardsMaster.BoardID, new SelectList(Model.BoardsList, "BoardID", "BoardName"), "Please select")
+                                        <input type="text" name="l-SchoolName" class="form-control l-name01" />
                                     </td>
                                     <td>
-                                        @Html.DropDownListFor(model => model.StudentDetails.PASSINGYEAR, Enumerable.Range(1950, 68).ToList().Select(x => new SelectListItem { Text = x.ToString() }), "Year")
+                                        <input type="text" name="Board" class="form-control email01" />
                                     </td>
                                     <td>
-                                        @*<input type="text" name="" placeholder="80%" class="max-widthinput">*@
-                                        @Html.EditorFor(model => model.StudentDetails.percentage, new { htmlAttributes = new { @class = "form-control", required = "required", style = "width:50px;margin-left:27%", @id = "percentageobtained", maxlength = "2" } })
+                                        <input type="text" name="Year of passing" class="form-control email01" />
                                     </td>
-                                    <td class="pad14"><button type="button" id="btnSubmit" class="btn btn-primary btn-md pull-right btn-sm">Add</button></td>
+                                    <td>
+                                        <input type="text" name="Percentage" class="form-control email01" />
+                                    </td>
+                                    <td>
+                                        <button type="button" id="btnSubmit" class="btn btn-xs btn-primary classAdd">Add More</button>
+                                    </td>
                                 </tr>
                             </table>
 

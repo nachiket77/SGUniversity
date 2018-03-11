@@ -30,10 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Education.DB, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Education.DB\bin\Debug\Education.DB.dll</HintPath>
-    </Reference>
     <Reference Include="Education.Entity, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Education.Entity\bin\Debug\Education.Entity.dll</HintPath>
@@ -86,6 +82,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Login\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Education.DB\Education.DB.csproj">
+      <Project>{e0745de3-1436-4a23-8ed7-e64db68f28d3}</Project>
+      <Name>Education.DB</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

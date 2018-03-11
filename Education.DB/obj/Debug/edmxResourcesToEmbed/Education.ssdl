@@ -20,6 +20,16 @@
     <Property Name="FiscalyearToDate" Type="datetime" />
     <Property Name="Year" Type="varchar" MaxLength="4" />
   </EntityType>
+  <EntityType Name="LogDetails">
+    <Key>
+      <PropertyRef Name="LogId" />
+    </Key>
+    <Property Name="LogId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Message" Type="nvarchar" MaxLength="3000" />
+    <Property Name="MessageDate" Type="datetime" />
+    <Property Name="MessageId" Type="varchar" MaxLength="50" />
+    <Property Name="MessageMethod" Type="varchar" MaxLength="100" />
+  </EntityType>
   <EntityType Name="MemberRegistration">
     <Key>
       <PropertyRef Name="MemID" />
@@ -156,6 +166,9 @@
     <Property Name="DOWNLOADCOUNT" Type="int" />
     <Property Name="VIEWCOUNT" Type="int" />
     <Property Name="VideoPath" Type="nvarchar" MaxLength="1000" />
+    <Property Name="CourseId" Type="int" />
+    <Property Name="VideoDesc" Type="nvarchar" MaxLength="1000" />
+    <Property Name="RefDocs" Type="nvarchar" MaxLength="500" />
   </EntityType>
   <EntityType Name="TBL_GN_DIGITALDOC_VIEWDETAILS">
     <Key>
@@ -332,6 +345,10 @@
     <Property Name="STARTDATETIME" Type="datetime" />
     <Property Name="ENDDATETIME" Type="datetime" />
     <Property Name="TOTALMARKS" Type="int" />
+    <Property Name="TotalObtainedMarks" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="TotalAttamptedQues" Type="int" />
+    <Property Name="TotalCorrectAnswer" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="TBL_TEST_ATAMPT_QUESTION_ANSWER">
     <Key>
@@ -342,6 +359,9 @@
     <Property Name="ANSWERID" Type="bigint" />
     <Property Name="TESTID" Type="bigint" />
     <Property Name="REMARKS" Type="nchar" MaxLength="10" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="TestAttampId" Type="bigint" />
+    <Property Name="StudentId" Type="bigint" />
   </EntityType>
   <EntityType Name="TBL_TEST_QUESTIONS">
     <Key>
@@ -370,6 +390,8 @@
     <Property Name="MODIFIEDDATE" Type="datetime" />
     <Property Name="COURSEID" Type="int" />
     <Property Name="TESTTYPEID" Type="int" />
+    <Property Name="TOTALMARKS" Type="int" />
+    <Property Name="TOTALTIME" Type="int" />
   </EntityType>
   <EntityType Name="TBL_USER_ADDRESS_DETAILS">
     <Key>
@@ -548,6 +570,16 @@
     <Property Name="MODIFIEDBY" Type="bigint" />
     <Property Name="MODIFIEDDATE" Type="datetime" />
   </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="tempTest">
+          <Property Name="TotalMarks" Type="int" />
+          <Property Name="TotalQues" Type="int" />
+          <Property Name="Incorrect" Type="int" />
+          <Property Name="Correct" Type="int" />
+          <Property Name="Unanswered" Type="int" />
+          <Property Name="TestAttampId" Type="int" />
+        </EntityType>-->
   <EntityType Name="Users">
     <Key>
       <PropertyRef Name="Id" />
@@ -996,6 +1028,7 @@
   <EntityContainer Name="ajay_dbModelStoreContainer">
     <EntitySet Name="RegisterUser" EntityType="Self.RegisterUser" Schema="ajay_dba" store:Type="Tables" />
     <EntitySet Name="Fiscalyear" EntityType="Self.Fiscalyear" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LogDetails" EntityType="Self.LogDetails" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="MemberRegistration" EntityType="Self.MemberRegistration" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PaymentDetails" EntityType="Self.PaymentDetails" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PlanMaster" EntityType="Self.PlanMaster" Schema="dbo" store:Type="Tables" />

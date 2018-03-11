@@ -20,6 +20,10 @@ namespace Education.DB
         public Nullable<System.DateTime> STARTDATETIME { get; set; }
         public Nullable<System.DateTime> ENDDATETIME { get; set; }
         public Nullable<int> TOTALMARKS { get; set; }
+        public Nullable<decimal> TotalObtainedMarks { get; set; }
+        public Nullable<int> TotalAttamptedQues { get; set; }
+        public Nullable<int> TotalCorrectAnswer { get; set; }
+        public System.DateTime CreatedDate { get; set; }
     
         public virtual TBL_TEST_TESTDETAIL TBL_TEST_TESTDETAIL { get; set; }
         public virtual TBL_USER_LOGIN TBL_USER_LOGIN { get; set; }

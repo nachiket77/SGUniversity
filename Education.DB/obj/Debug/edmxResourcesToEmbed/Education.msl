@@ -23,6 +23,17 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="LogDetails">
+      <EntityTypeMapping TypeName="ajay_dbModel.LogDetail">
+        <MappingFragment StoreEntitySet="LogDetails">
+          <ScalarProperty Name="LogId" ColumnName="LogId" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="MessageDate" ColumnName="MessageDate" />
+          <ScalarProperty Name="MessageId" ColumnName="MessageId" />
+          <ScalarProperty Name="MessageMethod" ColumnName="MessageMethod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="MemberRegistrations">
       <EntityTypeMapping TypeName="ajay_dbModel.MemberRegistration">
         <MappingFragment StoreEntitySet="MemberRegistration">
@@ -166,6 +177,9 @@
           <ScalarProperty Name="DOWNLOADCOUNT" ColumnName="DOWNLOADCOUNT" />
           <ScalarProperty Name="VIEWCOUNT" ColumnName="VIEWCOUNT" />
           <ScalarProperty Name="VideoPath" ColumnName="VideoPath" />
+          <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+          <ScalarProperty Name="VideoDesc" ColumnName="VideoDesc" />
+          <ScalarProperty Name="RefDocs" ColumnName="RefDocs" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -362,6 +376,10 @@
           <ScalarProperty Name="STARTDATETIME" ColumnName="STARTDATETIME" />
           <ScalarProperty Name="ENDDATETIME" ColumnName="ENDDATETIME" />
           <ScalarProperty Name="TOTALMARKS" ColumnName="TOTALMARKS" />
+          <ScalarProperty Name="TotalObtainedMarks" ColumnName="TotalObtainedMarks" />
+          <ScalarProperty Name="TotalAttamptedQues" ColumnName="TotalAttamptedQues" />
+          <ScalarProperty Name="TotalCorrectAnswer" ColumnName="TotalCorrectAnswer" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -373,6 +391,9 @@
           <ScalarProperty Name="ANSWERID" ColumnName="ANSWERID" />
           <ScalarProperty Name="TESTID" ColumnName="TESTID" />
           <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="TestAttampId" ColumnName="TestAttampId" />
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -403,6 +424,8 @@
           <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
           <ScalarProperty Name="COURSEID" ColumnName="COURSEID" />
           <ScalarProperty Name="TESTTYPEID" ColumnName="TESTTYPEID" />
+          <ScalarProperty Name="TOTALMARKS" ColumnName="TOTALMARKS" />
+          <ScalarProperty Name="TOTALTIME" ColumnName="TOTALTIME" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -25,6 +25,16 @@
           <Property Name="FiscalyearToDate" Type="datetime" />
           <Property Name="Year" Type="varchar" MaxLength="4" />
         </EntityType>
+        <EntityType Name="LogDetails">
+          <Key>
+            <PropertyRef Name="LogId" />
+          </Key>
+          <Property Name="LogId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Message" Type="nvarchar" MaxLength="3000" />
+          <Property Name="MessageDate" Type="datetime" />
+          <Property Name="MessageId" Type="varchar" MaxLength="50" />
+          <Property Name="MessageMethod" Type="varchar" MaxLength="100" />
+        </EntityType>
         <EntityType Name="MemberRegistration">
           <Key>
             <PropertyRef Name="MemID" />
@@ -161,6 +171,9 @@
           <Property Name="DOWNLOADCOUNT" Type="int" />
           <Property Name="VIEWCOUNT" Type="int" />
           <Property Name="VideoPath" Type="nvarchar" MaxLength="1000" />
+          <Property Name="CourseId" Type="int" />
+          <Property Name="VideoDesc" Type="nvarchar" MaxLength="1000" />
+          <Property Name="RefDocs" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <EntityType Name="TBL_GN_DIGITALDOC_VIEWDETAILS">
           <Key>
@@ -337,6 +350,10 @@
           <Property Name="STARTDATETIME" Type="datetime" />
           <Property Name="ENDDATETIME" Type="datetime" />
           <Property Name="TOTALMARKS" Type="int" />
+          <Property Name="TotalObtainedMarks" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="TotalAttamptedQues" Type="int" />
+          <Property Name="TotalCorrectAnswer" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="TBL_TEST_ATAMPT_QUESTION_ANSWER">
           <Key>
@@ -347,6 +364,9 @@
           <Property Name="ANSWERID" Type="bigint" />
           <Property Name="TESTID" Type="bigint" />
           <Property Name="REMARKS" Type="nchar" MaxLength="10" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="TestAttampId" Type="bigint" />
+          <Property Name="StudentId" Type="bigint" />
         </EntityType>
         <EntityType Name="TBL_TEST_QUESTIONS">
           <Key>
@@ -375,6 +395,8 @@
           <Property Name="MODIFIEDDATE" Type="datetime" />
           <Property Name="COURSEID" Type="int" />
           <Property Name="TESTTYPEID" Type="int" />
+          <Property Name="TOTALMARKS" Type="int" />
+          <Property Name="TOTALTIME" Type="int" />
         </EntityType>
         <EntityType Name="TBL_USER_ADDRESS_DETAILS">
           <Key>
@@ -553,6 +575,16 @@
           <Property Name="MODIFIEDBY" Type="bigint" />
           <Property Name="MODIFIEDDATE" Type="datetime" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="tempTest">
+          <Property Name="TotalMarks" Type="int" />
+          <Property Name="TotalQues" Type="int" />
+          <Property Name="Incorrect" Type="int" />
+          <Property Name="Correct" Type="int" />
+          <Property Name="Unanswered" Type="int" />
+          <Property Name="TestAttampId" Type="int" />
+        </EntityType>-->
         <EntityType Name="Users">
           <Key>
             <PropertyRef Name="Id" />
@@ -1001,6 +1033,7 @@
         <EntityContainer Name="ajay_dbModelStoreContainer">
           <EntitySet Name="RegisterUser" EntityType="Self.RegisterUser" Schema="ajay_dba" store:Type="Tables" />
           <EntitySet Name="Fiscalyear" EntityType="Self.Fiscalyear" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LogDetails" EntityType="Self.LogDetails" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MemberRegistration" EntityType="Self.MemberRegistration" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PaymentDetails" EntityType="Self.PaymentDetails" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PlanMaster" EntityType="Self.PlanMaster" Schema="dbo" store:Type="Tables" />
@@ -1208,6 +1241,16 @@
           <Property Name="FiscalyearToDate" Type="DateTime" Precision="3" />
           <Property Name="Year" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="LogDetail">
+          <Key>
+            <PropertyRef Name="LogId" />
+          </Key>
+          <Property Name="LogId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Message" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
+          <Property Name="MessageDate" Type="DateTime" Precision="3" />
+          <Property Name="MessageId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MessageMethod" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
         <EntityType Name="MemberRegistration">
           <Key>
             <PropertyRef Name="MemID" />
@@ -1344,6 +1387,9 @@
           <Property Name="DOWNLOADCOUNT" Type="Int32" />
           <Property Name="VIEWCOUNT" Type="Int32" />
           <Property Name="VideoPath" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="CourseId" Type="Int32" />
+          <Property Name="VideoDesc" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="RefDocs" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="TBL_MASTER_SUBJECT" Relationship="Self.FK_TBL_GN_DIGITALDOC_DETAILS_TBL_MASTER_SUBJECT" FromRole="TBL_GN_DIGITALDOC_DETAILS" ToRole="TBL_MASTER_SUBJECT" />
           <NavigationProperty Name="TBL_GN_DIGITALDOC_VIEWDETAILS" Relationship="Self.FK_TBL_GN_DIGITALDOC_VIEWDETAILS_TBL_GN_DIGITALDOC_DETAILS" FromRole="TBL_GN_DIGITALDOC_DETAILS" ToRole="TBL_GN_DIGITALDOC_VIEWDETAILS" />
         </EntityType>
@@ -1540,6 +1586,10 @@
           <Property Name="STARTDATETIME" Type="DateTime" Precision="3" />
           <Property Name="ENDDATETIME" Type="DateTime" Precision="3" />
           <Property Name="TOTALMARKS" Type="Int32" />
+          <Property Name="TotalObtainedMarks" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TotalAttamptedQues" Type="Int32" />
+          <Property Name="TotalCorrectAnswer" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="TBL_TEST_TESTDETAIL" Relationship="Self.FK_TBL_TEST_ATAMPT_TBL_TEST_TESTDETAIL" FromRole="TBL_TEST_ATAMPT" ToRole="TBL_TEST_TESTDETAIL" />
           <NavigationProperty Name="TBL_USER_LOGIN" Relationship="Self.FK_TBL_TEST_ATAMPT_TBL_USER_LOGIN" FromRole="TBL_TEST_ATAMPT" ToRole="TBL_USER_LOGIN" />
         </EntityType>
@@ -1552,6 +1602,9 @@
           <Property Name="ANSWERID" Type="Int64" />
           <Property Name="TESTID" Type="Int64" />
           <Property Name="REMARKS" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TestAttampId" Type="Int64" />
+          <Property Name="StudentId" Type="Int64" />
           <NavigationProperty Name="TBL_TEST_QUESTIONS" Relationship="Self.FK_TBL_TEST_ATAMPT_QUESTION_ANSWER_TBL_TEST_QUESTIONS" FromRole="TBL_TEST_ATAMPT_QUESTION_ANSWER" ToRole="TBL_TEST_QUESTIONS" />
           <NavigationProperty Name="TBL_TEST_TESTDETAIL" Relationship="Self.FK_TBL_TEST_ATAMPT_QUESTION_ANSWER_TBL_TEST_TESTDETAIL" FromRole="TBL_TEST_ATAMPT_QUESTION_ANSWER" ToRole="TBL_TEST_TESTDETAIL" />
         </EntityType>
@@ -1586,6 +1639,8 @@
           <Property Name="MODIFIEDDATE" Type="DateTime" Precision="3" />
           <Property Name="COURSEID" Type="Int32" />
           <Property Name="TESTTYPEID" Type="Int32" />
+          <Property Name="TOTALMARKS" Type="Int32" />
+          <Property Name="TOTALTIME" Type="Int32" />
           <NavigationProperty Name="TBL_MASTER_SUBJECT" Relationship="Self.FK_TBL_TEST_TESTDETAIL_TBL_MASTER_SUBJECT" FromRole="TBL_TEST_TESTDETAIL" ToRole="TBL_MASTER_SUBJECT" />
           <NavigationProperty Name="TBL_TEST_ANSWERS" Relationship="Self.FK_TBL_TEST_ANSWERS_TBL_TEST_TESTDETAIL" FromRole="TBL_TEST_TESTDETAIL" ToRole="TBL_TEST_ANSWERS" />
           <NavigationProperty Name="TBL_TEST_ATAMPT" Relationship="Self.FK_TBL_TEST_ATAMPT_TBL_TEST_TESTDETAIL" FromRole="TBL_TEST_TESTDETAIL" ToRole="TBL_TEST_ATAMPT" />
@@ -2220,6 +2275,7 @@
         <EntityContainer Name="ajay_dbEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="RegisterUsers" EntityType="Self.RegisterUser" />
           <EntitySet Name="Fiscalyears" EntityType="Self.Fiscalyear" />
+          <EntitySet Name="LogDetails" EntityType="Self.LogDetail" />
           <EntitySet Name="MemberRegistrations" EntityType="Self.MemberRegistration" />
           <EntitySet Name="PaymentDetails" EntityType="Self.PaymentDetail" />
           <EntitySet Name="PlanMasters" EntityType="Self.PlanMaster" />
@@ -2425,6 +2481,17 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="LogDetails">
+            <EntityTypeMapping TypeName="ajay_dbModel.LogDetail">
+              <MappingFragment StoreEntitySet="LogDetails">
+                <ScalarProperty Name="LogId" ColumnName="LogId" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="MessageDate" ColumnName="MessageDate" />
+                <ScalarProperty Name="MessageId" ColumnName="MessageId" />
+                <ScalarProperty Name="MessageMethod" ColumnName="MessageMethod" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="MemberRegistrations">
             <EntityTypeMapping TypeName="ajay_dbModel.MemberRegistration">
               <MappingFragment StoreEntitySet="MemberRegistration">
@@ -2568,6 +2635,9 @@
                 <ScalarProperty Name="DOWNLOADCOUNT" ColumnName="DOWNLOADCOUNT" />
                 <ScalarProperty Name="VIEWCOUNT" ColumnName="VIEWCOUNT" />
                 <ScalarProperty Name="VideoPath" ColumnName="VideoPath" />
+                <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+                <ScalarProperty Name="VideoDesc" ColumnName="VideoDesc" />
+                <ScalarProperty Name="RefDocs" ColumnName="RefDocs" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2764,6 +2834,10 @@
                 <ScalarProperty Name="STARTDATETIME" ColumnName="STARTDATETIME" />
                 <ScalarProperty Name="ENDDATETIME" ColumnName="ENDDATETIME" />
                 <ScalarProperty Name="TOTALMARKS" ColumnName="TOTALMARKS" />
+                <ScalarProperty Name="TotalObtainedMarks" ColumnName="TotalObtainedMarks" />
+                <ScalarProperty Name="TotalAttamptedQues" ColumnName="TotalAttamptedQues" />
+                <ScalarProperty Name="TotalCorrectAnswer" ColumnName="TotalCorrectAnswer" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2775,6 +2849,9 @@
                 <ScalarProperty Name="ANSWERID" ColumnName="ANSWERID" />
                 <ScalarProperty Name="TESTID" ColumnName="TESTID" />
                 <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="TestAttampId" ColumnName="TestAttampId" />
+                <ScalarProperty Name="StudentId" ColumnName="StudentId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2805,6 +2882,8 @@
                 <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
                 <ScalarProperty Name="COURSEID" ColumnName="COURSEID" />
                 <ScalarProperty Name="TESTTYPEID" ColumnName="TESTTYPEID" />
+                <ScalarProperty Name="TOTALMARKS" ColumnName="TOTALMARKS" />
+                <ScalarProperty Name="TOTALTIME" ColumnName="TOTALTIME" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

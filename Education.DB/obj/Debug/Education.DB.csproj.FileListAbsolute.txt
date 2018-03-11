@@ -37,3 +37,13 @@ C:\Web-Development\EducationApp\EducationApp\Education.DB\bin\Debug\EntityFramew
 C:\Web-Development\EducationApp\EducationApp\Education.DB\obj\Debug\Education.DB.csprojResolveAssemblyReference.cache
 C:\Web-Development\EducationApp\EducationApp\Education.DB\obj\Debug\Education.DB.dll
 C:\Web-Development\EducationApp\EducationApp\Education.DB\obj\Debug\Education.DB.pdb
+C:\SGUniversity-2018\Education.DB\bin\Debug\Education.DB.dll.config
+C:\SGUniversity-2018\Education.DB\bin\Debug\Education.DB.dll
+C:\SGUniversity-2018\Education.DB\bin\Debug\Education.DB.pdb
+C:\SGUniversity-2018\Education.DB\bin\Debug\EntityFramework.dll
+C:\SGUniversity-2018\Education.DB\bin\Debug\EntityFramework.SqlServer.dll
+C:\SGUniversity-2018\Education.DB\bin\Debug\EntityFramework.xml
+C:\SGUniversity-2018\Education.DB\bin\Debug\EntityFramework.SqlServer.xml
+C:\SGUniversity-2018\Education.DB\obj\Debug\Education.DB.csprojResolveAssemblyReference.cache
+C:\SGUniversity-2018\Education.DB\obj\Debug\Education.DB.dll
+C:\SGUniversity-2018\Education.DB\obj\Debug\Education.DB.pdb

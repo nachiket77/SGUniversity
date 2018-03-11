@@ -35,6 +35,8 @@ namespace Education.DB
         public Nullable<System.DateTime> MODIFIEDDATE { get; set; }
         public Nullable<int> COURSEID { get; set; }
         public Nullable<int> TESTTYPEID { get; set; }
+        public Nullable<int> TOTALMARKS { get; set; }
+        public Nullable<int> TOTALTIME { get; set; }
     
         public virtual TBL_MASTER_SUBJECT TBL_MASTER_SUBJECT { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

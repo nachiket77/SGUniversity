@@ -116,6 +116,8 @@ namespace Education.WebApp.Controllers
             objalltestdetails.SubjectMaster = alltestdetails.SubjectMaster;
             objalltestdetails.QuestionTypeMaster = alltestdetails.QuestionTypeMaster;
             objalltestdetails.TestTypeMaster = alltestdetails.TestTypeMaster;
+            objalltestdetails.TestDetails.TotalMarks = objalltestdetails.TestDetails.TotalMarks;
+            objalltestdetails.TestDetails.TotalTime = objalltestdetails.TestDetails.TotalTime;
             if (ModelState.IsValid)
             {
                 if (uploadfile != null && uploadfile.ContentLength > 0)
@@ -160,6 +162,7 @@ namespace Education.WebApp.Controllers
                     objalltestdetails.CourseMaster.ID = objalltestdetails.CourseMaster.ID;
                     objalltestdetails.QuestionTypeMaster.QUESTIONTYPEID = objalltestdetails.QuestionTypeMaster.QUESTIONTYPEID;
                     objalltestdetails.TestTypeMaster.TESTTYPEID = objalltestdetails.TestTypeMaster.TESTTYPEID;
+                    
                     objalltestdetails.TestDetails.GIVENBY = 1;
 
 
