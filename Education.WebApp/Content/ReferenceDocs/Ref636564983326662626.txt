@@ -1,0 +1,8 @@
+SET DIRECTORY_NAME="E:\hjggjg"
+TAKEOWN /f %DIRECTORY_NAME% /r /d y
+ICACLS %DIRECTORY_NAME% /grant administrators:F /t
+PAUSE
+
+
+
+----- remove this line and save as delete.bat -- 

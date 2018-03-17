@@ -37,10 +37,12 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\EducationApp\EducationApp\EducationApp\Education.WebApp\bin\System.Web.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -54,8 +56,10 @@
     <Compile Include="Admin\Test\Questions.cs" />
     <Compile Include="Admin\Test\QuestionType.cs" />
     <Compile Include="Admin\Test\TestDetails.cs" />
+    <Compile Include="Admin\Test\TestSchedule.cs" />
     <Compile Include="Admin\Test\TESTTYPE.cs" />
     <Compile Include="Admin\Videos\AllVideosDetails.cs" />
+    <Compile Include="Admin\Videos\VideoRequest.cs" />
     <Compile Include="Admin\Videos\VideoUpload.cs" />
     <Compile Include="CountryEntity\City.cs" />
     <Compile Include="CountryEntity\Country.cs" />
@@ -77,6 +81,7 @@
     <Compile Include="Teachers\AllTeacherDetails.cs" />
     <Compile Include="Teachers\TeacherDetails.cs" />
     <Compile Include="UserType.cs" />
+    <Compile Include="Validators\MaximumFileSizeValidator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Debug\Education.Entity.dll" />

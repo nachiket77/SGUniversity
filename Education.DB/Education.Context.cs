@@ -12,6 +12,8 @@ namespace Education.DB
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class ajay_dbEntities : DbContext
     {
@@ -76,5 +78,2448 @@ namespace Education.DB
         public virtual DbSet<webpages_Membership> webpages_Membership { get; set; }
         public virtual DbSet<webpages_OAuthMembership> webpages_OAuthMembership { get; set; }
         public virtual DbSet<webpages_Roles> webpages_Roles { get; set; }
+    
+        public virtual ObjectResult<Register_GetDetails_Result> Register_GetDetails()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Register_GetDetails_Result>("Register_GetDetails");
+        }
+    
+        public virtual int Register_Insert(string email, string password, string name, string address, string city)
+        {
+            var emailParameter = email != null ?
+                new ObjectParameter("Email", email) :
+                new ObjectParameter("Email", typeof(string));
+    
+            var passwordParameter = password != null ?
+                new ObjectParameter("Password", password) :
+                new ObjectParameter("Password", typeof(string));
+    
+            var nameParameter = name != null ?
+                new ObjectParameter("Name", name) :
+                new ObjectParameter("Name", typeof(string));
+    
+            var addressParameter = address != null ?
+                new ObjectParameter("Address", address) :
+                new ObjectParameter("Address", typeof(string));
+    
+            var cityParameter = city != null ?
+                new ObjectParameter("City", city) :
+                new ObjectParameter("City", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Register_Insert", emailParameter, passwordParameter, nameParameter, addressParameter, cityParameter);
+        }
+    
+        public virtual ObjectResult<USP_GET_VideosBySubject_Result> USP_GET_VideosBySubject(Nullable<int> subjectId)
+        {
+            var subjectIdParameter = subjectId.HasValue ?
+                new ObjectParameter("SubjectId", subjectId) :
+                new ObjectParameter("SubjectId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<USP_GET_VideosBySubject_Result>("USP_GET_VideosBySubject", subjectIdParameter);
+        }
+    
+        public virtual int DeleteTBL_MASTER_BOARDS()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DeleteTBL_MASTER_BOARDS");
+        }
+    
+        public virtual int DeleteTBL_MASTER_CITY(string nAME, Nullable<int> cITYID, Nullable<int> sTATEID)
+        {
+            var nAMEParameter = nAME != null ?
+                new ObjectParameter("NAME", nAME) :
+                new ObjectParameter("NAME", typeof(string));
+    
+            var cITYIDParameter = cITYID.HasValue ?
+                new ObjectParameter("CITYID", cITYID) :
+                new ObjectParameter("CITYID", typeof(int));
+    
+            var sTATEIDParameter = sTATEID.HasValue ?
+                new ObjectParameter("STATEID", sTATEID) :
+                new ObjectParameter("STATEID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DeleteTBL_MASTER_CITY", nAMEParameter, cITYIDParameter, sTATEIDParameter);
+        }
+    
+        public virtual int DeleteTBL_MASTER_CLASS(Nullable<int> cLASSID, string nAME)
+        {
+            var cLASSIDParameter = cLASSID.HasValue ?
+                new ObjectParameter("CLASSID", cLASSID) :
+                new ObjectParameter("CLASSID", typeof(int));
+    
+            var nAMEParameter = nAME != null ?
+                new ObjectParameter("NAME", nAME) :
+                new ObjectParameter("NAME", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DeleteTBL_MASTER_CLASS", cLASSIDParameter, nAMEParameter);
+        }
+    
+        public virtual int DeleteTBL_MASTER_COUNTRY(string nAME, Nullable<int> cOUNTRYID)
+        {
+            var nAMEParameter = nAME != null ?
+                new ObjectParameter("NAME", nAME) :
+                new ObjectParameter("NAME", typeof(string));
+    
+            var cOUNTRYIDParameter = cOUNTRYID.HasValue ?
+                new ObjectParameter("COUNTRYID", cOUNTRYID) :
+                new ObjectParameter("COUNTRYID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DeleteTBL_MASTER_COUNTRY", nAMEParameter, cOUNTRYIDParameter);
+        }
+    
+        public virtual int DeleteTBL_MASTER_COURSE(string nAME, Nullable<int> cOURSEID)
+        {
+            var nAMEParameter = nAME != null ?
+                new ObjectParameter("NAME", nAME) :
+                new ObjectParameter("NAME", typeof(string));
+    
+            var cOURSEIDParameter = cOURSEID.HasValue ?
+                new ObjectParameter("COURSEID", cOURSEID) :
+                new ObjectParameter("COURSEID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DeleteTBL_MASTER_COURSE", nAMEParameter, cOURSEIDParameter);
+        }
+    
+        public virtual int DeleteTBL_MASTER_DOCUMENTTYPE(string documentTypeName, Nullable<int> documentTypeID)
+        {
+            var documentTypeNameParameter = documentTypeName != null ?
+                new ObjectParameter("DocumentTypeName", documentTypeName) :
+                new ObjectParameter("DocumentTypeName", typeof(string));
+    
+            var documentTypeIDParameter = documentTypeID.HasValue ?
+                new ObjectParameter("DocumentTypeID", documentTypeID) :
+                new ObjectParameter("DocumentTypeID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DeleteTBL_MASTER_DOCUMENTTYPE", documentTypeNameParameter, documentTypeIDParameter);
+        }
+    
+        public virtual int DeleteTBL_MASTER_STATE(string nAME, Nullable<int> cOUNTRYID, Nullable<int> sTATEID)
+        {
+            var nAMEParameter = nAME != null ?
+                new ObjectParameter("NAME", nAME) :
+                new ObjectParameter("NAME", typeof(string));
+    
+            var cOUNTRYIDParameter = cOUNTRYID.HasValue ?
+                new ObjectParameter("COUNTRYID", cOUNTRYID) :
+                new ObjectParameter("COUNTRYID", typeof(int));
+    
+            var sTATEIDParameter = sTATEID.HasValue ?
+                new ObjectParameter("STATEID", sTATEID) :
+                new ObjectParameter("STATEID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DeleteTBL_MASTER_STATE", nAMEParameter, cOUNTRYIDParameter, sTATEIDParameter);
+        }
+    
+        public virtual int DeleteTBL_MASTER_STATUS(Nullable<int> sTATUSID, string nAME)
+        {
+            var sTATUSIDParameter = sTATUSID.HasValue ?
+                new ObjectParameter("STATUSID", sTATUSID) :
+                new ObjectParameter("STATUSID", typeof(int));
+    
+            var nAMEParameter = nAME != null ?
+                new ObjectParameter("NAME", nAME) :
+                new ObjectParameter("NAME", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DeleteTBL_MASTER_STATUS", sTATUSIDParameter, nAMEParameter);
+        }
+    
+        public virtual int DeleteTBL_MASTER_SUBJECT(string nAME, Nullable<int> sUBJECTID)
+        {
+            var nAMEParameter = nAME != null ?
+                new ObjectParameter("NAME", nAME) :
+                new ObjectParameter("NAME", typeof(string));
+    
+            var sUBJECTIDParameter = sUBJECTID.HasValue ?
+                new ObjectParameter("SUBJECTID", sUBJECTID) :
+                new ObjectParameter("SUBJECTID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DeleteTBL_MASTER_SUBJECT", nAMEParameter, sUBJECTIDParameter);
+        }
+    
+        public virtual int DeleteTBL_MASTER_USERTYPE(string tYPENAME, Nullable<int> uSERTYPEID)
+        {
+            var tYPENAMEParameter = tYPENAME != null ?
+                new ObjectParameter("TYPENAME", tYPENAME) :
+                new ObjectParameter("TYPENAME", typeof(string));
+    
+            var uSERTYPEIDParameter = uSERTYPEID.HasValue ?
+                new ObjectParameter("USERTYPEID", uSERTYPEID) :
+                new ObjectParameter("USERTYPEID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DeleteTBL_MASTER_USERTYPE", tYPENAMEParameter, uSERTYPEIDParameter);
+        }
+    
+        public virtual int DeleteTBL_USER_ADDRESS_DETAILS(Nullable<int> cITY, Nullable<int> aDDRESSTYPEID, Nullable<long> mODIFIEDBY, string aDDRESSLINE2, Nullable<bool> sTATUS, Nullable<int> cOUNTRY, string aDDRESSLINE1, Nullable<long> cREATEDBY, Nullable<int> sTATE, Nullable<long> uSERID, Nullable<long> aDDRESSDETAILID, string pINCODE, Nullable<System.DateTime> cREATEDDATE, Nullable<System.DateTime> mODIFIEDDATE)
+        {
+            var cITYParameter = cITY.HasValue ?
+                new ObjectParameter("CITY", cITY) :
+                new ObjectParameter("CITY", typeof(int));
+    
+            var aDDRESSTYPEIDParameter = aDDRESSTYPEID.HasValue ?
+                new ObjectParameter("ADDRESSTYPEID", aDDRESSTYPEID) :
+                new ObjectParameter("ADDRESSTYPEID", typeof(int));
+    
+            var mODIFIEDBYParameter = mODIFIEDBY.HasValue ?
+                new ObjectParameter("MODIFIEDBY", mODIFIEDBY) :
+                new ObjectParameter("MODIFIEDBY", typeof(long));
+    
+            var aDDRESSLINE2Parameter = aDDRESSLINE2 != null ?
+                new ObjectParameter("ADDRESSLINE2", aDDRESSLINE2) :
+                new ObjectParameter("ADDRESSLINE2", typeof(string));
+    
+            var sTATUSParameter = sTATUS.HasValue ?
+                new ObjectParameter("STATUS", sTATUS) :
+                new ObjectParameter("STATUS", typeof(bool));
+    
+            var cOUNTRYParameter = cOUNTRY.HasValue ?
+                new ObjectParameter("COUNTRY", cOUNTRY) :
+                new ObjectParameter("COUNTRY", typeof(int));
+    
+            var aDDRESSLINE1Parameter = aDDRESSLINE1 != null ?
+                new ObjectParameter("ADDRESSLINE1", aDDRESSLINE1) :
+                new ObjectParameter("ADDRESSLINE1", typeof(string));
+    
+            var cREATEDBYParameter = cREATEDBY.HasValue ?
+                new ObjectParameter("CREATEDBY", cREATEDBY) :
+                new ObjectParameter("CREATEDBY", typeof(long));
+    
+            var sTATEParameter = sTATE.HasValue ?
+                new ObjectParameter("STATE", sTATE) :
+                new ObjectParameter("STATE", typeof(int));
+    
+            var uSERIDParameter = uSERID.HasValue ?
+                new ObjectParameter("USERID", uSERID) :
+                new ObjectParameter("USERID", typeof(long));
+    
+            var aDDRESSDETAILIDParameter = aDDRESSDETAILID.HasValue ?
+                new ObjectParameter("ADDRESSDETAILID", aDDRESSDETAILID) :
+                new ObjectParameter("ADDRESSDETAILID", typeof(long));
+    
+            var pINCODEParameter = pINCODE != null ?
+                new ObjectParameter("PINCODE", pINCODE) :
+                new ObjectParameter("PINCODE", typeof(string));
+    
+            var cREATEDDATEParameter = cREATEDDATE.HasValue ?
+                new ObjectParameter("CREATEDDATE", cREATEDDATE) :
+                new ObjectParameter("CREATEDDATE", typeof(System.DateTime));
+    
+            var mODIFIEDDATEParameter = mODIFIEDDATE.HasValue ?
+                new ObjectParameter("MODIFIEDDATE", mODIFIEDDATE) :
+                new ObjectParameter("MODIFIEDDATE", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DeleteTBL_USER_ADDRESS_DETAILS", cITYParameter, aDDRESSTYPEIDParameter, mODIFIEDBYParameter, aDDRESSLINE2Parameter, sTATUSParameter, cOUNTRYParameter, aDDRESSLINE1Parameter, cREATEDBYParameter, sTATEParameter, uSERIDParameter, aDDRESSDETAILIDParameter, pINCODEParameter, cREATEDDATEParameter, mODIFIEDDATEParameter);
+        }
+    
+        public virtual int DeleteTBL_USER_COURSE_DETAILS(Nullable<long> mODIFIEDBY, Nullable<System.DateTime> jOINDATE, Nullable<System.DateTime> cREATEDDATE, Nullable<long> cREATEDBY, Nullable<int> cOURSEID, Nullable<long> uSERID, Nullable<System.DateTime> mODIFIEDDATE, Nullable<long> sTUDENTCOURSEID, Nullable<System.DateTime> cOMPLETEDATE)
+        {
+            var mODIFIEDBYParameter = mODIFIEDBY.HasValue ?
+                new ObjectParameter("MODIFIEDBY", mODIFIEDBY) :
+                new ObjectParameter("MODIFIEDBY", typeof(long));
+    
+            var jOINDATEParameter = jOINDATE.HasValue ?
+                new ObjectParameter("JOINDATE", jOINDATE) :
+                new ObjectParameter("JOINDATE", typeof(System.DateTime));
+    
+            var cREATEDDATEParameter = cREATEDDATE.HasValue ?
+                new ObjectParameter("CREATEDDATE", cREATEDDATE) :
+                new ObjectParameter("CREATEDDATE", typeof(System.DateTime));
+    
+            var cREATEDBYParameter = cREATEDBY.HasValue ?
+                new ObjectParameter("CREATEDBY", cREATEDBY) :
+                new ObjectParameter("CREATEDBY", typeof(long));
+    
+            var cOURSEIDParameter = cOURSEID.HasValue ?
+                new ObjectParameter("COURSEID", cOURSEID) :
+                new ObjectParameter("COURSEID", typeof(int));
+    
+            var uSERIDParameter = uSERID.HasValue ?
+                new ObjectParameter("USERID", uSERID) :
+                new ObjectParameter("USERID", typeof(long));
+    
+            var mODIFIEDDATEParameter = mODIFIEDDATE.HasValue ?
+                new ObjectParameter("MODIFIEDDATE", mODIFIEDDATE) :
+                new ObjectParameter("MODIFIEDDATE", typeof(System.DateTime));
+    
+            var sTUDENTCOURSEIDParameter = sTUDENTCOURSEID.HasValue ?
+                new ObjectParameter("STUDENTCOURSEID", sTUDENTCOURSEID) :
+                new ObjectParameter("STUDENTCOURSEID", typeof(long));
+    
+            var cOMPLETEDATEParameter = cOMPLETEDATE.HasValue ?
+                new ObjectParameter("COMPLETEDATE", cOMPLETEDATE) :
+                new ObjectParameter("COMPLETEDATE", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DeleteTBL_USER_COURSE_DETAILS", mODIFIEDBYParameter, jOINDATEParameter, cREATEDDATEParameter, cREATEDBYParameter, cOURSEIDParameter, uSERIDParameter, mODIFIEDDATEParameter, sTUDENTCOURSEIDParameter, cOMPLETEDATEParameter);
+        }
+    
+        public virtual int DeleteTBL_USER_DETAILS(string nATIONALITY, string gENDER, Nullable<long> uSERID, string eNROLNMENTID, string dISABILITY, Nullable<System.DateTime> dOB, string fIRSTNAME, string mOTHERNAME, string lASTNAME, string fATHERNAME, Nullable<long> pERSONALDETAILID, string mIDDLENAME)
+        {
+            var nATIONALITYParameter = nATIONALITY != null ?
+                new ObjectParameter("NATIONALITY", nATIONALITY) :
+                new ObjectParameter("NATIONALITY", typeof(string));
+    
+            var gENDERParameter = gENDER != null ?
+                new ObjectParameter("GENDER", gENDER) :
+                new ObjectParameter("GENDER", typeof(string));
+    
+            var uSERIDParameter = uSERID.HasValue ?
+                new ObjectParameter("USERID", uSERID) :
+                new ObjectParameter("USERID", typeof(long));
+    
+            var eNROLNMENTIDParameter = eNROLNMENTID != null ?
+                new ObjectParameter("ENROLNMENTID", eNROLNMENTID) :
+                new ObjectParameter("ENROLNMENTID", typeof(string));
+    
+            var dISABILITYParameter = dISABILITY != null ?
+                new ObjectParameter("DISABILITY", dISABILITY) :
+                new ObjectParameter("DISABILITY", typeof(string));
+    
+            var dOBParameter = dOB.HasValue ?
+                new ObjectParameter("DOB", dOB) :
+                new ObjectParameter("DOB", typeof(System.DateTime));
+    
+            var fIRSTNAMEParameter = fIRSTNAME != null ?
+                new ObjectParameter("FIRSTNAME", fIRSTNAME) :
+                new ObjectParameter("FIRSTNAME", typeof(string));
+    
+            var mOTHERNAMEParameter = mOTHERNAME != null ?
+                new ObjectParameter("MOTHERNAME", mOTHERNAME) :
+                new ObjectParameter("MOTHERNAME", typeof(string));
+    
+            var lASTNAMEParameter = lASTNAME != null ?
+                new ObjectParameter("LASTNAME", lASTNAME) :
+                new ObjectParameter("LASTNAME", typeof(string));
+    
+            var fATHERNAMEParameter = fATHERNAME != null ?
+                new ObjectParameter("FATHERNAME", fATHERNAME) :
+                new ObjectParameter("FATHERNAME", typeof(string));
+    
+            var pERSONALDETAILIDParameter = pERSONALDETAILID.HasValue ?
+                new ObjectParameter("PERSONALDETAILID", pERSONALDETAILID) :
+                new ObjectParameter("PERSONALDETAILID", typeof(long));
+    
+            var mIDDLENAMEParameter = mIDDLENAME != null ?
+                new ObjectParameter("MIDDLENAME", mIDDLENAME) :
+                new ObjectParameter("MIDDLENAME", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DeleteTBL_USER_DETAILS", nATIONALITYParameter, gENDERParameter, uSERIDParameter, eNROLNMENTIDParameter, dISABILITYParameter, dOBParameter, fIRSTNAMEParameter, mOTHERNAMEParameter, lASTNAMEParameter, fATHERNAMEParameter, pERSONALDETAILIDParameter, mIDDLENAMEParameter);
+        }
+    
+        public virtual int DeleteTBL_USER_DOCUMENTS_DETAILS(Nullable<long> mODIFIEDBY, Nullable<bool> sTATUS, Nullable<long> cREATEDBY, Nullable<long> uSERID, Nullable<System.DateTime> cREATEDDATE, Nullable<System.DateTime> mODIFIEDDATE, Nullable<int> dOCUMENTTYPEID, Nullable<long> uSERDOCUMENTID, string dOCUMENTNAME)
+        {
+            var mODIFIEDBYParameter = mODIFIEDBY.HasValue ?
+                new ObjectParameter("MODIFIEDBY", mODIFIEDBY) :
+                new ObjectParameter("MODIFIEDBY", typeof(long));
+    
+            var sTATUSParameter = sTATUS.HasValue ?
+                new ObjectParameter("STATUS", sTATUS) :
+                new ObjectParameter("STATUS", typeof(bool));
+    
+            var cREATEDBYParameter = cREATEDBY.HasValue ?
+                new ObjectParameter("CREATEDBY", cREATEDBY) :
+                new ObjectParameter("CREATEDBY", typeof(long));
+    
+            var uSERIDParameter = uSERID.HasValue ?
+                new ObjectParameter("USERID", uSERID) :
+                new ObjectParameter("USERID", typeof(long));
+    
+            var cREATEDDATEParameter = cREATEDDATE.HasValue ?
+                new ObjectParameter("CREATEDDATE", cREATEDDATE) :
+                new ObjectParameter("CREATEDDATE", typeof(System.DateTime));
+    
+            var mODIFIEDDATEParameter = mODIFIEDDATE.HasValue ?
+                new ObjectParameter("MODIFIEDDATE", mODIFIEDDATE) :
+                new ObjectParameter("MODIFIEDDATE", typeof(System.DateTime));
+    
+            var dOCUMENTTYPEIDParameter = dOCUMENTTYPEID.HasValue ?
+                new ObjectParameter("DOCUMENTTYPEID", dOCUMENTTYPEID) :
+                new ObjectParameter("DOCUMENTTYPEID", typeof(int));
+    
+            var uSERDOCUMENTIDParameter = uSERDOCUMENTID.HasValue ?
+                new ObjectParameter("USERDOCUMENTID", uSERDOCUMENTID) :
+                new ObjectParameter("USERDOCUMENTID", typeof(long));
+    
+            var dOCUMENTNAMEParameter = dOCUMENTNAME != null ?
+                new ObjectParameter("DOCUMENTNAME", dOCUMENTNAME) :
+                new ObjectParameter("DOCUMENTNAME", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DeleteTBL_USER_DOCUMENTS_DETAILS", mODIFIEDBYParameter, sTATUSParameter, cREATEDBYParameter, uSERIDParameter, cREATEDDATEParameter, mODIFIEDDATEParameter, dOCUMENTTYPEIDParameter, uSERDOCUMENTIDParameter, dOCUMENTNAMEParameter);
+        }
+    
+        public virtual int DeleteTBL_USER_INSTITUTION_DETAILS(Nullable<long> mODIFIEDBY, Nullable<long> iNSTITUTIONID, Nullable<int> bOARDID, Nullable<System.DateTime> mODIFIEDDATE, string gRADE_PERCENT, string iNSTITUTIONNAME, Nullable<int> cLASSID, Nullable<long> uSERID, Nullable<int> pASSINGYEAR, Nullable<long> cREATEDBY, Nullable<System.DateTime> cREATEDDATE)
+        {
+            var mODIFIEDBYParameter = mODIFIEDBY.HasValue ?
+                new ObjectParameter("MODIFIEDBY", mODIFIEDBY) :
+                new ObjectParameter("MODIFIEDBY", typeof(long));
+    
+            var iNSTITUTIONIDParameter = iNSTITUTIONID.HasValue ?
+                new ObjectParameter("INSTITUTIONID", iNSTITUTIONID) :
+                new ObjectParameter("INSTITUTIONID", typeof(long));
+    
+            var bOARDIDParameter = bOARDID.HasValue ?
+                new ObjectParameter("BOARDID", bOARDID) :
+                new ObjectParameter("BOARDID", typeof(int));
+    
+            var mODIFIEDDATEParameter = mODIFIEDDATE.HasValue ?
+                new ObjectParameter("MODIFIEDDATE", mODIFIEDDATE) :
+                new ObjectParameter("MODIFIEDDATE", typeof(System.DateTime));
+    
+            var gRADE_PERCENTParameter = gRADE_PERCENT != null ?
+                new ObjectParameter("GRADE_PERCENT", gRADE_PERCENT) :
+                new ObjectParameter("GRADE_PERCENT", typeof(string));
+    
+            var iNSTITUTIONNAMEParameter = iNSTITUTIONNAME != null ?
+                new ObjectParameter("INSTITUTIONNAME", iNSTITUTIONNAME) :
+                new ObjectParameter("INSTITUTIONNAME", typeof(string));
+    
+            var cLASSIDParameter = cLASSID.HasValue ?
+                new ObjectParameter("CLASSID", cLASSID) :
+                new ObjectParameter("CLASSID", typeof(int));
+    
+            var uSERIDParameter = uSERID.HasValue ?
+                new ObjectParameter("USERID", uSERID) :
+                new ObjectParameter("USERID", typeof(long));
+    
+            var pASSINGYEARParameter = pASSINGYEAR.HasValue ?
+                new ObjectParameter("PASSINGYEAR", pASSINGYEAR) :
+                new ObjectParameter("PASSINGYEAR", typeof(int));
+    
+            var cREATEDBYParameter = cREATEDBY.HasValue ?
+                new ObjectParameter("CREATEDBY", cREATEDBY) :
+                new ObjectParameter("CREATEDBY", typeof(long));
+    
+            var cREATEDDATEParameter = cREATEDDATE.HasValue ?
+                new ObjectParameter("CREATEDDATE", cREATEDDATE) :
+                new ObjectParameter("CREATEDDATE", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DeleteTBL_USER_INSTITUTION_DETAILS", mODIFIEDBYParameter, iNSTITUTIONIDParameter, bOARDIDParameter, mODIFIEDDATEParameter, gRADE_PERCENTParameter, iNSTITUTIONNAMEParameter, cLASSIDParameter, uSERIDParameter, pASSINGYEARParameter, cREATEDBYParameter, cREATEDDATEParameter);
+        }
+    
+        public virtual int DeleteTBL_USER_LOGIN(string pASSWORD, Nullable<int> pASSWORDRETRYCOUNT, string lOGIN_MOBILE, Nullable<long> uSERID, Nullable<System.DateTime> mODIFIEDDATE, string lOGIN_EMAIL, Nullable<int> sTATUSID, Nullable<System.DateTime> cREATEDDATE, Nullable<int> uSERTYPEID)
+        {
+            var pASSWORDParameter = pASSWORD != null ?
+                new ObjectParameter("PASSWORD", pASSWORD) :
+                new ObjectParameter("PASSWORD", typeof(string));
+    
+            var pASSWORDRETRYCOUNTParameter = pASSWORDRETRYCOUNT.HasValue ?
+                new ObjectParameter("PASSWORDRETRYCOUNT", pASSWORDRETRYCOUNT) :
+                new ObjectParameter("PASSWORDRETRYCOUNT", typeof(int));
+    
+            var lOGIN_MOBILEParameter = lOGIN_MOBILE != null ?
+                new ObjectParameter("LOGIN_MOBILE", lOGIN_MOBILE) :
+                new ObjectParameter("LOGIN_MOBILE", typeof(string));
+    
+            var uSERIDParameter = uSERID.HasValue ?
+                new ObjectParameter("USERID", uSERID) :
+                new ObjectParameter("USERID", typeof(long));
+    
+            var mODIFIEDDATEParameter = mODIFIEDDATE.HasValue ?
+                new ObjectParameter("MODIFIEDDATE", mODIFIEDDATE) :
+                new ObjectParameter("MODIFIEDDATE", typeof(System.DateTime));
+    
+            var lOGIN_EMAILParameter = lOGIN_EMAIL != null ?
+                new ObjectParameter("LOGIN_EMAIL", lOGIN_EMAIL) :
+                new ObjectParameter("LOGIN_EMAIL", typeof(string));
+    
+            var sTATUSIDParameter = sTATUSID.HasValue ?
+                new ObjectParameter("STATUSID", sTATUSID) :
+                new ObjectParameter("STATUSID", typeof(int));
+    
+            var cREATEDDATEParameter = cREATEDDATE.HasValue ?
+                new ObjectParameter("CREATEDDATE", cREATEDDATE) :
+                new ObjectParameter("CREATEDDATE", typeof(System.DateTime));
+    
+            var uSERTYPEIDParameter = uSERTYPEID.HasValue ?
+                new ObjectParameter("USERTYPEID", uSERTYPEID) :
+                new ObjectParameter("USERTYPEID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DeleteTBL_USER_LOGIN", pASSWORDParameter, pASSWORDRETRYCOUNTParameter, lOGIN_MOBILEParameter, uSERIDParameter, mODIFIEDDATEParameter, lOGIN_EMAILParameter, sTATUSIDParameter, cREATEDDATEParameter, uSERTYPEIDParameter);
+        }
+    
+        public virtual int DeleteTBL_USER_LOGIN_TRAIL(string iPADDRESS, string lATITUTE, Nullable<long> uSERID, string lONGITUTE, Nullable<System.DateTime> lOGINDATETIME)
+        {
+            var iPADDRESSParameter = iPADDRESS != null ?
+                new ObjectParameter("IPADDRESS", iPADDRESS) :
+                new ObjectParameter("IPADDRESS", typeof(string));
+    
+            var lATITUTEParameter = lATITUTE != null ?
+                new ObjectParameter("LATITUTE", lATITUTE) :
+                new ObjectParameter("LATITUTE", typeof(string));
+    
+            var uSERIDParameter = uSERID.HasValue ?
+                new ObjectParameter("USERID", uSERID) :
+                new ObjectParameter("USERID", typeof(long));
+    
+            var lONGITUTEParameter = lONGITUTE != null ?
+                new ObjectParameter("LONGITUTE", lONGITUTE) :
+                new ObjectParameter("LONGITUTE", typeof(string));
+    
+            var lOGINDATETIMEParameter = lOGINDATETIME.HasValue ?
+                new ObjectParameter("LOGINDATETIME", lOGINDATETIME) :
+                new ObjectParameter("LOGINDATETIME", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DeleteTBL_USER_LOGIN_TRAIL", iPADDRESSParameter, lATITUTEParameter, uSERIDParameter, lONGITUTEParameter, lOGINDATETIMEParameter);
+        }
+    
+        public virtual int DeleteTBL_USER_PARENTS_DETAILS(Nullable<long> cREATEDBY, string mOTHEROCCUPATION, Nullable<System.DateTime> cREATEDDATE, Nullable<System.DateTime> mODIFIEDDATE, string fATHERNAME, Nullable<long> mODIFIEDBY, string mOTHEREMAIL, string mOTHERCOMPANYNAME, string fATHERDESIGNATION, string fATHEROCCUPATION, string fATHEREMAIL, Nullable<long> uSERID, Nullable<long> pARENTID, string fATHERMOBILENUMBER, string mOTHERMOBILENUMBER, string mOTHERNAME, string mOTHERDESIGNATION, string fATHERCOMPANYNAME)
+        {
+            var cREATEDBYParameter = cREATEDBY.HasValue ?
+                new ObjectParameter("CREATEDBY", cREATEDBY) :
+                new ObjectParameter("CREATEDBY", typeof(long));
+    
+            var mOTHEROCCUPATIONParameter = mOTHEROCCUPATION != null ?
+                new ObjectParameter("MOTHEROCCUPATION", mOTHEROCCUPATION) :
+                new ObjectParameter("MOTHEROCCUPATION", typeof(string));
+    
+            var cREATEDDATEParameter = cREATEDDATE.HasValue ?
+                new ObjectParameter("CREATEDDATE", cREATEDDATE) :
+                new ObjectParameter("CREATEDDATE", typeof(System.DateTime));
+    
+            var mODIFIEDDATEParameter = mODIFIEDDATE.HasValue ?
+                new ObjectParameter("MODIFIEDDATE", mODIFIEDDATE) :
+                new ObjectParameter("MODIFIEDDATE", typeof(System.DateTime));
+    
+            var fATHERNAMEParameter = fATHERNAME != null ?
+                new ObjectParameter("FATHERNAME", fATHERNAME) :
+                new ObjectParameter("FATHERNAME", typeof(string));
+    
+            var mODIFIEDBYParameter = mODIFIEDBY.HasValue ?
+                new ObjectParameter("MODIFIEDBY", mODIFIEDBY) :
+                new ObjectParameter("MODIFIEDBY", typeof(long));
+    
+            var mOTHEREMAILParameter = mOTHEREMAIL != null ?
+                new ObjectParameter("MOTHEREMAIL", mOTHEREMAIL) :
+                new ObjectParameter("MOTHEREMAIL", typeof(string));
+    
+            var mOTHERCOMPANYNAMEParameter = mOTHERCOMPANYNAME != null ?
+                new ObjectParameter("MOTHERCOMPANYNAME", mOTHERCOMPANYNAME) :
+                new ObjectParameter("MOTHERCOMPANYNAME", typeof(string));
+    
+            var fATHERDESIGNATIONParameter = fATHERDESIGNATION != null ?
+                new ObjectParameter("FATHERDESIGNATION", fATHERDESIGNATION) :
+                new ObjectParameter("FATHERDESIGNATION", typeof(string));
+    
+            var fATHEROCCUPATIONParameter = fATHEROCCUPATION != null ?
+                new ObjectParameter("FATHEROCCUPATION", fATHEROCCUPATION) :
+                new ObjectParameter("FATHEROCCUPATION", typeof(string));
+    
+            var fATHEREMAILParameter = fATHEREMAIL != null ?
+                new ObjectParameter("FATHEREMAIL", fATHEREMAIL) :
+                new ObjectParameter("FATHEREMAIL", typeof(string));
+    
+            var uSERIDParameter = uSERID.HasValue ?
+                new ObjectParameter("USERID", uSERID) :
+                new ObjectParameter("USERID", typeof(long));
+    
+            var pARENTIDParameter = pARENTID.HasValue ?
+                new ObjectParameter("PARENTID", pARENTID) :
+                new ObjectParameter("PARENTID", typeof(long));
+    
+            var fATHERMOBILENUMBERParameter = fATHERMOBILENUMBER != null ?
+                new ObjectParameter("FATHERMOBILENUMBER", fATHERMOBILENUMBER) :
+                new ObjectParameter("FATHERMOBILENUMBER", typeof(string));
+    
+            var mOTHERMOBILENUMBERParameter = mOTHERMOBILENUMBER != null ?
+                new ObjectParameter("MOTHERMOBILENUMBER", mOTHERMOBILENUMBER) :
+                new ObjectParameter("MOTHERMOBILENUMBER", typeof(string));
+    
+            var mOTHERNAMEParameter = mOTHERNAME != null ?
+                new ObjectParameter("MOTHERNAME", mOTHERNAME) :
+                new ObjectParameter("MOTHERNAME", typeof(string));
+    
+            var mOTHERDESIGNATIONParameter = mOTHERDESIGNATION != null ?
+                new ObjectParameter("MOTHERDESIGNATION", mOTHERDESIGNATION) :
+                new ObjectParameter("MOTHERDESIGNATION", typeof(string));
+    
+            var fATHERCOMPANYNAMEParameter = fATHERCOMPANYNAME != null ?
+                new ObjectParameter("FATHERCOMPANYNAME", fATHERCOMPANYNAME) :
+                new ObjectParameter("FATHERCOMPANYNAME", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DeleteTBL_USER_PARENTS_DETAILS", cREATEDBYParameter, mOTHEROCCUPATIONParameter, cREATEDDATEParameter, mODIFIEDDATEParameter, fATHERNAMEParameter, mODIFIEDBYParameter, mOTHEREMAILParameter, mOTHERCOMPANYNAMEParameter, fATHERDESIGNATIONParameter, fATHEROCCUPATIONParameter, fATHEREMAILParameter, uSERIDParameter, pARENTIDParameter, fATHERMOBILENUMBERParameter, mOTHERMOBILENUMBERParameter, mOTHERNAMEParameter, mOTHERDESIGNATIONParameter, fATHERCOMPANYNAMEParameter);
+        }
+    
+        public virtual int DeleteTBL_USER_PROFESSIONAL_DETAILS(Nullable<long> mODIFIEDDBY, Nullable<System.DateTime> cREATEDDATE, string dESIGNATION, Nullable<long> cREATEBY, string rEMARKS, Nullable<long> uSERID, Nullable<System.DateTime> mODIFIEDDATE, string eMPLOYEETYPE, Nullable<long> pROFESSIONALDETAILID, string cOMPANYNAME)
+        {
+            var mODIFIEDDBYParameter = mODIFIEDDBY.HasValue ?
+                new ObjectParameter("MODIFIEDDBY", mODIFIEDDBY) :
+                new ObjectParameter("MODIFIEDDBY", typeof(long));
+    
+            var cREATEDDATEParameter = cREATEDDATE.HasValue ?
+                new ObjectParameter("CREATEDDATE", cREATEDDATE) :
+                new ObjectParameter("CREATEDDATE", typeof(System.DateTime));
+    
+            var dESIGNATIONParameter = dESIGNATION != null ?
+                new ObjectParameter("DESIGNATION", dESIGNATION) :
+                new ObjectParameter("DESIGNATION", typeof(string));
+    
+            var cREATEBYParameter = cREATEBY.HasValue ?
+                new ObjectParameter("CREATEBY", cREATEBY) :
+                new ObjectParameter("CREATEBY", typeof(long));
+    
+            var rEMARKSParameter = rEMARKS != null ?
+                new ObjectParameter("REMARKS", rEMARKS) :
+                new ObjectParameter("REMARKS", typeof(string));
+    
+            var uSERIDParameter = uSERID.HasValue ?
+                new ObjectParameter("USERID", uSERID) :
+                new ObjectParameter("USERID", typeof(long));
+    
+            var mODIFIEDDATEParameter = mODIFIEDDATE.HasValue ?
+                new ObjectParameter("MODIFIEDDATE", mODIFIEDDATE) :
+                new ObjectParameter("MODIFIEDDATE", typeof(System.DateTime));
+    
+            var eMPLOYEETYPEParameter = eMPLOYEETYPE != null ?
+                new ObjectParameter("EMPLOYEETYPE", eMPLOYEETYPE) :
+                new ObjectParameter("EMPLOYEETYPE", typeof(string));
+    
+            var pROFESSIONALDETAILIDParameter = pROFESSIONALDETAILID.HasValue ?
+                new ObjectParameter("PROFESSIONALDETAILID", pROFESSIONALDETAILID) :
+                new ObjectParameter("PROFESSIONALDETAILID", typeof(long));
+    
+            var cOMPANYNAMEParameter = cOMPANYNAME != null ?
+                new ObjectParameter("COMPANYNAME", cOMPANYNAME) :
+                new ObjectParameter("COMPANYNAME", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DeleteTBL_USER_PROFESSIONAL_DETAILS", mODIFIEDDBYParameter, cREATEDDATEParameter, dESIGNATIONParameter, cREATEBYParameter, rEMARKSParameter, uSERIDParameter, mODIFIEDDATEParameter, eMPLOYEETYPEParameter, pROFESSIONALDETAILIDParameter, cOMPANYNAMEParameter);
+        }
+    
+        public virtual int DeleteTBL_USER_SUBJECTS(Nullable<long> mODIFIEDBY, Nullable<long> uSERID, Nullable<long> uSERSUBJECTID, Nullable<System.DateTime> cREATEDDATE, Nullable<long> cREATEDBY, Nullable<System.DateTime> mODIFIEDDATE, Nullable<int> sUBJECTID)
+        {
+            var mODIFIEDBYParameter = mODIFIEDBY.HasValue ?
+                new ObjectParameter("MODIFIEDBY", mODIFIEDBY) :
+                new ObjectParameter("MODIFIEDBY", typeof(long));
+    
+            var uSERIDParameter = uSERID.HasValue ?
+                new ObjectParameter("USERID", uSERID) :
+                new ObjectParameter("USERID", typeof(long));
+    
+            var uSERSUBJECTIDParameter = uSERSUBJECTID.HasValue ?
+                new ObjectParameter("USERSUBJECTID", uSERSUBJECTID) :
+                new ObjectParameter("USERSUBJECTID", typeof(long));
+    
+            var cREATEDDATEParameter = cREATEDDATE.HasValue ?
+                new ObjectParameter("CREATEDDATE", cREATEDDATE) :
+                new ObjectParameter("CREATEDDATE", typeof(System.DateTime));
+    
+            var cREATEDBYParameter = cREATEDBY.HasValue ?
+                new ObjectParameter("CREATEDBY", cREATEDBY) :
+                new ObjectParameter("CREATEDBY", typeof(long));
+    
+            var mODIFIEDDATEParameter = mODIFIEDDATE.HasValue ?
+                new ObjectParameter("MODIFIEDDATE", mODIFIEDDATE) :
+                new ObjectParameter("MODIFIEDDATE", typeof(System.DateTime));
+    
+            var sUBJECTIDParameter = sUBJECTID.HasValue ?
+                new ObjectParameter("SUBJECTID", sUBJECTID) :
+                new ObjectParameter("SUBJECTID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DeleteTBL_USER_SUBJECTS", mODIFIEDBYParameter, uSERIDParameter, uSERSUBJECTIDParameter, cREATEDDATEParameter, cREATEDBYParameter, mODIFIEDDATEParameter, sUBJECTIDParameter);
+        }
+    
+        public virtual ObjectResult<GetAllTBL_MASTER_BOARDS_Result> GetAllTBL_MASTER_BOARDS()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetAllTBL_MASTER_BOARDS_Result>("GetAllTBL_MASTER_BOARDS");
+        }
+    
+        public virtual ObjectResult<Nullable<int>> GetAllTBL_MASTER_CLASS()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("GetAllTBL_MASTER_CLASS");
+        }
+    
+        public virtual ObjectResult<Nullable<int>> GetAllTBL_MASTER_COUNTRY()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("GetAllTBL_MASTER_COUNTRY");
+        }
+    
+        public virtual ObjectResult<Nullable<int>> GetAllTBL_MASTER_COURSE()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("GetAllTBL_MASTER_COURSE");
+        }
+    
+        public virtual ObjectResult<Nullable<int>> GetAllTBL_MASTER_DOCUMENTTYPE()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("GetAllTBL_MASTER_DOCUMENTTYPE");
+        }
+    
+        public virtual ObjectResult<Nullable<int>> GetAllTBL_MASTER_STATUS()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("GetAllTBL_MASTER_STATUS");
+        }
+    
+        public virtual ObjectResult<Nullable<int>> GetAllTBL_MASTER_SUBJECT()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("GetAllTBL_MASTER_SUBJECT");
+        }
+    
+        public virtual ObjectResult<Nullable<int>> GetAllTBL_MASTER_USERTYPE()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("GetAllTBL_MASTER_USERTYPE");
+        }
+    
+        public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            var versionParameter = version.HasValue ?
+                new ObjectParameter("version", version) :
+                new ObjectParameter("version", typeof(int));
+    
+            var definitionParameter = definition != null ?
+                new ObjectParameter("definition", definition) :
+                new ObjectParameter("definition", typeof(byte[]));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_alterdiagram", diagramnameParameter, owner_idParameter, versionParameter, definitionParameter);
+        }
+    
+        public virtual int sp_creatediagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            var versionParameter = version.HasValue ?
+                new ObjectParameter("version", version) :
+                new ObjectParameter("version", typeof(int));
+    
+            var definitionParameter = definition != null ?
+                new ObjectParameter("definition", definition) :
+                new ObjectParameter("definition", typeof(byte[]));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_creatediagram", diagramnameParameter, owner_idParameter, versionParameter, definitionParameter);
+        }
+    
+        public virtual int sp_dropdiagram(string diagramname, Nullable<int> owner_id)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_dropdiagram", diagramnameParameter, owner_idParameter);
+        }
+    
+        public virtual ObjectResult<sp_helpdiagramdefinition_Result> sp_helpdiagramdefinition(string diagramname, Nullable<int> owner_id)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagramdefinition_Result>("sp_helpdiagramdefinition", diagramnameParameter, owner_idParameter);
+        }
+    
+        public virtual ObjectResult<sp_helpdiagrams_Result> sp_helpdiagrams(string diagramname, Nullable<int> owner_id)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagrams_Result>("sp_helpdiagrams", diagramnameParameter, owner_idParameter);
+        }
+    
+        public virtual int sp_renamediagram(string diagramname, Nullable<int> owner_id, string new_diagramname)
+        {
+            var diagramnameParameter = diagramname != null ?
+                new ObjectParameter("diagramname", diagramname) :
+                new ObjectParameter("diagramname", typeof(string));
+    
+            var owner_idParameter = owner_id.HasValue ?
+                new ObjectParameter("owner_id", owner_id) :
+                new ObjectParameter("owner_id", typeof(int));
+    
+            var new_diagramnameParameter = new_diagramname != null ?
+                new ObjectParameter("new_diagramname", new_diagramname) :
+                new ObjectParameter("new_diagramname", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_renamediagram", diagramnameParameter, owner_idParameter, new_diagramnameParameter);
+        }
+    
+        public virtual int sp_upgraddiagrams()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
+        }
+    
+        public virtual int sprocMemberRegistrationDeleteSingleItem(Nullable<long> memID)
+        {
+            var memIDParameter = memID.HasValue ?
+                new ObjectParameter("MemID", memID) :
+                new ObjectParameter("MemID", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sprocMemberRegistrationDeleteSingleItem", memIDParameter);
+        }
+    
+        public virtual int sprocMemberRegistrationInsertUpdateSingleItem(Nullable<long> memID, string memberFName, string memberLName, string memberMName, string address, Nullable<System.DateTime> dOB, string age, string contactno, string emailID, string gender, Nullable<int> plantypeID, Nullable<int> workouttypeID, Nullable<long> createdby, Nullable<long> modifiedBy, Nullable<System.DateTime> joiningDate, ObjectParameter memIDOUT)
+        {
+            var memIDParameter = memID.HasValue ?
+                new ObjectParameter("MemID", memID) :
+                new ObjectParameter("MemID", typeof(long));
+    
+            var memberFNameParameter = memberFName != null ?
+                new ObjectParameter("MemberFName", memberFName) :
+                new ObjectParameter("MemberFName", typeof(string));
+    
+            var memberLNameParameter = memberLName != null ?
+                new ObjectParameter("MemberLName", memberLName) :
+                new ObjectParameter("MemberLName", typeof(string));
+    
+            var memberMNameParameter = memberMName != null ?
+                new ObjectParameter("MemberMName", memberMName) :
+                new ObjectParameter("MemberMName", typeof(string));
+    
+            var addressParameter = address != null ?
+                new ObjectParameter("Address", address) :
+                new ObjectParameter("Address", typeof(string));
+    
+            var dOBParameter = dOB.HasValue ?
+                new ObjectParameter("DOB", dOB) :
+                new ObjectParameter("DOB", typeof(System.DateTime));
+    
+            var ageParameter = age != null ?
+                new ObjectParameter("Age", age) :
+                new ObjectParameter("Age", typeof(string));
+    
+            var contactnoParameter = contactno != null ?
+                new ObjectParameter("Contactno", contactno) :
+                new ObjectParameter("Contactno", typeof(string));
+    
+            var emailIDParameter = emailID != null ?
+                new ObjectParameter("EmailID", emailID) :
+                new ObjectParameter("EmailID", typeof(string));
+    
+            var genderParameter = gender != null ?
+                new ObjectParameter("Gender", gender) :
+                new ObjectParameter("Gender", typeof(string));
+    
+            var plantypeIDParameter = plantypeID.HasValue ?
+                new ObjectParameter("PlantypeID", plantypeID) :
+                new ObjectParameter("PlantypeID", typeof(int));
+    
+            var workouttypeIDParameter = workouttypeID.HasValue ?
+                new ObjectParameter("WorkouttypeID", workouttypeID) :
+                new ObjectParameter("WorkouttypeID", typeof(int));
+    
+            var createdbyParameter = createdby.HasValue ?
+                new ObjectParameter("Createdby", createdby) :
+                new ObjectParameter("Createdby", typeof(long));
+    
+            var modifiedByParameter = modifiedBy.HasValue ?
+                new ObjectParameter("ModifiedBy", modifiedBy) :
+                new ObjectParameter("ModifiedBy", typeof(long));
+    
+            var joiningDateParameter = joiningDate.HasValue ?
+                new ObjectParameter("JoiningDate", joiningDate) :
+                new ObjectParameter("JoiningDate", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sprocMemberRegistrationInsertUpdateSingleItem", memIDParameter, memberFNameParameter, memberLNameParameter, memberMNameParameter, addressParameter, dOBParameter, ageParameter, contactnoParameter, emailIDParameter, genderParameter, plantypeIDParameter, workouttypeIDParameter, createdbyParameter, modifiedByParameter, joiningDateParameter, memIDOUT);
+        }
+    
+        public virtual ObjectResult<sprocMemberRegistrationSelectList_Result> sprocMemberRegistrationSelectList()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sprocMemberRegistrationSelectList_Result>("sprocMemberRegistrationSelectList");
+        }
+    
+        public virtual ObjectResult<sprocMemberRegistrationSelectSingleItem_Result> sprocMemberRegistrationSelectSingleItem(Nullable<long> memID)
+        {
+            var memIDParameter = memID.HasValue ?
+                new ObjectParameter("MemID", memID) :
+                new ObjectParameter("MemID", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sprocMemberRegistrationSelectSingleItem_Result>("sprocMemberRegistrationSelectSingleItem", memIDParameter);
+        }
+    
+        public virtual int sprocMemberRegistrationUpdateSingleItem(Nullable<long> paymentID, Nullable<int> planID, Nullable<int> workouttypeID, string paymenttype, Nullable<System.DateTime> paymentFromdt, Nullable<decimal> paymentAmount, Nullable<int> modifyUserID, string recStatus, Nullable<long> memberID, ObjectParameter paymentIDOUT)
+        {
+            var paymentIDParameter = paymentID.HasValue ?
+                new ObjectParameter("PaymentID", paymentID) :
+                new ObjectParameter("PaymentID", typeof(long));
+    
+            var planIDParameter = planID.HasValue ?
+                new ObjectParameter("PlanID", planID) :
+                new ObjectParameter("PlanID", typeof(int));
+    
+            var workouttypeIDParameter = workouttypeID.HasValue ?
+                new ObjectParameter("WorkouttypeID", workouttypeID) :
+                new ObjectParameter("WorkouttypeID", typeof(int));
+    
+            var paymenttypeParameter = paymenttype != null ?
+                new ObjectParameter("Paymenttype", paymenttype) :
+                new ObjectParameter("Paymenttype", typeof(string));
+    
+            var paymentFromdtParameter = paymentFromdt.HasValue ?
+                new ObjectParameter("PaymentFromdt", paymentFromdt) :
+                new ObjectParameter("PaymentFromdt", typeof(System.DateTime));
+    
+            var paymentAmountParameter = paymentAmount.HasValue ?
+                new ObjectParameter("PaymentAmount", paymentAmount) :
+                new ObjectParameter("PaymentAmount", typeof(decimal));
+    
+            var modifyUserIDParameter = modifyUserID.HasValue ?
+                new ObjectParameter("ModifyUserID", modifyUserID) :
+                new ObjectParameter("ModifyUserID", typeof(int));
+    
+            var recStatusParameter = recStatus != null ?
+                new ObjectParameter("RecStatus", recStatus) :
+                new ObjectParameter("RecStatus", typeof(string));
+    
+            var memberIDParameter = memberID.HasValue ?
+                new ObjectParameter("MemberID", memberID) :
+                new ObjectParameter("MemberID", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sprocMemberRegistrationUpdateSingleItem", paymentIDParameter, planIDParameter, workouttypeIDParameter, paymenttypeParameter, paymentFromdtParameter, paymentAmountParameter, modifyUserIDParameter, recStatusParameter, memberIDParameter, paymentIDOUT);
+        }
+    
+        public virtual int sprocPaymentDetailsDeleteSingleItem(Nullable<long> paymentID)
+        {
+            var paymentIDParameter = paymentID.HasValue ?
+                new ObjectParameter("PaymentID", paymentID) :
+                new ObjectParameter("PaymentID", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sprocPaymentDetailsDeleteSingleItem", paymentIDParameter);
+        }
+    
+        public virtual int sprocPaymentDetailsInsertUpdateSingleItem(Nullable<long> paymentID, Nullable<int> planID, Nullable<int> workouttypeID, string paymenttype, Nullable<System.DateTime> paymentFromdt, Nullable<decimal> paymentAmount, Nullable<int> createUserID, Nullable<int> modifyUserID, string recStatus, Nullable<long> memberID, ObjectParameter paymentIDOUT)
+        {
+            var paymentIDParameter = paymentID.HasValue ?
+                new ObjectParameter("PaymentID", paymentID) :
+                new ObjectParameter("PaymentID", typeof(long));
+    
+            var planIDParameter = planID.HasValue ?
+                new ObjectParameter("PlanID", planID) :
+                new ObjectParameter("PlanID", typeof(int));
+    
+            var workouttypeIDParameter = workouttypeID.HasValue ?
+                new ObjectParameter("WorkouttypeID", workouttypeID) :
+                new ObjectParameter("WorkouttypeID", typeof(int));
+    
+            var paymenttypeParameter = paymenttype != null ?
+                new ObjectParameter("Paymenttype", paymenttype) :
+                new ObjectParameter("Paymenttype", typeof(string));
+    
+            var paymentFromdtParameter = paymentFromdt.HasValue ?
+                new ObjectParameter("PaymentFromdt", paymentFromdt) :
+                new ObjectParameter("PaymentFromdt", typeof(System.DateTime));
+    
+            var paymentAmountParameter = paymentAmount.HasValue ?
+                new ObjectParameter("PaymentAmount", paymentAmount) :
+                new ObjectParameter("PaymentAmount", typeof(decimal));
+    
+            var createUserIDParameter = createUserID.HasValue ?
+                new ObjectParameter("CreateUserID", createUserID) :
+                new ObjectParameter("CreateUserID", typeof(int));
+    
+            var modifyUserIDParameter = modifyUserID.HasValue ?
+                new ObjectParameter("ModifyUserID", modifyUserID) :
+                new ObjectParameter("ModifyUserID", typeof(int));
+    
+            var recStatusParameter = recStatus != null ?
+                new ObjectParameter("RecStatus", recStatus) :
+                new ObjectParameter("RecStatus", typeof(string));
+    
+            var memberIDParameter = memberID.HasValue ?
+                new ObjectParameter("MemberID", memberID) :
+                new ObjectParameter("MemberID", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sprocPaymentDetailsInsertUpdateSingleItem", paymentIDParameter, planIDParameter, workouttypeIDParameter, paymenttypeParameter, paymentFromdtParameter, paymentAmountParameter, createUserIDParameter, modifyUserIDParameter, recStatusParameter, memberIDParameter, paymentIDOUT);
+        }
+    
+        public virtual ObjectResult<sprocPaymentDetailsSelectList_Result> sprocPaymentDetailsSelectList()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sprocPaymentDetailsSelectList_Result>("sprocPaymentDetailsSelectList");
+        }
+    
+        public virtual ObjectResult<sprocPaymentDetailsSelectSingleItem_Result> sprocPaymentDetailsSelectSingleItem(Nullable<long> paymentID)
+        {
+            var paymentIDParameter = paymentID.HasValue ?
+                new ObjectParameter("PaymentID", paymentID) :
+                new ObjectParameter("PaymentID", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sprocPaymentDetailsSelectSingleItem_Result>("sprocPaymentDetailsSelectSingleItem", paymentIDParameter);
+        }
+    
+        public virtual int sprocPlanMasterDeleteSingleItem(Nullable<int> planID)
+        {
+            var planIDParameter = planID.HasValue ?
+                new ObjectParameter("PlanID", planID) :
+                new ObjectParameter("PlanID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sprocPlanMasterDeleteSingleItem", planIDParameter);
+        }
+    
+        public virtual int sprocPlanMasterInsertUpdateSingleItem(Nullable<int> planID, Nullable<int> schemeID, Nullable<int> periodID, string planName, Nullable<decimal> planAmount, Nullable<decimal> serviceTax, Nullable<System.DateTime> createDate, Nullable<int> createUserID, Nullable<System.DateTime> modifyDate, Nullable<int> modifyUserID, string recStatus)
+        {
+            var planIDParameter = planID.HasValue ?
+                new ObjectParameter("PlanID", planID) :
+                new ObjectParameter("PlanID", typeof(int));
+    
+            var schemeIDParameter = schemeID.HasValue ?
+                new ObjectParameter("SchemeID", schemeID) :
+                new ObjectParameter("SchemeID", typeof(int));
+    
+            var periodIDParameter = periodID.HasValue ?
+                new ObjectParameter("PeriodID", periodID) :
+                new ObjectParameter("PeriodID", typeof(int));
+    
+            var planNameParameter = planName != null ?
+                new ObjectParameter("PlanName", planName) :
+                new ObjectParameter("PlanName", typeof(string));
+    
+            var planAmountParameter = planAmount.HasValue ?
+                new ObjectParameter("PlanAmount", planAmount) :
+                new ObjectParameter("PlanAmount", typeof(decimal));
+    
+            var serviceTaxParameter = serviceTax.HasValue ?
+                new ObjectParameter("ServiceTax", serviceTax) :
+                new ObjectParameter("ServiceTax", typeof(decimal));
+    
+            var createDateParameter = createDate.HasValue ?
+                new ObjectParameter("CreateDate", createDate) :
+                new ObjectParameter("CreateDate", typeof(System.DateTime));
+    
+            var createUserIDParameter = createUserID.HasValue ?
+                new ObjectParameter("CreateUserID", createUserID) :
+                new ObjectParameter("CreateUserID", typeof(int));
+    
+            var modifyDateParameter = modifyDate.HasValue ?
+                new ObjectParameter("ModifyDate", modifyDate) :
+                new ObjectParameter("ModifyDate", typeof(System.DateTime));
+    
+            var modifyUserIDParameter = modifyUserID.HasValue ?
+                new ObjectParameter("ModifyUserID", modifyUserID) :
+                new ObjectParameter("ModifyUserID", typeof(int));
+    
+            var recStatusParameter = recStatus != null ?
+                new ObjectParameter("RecStatus", recStatus) :
+                new ObjectParameter("RecStatus", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sprocPlanMasterInsertUpdateSingleItem", planIDParameter, schemeIDParameter, periodIDParameter, planNameParameter, planAmountParameter, serviceTaxParameter, createDateParameter, createUserIDParameter, modifyDateParameter, modifyUserIDParameter, recStatusParameter);
+        }
+    
+        public virtual ObjectResult<sprocPlanMasterSelectList_Result> sprocPlanMasterSelectList()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sprocPlanMasterSelectList_Result>("sprocPlanMasterSelectList");
+        }
+    
+        public virtual ObjectResult<sprocPlanMasterSelectSingleItem_Result> sprocPlanMasterSelectSingleItem(Nullable<int> planID)
+        {
+            var planIDParameter = planID.HasValue ?
+                new ObjectParameter("PlanID", planID) :
+                new ObjectParameter("PlanID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sprocPlanMasterSelectSingleItem_Result>("sprocPlanMasterSelectSingleItem", planIDParameter);
+        }
+    
+        public virtual int sprocRecepitTBInsertUpdateSingleItem(Nullable<long> recepitID, Nullable<long> memberid, Nullable<long> generateby, Nullable<long> createdby)
+        {
+            var recepitIDParameter = recepitID.HasValue ?
+                new ObjectParameter("RecepitID", recepitID) :
+                new ObjectParameter("RecepitID", typeof(long));
+    
+            var memberidParameter = memberid.HasValue ?
+                new ObjectParameter("Memberid", memberid) :
+                new ObjectParameter("Memberid", typeof(long));
+    
+            var generatebyParameter = generateby.HasValue ?
+                new ObjectParameter("generateby", generateby) :
+                new ObjectParameter("generateby", typeof(long));
+    
+            var createdbyParameter = createdby.HasValue ?
+                new ObjectParameter("createdby", createdby) :
+                new ObjectParameter("createdby", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sprocRecepitTBInsertUpdateSingleItem", recepitIDParameter, memberidParameter, generatebyParameter, createdbyParameter);
+        }
+    
+        public virtual int sprocSchemeMasterDeleteSingleItem(Nullable<int> schemeID)
+        {
+            var schemeIDParameter = schemeID.HasValue ?
+                new ObjectParameter("SchemeID", schemeID) :
+                new ObjectParameter("SchemeID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sprocSchemeMasterDeleteSingleItem", schemeIDParameter);
+        }
+    
+        public virtual int sprocSchemeMasterInsertUpdateSingleItem(Nullable<int> schemeID, string schemeName, Nullable<int> createdby)
+        {
+            var schemeIDParameter = schemeID.HasValue ?
+                new ObjectParameter("SchemeID", schemeID) :
+                new ObjectParameter("SchemeID", typeof(int));
+    
+            var schemeNameParameter = schemeName != null ?
+                new ObjectParameter("SchemeName", schemeName) :
+                new ObjectParameter("SchemeName", typeof(string));
+    
+            var createdbyParameter = createdby.HasValue ?
+                new ObjectParameter("Createdby", createdby) :
+                new ObjectParameter("Createdby", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sprocSchemeMasterInsertUpdateSingleItem", schemeIDParameter, schemeNameParameter, createdbyParameter);
+        }
+    
+        public virtual int sprocTBL_MASTER_BOARDSDeleteSingleItem(Nullable<int> bOARDID)
+        {
+            var bOARDIDParameter = bOARDID.HasValue ?
+                new ObjectParameter("BOARDID", bOARDID) :
+                new ObjectParameter("BOARDID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sprocTBL_MASTER_BOARDSDeleteSingleItem", bOARDIDParameter);
+        }
+    
+        public virtual int sprocTBL_MASTER_BOARDSInsertUpdateSingleItem(Nullable<int> bOARDID, string nAME)
+        {
+            var bOARDIDParameter = bOARDID.HasValue ?
+                new ObjectParameter("BOARDID", bOARDID) :
+                new ObjectParameter("BOARDID", typeof(int));
+    
+            var nAMEParameter = nAME != null ?
+                new ObjectParameter("NAME", nAME) :
+                new ObjectParameter("NAME", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sprocTBL_MASTER_BOARDSInsertUpdateSingleItem", bOARDIDParameter, nAMEParameter);
+        }
+    
+        public virtual ObjectResult<sprocTBL_MASTER_BOARDSSelectList_Result> sprocTBL_MASTER_BOARDSSelectList()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sprocTBL_MASTER_BOARDSSelectList_Result>("sprocTBL_MASTER_BOARDSSelectList");
+        }
+    
+        public virtual ObjectResult<sprocTBL_MASTER_BOARDSSelectSingleItem_Result> sprocTBL_MASTER_BOARDSSelectSingleItem(Nullable<int> bOARDID)
+        {
+            var bOARDIDParameter = bOARDID.HasValue ?
+                new ObjectParameter("BOARDID", bOARDID) :
+                new ObjectParameter("BOARDID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sprocTBL_MASTER_BOARDSSelectSingleItem_Result>("sprocTBL_MASTER_BOARDSSelectSingleItem", bOARDIDParameter);
+        }
+    
+        public virtual int sprocTBL_MASTER_CITYDeleteSingleItem(Nullable<int> cITYID)
+        {
+            var cITYIDParameter = cITYID.HasValue ?
+                new ObjectParameter("CITYID", cITYID) :
+                new ObjectParameter("CITYID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sprocTBL_MASTER_CITYDeleteSingleItem", cITYIDParameter);
+        }
+    
+        public virtual int sprocTBL_MASTER_CITYInsertUpdateSingleItem(Nullable<int> cITYID, string nAME, Nullable<int> sTATEID)
+        {
+            var cITYIDParameter = cITYID.HasValue ?
+                new ObjectParameter("CITYID", cITYID) :
+                new ObjectParameter("CITYID", typeof(int));
+    
+            var nAMEParameter = nAME != null ?
+                new ObjectParameter("NAME", nAME) :
+                new ObjectParameter("NAME", typeof(string));
+    
+            var sTATEIDParameter = sTATEID.HasValue ?
+                new ObjectParameter("STATEID", sTATEID) :
+                new ObjectParameter("STATEID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sprocTBL_MASTER_CITYInsertUpdateSingleItem", cITYIDParameter, nAMEParameter, sTATEIDParameter);
+        }
+    
+        public virtual ObjectResult<sprocTBL_MASTER_CITYSelectList_Result> sprocTBL_MASTER_CITYSelectList()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sprocTBL_MASTER_CITYSelectList_Result>("sprocTBL_MASTER_CITYSelectList");
+        }
+    
+        public virtual ObjectResult<sprocTBL_MASTER_CITYSelectSingleItem_Result> sprocTBL_MASTER_CITYSelectSingleItem(Nullable<int> cITYID)
+        {
+            var cITYIDParameter = cITYID.HasValue ?
+                new ObjectParameter("CITYID", cITYID) :
+                new ObjectParameter("CITYID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sprocTBL_MASTER_CITYSelectSingleItem_Result>("sprocTBL_MASTER_CITYSelectSingleItem", cITYIDParameter);
+        }
+    
+        public virtual int sprocTBL_MASTER_CLASSDeleteSingleItem(Nullable<int> cLASSID)
+        {
+            var cLASSIDParameter = cLASSID.HasValue ?
+                new ObjectParameter("CLASSID", cLASSID) :
+                new ObjectParameter("CLASSID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sprocTBL_MASTER_CLASSDeleteSingleItem", cLASSIDParameter);
+        }
+    
+        public virtual int sprocTBL_MASTER_CLASSInsertUpdateSingleItem(Nullable<int> cLASSID, string nAME)
+        {
+            var cLASSIDParameter = cLASSID.HasValue ?
+                new ObjectParameter("CLASSID", cLASSID) :
+                new ObjectParameter("CLASSID", typeof(int));
+    
+            var nAMEParameter = nAME != null ?
+                new ObjectParameter("NAME", nAME) :
+                new ObjectParameter("NAME", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sprocTBL_MASTER_CLASSInsertUpdateSingleItem", cLASSIDParameter, nAMEParameter);
+        }
+    
+        public virtual ObjectResult<sprocTBL_MASTER_CLASSSelectList_Result> sprocTBL_MASTER_CLASSSelectList()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sprocTBL_MASTER_CLASSSelectList_Result>("sprocTBL_MASTER_CLASSSelectList");
+        }
+    
+        public virtual ObjectResult<sprocTBL_MASTER_CLASSSelectSingleItem_Result> sprocTBL_MASTER_CLASSSelectSingleItem(Nullable<int> cLASSID)
+        {
+            var cLASSIDParameter = cLASSID.HasValue ?
+                new ObjectParameter("CLASSID", cLASSID) :
+                new ObjectParameter("CLASSID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sprocTBL_MASTER_CLASSSelectSingleItem_Result>("sprocTBL_MASTER_CLASSSelectSingleItem", cLASSIDParameter);
+        }
+    
+        public virtual int sprocTBL_MASTER_COUNTRYDeleteSingleItem(Nullable<int> cOUNTRYID)
+        {
+            var cOUNTRYIDParameter = cOUNTRYID.HasValue ?
+                new ObjectParameter("COUNTRYID", cOUNTRYID) :
+                new ObjectParameter("COUNTRYID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sprocTBL_MASTER_COUNTRYDeleteSingleItem", cOUNTRYIDParameter);
+        }
+    
+        public virtual int sprocTBL_MASTER_COUNTRYInsertUpdateSingleItem(Nullable<int> cOUNTRYID, string nAME)
+        {
+            var cOUNTRYIDParameter = cOUNTRYID.HasValue ?
+                new ObjectParameter("COUNTRYID", cOUNTRYID) :
+                new ObjectParameter("COUNTRYID", typeof(int));
+    
+            var nAMEParameter = nAME != null ?
+                new ObjectParameter("NAME", nAME) :
+                new ObjectParameter("NAME", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sprocTBL_MASTER_COUNTRYInsertUpdateSingleItem", cOUNTRYIDParameter, nAMEParameter);
+        }
+    
+        public virtual ObjectResult<sprocTBL_MASTER_COUNTRYSelectList_Result> sprocTBL_MASTER_COUNTRYSelectList()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sprocTBL_MASTER_COUNTRYSelectList_Result>("sprocTBL_MASTER_COUNTRYSelectList");
+        }
+    
+        public virtual ObjectResult<sprocTBL_MASTER_COUNTRYSelectSingleItem_Result> sprocTBL_MASTER_COUNTRYSelectSingleItem(Nullable<int> cOUNTRYID)
+        {
+            var cOUNTRYIDParameter = cOUNTRYID.HasValue ?
+                new ObjectParameter("COUNTRYID", cOUNTRYID) :
+                new ObjectParameter("COUNTRYID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sprocTBL_MASTER_COUNTRYSelectSingleItem_Result>("sprocTBL_MASTER_COUNTRYSelectSingleItem", cOUNTRYIDParameter);
+        }
+    
+        public virtual int sprocTBL_MASTER_COURSEDeleteSingleItem(Nullable<int> cOURSEID)
+        {
+            var cOURSEIDParameter = cOURSEID.HasValue ?
+                new ObjectParameter("COURSEID", cOURSEID) :
+                new ObjectParameter("COURSEID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sprocTBL_MASTER_COURSEDeleteSingleItem", cOURSEIDParameter);
+        }
+    
+        public virtual int sprocTBL_MASTER_COURSEInsertUpdateSingleItem(Nullable<int> cOURSEID, string nAME)
+        {
+            var cOURSEIDParameter = cOURSEID.HasValue ?
+                new ObjectParameter("COURSEID", cOURSEID) :
+                new ObjectParameter("COURSEID", typeof(int));
+    
+            var nAMEParameter = nAME != null ?
+                new ObjectParameter("NAME", nAME) :
+                new ObjectParameter("NAME", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sprocTBL_MASTER_COURSEInsertUpdateSingleItem", cOURSEIDParameter, nAMEParameter);
+        }
+    
+        public virtual ObjectResult<sprocTBL_MASTER_COURSESelectList_Result> sprocTBL_MASTER_COURSESelectList()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sprocTBL_MASTER_COURSESelectList_Result>("sprocTBL_MASTER_COURSESelectList");
+        }
+    
+        public virtual ObjectResult<sprocTBL_MASTER_COURSESelectSingleItem_Result> sprocTBL_MASTER_COURSESelectSingleItem(Nullable<int> cOURSEID)
+        {
+            var cOURSEIDParameter = cOURSEID.HasValue ?
+                new ObjectParameter("COURSEID", cOURSEID) :
+                new ObjectParameter("COURSEID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sprocTBL_MASTER_COURSESelectSingleItem_Result>("sprocTBL_MASTER_COURSESelectSingleItem", cOURSEIDParameter);
+        }
+    
+        public virtual int sprocTBL_MASTER_DOCUMENTTYPEDeleteSingleItem(Nullable<int> documentTypeID)
+        {
+            var documentTypeIDParameter = documentTypeID.HasValue ?
+                new ObjectParameter("DocumentTypeID", documentTypeID) :
+                new ObjectParameter("DocumentTypeID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sprocTBL_MASTER_DOCUMENTTYPEDeleteSingleItem", documentTypeIDParameter);
+        }
+    
+        public virtual int sprocTBL_MASTER_DOCUMENTTYPEInsertUpdateSingleItem(Nullable<int> documentTypeID, string documentTypeName)
+        {
+            var documentTypeIDParameter = documentTypeID.HasValue ?
+                new ObjectParameter("DocumentTypeID", documentTypeID) :
+                new ObjectParameter("DocumentTypeID", typeof(int));
+    
+            var documentTypeNameParameter = documentTypeName != null ?
+                new ObjectParameter("DocumentTypeName", documentTypeName) :
+                new ObjectParameter("DocumentTypeName", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sprocTBL_MASTER_DOCUMENTTYPEInsertUpdateSingleItem", documentTypeIDParameter, documentTypeNameParameter);
+        }
+    
+        public virtual ObjectResult<sprocTBL_MASTER_DOCUMENTTYPESelectList_Result> sprocTBL_MASTER_DOCUMENTTYPESelectList()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sprocTBL_MASTER_DOCUMENTTYPESelectList_Result>("sprocTBL_MASTER_DOCUMENTTYPESelectList");
+        }
+    
+        public virtual ObjectResult<sprocTBL_MASTER_DOCUMENTTYPESelectSingleItem_Result> sprocTBL_MASTER_DOCUMENTTYPESelectSingleItem(Nullable<int> documentTypeID)
+        {
+            var documentTypeIDParameter = documentTypeID.HasValue ?
+                new ObjectParameter("DocumentTypeID", documentTypeID) :
+                new ObjectParameter("DocumentTypeID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sprocTBL_MASTER_DOCUMENTTYPESelectSingleItem_Result>("sprocTBL_MASTER_DOCUMENTTYPESelectSingleItem", documentTypeIDParameter);
+        }
+    
+        public virtual int sprocTBL_MASTER_STATEDeleteSingleItem(Nullable<int> sTATEID)
+        {
+            var sTATEIDParameter = sTATEID.HasValue ?
+                new ObjectParameter("STATEID", sTATEID) :
+                new ObjectParameter("STATEID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sprocTBL_MASTER_STATEDeleteSingleItem", sTATEIDParameter);
+        }
+    
+        public virtual int sprocTBL_MASTER_STATEInsertUpdateSingleItem(Nullable<int> sTATEID, string nAME, Nullable<int> cOUNTRYID)
+        {
+            var sTATEIDParameter = sTATEID.HasValue ?
+                new ObjectParameter("STATEID", sTATEID) :
+                new ObjectParameter("STATEID", typeof(int));
+    
+            var nAMEParameter = nAME != null ?
+                new ObjectParameter("NAME", nAME) :
+                new ObjectParameter("NAME", typeof(string));
+    
+            var cOUNTRYIDParameter = cOUNTRYID.HasValue ?
+                new ObjectParameter("COUNTRYID", cOUNTRYID) :
+                new ObjectParameter("COUNTRYID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sprocTBL_MASTER_STATEInsertUpdateSingleItem", sTATEIDParameter, nAMEParameter, cOUNTRYIDParameter);
+        }
+    
+        public virtual ObjectResult<sprocTBL_MASTER_STATESelectList_Result> sprocTBL_MASTER_STATESelectList()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sprocTBL_MASTER_STATESelectList_Result>("sprocTBL_MASTER_STATESelectList");
+        }
+    
+        public virtual ObjectResult<sprocTBL_MASTER_STATESelectSingleItem_Result> sprocTBL_MASTER_STATESelectSingleItem(Nullable<int> sTATEID)
+        {
+            var sTATEIDParameter = sTATEID.HasValue ?
+                new ObjectParameter("STATEID", sTATEID) :
+                new ObjectParameter("STATEID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sprocTBL_MASTER_STATESelectSingleItem_Result>("sprocTBL_MASTER_STATESelectSingleItem", sTATEIDParameter);
+        }
+    
+        public virtual int sprocTBL_MASTER_STATUSDeleteSingleItem(Nullable<int> sTATUSID)
+        {
+            var sTATUSIDParameter = sTATUSID.HasValue ?
+                new ObjectParameter("STATUSID", sTATUSID) :
+                new ObjectParameter("STATUSID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sprocTBL_MASTER_STATUSDeleteSingleItem", sTATUSIDParameter);
+        }
+    
+        public virtual int sprocTBL_MASTER_STATUSInsertUpdateSingleItem(Nullable<int> sTATUSID, string nAME)
+        {
+            var sTATUSIDParameter = sTATUSID.HasValue ?
+                new ObjectParameter("STATUSID", sTATUSID) :
+                new ObjectParameter("STATUSID", typeof(int));
+    
+            var nAMEParameter = nAME != null ?
+                new ObjectParameter("NAME", nAME) :
+                new ObjectParameter("NAME", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sprocTBL_MASTER_STATUSInsertUpdateSingleItem", sTATUSIDParameter, nAMEParameter);
+        }
+    
+        public virtual ObjectResult<sprocTBL_MASTER_STATUSSelectList_Result> sprocTBL_MASTER_STATUSSelectList()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sprocTBL_MASTER_STATUSSelectList_Result>("sprocTBL_MASTER_STATUSSelectList");
+        }
+    
+        public virtual ObjectResult<sprocTBL_MASTER_STATUSSelectSingleItem_Result> sprocTBL_MASTER_STATUSSelectSingleItem(Nullable<int> sTATUSID)
+        {
+            var sTATUSIDParameter = sTATUSID.HasValue ?
+                new ObjectParameter("STATUSID", sTATUSID) :
+                new ObjectParameter("STATUSID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sprocTBL_MASTER_STATUSSelectSingleItem_Result>("sprocTBL_MASTER_STATUSSelectSingleItem", sTATUSIDParameter);
+        }
+    
+        public virtual int sprocTBL_MASTER_SUBJECTDeleteSingleItem(Nullable<int> sUBJECTID)
+        {
+            var sUBJECTIDParameter = sUBJECTID.HasValue ?
+                new ObjectParameter("SUBJECTID", sUBJECTID) :
+                new ObjectParameter("SUBJECTID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sprocTBL_MASTER_SUBJECTDeleteSingleItem", sUBJECTIDParameter);
+        }
+    
+        public virtual int sprocTBL_MASTER_SUBJECTInsertUpdateSingleItem(Nullable<int> sUBJECTID, string nAME)
+        {
+            var sUBJECTIDParameter = sUBJECTID.HasValue ?
+                new ObjectParameter("SUBJECTID", sUBJECTID) :
+                new ObjectParameter("SUBJECTID", typeof(int));
+    
+            var nAMEParameter = nAME != null ?
+                new ObjectParameter("NAME", nAME) :
+                new ObjectParameter("NAME", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sprocTBL_MASTER_SUBJECTInsertUpdateSingleItem", sUBJECTIDParameter, nAMEParameter);
+        }
+    
+        public virtual ObjectResult<sprocTBL_MASTER_SUBJECTSelectList_Result> sprocTBL_MASTER_SUBJECTSelectList()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sprocTBL_MASTER_SUBJECTSelectList_Result>("sprocTBL_MASTER_SUBJECTSelectList");
+        }
+    
+        public virtual ObjectResult<sprocTBL_MASTER_SUBJECTSelectSingleItem_Result> sprocTBL_MASTER_SUBJECTSelectSingleItem(Nullable<int> sUBJECTID)
+        {
+            var sUBJECTIDParameter = sUBJECTID.HasValue ?
+                new ObjectParameter("SUBJECTID", sUBJECTID) :
+                new ObjectParameter("SUBJECTID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sprocTBL_MASTER_SUBJECTSelectSingleItem_Result>("sprocTBL_MASTER_SUBJECTSelectSingleItem", sUBJECTIDParameter);
+        }
+    
+        public virtual int sprocTBL_MASTER_USERTYPEDeleteSingleItem(Nullable<int> uSERTYPEID)
+        {
+            var uSERTYPEIDParameter = uSERTYPEID.HasValue ?
+                new ObjectParameter("USERTYPEID", uSERTYPEID) :
+                new ObjectParameter("USERTYPEID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sprocTBL_MASTER_USERTYPEDeleteSingleItem", uSERTYPEIDParameter);
+        }
+    
+        public virtual int sprocTBL_MASTER_USERTYPEInsertUpdateSingleItem(Nullable<int> uSERTYPEID, string tYPENAME)
+        {
+            var uSERTYPEIDParameter = uSERTYPEID.HasValue ?
+                new ObjectParameter("USERTYPEID", uSERTYPEID) :
+                new ObjectParameter("USERTYPEID", typeof(int));
+    
+            var tYPENAMEParameter = tYPENAME != null ?
+                new ObjectParameter("TYPENAME", tYPENAME) :
+                new ObjectParameter("TYPENAME", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sprocTBL_MASTER_USERTYPEInsertUpdateSingleItem", uSERTYPEIDParameter, tYPENAMEParameter);
+        }
+    
+        public virtual ObjectResult<sprocTBL_MASTER_USERTYPESelectList_Result> sprocTBL_MASTER_USERTYPESelectList()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sprocTBL_MASTER_USERTYPESelectList_Result>("sprocTBL_MASTER_USERTYPESelectList");
+        }
+    
+        public virtual ObjectResult<sprocTBL_MASTER_USERTYPESelectSingleItem_Result> sprocTBL_MASTER_USERTYPESelectSingleItem(Nullable<int> uSERTYPEID)
+        {
+            var uSERTYPEIDParameter = uSERTYPEID.HasValue ?
+                new ObjectParameter("USERTYPEID", uSERTYPEID) :
+                new ObjectParameter("USERTYPEID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sprocTBL_MASTER_USERTYPESelectSingleItem_Result>("sprocTBL_MASTER_USERTYPESelectSingleItem", uSERTYPEIDParameter);
+        }
+    
+        public virtual int sprocTBL_USER_ADDRESS_DETAILSDeleteSingleItem(Nullable<long> aDDRESSDETAILID)
+        {
+            var aDDRESSDETAILIDParameter = aDDRESSDETAILID.HasValue ?
+                new ObjectParameter("ADDRESSDETAILID", aDDRESSDETAILID) :
+                new ObjectParameter("ADDRESSDETAILID", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sprocTBL_USER_ADDRESS_DETAILSDeleteSingleItem", aDDRESSDETAILIDParameter);
+        }
+    
+        public virtual int sprocTBL_USER_ADDRESS_DETAILSInsertUpdateSingleItem(Nullable<long> aDDRESSDETAILID, Nullable<long> uSERID, Nullable<int> aDDRESSTYPEID, string aDDRESSLINE1, string aDDRESSLINE2, Nullable<int> cITY, Nullable<int> sTATE, Nullable<int> cOUNTRY, string pINCODE, Nullable<bool> sTATUS, Nullable<long> cREATEDBY, Nullable<System.DateTime> cREATEDDATE, Nullable<System.DateTime> mODIFIEDDATE, Nullable<long> mODIFIEDBY)
+        {
+            var aDDRESSDETAILIDParameter = aDDRESSDETAILID.HasValue ?
+                new ObjectParameter("ADDRESSDETAILID", aDDRESSDETAILID) :
+                new ObjectParameter("ADDRESSDETAILID", typeof(long));
+    
+            var uSERIDParameter = uSERID.HasValue ?
+                new ObjectParameter("USERID", uSERID) :
+                new ObjectParameter("USERID", typeof(long));
+    
+            var aDDRESSTYPEIDParameter = aDDRESSTYPEID.HasValue ?
+                new ObjectParameter("ADDRESSTYPEID", aDDRESSTYPEID) :
+                new ObjectParameter("ADDRESSTYPEID", typeof(int));
+    
+            var aDDRESSLINE1Parameter = aDDRESSLINE1 != null ?
+                new ObjectParameter("ADDRESSLINE1", aDDRESSLINE1) :
+                new ObjectParameter("ADDRESSLINE1", typeof(string));
+    
+            var aDDRESSLINE2Parameter = aDDRESSLINE2 != null ?
+                new ObjectParameter("ADDRESSLINE2", aDDRESSLINE2) :
+                new ObjectParameter("ADDRESSLINE2", typeof(string));
+    
+            var cITYParameter = cITY.HasValue ?
+                new ObjectParameter("CITY", cITY) :
+                new ObjectParameter("CITY", typeof(int));
+    
+            var sTATEParameter = sTATE.HasValue ?
+                new ObjectParameter("STATE", sTATE) :
+                new ObjectParameter("STATE", typeof(int));
+    
+            var cOUNTRYParameter = cOUNTRY.HasValue ?
+                new ObjectParameter("COUNTRY", cOUNTRY) :
+                new ObjectParameter("COUNTRY", typeof(int));
+    
+            var pINCODEParameter = pINCODE != null ?
+                new ObjectParameter("PINCODE", pINCODE) :
+                new ObjectParameter("PINCODE", typeof(string));
+    
+            var sTATUSParameter = sTATUS.HasValue ?
+                new ObjectParameter("STATUS", sTATUS) :
+                new ObjectParameter("STATUS", typeof(bool));
+    
+            var cREATEDBYParameter = cREATEDBY.HasValue ?
+                new ObjectParameter("CREATEDBY", cREATEDBY) :
+                new ObjectParameter("CREATEDBY", typeof(long));
+    
+            var cREATEDDATEParameter = cREATEDDATE.HasValue ?
+                new ObjectParameter("CREATEDDATE", cREATEDDATE) :
+                new ObjectParameter("CREATEDDATE", typeof(System.DateTime));
+    
+            var mODIFIEDDATEParameter = mODIFIEDDATE.HasValue ?
+                new ObjectParameter("MODIFIEDDATE", mODIFIEDDATE) :
+                new ObjectParameter("MODIFIEDDATE", typeof(System.DateTime));
+    
+            var mODIFIEDBYParameter = mODIFIEDBY.HasValue ?
+                new ObjectParameter("MODIFIEDBY", mODIFIEDBY) :
+                new ObjectParameter("MODIFIEDBY", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sprocTBL_USER_ADDRESS_DETAILSInsertUpdateSingleItem", aDDRESSDETAILIDParameter, uSERIDParameter, aDDRESSTYPEIDParameter, aDDRESSLINE1Parameter, aDDRESSLINE2Parameter, cITYParameter, sTATEParameter, cOUNTRYParameter, pINCODEParameter, sTATUSParameter, cREATEDBYParameter, cREATEDDATEParameter, mODIFIEDDATEParameter, mODIFIEDBYParameter);
+        }
+    
+        public virtual ObjectResult<sprocTBL_USER_ADDRESS_DETAILSSelectList_Result> sprocTBL_USER_ADDRESS_DETAILSSelectList()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sprocTBL_USER_ADDRESS_DETAILSSelectList_Result>("sprocTBL_USER_ADDRESS_DETAILSSelectList");
+        }
+    
+        public virtual ObjectResult<sprocTBL_USER_ADDRESS_DETAILSSelectSingleItem_Result> sprocTBL_USER_ADDRESS_DETAILSSelectSingleItem(Nullable<long> aDDRESSDETAILID)
+        {
+            var aDDRESSDETAILIDParameter = aDDRESSDETAILID.HasValue ?
+                new ObjectParameter("ADDRESSDETAILID", aDDRESSDETAILID) :
+                new ObjectParameter("ADDRESSDETAILID", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sprocTBL_USER_ADDRESS_DETAILSSelectSingleItem_Result>("sprocTBL_USER_ADDRESS_DETAILSSelectSingleItem", aDDRESSDETAILIDParameter);
+        }
+    
+        public virtual int sprocTBL_USER_COURSE_DETAILSDeleteSingleItem(Nullable<long> sTUDENTCOURSEID)
+        {
+            var sTUDENTCOURSEIDParameter = sTUDENTCOURSEID.HasValue ?
+                new ObjectParameter("STUDENTCOURSEID", sTUDENTCOURSEID) :
+                new ObjectParameter("STUDENTCOURSEID", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sprocTBL_USER_COURSE_DETAILSDeleteSingleItem", sTUDENTCOURSEIDParameter);
+        }
+    
+        public virtual int sprocTBL_USER_COURSE_DETAILSInsertUpdateSingleItem(Nullable<long> sTUDENTCOURSEID, Nullable<long> uSERID, Nullable<int> cOURSEID, Nullable<System.DateTime> jOINDATE, Nullable<System.DateTime> cOMPLETEDATE, Nullable<long> cREATEDBY, Nullable<long> mODIFIEDBY, Nullable<System.DateTime> cREATEDDATE, Nullable<System.DateTime> mODIFIEDDATE)
+        {
+            var sTUDENTCOURSEIDParameter = sTUDENTCOURSEID.HasValue ?
+                new ObjectParameter("STUDENTCOURSEID", sTUDENTCOURSEID) :
+                new ObjectParameter("STUDENTCOURSEID", typeof(long));
+    
+            var uSERIDParameter = uSERID.HasValue ?
+                new ObjectParameter("USERID", uSERID) :
+                new ObjectParameter("USERID", typeof(long));
+    
+            var cOURSEIDParameter = cOURSEID.HasValue ?
+                new ObjectParameter("COURSEID", cOURSEID) :
+                new ObjectParameter("COURSEID", typeof(int));
+    
+            var jOINDATEParameter = jOINDATE.HasValue ?
+                new ObjectParameter("JOINDATE", jOINDATE) :
+                new ObjectParameter("JOINDATE", typeof(System.DateTime));
+    
+            var cOMPLETEDATEParameter = cOMPLETEDATE.HasValue ?
+                new ObjectParameter("COMPLETEDATE", cOMPLETEDATE) :
+                new ObjectParameter("COMPLETEDATE", typeof(System.DateTime));
+    
+            var cREATEDBYParameter = cREATEDBY.HasValue ?
+                new ObjectParameter("CREATEDBY", cREATEDBY) :
+                new ObjectParameter("CREATEDBY", typeof(long));
+    
+            var mODIFIEDBYParameter = mODIFIEDBY.HasValue ?
+                new ObjectParameter("MODIFIEDBY", mODIFIEDBY) :
+                new ObjectParameter("MODIFIEDBY", typeof(long));
+    
+            var cREATEDDATEParameter = cREATEDDATE.HasValue ?
+                new ObjectParameter("CREATEDDATE", cREATEDDATE) :
+                new ObjectParameter("CREATEDDATE", typeof(System.DateTime));
+    
+            var mODIFIEDDATEParameter = mODIFIEDDATE.HasValue ?
+                new ObjectParameter("MODIFIEDDATE", mODIFIEDDATE) :
+                new ObjectParameter("MODIFIEDDATE", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sprocTBL_USER_COURSE_DETAILSInsertUpdateSingleItem", sTUDENTCOURSEIDParameter, uSERIDParameter, cOURSEIDParameter, jOINDATEParameter, cOMPLETEDATEParameter, cREATEDBYParameter, mODIFIEDBYParameter, cREATEDDATEParameter, mODIFIEDDATEParameter);
+        }
+    
+        public virtual ObjectResult<sprocTBL_USER_COURSE_DETAILSSelectList_Result> sprocTBL_USER_COURSE_DETAILSSelectList()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sprocTBL_USER_COURSE_DETAILSSelectList_Result>("sprocTBL_USER_COURSE_DETAILSSelectList");
+        }
+    
+        public virtual ObjectResult<sprocTBL_USER_COURSE_DETAILSSelectSingleItem_Result> sprocTBL_USER_COURSE_DETAILSSelectSingleItem(Nullable<long> sTUDENTCOURSEID)
+        {
+            var sTUDENTCOURSEIDParameter = sTUDENTCOURSEID.HasValue ?
+                new ObjectParameter("STUDENTCOURSEID", sTUDENTCOURSEID) :
+                new ObjectParameter("STUDENTCOURSEID", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sprocTBL_USER_COURSE_DETAILSSelectSingleItem_Result>("sprocTBL_USER_COURSE_DETAILSSelectSingleItem", sTUDENTCOURSEIDParameter);
+        }
+    
+        public virtual int sprocTBL_USER_DETAILSDeleteSingleItem(Nullable<long> pERSONALDETAILID)
+        {
+            var pERSONALDETAILIDParameter = pERSONALDETAILID.HasValue ?
+                new ObjectParameter("PERSONALDETAILID", pERSONALDETAILID) :
+                new ObjectParameter("PERSONALDETAILID", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sprocTBL_USER_DETAILSDeleteSingleItem", pERSONALDETAILIDParameter);
+        }
+    
+        public virtual ObjectResult<sprocTBL_USER_DETAILSSelectList_Result> sprocTBL_USER_DETAILSSelectList()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sprocTBL_USER_DETAILSSelectList_Result>("sprocTBL_USER_DETAILSSelectList");
+        }
+    
+        public virtual ObjectResult<sprocTBL_USER_DETAILSSelectSingleItem_Result> sprocTBL_USER_DETAILSSelectSingleItem(Nullable<long> pERSONALDETAILID)
+        {
+            var pERSONALDETAILIDParameter = pERSONALDETAILID.HasValue ?
+                new ObjectParameter("PERSONALDETAILID", pERSONALDETAILID) :
+                new ObjectParameter("PERSONALDETAILID", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sprocTBL_USER_DETAILSSelectSingleItem_Result>("sprocTBL_USER_DETAILSSelectSingleItem", pERSONALDETAILIDParameter);
+        }
+    
+        public virtual int sprocTBL_USER_DOCUMENTS_DETAILSDeleteSingleItem(Nullable<long> uSERDOCUMENTID)
+        {
+            var uSERDOCUMENTIDParameter = uSERDOCUMENTID.HasValue ?
+                new ObjectParameter("USERDOCUMENTID", uSERDOCUMENTID) :
+                new ObjectParameter("USERDOCUMENTID", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sprocTBL_USER_DOCUMENTS_DETAILSDeleteSingleItem", uSERDOCUMENTIDParameter);
+        }
+    
+        public virtual int sprocTBL_USER_DOCUMENTS_DETAILSInsertUpdateSingleItem(Nullable<long> uSERDOCUMENTID, Nullable<int> dOCUMENTTYPEID, string dOCUMENTNAME, Nullable<long> uSERID, Nullable<bool> sTATUS, Nullable<long> cREATEDBY, Nullable<System.DateTime> cREATEDDATE, Nullable<long> mODIFIEDBY, Nullable<System.DateTime> mODIFIEDDATE)
+        {
+            var uSERDOCUMENTIDParameter = uSERDOCUMENTID.HasValue ?
+                new ObjectParameter("USERDOCUMENTID", uSERDOCUMENTID) :
+                new ObjectParameter("USERDOCUMENTID", typeof(long));
+    
+            var dOCUMENTTYPEIDParameter = dOCUMENTTYPEID.HasValue ?
+                new ObjectParameter("DOCUMENTTYPEID", dOCUMENTTYPEID) :
+                new ObjectParameter("DOCUMENTTYPEID", typeof(int));
+    
+            var dOCUMENTNAMEParameter = dOCUMENTNAME != null ?
+                new ObjectParameter("DOCUMENTNAME", dOCUMENTNAME) :
+                new ObjectParameter("DOCUMENTNAME", typeof(string));
+    
+            var uSERIDParameter = uSERID.HasValue ?
+                new ObjectParameter("USERID", uSERID) :
+                new ObjectParameter("USERID", typeof(long));
+    
+            var sTATUSParameter = sTATUS.HasValue ?
+                new ObjectParameter("STATUS", sTATUS) :
+                new ObjectParameter("STATUS", typeof(bool));
+    
+            var cREATEDBYParameter = cREATEDBY.HasValue ?
+                new ObjectParameter("CREATEDBY", cREATEDBY) :
+                new ObjectParameter("CREATEDBY", typeof(long));
+    
+            var cREATEDDATEParameter = cREATEDDATE.HasValue ?
+                new ObjectParameter("CREATEDDATE", cREATEDDATE) :
+                new ObjectParameter("CREATEDDATE", typeof(System.DateTime));
+    
+            var mODIFIEDBYParameter = mODIFIEDBY.HasValue ?
+                new ObjectParameter("MODIFIEDBY", mODIFIEDBY) :
+                new ObjectParameter("MODIFIEDBY", typeof(long));
+    
+            var mODIFIEDDATEParameter = mODIFIEDDATE.HasValue ?
+                new ObjectParameter("MODIFIEDDATE", mODIFIEDDATE) :
+                new ObjectParameter("MODIFIEDDATE", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sprocTBL_USER_DOCUMENTS_DETAILSInsertUpdateSingleItem", uSERDOCUMENTIDParameter, dOCUMENTTYPEIDParameter, dOCUMENTNAMEParameter, uSERIDParameter, sTATUSParameter, cREATEDBYParameter, cREATEDDATEParameter, mODIFIEDBYParameter, mODIFIEDDATEParameter);
+        }
+    
+        public virtual ObjectResult<sprocTBL_USER_DOCUMENTS_DETAILSSelectList_Result> sprocTBL_USER_DOCUMENTS_DETAILSSelectList()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sprocTBL_USER_DOCUMENTS_DETAILSSelectList_Result>("sprocTBL_USER_DOCUMENTS_DETAILSSelectList");
+        }
+    
+        public virtual ObjectResult<sprocTBL_USER_DOCUMENTS_DETAILSSelectSingleItem_Result> sprocTBL_USER_DOCUMENTS_DETAILSSelectSingleItem(Nullable<long> uSERDOCUMENTID)
+        {
+            var uSERDOCUMENTIDParameter = uSERDOCUMENTID.HasValue ?
+                new ObjectParameter("USERDOCUMENTID", uSERDOCUMENTID) :
+                new ObjectParameter("USERDOCUMENTID", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sprocTBL_USER_DOCUMENTS_DETAILSSelectSingleItem_Result>("sprocTBL_USER_DOCUMENTS_DETAILSSelectSingleItem", uSERDOCUMENTIDParameter);
+        }
+    
+        public virtual int sprocTBL_USER_INSTITUTION_DETAILSDeleteSingleItem(Nullable<long> iNSTITUTIONID)
+        {
+            var iNSTITUTIONIDParameter = iNSTITUTIONID.HasValue ?
+                new ObjectParameter("INSTITUTIONID", iNSTITUTIONID) :
+                new ObjectParameter("INSTITUTIONID", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sprocTBL_USER_INSTITUTION_DETAILSDeleteSingleItem", iNSTITUTIONIDParameter);
+        }
+    
+        public virtual int sprocTBL_USER_INSTITUTION_DETAILSInsertUpdateSingleItem(Nullable<long> iNSTITUTIONID, string iNSTITUTIONNAME, Nullable<long> uSERID, Nullable<int> cLASSID, Nullable<int> bOARDID, Nullable<int> pASSINGYEAR, string gRADE_PERCENT, Nullable<long> cREATEDBY, Nullable<System.DateTime> cREATEDDATE, Nullable<long> mODIFIEDBY, Nullable<System.DateTime> mODIFIEDDATE)
+        {
+            var iNSTITUTIONIDParameter = iNSTITUTIONID.HasValue ?
+                new ObjectParameter("INSTITUTIONID", iNSTITUTIONID) :
+                new ObjectParameter("INSTITUTIONID", typeof(long));
+    
+            var iNSTITUTIONNAMEParameter = iNSTITUTIONNAME != null ?
+                new ObjectParameter("INSTITUTIONNAME", iNSTITUTIONNAME) :
+                new ObjectParameter("INSTITUTIONNAME", typeof(string));
+    
+            var uSERIDParameter = uSERID.HasValue ?
+                new ObjectParameter("USERID", uSERID) :
+                new ObjectParameter("USERID", typeof(long));
+    
+            var cLASSIDParameter = cLASSID.HasValue ?
+                new ObjectParameter("CLASSID", cLASSID) :
+                new ObjectParameter("CLASSID", typeof(int));
+    
+            var bOARDIDParameter = bOARDID.HasValue ?
+                new ObjectParameter("BOARDID", bOARDID) :
+                new ObjectParameter("BOARDID", typeof(int));
+    
+            var pASSINGYEARParameter = pASSINGYEAR.HasValue ?
+                new ObjectParameter("PASSINGYEAR", pASSINGYEAR) :
+                new ObjectParameter("PASSINGYEAR", typeof(int));
+    
+            var gRADE_PERCENTParameter = gRADE_PERCENT != null ?
+                new ObjectParameter("GRADE_PERCENT", gRADE_PERCENT) :
+                new ObjectParameter("GRADE_PERCENT", typeof(string));
+    
+            var cREATEDBYParameter = cREATEDBY.HasValue ?
+                new ObjectParameter("CREATEDBY", cREATEDBY) :
+                new ObjectParameter("CREATEDBY", typeof(long));
+    
+            var cREATEDDATEParameter = cREATEDDATE.HasValue ?
+                new ObjectParameter("CREATEDDATE", cREATEDDATE) :
+                new ObjectParameter("CREATEDDATE", typeof(System.DateTime));
+    
+            var mODIFIEDBYParameter = mODIFIEDBY.HasValue ?
+                new ObjectParameter("MODIFIEDBY", mODIFIEDBY) :
+                new ObjectParameter("MODIFIEDBY", typeof(long));
+    
+            var mODIFIEDDATEParameter = mODIFIEDDATE.HasValue ?
+                new ObjectParameter("MODIFIEDDATE", mODIFIEDDATE) :
+                new ObjectParameter("MODIFIEDDATE", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sprocTBL_USER_INSTITUTION_DETAILSInsertUpdateSingleItem", iNSTITUTIONIDParameter, iNSTITUTIONNAMEParameter, uSERIDParameter, cLASSIDParameter, bOARDIDParameter, pASSINGYEARParameter, gRADE_PERCENTParameter, cREATEDBYParameter, cREATEDDATEParameter, mODIFIEDBYParameter, mODIFIEDDATEParameter);
+        }
+    
+        public virtual ObjectResult<sprocTBL_USER_INSTITUTION_DETAILSSelectList_Result> sprocTBL_USER_INSTITUTION_DETAILSSelectList()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sprocTBL_USER_INSTITUTION_DETAILSSelectList_Result>("sprocTBL_USER_INSTITUTION_DETAILSSelectList");
+        }
+    
+        public virtual ObjectResult<sprocTBL_USER_INSTITUTION_DETAILSSelectSingleItem_Result> sprocTBL_USER_INSTITUTION_DETAILSSelectSingleItem(Nullable<long> iNSTITUTIONID)
+        {
+            var iNSTITUTIONIDParameter = iNSTITUTIONID.HasValue ?
+                new ObjectParameter("INSTITUTIONID", iNSTITUTIONID) :
+                new ObjectParameter("INSTITUTIONID", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sprocTBL_USER_INSTITUTION_DETAILSSelectSingleItem_Result>("sprocTBL_USER_INSTITUTION_DETAILSSelectSingleItem", iNSTITUTIONIDParameter);
+        }
+    
+        public virtual int sprocTBL_USER_LOGIN_TRAILDeleteSingleItem(Nullable<long> lOGIN_TRAIL_ID)
+        {
+            var lOGIN_TRAIL_IDParameter = lOGIN_TRAIL_ID.HasValue ?
+                new ObjectParameter("LOGIN_TRAIL_ID", lOGIN_TRAIL_ID) :
+                new ObjectParameter("LOGIN_TRAIL_ID", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sprocTBL_USER_LOGIN_TRAILDeleteSingleItem", lOGIN_TRAIL_IDParameter);
+        }
+    
+        public virtual int sprocTBL_USER_LOGIN_TRAILInsertUpdateSingleItem(Nullable<long> lOGIN_TRAIL_ID, Nullable<long> uSERID, string iPADDRESS, string lATITUTE, string lONGITUTE, Nullable<System.DateTime> lOGINDATETIME)
+        {
+            var lOGIN_TRAIL_IDParameter = lOGIN_TRAIL_ID.HasValue ?
+                new ObjectParameter("LOGIN_TRAIL_ID", lOGIN_TRAIL_ID) :
+                new ObjectParameter("LOGIN_TRAIL_ID", typeof(long));
+    
+            var uSERIDParameter = uSERID.HasValue ?
+                new ObjectParameter("USERID", uSERID) :
+                new ObjectParameter("USERID", typeof(long));
+    
+            var iPADDRESSParameter = iPADDRESS != null ?
+                new ObjectParameter("IPADDRESS", iPADDRESS) :
+                new ObjectParameter("IPADDRESS", typeof(string));
+    
+            var lATITUTEParameter = lATITUTE != null ?
+                new ObjectParameter("LATITUTE", lATITUTE) :
+                new ObjectParameter("LATITUTE", typeof(string));
+    
+            var lONGITUTEParameter = lONGITUTE != null ?
+                new ObjectParameter("LONGITUTE", lONGITUTE) :
+                new ObjectParameter("LONGITUTE", typeof(string));
+    
+            var lOGINDATETIMEParameter = lOGINDATETIME.HasValue ?
+                new ObjectParameter("LOGINDATETIME", lOGINDATETIME) :
+                new ObjectParameter("LOGINDATETIME", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sprocTBL_USER_LOGIN_TRAILInsertUpdateSingleItem", lOGIN_TRAIL_IDParameter, uSERIDParameter, iPADDRESSParameter, lATITUTEParameter, lONGITUTEParameter, lOGINDATETIMEParameter);
+        }
+    
+        public virtual ObjectResult<sprocTBL_USER_LOGIN_TRAILSelectList_Result> sprocTBL_USER_LOGIN_TRAILSelectList()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sprocTBL_USER_LOGIN_TRAILSelectList_Result>("sprocTBL_USER_LOGIN_TRAILSelectList");
+        }
+    
+        public virtual ObjectResult<sprocTBL_USER_LOGIN_TRAILSelectSingleItem_Result> sprocTBL_USER_LOGIN_TRAILSelectSingleItem(Nullable<long> lOGIN_TRAIL_ID)
+        {
+            var lOGIN_TRAIL_IDParameter = lOGIN_TRAIL_ID.HasValue ?
+                new ObjectParameter("LOGIN_TRAIL_ID", lOGIN_TRAIL_ID) :
+                new ObjectParameter("LOGIN_TRAIL_ID", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sprocTBL_USER_LOGIN_TRAILSelectSingleItem_Result>("sprocTBL_USER_LOGIN_TRAILSelectSingleItem", lOGIN_TRAIL_IDParameter);
+        }
+    
+        public virtual int sprocTBL_USER_LOGINDeleteSingleItem(Nullable<long> uSERID)
+        {
+            var uSERIDParameter = uSERID.HasValue ?
+                new ObjectParameter("USERID", uSERID) :
+                new ObjectParameter("USERID", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sprocTBL_USER_LOGINDeleteSingleItem", uSERIDParameter);
+        }
+    
+        public virtual int sprocTBL_USER_LOGINInsertUpdateSingleItem(Nullable<long> uSERID, string lOGIN_EMAIL, string lOGIN_MOBILE, string pASSWORD, Nullable<int> sTATUSID, Nullable<int> uSERTYPEID, Nullable<int> pASSWORDRETRYCOUNT, Nullable<System.DateTime> cREATEDDATE, Nullable<System.DateTime> mODIFIEDDATE)
+        {
+            var uSERIDParameter = uSERID.HasValue ?
+                new ObjectParameter("USERID", uSERID) :
+                new ObjectParameter("USERID", typeof(long));
+    
+            var lOGIN_EMAILParameter = lOGIN_EMAIL != null ?
+                new ObjectParameter("LOGIN_EMAIL", lOGIN_EMAIL) :
+                new ObjectParameter("LOGIN_EMAIL", typeof(string));
+    
+            var lOGIN_MOBILEParameter = lOGIN_MOBILE != null ?
+                new ObjectParameter("LOGIN_MOBILE", lOGIN_MOBILE) :
+                new ObjectParameter("LOGIN_MOBILE", typeof(string));
+    
+            var pASSWORDParameter = pASSWORD != null ?
+                new ObjectParameter("PASSWORD", pASSWORD) :
+                new ObjectParameter("PASSWORD", typeof(string));
+    
+            var sTATUSIDParameter = sTATUSID.HasValue ?
+                new ObjectParameter("STATUSID", sTATUSID) :
+                new ObjectParameter("STATUSID", typeof(int));
+    
+            var uSERTYPEIDParameter = uSERTYPEID.HasValue ?
+                new ObjectParameter("USERTYPEID", uSERTYPEID) :
+                new ObjectParameter("USERTYPEID", typeof(int));
+    
+            var pASSWORDRETRYCOUNTParameter = pASSWORDRETRYCOUNT.HasValue ?
+                new ObjectParameter("PASSWORDRETRYCOUNT", pASSWORDRETRYCOUNT) :
+                new ObjectParameter("PASSWORDRETRYCOUNT", typeof(int));
+    
+            var cREATEDDATEParameter = cREATEDDATE.HasValue ?
+                new ObjectParameter("CREATEDDATE", cREATEDDATE) :
+                new ObjectParameter("CREATEDDATE", typeof(System.DateTime));
+    
+            var mODIFIEDDATEParameter = mODIFIEDDATE.HasValue ?
+                new ObjectParameter("MODIFIEDDATE", mODIFIEDDATE) :
+                new ObjectParameter("MODIFIEDDATE", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sprocTBL_USER_LOGINInsertUpdateSingleItem", uSERIDParameter, lOGIN_EMAILParameter, lOGIN_MOBILEParameter, pASSWORDParameter, sTATUSIDParameter, uSERTYPEIDParameter, pASSWORDRETRYCOUNTParameter, cREATEDDATEParameter, mODIFIEDDATEParameter);
+        }
+    
+        public virtual ObjectResult<sprocTBL_USER_LOGINSelectList_Result> sprocTBL_USER_LOGINSelectList()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sprocTBL_USER_LOGINSelectList_Result>("sprocTBL_USER_LOGINSelectList");
+        }
+    
+        public virtual ObjectResult<sprocTBL_USER_LOGINSelectSingleItem_Result> sprocTBL_USER_LOGINSelectSingleItem(Nullable<long> uSERID)
+        {
+            var uSERIDParameter = uSERID.HasValue ?
+                new ObjectParameter("USERID", uSERID) :
+                new ObjectParameter("USERID", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sprocTBL_USER_LOGINSelectSingleItem_Result>("sprocTBL_USER_LOGINSelectSingleItem", uSERIDParameter);
+        }
+    
+        public virtual int sprocTBL_USER_PARENTS_DETAILSDeleteSingleItem(Nullable<long> pARENTID)
+        {
+            var pARENTIDParameter = pARENTID.HasValue ?
+                new ObjectParameter("PARENTID", pARENTID) :
+                new ObjectParameter("PARENTID", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sprocTBL_USER_PARENTS_DETAILSDeleteSingleItem", pARENTIDParameter);
+        }
+    
+        public virtual int sprocTBL_USER_PARENTS_DETAILSInsertUpdateSingleItem(Nullable<long> pARENTID, Nullable<long> uSERID, string fATHERNAME, string fATHEREMAIL, string fATHERMOBILENUMBER, string fATHEROCCUPATION, string fATHERCOMPANYNAME, string fATHERDESIGNATION, string mOTHERNAME, string mOTHEREMAIL, string mOTHERMOBILENUMBER, string mOTHEROCCUPATION, string mOTHERCOMPANYNAME, string mOTHERDESIGNATION, Nullable<long> cREATEDBY, Nullable<System.DateTime> cREATEDDATE, Nullable<long> mODIFIEDBY, Nullable<System.DateTime> mODIFIEDDATE)
+        {
+            var pARENTIDParameter = pARENTID.HasValue ?
+                new ObjectParameter("PARENTID", pARENTID) :
+                new ObjectParameter("PARENTID", typeof(long));
+    
+            var uSERIDParameter = uSERID.HasValue ?
+                new ObjectParameter("USERID", uSERID) :
+                new ObjectParameter("USERID", typeof(long));
+    
+            var fATHERNAMEParameter = fATHERNAME != null ?
+                new ObjectParameter("FATHERNAME", fATHERNAME) :
+                new ObjectParameter("FATHERNAME", typeof(string));
+    
+            var fATHEREMAILParameter = fATHEREMAIL != null ?
+                new ObjectParameter("FATHEREMAIL", fATHEREMAIL) :
+                new ObjectParameter("FATHEREMAIL", typeof(string));
+    
+            var fATHERMOBILENUMBERParameter = fATHERMOBILENUMBER != null ?
+                new ObjectParameter("FATHERMOBILENUMBER", fATHERMOBILENUMBER) :
+                new ObjectParameter("FATHERMOBILENUMBER", typeof(string));
+    
+            var fATHEROCCUPATIONParameter = fATHEROCCUPATION != null ?
+                new ObjectParameter("FATHEROCCUPATION", fATHEROCCUPATION) :
+                new ObjectParameter("FATHEROCCUPATION", typeof(string));
+    
+            var fATHERCOMPANYNAMEParameter = fATHERCOMPANYNAME != null ?
+                new ObjectParameter("FATHERCOMPANYNAME", fATHERCOMPANYNAME) :
+                new ObjectParameter("FATHERCOMPANYNAME", typeof(string));
+    
+            var fATHERDESIGNATIONParameter = fATHERDESIGNATION != null ?
+                new ObjectParameter("FATHERDESIGNATION", fATHERDESIGNATION) :
+                new ObjectParameter("FATHERDESIGNATION", typeof(string));
+    
+            var mOTHERNAMEParameter = mOTHERNAME != null ?
+                new ObjectParameter("MOTHERNAME", mOTHERNAME) :
+                new ObjectParameter("MOTHERNAME", typeof(string));
+    
+            var mOTHEREMAILParameter = mOTHEREMAIL != null ?
+                new ObjectParameter("MOTHEREMAIL", mOTHEREMAIL) :
+                new ObjectParameter("MOTHEREMAIL", typeof(string));
+    
+            var mOTHERMOBILENUMBERParameter = mOTHERMOBILENUMBER != null ?
+                new ObjectParameter("MOTHERMOBILENUMBER", mOTHERMOBILENUMBER) :
+                new ObjectParameter("MOTHERMOBILENUMBER", typeof(string));
+    
+            var mOTHEROCCUPATIONParameter = mOTHEROCCUPATION != null ?
+                new ObjectParameter("MOTHEROCCUPATION", mOTHEROCCUPATION) :
+                new ObjectParameter("MOTHEROCCUPATION", typeof(string));
+    
+            var mOTHERCOMPANYNAMEParameter = mOTHERCOMPANYNAME != null ?
+                new ObjectParameter("MOTHERCOMPANYNAME", mOTHERCOMPANYNAME) :
+                new ObjectParameter("MOTHERCOMPANYNAME", typeof(string));
+    
+            var mOTHERDESIGNATIONParameter = mOTHERDESIGNATION != null ?
+                new ObjectParameter("MOTHERDESIGNATION", mOTHERDESIGNATION) :
+                new ObjectParameter("MOTHERDESIGNATION", typeof(string));
+    
+            var cREATEDBYParameter = cREATEDBY.HasValue ?
+                new ObjectParameter("CREATEDBY", cREATEDBY) :
+                new ObjectParameter("CREATEDBY", typeof(long));
+    
+            var cREATEDDATEParameter = cREATEDDATE.HasValue ?
+                new ObjectParameter("CREATEDDATE", cREATEDDATE) :
+                new ObjectParameter("CREATEDDATE", typeof(System.DateTime));
+    
+            var mODIFIEDBYParameter = mODIFIEDBY.HasValue ?
+                new ObjectParameter("MODIFIEDBY", mODIFIEDBY) :
+                new ObjectParameter("MODIFIEDBY", typeof(long));
+    
+            var mODIFIEDDATEParameter = mODIFIEDDATE.HasValue ?
+                new ObjectParameter("MODIFIEDDATE", mODIFIEDDATE) :
+                new ObjectParameter("MODIFIEDDATE", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sprocTBL_USER_PARENTS_DETAILSInsertUpdateSingleItem", pARENTIDParameter, uSERIDParameter, fATHERNAMEParameter, fATHEREMAILParameter, fATHERMOBILENUMBERParameter, fATHEROCCUPATIONParameter, fATHERCOMPANYNAMEParameter, fATHERDESIGNATIONParameter, mOTHERNAMEParameter, mOTHEREMAILParameter, mOTHERMOBILENUMBERParameter, mOTHEROCCUPATIONParameter, mOTHERCOMPANYNAMEParameter, mOTHERDESIGNATIONParameter, cREATEDBYParameter, cREATEDDATEParameter, mODIFIEDBYParameter, mODIFIEDDATEParameter);
+        }
+    
+        public virtual ObjectResult<sprocTBL_USER_PARENTS_DETAILSSelectList_Result> sprocTBL_USER_PARENTS_DETAILSSelectList()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sprocTBL_USER_PARENTS_DETAILSSelectList_Result>("sprocTBL_USER_PARENTS_DETAILSSelectList");
+        }
+    
+        public virtual ObjectResult<sprocTBL_USER_PARENTS_DETAILSSelectSingleItem_Result> sprocTBL_USER_PARENTS_DETAILSSelectSingleItem(Nullable<long> pARENTID)
+        {
+            var pARENTIDParameter = pARENTID.HasValue ?
+                new ObjectParameter("PARENTID", pARENTID) :
+                new ObjectParameter("PARENTID", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sprocTBL_USER_PARENTS_DETAILSSelectSingleItem_Result>("sprocTBL_USER_PARENTS_DETAILSSelectSingleItem", pARENTIDParameter);
+        }
+    
+        public virtual int sprocTBL_USER_PROFESSIONAL_DETAILSDeleteSingleItem(Nullable<long> pROFESSIONALDETAILID)
+        {
+            var pROFESSIONALDETAILIDParameter = pROFESSIONALDETAILID.HasValue ?
+                new ObjectParameter("PROFESSIONALDETAILID", pROFESSIONALDETAILID) :
+                new ObjectParameter("PROFESSIONALDETAILID", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sprocTBL_USER_PROFESSIONAL_DETAILSDeleteSingleItem", pROFESSIONALDETAILIDParameter);
+        }
+    
+        public virtual int sprocTBL_USER_PROFESSIONAL_DETAILSInsertUpdateSingleItem(Nullable<long> pROFESSIONALDETAILID, Nullable<long> uSERID, string cOMPANYNAME, string dESIGNATION, string eMPLOYEETYPE, string rEMARKS, Nullable<long> cREATEBY, Nullable<System.DateTime> cREATEDDATE, Nullable<long> mODIFIEDDBY, Nullable<System.DateTime> mODIFIEDDATE)
+        {
+            var pROFESSIONALDETAILIDParameter = pROFESSIONALDETAILID.HasValue ?
+                new ObjectParameter("PROFESSIONALDETAILID", pROFESSIONALDETAILID) :
+                new ObjectParameter("PROFESSIONALDETAILID", typeof(long));
+    
+            var uSERIDParameter = uSERID.HasValue ?
+                new ObjectParameter("USERID", uSERID) :
+                new ObjectParameter("USERID", typeof(long));
+    
+            var cOMPANYNAMEParameter = cOMPANYNAME != null ?
+                new ObjectParameter("COMPANYNAME", cOMPANYNAME) :
+                new ObjectParameter("COMPANYNAME", typeof(string));
+    
+            var dESIGNATIONParameter = dESIGNATION != null ?
+                new ObjectParameter("DESIGNATION", dESIGNATION) :
+                new ObjectParameter("DESIGNATION", typeof(string));
+    
+            var eMPLOYEETYPEParameter = eMPLOYEETYPE != null ?
+                new ObjectParameter("EMPLOYEETYPE", eMPLOYEETYPE) :
+                new ObjectParameter("EMPLOYEETYPE", typeof(string));
+    
+            var rEMARKSParameter = rEMARKS != null ?
+                new ObjectParameter("REMARKS", rEMARKS) :
+                new ObjectParameter("REMARKS", typeof(string));
+    
+            var cREATEBYParameter = cREATEBY.HasValue ?
+                new ObjectParameter("CREATEBY", cREATEBY) :
+                new ObjectParameter("CREATEBY", typeof(long));
+    
+            var cREATEDDATEParameter = cREATEDDATE.HasValue ?
+                new ObjectParameter("CREATEDDATE", cREATEDDATE) :
+                new ObjectParameter("CREATEDDATE", typeof(System.DateTime));
+    
+            var mODIFIEDDBYParameter = mODIFIEDDBY.HasValue ?
+                new ObjectParameter("MODIFIEDDBY", mODIFIEDDBY) :
+                new ObjectParameter("MODIFIEDDBY", typeof(long));
+    
+            var mODIFIEDDATEParameter = mODIFIEDDATE.HasValue ?
+                new ObjectParameter("MODIFIEDDATE", mODIFIEDDATE) :
+                new ObjectParameter("MODIFIEDDATE", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sprocTBL_USER_PROFESSIONAL_DETAILSInsertUpdateSingleItem", pROFESSIONALDETAILIDParameter, uSERIDParameter, cOMPANYNAMEParameter, dESIGNATIONParameter, eMPLOYEETYPEParameter, rEMARKSParameter, cREATEBYParameter, cREATEDDATEParameter, mODIFIEDDBYParameter, mODIFIEDDATEParameter);
+        }
+    
+        public virtual ObjectResult<sprocTBL_USER_PROFESSIONAL_DETAILSSelectList_Result> sprocTBL_USER_PROFESSIONAL_DETAILSSelectList()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sprocTBL_USER_PROFESSIONAL_DETAILSSelectList_Result>("sprocTBL_USER_PROFESSIONAL_DETAILSSelectList");
+        }
+    
+        public virtual ObjectResult<sprocTBL_USER_PROFESSIONAL_DETAILSSelectSingleItem_Result> sprocTBL_USER_PROFESSIONAL_DETAILSSelectSingleItem(Nullable<long> pROFESSIONALDETAILID)
+        {
+            var pROFESSIONALDETAILIDParameter = pROFESSIONALDETAILID.HasValue ?
+                new ObjectParameter("PROFESSIONALDETAILID", pROFESSIONALDETAILID) :
+                new ObjectParameter("PROFESSIONALDETAILID", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sprocTBL_USER_PROFESSIONAL_DETAILSSelectSingleItem_Result>("sprocTBL_USER_PROFESSIONAL_DETAILSSelectSingleItem", pROFESSIONALDETAILIDParameter);
+        }
+    
+        public virtual int sprocTBL_USER_SUBJECTSDeleteSingleItem(Nullable<long> uSERSUBJECTID)
+        {
+            var uSERSUBJECTIDParameter = uSERSUBJECTID.HasValue ?
+                new ObjectParameter("USERSUBJECTID", uSERSUBJECTID) :
+                new ObjectParameter("USERSUBJECTID", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sprocTBL_USER_SUBJECTSDeleteSingleItem", uSERSUBJECTIDParameter);
+        }
+    
+        public virtual int sprocTBL_USER_SUBJECTSInsertUpdateSingleItem(Nullable<long> uSERSUBJECTID, Nullable<int> sUBJECTID, Nullable<long> uSERID, Nullable<long> cREATEDBY, Nullable<System.DateTime> cREATEDDATE, Nullable<long> mODIFIEDBY, Nullable<System.DateTime> mODIFIEDDATE)
+        {
+            var uSERSUBJECTIDParameter = uSERSUBJECTID.HasValue ?
+                new ObjectParameter("USERSUBJECTID", uSERSUBJECTID) :
+                new ObjectParameter("USERSUBJECTID", typeof(long));
+    
+            var sUBJECTIDParameter = sUBJECTID.HasValue ?
+                new ObjectParameter("SUBJECTID", sUBJECTID) :
+                new ObjectParameter("SUBJECTID", typeof(int));
+    
+            var uSERIDParameter = uSERID.HasValue ?
+                new ObjectParameter("USERID", uSERID) :
+                new ObjectParameter("USERID", typeof(long));
+    
+            var cREATEDBYParameter = cREATEDBY.HasValue ?
+                new ObjectParameter("CREATEDBY", cREATEDBY) :
+                new ObjectParameter("CREATEDBY", typeof(long));
+    
+            var cREATEDDATEParameter = cREATEDDATE.HasValue ?
+                new ObjectParameter("CREATEDDATE", cREATEDDATE) :
+                new ObjectParameter("CREATEDDATE", typeof(System.DateTime));
+    
+            var mODIFIEDBYParameter = mODIFIEDBY.HasValue ?
+                new ObjectParameter("MODIFIEDBY", mODIFIEDBY) :
+                new ObjectParameter("MODIFIEDBY", typeof(long));
+    
+            var mODIFIEDDATEParameter = mODIFIEDDATE.HasValue ?
+                new ObjectParameter("MODIFIEDDATE", mODIFIEDDATE) :
+                new ObjectParameter("MODIFIEDDATE", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sprocTBL_USER_SUBJECTSInsertUpdateSingleItem", uSERSUBJECTIDParameter, sUBJECTIDParameter, uSERIDParameter, cREATEDBYParameter, cREATEDDATEParameter, mODIFIEDBYParameter, mODIFIEDDATEParameter);
+        }
+    
+        public virtual ObjectResult<sprocTBL_USER_SUBJECTSSelectList_Result> sprocTBL_USER_SUBJECTSSelectList()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sprocTBL_USER_SUBJECTSSelectList_Result>("sprocTBL_USER_SUBJECTSSelectList");
+        }
+    
+        public virtual ObjectResult<sprocTBL_USER_SUBJECTSSelectSingleItem_Result> sprocTBL_USER_SUBJECTSSelectSingleItem(Nullable<long> uSERSUBJECTID)
+        {
+            var uSERSUBJECTIDParameter = uSERSUBJECTID.HasValue ?
+                new ObjectParameter("USERSUBJECTID", uSERSUBJECTID) :
+                new ObjectParameter("USERSUBJECTID", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sprocTBL_USER_SUBJECTSSelectSingleItem_Result>("sprocTBL_USER_SUBJECTSSelectSingleItem", uSERSUBJECTIDParameter);
+        }
+    
+        public virtual ObjectResult<Usp_ALLPaymentDetailinfo_Result> Usp_ALLPaymentDetailinfo()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Usp_ALLPaymentDetailinfo_Result>("Usp_ALLPaymentDetailinfo");
+        }
+    
+        public virtual ObjectResult<string> Usp_checkplan(string planmaster)
+        {
+            var planmasterParameter = planmaster != null ?
+                new ObjectParameter("Planmaster", planmaster) :
+                new ObjectParameter("Planmaster", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("Usp_checkplan", planmasterParameter);
+        }
+    
+        public virtual ObjectResult<string> Usp_checkscheme(string schemeName)
+        {
+            var schemeNameParameter = schemeName != null ?
+                new ObjectParameter("SchemeName", schemeName) :
+                new ObjectParameter("SchemeName", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("Usp_checkscheme", schemeNameParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> Usp_checkUsernameExits(string userName)
+        {
+            var userNameParameter = userName != null ?
+                new ObjectParameter("UserName", userName) :
+                new ObjectParameter("UserName", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("Usp_checkUsernameExits", userNameParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> Usp_CheckUserRoles(Nullable<int> userId)
+        {
+            var userIdParameter = userId.HasValue ?
+                new ObjectParameter("UserId", userId) :
+                new ObjectParameter("UserId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("Usp_CheckUserRoles", userIdParameter);
+        }
+    
+        public virtual ObjectResult<Usp_DisplayAllUser_And_Roles_Result> Usp_DisplayAllUser_And_Roles()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Usp_DisplayAllUser_And_Roles_Result>("Usp_DisplayAllUser_And_Roles");
+        }
+    
+        public virtual ObjectResult<Usp_Generatenumber_Result> Usp_Generatenumber()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Usp_Generatenumber_Result>("Usp_Generatenumber");
+        }
+    
+        public virtual ObjectResult<Usp_GenerateRecepit_Result> Usp_GenerateRecepit(Nullable<long> memberid)
+        {
+            var memberidParameter = memberid.HasValue ?
+                new ObjectParameter("Memberid", memberid) :
+                new ObjectParameter("Memberid", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Usp_GenerateRecepit_Result>("Usp_GenerateRecepit", memberidParameter);
+        }
+    
+        public virtual ObjectResult<USP_GET_PopularVideos_Result> USP_GET_PopularVideos(Nullable<long> studentId)
+        {
+            var studentIdParameter = studentId.HasValue ?
+                new ObjectParameter("StudentId", studentId) :
+                new ObjectParameter("StudentId", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<USP_GET_PopularVideos_Result>("USP_GET_PopularVideos", studentIdParameter);
+        }
+    
+        public virtual ObjectResult<USP_GET_RecommendedVideos_Result> USP_GET_RecommendedVideos(Nullable<long> studentId)
+        {
+            var studentIdParameter = studentId.HasValue ?
+                new ObjectParameter("StudentId", studentId) :
+                new ObjectParameter("StudentId", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<USP_GET_RecommendedVideos_Result>("USP_GET_RecommendedVideos", studentIdParameter);
+        }
+    
+        public virtual ObjectResult<USP_GET_TestDetails_Result> USP_GET_TestDetails(Nullable<int> subjectId)
+        {
+            var subjectIdParameter = subjectId.HasValue ?
+                new ObjectParameter("SubjectId", subjectId) :
+                new ObjectParameter("SubjectId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<USP_GET_TestDetails_Result>("USP_GET_TestDetails", subjectIdParameter);
+        }
+    
+        public virtual ObjectResult<USP_GET_TestQuestionByTestId_Result> USP_GET_TestQuestionByTestId(Nullable<int> testId)
+        {
+            var testIdParameter = testId.HasValue ?
+                new ObjectParameter("TestId", testId) :
+                new ObjectParameter("TestId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<USP_GET_TestQuestionByTestId_Result>("USP_GET_TestQuestionByTestId", testIdParameter);
+        }
+    
+        public virtual ObjectResult<USP_GET_VideoDetails_Result> USP_GET_VideoDetails(Nullable<long> videoId)
+        {
+            var videoIdParameter = videoId.HasValue ?
+                new ObjectParameter("VideoId", videoId) :
+                new ObjectParameter("VideoId", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<USP_GET_VideoDetails_Result>("USP_GET_VideoDetails", videoIdParameter);
+        }
+    
+        public virtual ObjectResult<USP_GET_VideosBySubject1_Result> USP_GET_VideosBySubject1(Nullable<int> subjectId)
+        {
+            var subjectIdParameter = subjectId.HasValue ?
+                new ObjectParameter("SubjectId", subjectId) :
+                new ObjectParameter("SubjectId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<USP_GET_VideosBySubject1_Result>("USP_GET_VideosBySubject1", subjectIdParameter);
+        }
+    
+        public virtual ObjectResult<Usp_GetAllRenwalrecords_Result> Usp_GetAllRenwalrecords()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Usp_GetAllRenwalrecords_Result>("Usp_GetAllRenwalrecords");
+        }
+    
+        public virtual ObjectResult<Usp_GetAllRenwalrecordsFromBetweenDate_Result> Usp_GetAllRenwalrecordsFromBetweenDate(Nullable<System.DateTime> paymentfromdt, Nullable<System.DateTime> paymenttodt, Nullable<System.DateTime> exactdate)
+        {
+            var paymentfromdtParameter = paymentfromdt.HasValue ?
+                new ObjectParameter("Paymentfromdt", paymentfromdt) :
+                new ObjectParameter("Paymentfromdt", typeof(System.DateTime));
+    
+            var paymenttodtParameter = paymenttodt.HasValue ?
+                new ObjectParameter("Paymenttodt", paymenttodt) :
+                new ObjectParameter("Paymenttodt", typeof(System.DateTime));
+    
+            var exactdateParameter = exactdate.HasValue ?
+                new ObjectParameter("exactdate", exactdate) :
+                new ObjectParameter("exactdate", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Usp_GetAllRenwalrecordsFromBetweenDate_Result>("Usp_GetAllRenwalrecordsFromBetweenDate", paymentfromdtParameter, paymenttodtParameter, exactdateParameter);
+        }
+    
+        public virtual ObjectResult<Usp_GetAllUsers_Result> Usp_GetAllUsers()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Usp_GetAllUsers_Result>("Usp_GetAllUsers");
+        }
+    
+        public virtual ObjectResult<Nullable<decimal>> Usp_GetAmount_reg(Nullable<int> planID, Nullable<int> schemeID)
+        {
+            var planIDParameter = planID.HasValue ?
+                new ObjectParameter("PlanID", planID) :
+                new ObjectParameter("PlanID", typeof(int));
+    
+            var schemeIDParameter = schemeID.HasValue ?
+                new ObjectParameter("SchemeID", schemeID) :
+                new ObjectParameter("SchemeID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<decimal>>("Usp_GetAmount_reg", planIDParameter, schemeIDParameter);
+        }
+    
+        public virtual ObjectResult<Usp_GetDataofMemberbyID_Result> Usp_GetDataofMemberbyID(Nullable<long> mainMemberID)
+        {
+            var mainMemberIDParameter = mainMemberID.HasValue ?
+                new ObjectParameter("MainMemberID", mainMemberID) :
+                new ObjectParameter("MainMemberID", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Usp_GetDataofMemberbyID_Result>("Usp_GetDataofMemberbyID", mainMemberIDParameter);
+        }
+    
+        public virtual ObjectResult<Usp_getDec_Result> Usp_getDec(Nullable<long> memberid)
+        {
+            var memberidParameter = memberid.HasValue ?
+                new ObjectParameter("Memberid", memberid) :
+                new ObjectParameter("Memberid", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Usp_getDec_Result>("Usp_getDec", memberidParameter);
+        }
+    
+        public virtual ObjectResult<Usp_GetMonthwisepaymentdetails_Result> Usp_GetMonthwisepaymentdetails(Nullable<long> month)
+        {
+            var monthParameter = month.HasValue ?
+                new ObjectParameter("month", month) :
+                new ObjectParameter("month", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Usp_GetMonthwisepaymentdetails_Result>("Usp_GetMonthwisepaymentdetails", monthParameter);
+        }
+    
+        public virtual ObjectResult<Usp_GetPlanByWorkTypeID_Result> Usp_GetPlanByWorkTypeID(Nullable<int> schemeID)
+        {
+            var schemeIDParameter = schemeID.HasValue ?
+                new ObjectParameter("SchemeID", schemeID) :
+                new ObjectParameter("SchemeID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Usp_GetPlanByWorkTypeID_Result>("Usp_GetPlanByWorkTypeID", schemeIDParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> Usp_getPlanPeriodID(Nullable<int> planID)
+        {
+            var planIDParameter = planID.HasValue ?
+                new ObjectParameter("PlanID", planID) :
+                new ObjectParameter("PlanID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("Usp_getPlanPeriodID", planIDParameter);
+        }
+    
+        public virtual ObjectResult<string> Usp_getRoleByUserID(Nullable<int> userId)
+        {
+            var userIdParameter = userId.HasValue ?
+                new ObjectParameter("UserId", userId) :
+                new ObjectParameter("UserId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("Usp_getRoleByUserID", userIdParameter);
+        }
+    
+        public virtual ObjectResult<Usp_GetRoles_Result> Usp_GetRoles()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Usp_GetRoles_Result>("Usp_GetRoles");
+        }
+    
+        public virtual ObjectResult<Usp_GetYearwisepaymentdetails_Result> Usp_GetYearwisepaymentdetails(Nullable<long> year)
+        {
+            var yearParameter = year.HasValue ?
+                new ObjectParameter("year", year) :
+                new ObjectParameter("year", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Usp_GetYearwisepaymentdetails_Result>("Usp_GetYearwisepaymentdetails", yearParameter);
+        }
+    
+        public virtual ObjectResult<USP_listofMemberName_Result> USP_listofMemberName(string memberFName)
+        {
+            var memberFNameParameter = memberFName != null ?
+                new ObjectParameter("MemberFName", memberFName) :
+                new ObjectParameter("MemberFName", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<USP_listofMemberName_Result>("USP_listofMemberName", memberFNameParameter);
+        }
+    
+        public virtual ObjectResult<USP_listofMemberno_Result> USP_listofMemberno(string memberID)
+        {
+            var memberIDParameter = memberID != null ?
+                new ObjectParameter("MemberID", memberID) :
+                new ObjectParameter("MemberID", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<USP_listofMemberno_Result>("USP_listofMemberno", memberIDParameter);
+        }
+    
+        public virtual ObjectResult<Usp_PaymentDetailinfo_Result> Usp_PaymentDetailinfo(Nullable<long> memberID)
+        {
+            var memberIDParameter = memberID.HasValue ?
+                new ObjectParameter("MemberID", memberID) :
+                new ObjectParameter("MemberID", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Usp_PaymentDetailinfo_Result>("Usp_PaymentDetailinfo", memberIDParameter);
+        }
+    
+        public virtual ObjectResult<Usp_PaymentDetailinfo_Name_Result> Usp_PaymentDetailinfo_Name(string memberFName)
+        {
+            var memberFNameParameter = memberFName != null ?
+                new ObjectParameter("MemberFName", memberFName) :
+                new ObjectParameter("MemberFName", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Usp_PaymentDetailinfo_Name_Result>("Usp_PaymentDetailinfo_Name", memberFNameParameter);
+        }
+    
+        public virtual ObjectResult<USP_SaveTestAnswers_Result> USP_SaveTestAnswers(Nullable<int> testId, Nullable<int> subjectId, Nullable<System.DateTime> startTime, Nullable<System.DateTime> endTime, Nullable<int> studentId, string quesAnsXml)
+        {
+            var testIdParameter = testId.HasValue ?
+                new ObjectParameter("TestId", testId) :
+                new ObjectParameter("TestId", typeof(int));
+    
+            var subjectIdParameter = subjectId.HasValue ?
+                new ObjectParameter("SubjectId", subjectId) :
+                new ObjectParameter("SubjectId", typeof(int));
+    
+            var startTimeParameter = startTime.HasValue ?
+                new ObjectParameter("StartTime", startTime) :
+                new ObjectParameter("StartTime", typeof(System.DateTime));
+    
+            var endTimeParameter = endTime.HasValue ?
+                new ObjectParameter("EndTime", endTime) :
+                new ObjectParameter("EndTime", typeof(System.DateTime));
+    
+            var studentIdParameter = studentId.HasValue ?
+                new ObjectParameter("StudentId", studentId) :
+                new ObjectParameter("StudentId", typeof(int));
+    
+            var quesAnsXmlParameter = quesAnsXml != null ?
+                new ObjectParameter("QuesAnsXml", quesAnsXml) :
+                new ObjectParameter("QuesAnsXml", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<USP_SaveTestAnswers_Result>("USP_SaveTestAnswers", testIdParameter, subjectIdParameter, startTimeParameter, endTimeParameter, studentIdParameter, quesAnsXmlParameter);
+        }
+    
+        public virtual int USP_TestAnswers_new(Nullable<int> testId, Nullable<int> subjectId, Nullable<System.DateTime> startTime, Nullable<System.DateTime> endTime, Nullable<int> studentId, string quesAnsXml)
+        {
+            var testIdParameter = testId.HasValue ?
+                new ObjectParameter("TestId", testId) :
+                new ObjectParameter("TestId", typeof(int));
+    
+            var subjectIdParameter = subjectId.HasValue ?
+                new ObjectParameter("SubjectId", subjectId) :
+                new ObjectParameter("SubjectId", typeof(int));
+    
+            var startTimeParameter = startTime.HasValue ?
+                new ObjectParameter("StartTime", startTime) :
+                new ObjectParameter("StartTime", typeof(System.DateTime));
+    
+            var endTimeParameter = endTime.HasValue ?
+                new ObjectParameter("EndTime", endTime) :
+                new ObjectParameter("EndTime", typeof(System.DateTime));
+    
+            var studentIdParameter = studentId.HasValue ?
+                new ObjectParameter("StudentId", studentId) :
+                new ObjectParameter("StudentId", typeof(int));
+    
+            var quesAnsXmlParameter = quesAnsXml != null ?
+                new ObjectParameter("QuesAnsXml", quesAnsXml) :
+                new ObjectParameter("QuesAnsXml", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("USP_TestAnswers_new", testIdParameter, subjectIdParameter, startTimeParameter, endTimeParameter, studentIdParameter, quesAnsXmlParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> Usp_UserIDbyUserName(string userName)
+        {
+            var userNameParameter = userName != null ?
+                new ObjectParameter("UserName", userName) :
+                new ObjectParameter("UserName", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("Usp_UserIDbyUserName", userNameParameter);
+        }
+    
+        public virtual ObjectResult<string> Usp_UserNamebyUserID(string userId)
+        {
+            var userIdParameter = userId != null ?
+                new ObjectParameter("UserId", userId) :
+                new ObjectParameter("UserId", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("Usp_UserNamebyUserID", userIdParameter);
+        }
     }
 }

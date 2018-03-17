@@ -23,41 +23,51 @@
         </div>
     </div>
     <div class="col-xs-12 col-md-10 col-lg-9 col-md-offset-2 col-lg-offset-3 white-color">
-        <div class="col-xs-12 side-no-pad pad-bottom-20">
-            <div class="col-xs-10 fw-bold">
-                <div class="col-xs-1 side-no-pad">
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input class="form-check-input div-checkbox1" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
-                        </label>
+        @using (Html.BeginForm("ListVideo", "Videos", FormMethod.Post))
+        {
+            <div class="col-xs-12 side-no-pad pad-bottom-20">
+                <div class="col-xs-10 fw-bold">
+                    <div class="col-xs-1 side-no-pad">
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input div-checkbox1" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-xs-3 leftside-no-pad">
+                        @Html.DropDownListFor(model => model.CourseMaster.ID, new SelectList(Model.CourseList, "ID", "NAME"), "Course", new { @class = "form-control text-color  " })
+
+
+                        @*<select class="form-control text-color">
+                                <option>Course</option>
+                                <option>Newest</option>
+                                <option>Newest</option>
+                            </select>*@
+                    </div>
+                    <div class="col-xs-3 rightside-no-pad">
+
+                        @Html.DropDownListFor(model => model.SubjectMaster.SUBJECTID, new SelectList(Model.SubjectList, "SUBJECTID", "SUBJECTNAME"), "Subject", new { @class = "form-control text-color" })
+
+                    </div>
+
+                    <div class="col-xs-3 rightside-no-pad">
+                        <input type="submit" name="type" value="Search" class="btn btn-primary" />
+                        <input type="submit" name="type" value="Reset" class="btn btn-danger" />
+                    </div>
+
+
+                </div>
+                <div class="col-xs-2 sm-side-no-pad">
+                    <div class="col-xs-11 side-no-pad">
+                        <select class="form-control text-color">
+                            <option>Action</option>
+                            <option>Newest</option>
+                            <option>Newest</option>
+                        </select>
                     </div>
                 </div>
-                <div class="col-xs-3 leftside-no-pad">
-                    <select class="form-control text-color">
-                        <option>Course</option>
-                        <option>Newest</option>
-                        <option>Newest</option>
-                    </select>
-                </div>
-                <div class="col-xs-3 rightside-no-pad">
-                    <select class="form-control text-color">
-                        <option>Subject</option>
-                        <option>Newest</option>
-                        <option>Newest</option>
-                    </select>
-                </div>
             </div>
-            <div class="col-xs-2 sm-side-no-pad">
-                <div class="col-xs-11 side-no-pad">
-                    <select class="form-control text-color">
-                        <option>Action</option>
-                        <option>Newest</option>
-                        <option>Newest</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-
+        }
         @if (Model.VideoUploaddetailsList.Count() > 0)
         {
             foreach (var file in Model.VideoUploaddetailsList)
@@ -76,6 +86,7 @@
 
                                 <div class="flowplayer">
                                     <video width="200" height="150" controls>
+                                        @*controlsList="nodownload"*@
                                         <source src="~/Content/files/@file.VideoPath" type="video/3gpp">
                                         <source src="~/Content/files/@file.VideoPath" type="video/m4v">
                                         <source src="~/Content/files/@file.VideoPath" type="video/mp4">
@@ -94,8 +105,8 @@
                             </div>
                             <div class="col-sm-9 col-xs-12 black-color pad-left-20 pad-top-10">
                                 <p class="no-bottom text-color fw-bold">@file.DOCUMENTNAME</p>
-                                <p class="no-bottom small-font"><span>Course:</span><span> </span><span class="aqua-color">UPSC</span></p>
-                                <p class="no-bottom small-font"><span>Subject:</span><span> </span><span class="aqua-color">Anthroplolgy</span></p>
+                                <p class="no-bottom small-font"><span>Course:</span><span> </span><span class="aqua-color">@file.CourseName</span></p>
+                                <p class="no-bottom small-font"><span>Subject:</span><span> </span><span class="aqua-color">@file.SubjectName</span></p>
                                 <p class="no-bottom smaller-font text-color right-align">@file.CREATEDDATE</p>
 
                             </div>
