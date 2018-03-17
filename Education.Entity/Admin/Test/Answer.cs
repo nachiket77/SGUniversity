@@ -43,5 +43,12 @@ namespace Education.Entity.Admin.Test
             set;
         }
 
+        public int gittest
+        {
+            get;
+            set;
+        }
+
+
     }
 }
