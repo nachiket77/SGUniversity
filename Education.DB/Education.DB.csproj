@@ -69,6 +69,9 @@
     <Compile Include="Fiscalyear.cs">
       <DependentUpon>Education.tt</DependentUpon>
     </Compile>
+    <Compile Include="GetAllTBL_MASTER_BOARDS_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
     <Compile Include="LogDetail.cs">
       <DependentUpon>Education.tt</DependentUpon>
     </Compile>
@@ -88,7 +91,154 @@
     <Compile Include="RegisterUser.cs">
       <DependentUpon>Education.tt</DependentUpon>
     </Compile>
+    <Compile Include="Register_GetDetails_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
     <Compile Include="SchemeMaster.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocMemberRegistrationSelectList_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocMemberRegistrationSelectSingleItem_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocPaymentDetailsSelectList_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocPaymentDetailsSelectSingleItem_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocPlanMasterSelectList_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocPlanMasterSelectSingleItem_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_MASTER_BOARDSSelectList_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_MASTER_BOARDSSelectSingleItem_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_MASTER_CITYSelectList_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_MASTER_CITYSelectSingleItem_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_MASTER_CLASSSelectList_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_MASTER_CLASSSelectSingleItem_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_MASTER_COUNTRYSelectList_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_MASTER_COUNTRYSelectSingleItem_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_MASTER_COURSESelectList_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_MASTER_COURSESelectSingleItem_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_MASTER_DOCUMENTTYPESelectList_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_MASTER_DOCUMENTTYPESelectSingleItem_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_MASTER_STATESelectList_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_MASTER_STATESelectSingleItem_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_MASTER_STATUSSelectList_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_MASTER_STATUSSelectSingleItem_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_MASTER_SUBJECTSelectList_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_MASTER_SUBJECTSelectSingleItem_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_MASTER_USERTYPESelectList_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_MASTER_USERTYPESelectSingleItem_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_USER_ADDRESS_DETAILSSelectList_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_USER_ADDRESS_DETAILSSelectSingleItem_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_USER_COURSE_DETAILSSelectList_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_USER_COURSE_DETAILSSelectSingleItem_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_USER_DETAILSSelectList_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_USER_DETAILSSelectSingleItem_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_USER_DOCUMENTS_DETAILSSelectList_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_USER_DOCUMENTS_DETAILSSelectSingleItem_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_USER_INSTITUTION_DETAILSSelectList_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_USER_INSTITUTION_DETAILSSelectSingleItem_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_USER_LOGINSelectList_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_USER_LOGINSelectSingleItem_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_USER_LOGIN_TRAILSelectList_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_USER_LOGIN_TRAILSelectSingleItem_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_USER_PARENTS_DETAILSSelectList_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_USER_PARENTS_DETAILSSelectSingleItem_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_USER_PROFESSIONAL_DETAILSSelectList_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_USER_PROFESSIONAL_DETAILSSelectSingleItem_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_USER_SUBJECTSSelectList_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sprocTBL_USER_SUBJECTSSelectSingleItem_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
       <DependentUpon>Education.tt</DependentUpon>
     </Compile>
     <Compile Include="sysdiagram.cs">
@@ -209,6 +359,81 @@
       <DependentUpon>Education.tt</DependentUpon>
     </Compile>
     <Compile Include="User.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usp_ALLPaymentDetailinfo_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usp_DisplayAllUser_And_Roles_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usp_Generatenumber_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usp_GenerateRecepit_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usp_GetAllRenwalrecordsFromBetweenDate_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usp_GetAllRenwalrecords_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usp_GetAllUsers_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usp_GetDataofMemberbyID_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usp_getDec_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usp_GetMonthwisepaymentdetails_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usp_GetPlanByWorkTypeID_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usp_GetRoles_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usp_GetYearwisepaymentdetails_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USP_GET_PopularVideos_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USP_GET_RecommendedVideos_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USP_GET_TestDetails_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USP_GET_TestQuestionByTestId_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USP_GET_VideoDetails_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USP_GET_VideosBySubject1_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USP_GET_VideosBySubject_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USP_listofMemberName_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USP_listofMemberno_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usp_PaymentDetailinfo_Name_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usp_PaymentDetailinfo_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USP_SaveTestAnswers_Result.cs">
       <DependentUpon>Education.tt</DependentUpon>
     </Compile>
     <Compile Include="webpages_Membership.cs">

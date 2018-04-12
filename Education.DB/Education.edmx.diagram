@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="2ba56a1c5e84489b8c123886b55861ea" Name="Diagram1">
+      <Diagram DiagramId="fa321e3509eb4faab74506b5354e3098" Name="Diagram1">
         <EntityTypeShape EntityType="ajay_dbModel.RegisterUser" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ajay_dbModel.Fiscalyear" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ajay_dbModel.LogDetail" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />

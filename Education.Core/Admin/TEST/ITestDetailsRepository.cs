@@ -23,7 +23,9 @@ namespace Education.Core.Admin
 
         List<TestDetails> GetTestDetails();
 
-        
-
+        // Created by Pramod for API
+        List<TestTypeModel> GetTestDetailsForAPI(Nullable<int> StudentId);
+        List<TestQuestion> GetTestQuestionForAPI(int testId);
+        TestProgressModel SaveTestAnswers(int testId, int subjectId, DateTime startTime, DateTime endTime, int studentId, string quesAnsXml);
     }
 }

@@ -47,3 +47,13 @@ C:\SGUniversity-2018\Education.DB\bin\Debug\EntityFramework.SqlServer.xml
 C:\SGUniversity-2018\Education.DB\obj\Debug\Education.DB.csprojResolveAssemblyReference.cache
 C:\SGUniversity-2018\Education.DB\obj\Debug\Education.DB.dll
 C:\SGUniversity-2018\Education.DB\obj\Debug\Education.DB.pdb
+D:\Projects\Mumbai\Git\Education.DB\bin\Debug\Education.DB.dll.config
+D:\Projects\Mumbai\Git\Education.DB\bin\Debug\Education.DB.dll
+D:\Projects\Mumbai\Git\Education.DB\bin\Debug\Education.DB.pdb
+D:\Projects\Mumbai\Git\Education.DB\bin\Debug\EntityFramework.dll
+D:\Projects\Mumbai\Git\Education.DB\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects\Mumbai\Git\Education.DB\bin\Debug\EntityFramework.xml
+D:\Projects\Mumbai\Git\Education.DB\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projects\Mumbai\Git\Education.DB\obj\Debug\Education.DB.csprojResolveAssemblyReference.cache
+D:\Projects\Mumbai\Git\Education.DB\obj\Debug\Education.DB.dll
+D:\Projects\Mumbai\Git\Education.DB\obj\Debug\Education.DB.pdb
