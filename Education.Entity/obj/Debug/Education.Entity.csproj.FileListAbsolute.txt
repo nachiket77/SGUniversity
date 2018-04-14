@@ -87,8 +87,6 @@ C:\SGUniversity-2018\Education.Entity\bin\Debug\System.Web.Mvc.xml
 C:\SGUniversity-2018\Education.Entity\bin\Debug\EntityFramework.xml
 C:\SGUniversity-2018\Education.Entity\bin\Debug\System.Web.Razor.xml
 C:\SGUniversity-2018\Education.Entity\bin\Debug\System.Web.WebPages.Razor.xml
-C:\SGUniversity-2018\Education.Entity\bin\Debug\System.Web.WebPages.xml
-C:\SGUniversity-2018\Education.Entity\bin\Debug\System.Web.WebPages.Deployment.xml
 C:\SGUniversity-2018\Education.Entity\obj\Debug\Education.Entity.csprojResolveAssemblyReference.cache
 C:\SGUniversity-2018\Education.Entity\obj\Debug\Education.Entity.dll
 C:\SGUniversity-2018\Education.Entity\obj\Debug\Education.Entity.pdb

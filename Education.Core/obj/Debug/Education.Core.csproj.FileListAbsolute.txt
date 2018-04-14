@@ -94,8 +94,6 @@ C:\SGUniversity-2018\Education.Core\bin\Debug\EntityFramework.SqlServer.xml
 C:\SGUniversity-2018\Education.Core\bin\Debug\System.Web.Mvc.xml
 C:\SGUniversity-2018\Education.Core\bin\Debug\System.Web.Razor.xml
 C:\SGUniversity-2018\Education.Core\bin\Debug\System.Web.WebPages.Razor.xml
-C:\SGUniversity-2018\Education.Core\bin\Debug\System.Web.WebPages.xml
-C:\SGUniversity-2018\Education.Core\bin\Debug\System.Web.WebPages.Deployment.xml
 C:\SGUniversity-2018\Education.Core\obj\Debug\Education.Core.csprojResolveAssemblyReference.cache
 C:\SGUniversity-2018\Education.Core\obj\Debug\Education.Core.dll
 C:\SGUniversity-2018\Education.Core\obj\Debug\Education.Core.pdb
@@ -125,3 +123,4 @@ D:\Projects\Mumbai\Git\Education.Core\bin\Debug\System.Web.WebPages.Deployment.x
 D:\Projects\Mumbai\Git\Education.Core\obj\Debug\Education.Core.csprojResolveAssemblyReference.cache
 D:\Projects\Mumbai\Git\Education.Core\obj\Debug\Education.Core.dll
 D:\Projects\Mumbai\Git\Education.Core\obj\Debug\Education.Core.pdb
+C:\SGUniversity-2018\Education.Core\bin\Debug\Microsoft.Web.Infrastructure.xml

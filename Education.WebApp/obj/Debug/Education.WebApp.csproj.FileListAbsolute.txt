@@ -357,3 +357,4 @@ D:\Projects\Mumbai\Git\Education.WebApp\bin\System.Web.Optimization.xml
 D:\Projects\Mumbai\Git\Education.WebApp\obj\Debug\Education.WebApp.csprojResolveAssemblyReference.cache
 D:\Projects\Mumbai\Git\Education.WebApp\obj\Debug\Education.WebApp.dll
 D:\Projects\Mumbai\Git\Education.WebApp\obj\Debug\Education.WebApp.pdb
+C:\SGUniversity-2018\Education.WebApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml

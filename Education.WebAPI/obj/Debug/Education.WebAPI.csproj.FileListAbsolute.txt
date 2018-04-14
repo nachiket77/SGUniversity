@@ -215,8 +215,6 @@ C:\SGUniversity-2018\Education.WebAPI\bin\Education.DB.pdb
 C:\SGUniversity-2018\Education.WebAPI\bin\System.Web.Mvc.xml
 C:\SGUniversity-2018\Education.WebAPI\bin\System.Web.Razor.xml
 C:\SGUniversity-2018\Education.WebAPI\bin\System.Web.WebPages.Razor.xml
-C:\SGUniversity-2018\Education.WebAPI\bin\System.Web.WebPages.xml
-C:\SGUniversity-2018\Education.WebAPI\bin\System.Web.WebPages.Deployment.xml
 C:\SGUniversity-2018\Education.WebAPI\obj\Debug\Education.WebAPI.dll
 C:\SGUniversity-2018\Education.WebAPI\obj\Debug\Education.WebAPI.pdb
 D:\Projects\Mumbai\Git\Education.WebAPI\obj\Debug\Education.WebAPI.csprojResolveAssemblyReference.cache
@@ -305,3 +303,15 @@ D:\Projects\Mumbai\Git\Education.WebAPI\bin\System.Web.WebPages.xml
 D:\Projects\Mumbai\Git\Education.WebAPI\bin\System.Web.WebPages.Razor.xml
 D:\Projects\Mumbai\Git\Education.WebAPI\bin\System.Web.Razor.xml
 D:\Projects\Mumbai\Git\Education.WebAPI\bin\System.Web.WebPages.Deployment.xml
+C:\SGUniversity-2018\Education.WebAPI\bin\Microsoft.Owin.Cors.dll
+C:\SGUniversity-2018\Education.WebAPI\bin\Microsoft.Owin.dll
+C:\SGUniversity-2018\Education.WebAPI\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\SGUniversity-2018\Education.WebAPI\bin\Microsoft.Owin.Security.dll
+C:\SGUniversity-2018\Education.WebAPI\bin\Microsoft.Owin.Security.OAuth.dll
+C:\SGUniversity-2018\Education.WebAPI\bin\Owin.dll
+C:\SGUniversity-2018\Education.WebAPI\bin\System.Web.Cors.dll
+C:\SGUniversity-2018\Education.WebAPI\bin\Microsoft.Owin.xml
+C:\SGUniversity-2018\Education.WebAPI\bin\Microsoft.Owin.Cors.xml
+C:\SGUniversity-2018\Education.WebAPI\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\SGUniversity-2018\Education.WebAPI\bin\Microsoft.Owin.Security.xml
+C:\SGUniversity-2018\Education.WebAPI\bin\Microsoft.Owin.Security.OAuth.xml
