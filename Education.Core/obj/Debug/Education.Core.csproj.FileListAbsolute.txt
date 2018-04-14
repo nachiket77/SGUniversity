@@ -124,3 +124,5 @@ D:\Projects\Mumbai\Git\Education.Core\obj\Debug\Education.Core.csprojResolveAsse
 D:\Projects\Mumbai\Git\Education.Core\obj\Debug\Education.Core.dll
 D:\Projects\Mumbai\Git\Education.Core\obj\Debug\Education.Core.pdb
 C:\SGUniversity-2018\Education.Core\bin\Debug\Microsoft.Web.Infrastructure.xml
+C:\SGUniversity-2018\Education.Core\bin\Debug\Excel.dll
+C:\SGUniversity-2018\Education.Core\bin\Debug\ICSharpCode.SharpZipLib.dll

@@ -7,6 +7,7 @@ using Education.Entity.Admin;
 using Education.DB;
 using System.Data;
 using Education.Entity.Admin.Test;
+using System.Web;
 
 namespace Education.Core.Admin
 {
@@ -49,15 +50,24 @@ namespace Education.Core.Admin
 
                     TBL_TEST_QUESTIONS objquestiondetails = new TBL_TEST_QUESTIONS();
 
-                    objquestiondetails.DESCRIPTION = questions;
-                    objquestiondetails.ISMULTISELECT = true;
-                    objquestiondetails.TESTID = allTestDetails.TestDetails.TESTID;
-                    objquestiondetails.QUESTIONTYPEID = allTestDetails.QuestionTypeMaster.QUESTIONTYPEID;
-                    objquestiondetails.MARKS = Marks;
-                    dbEntities.TBL_TEST_QUESTIONS.Add(objquestiondetails);
-                    dbEntities.SaveChanges();
-                    allTestDetails.TestDetails.QUESTIONID = objquestiondetails.QUESTIONID;
+                    if (questions!="")
+                    {
+                        objquestiondetails.DESCRIPTION = questions;
+                        objquestiondetails.ISMULTISELECT = true;
+                        objquestiondetails.TESTID = allTestDetails.TestDetails.TESTID;
+                        objquestiondetails.QUESTIONTYPEID = allTestDetails.QuestionTypeMaster.QUESTIONTYPEID;
+                        objquestiondetails.MARKS = Marks;
+                        dbEntities.TBL_TEST_QUESTIONS.Add(objquestiondetails);
+                        dbEntities.SaveChanges();
+                        allTestDetails.TestDetails.QUESTIONID = objquestiondetails.QUESTIONID;
+                        HttpContext.Current.Session["SessionQuestionID"] = allTestDetails.TestDetails.QUESTIONID;
 
+
+                    }
+                    if (questions == "")
+                    {
+                         allTestDetails.TestDetails.QUESTIONID = long.Parse(HttpContext.Current.Session["SessionQuestionID"].ToString());
+                    }
 
                     TBL_TEST_ANSWERS objtestanswersdetail = new TBL_TEST_ANSWERS();
                     objtestanswersdetail.DESCRIPTION = answers;
