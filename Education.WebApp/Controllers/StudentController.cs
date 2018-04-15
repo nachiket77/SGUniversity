@@ -126,7 +126,7 @@ namespace Education.WebApp.Controllers
                 det.Countrylist = _ICountryStateCityReposetory.GetCountry();
                 det.statelist = _ICountryStateCityReposetory.GetState(1);
                 det.citylist = _ICountryStateCityReposetory.GetCity(1);
-                ModelState.Clear();
+                //ModelState.Clear();
                 return View("AddStudent", "_Layout", det);
             }
             catch (Exception ex)
@@ -205,7 +205,7 @@ namespace Education.WebApp.Controllers
                 det.Countrylist = _ICountryStateCityReposetory.GetCountry();
                 det.statelist = _ICountryStateCityReposetory.GetState(1);
                 det.citylist = _ICountryStateCityReposetory.GetCity(1);
-                ModelState.Clear();
+                //ModelState.Clear();
                 return View("AddStudent", "_Layout", det);
             }
             catch (Exception ex)
@@ -277,7 +277,7 @@ namespace Education.WebApp.Controllers
                 det.Countrylist = _ICountryStateCityReposetory.GetCountry();
                 det.statelist = _ICountryStateCityReposetory.GetState(1);
                 det.citylist = _ICountryStateCityReposetory.GetCity(1);
-                ModelState.Clear();
+                //ModelState.Clear();
                 return View("AddStudent", "_Layout", det);
             }
             catch (Exception ex)

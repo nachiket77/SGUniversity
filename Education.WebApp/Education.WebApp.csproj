@@ -336,6 +336,7 @@
     <Compile Include="App_Start\Iteacher.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
+    <Compile Include="Controllers\CourseSubjectMappingController.cs" />
     <Compile Include="Controllers\ListController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MainController.cs" />
@@ -380,6 +381,7 @@
     <Content Include="Views\List\ListStudent.cshtml" />
     <Content Include="Views\List\UpdateStudentDetails.cshtml" />
     <Content Include="Views\Teacher\UpdateTeacherDetails.cshtml" />
+    <Content Include="Views\CourseSubjectMapping\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

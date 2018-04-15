@@ -81,6 +81,8 @@
     <Compile Include="Students\Documents.cs" />
     <Compile Include="Students\InstitutionDetail.cs" />
     <Compile Include="Students\StudentDetails.cs" />
+    <Compile Include="SubjectCourseMapping\AllSubjectCourseMappingDetails.cs" />
+    <Compile Include="SubjectCourseMapping\SubjectCourseMappingDetails.cs" />
     <Compile Include="Teachers\AllTeacherDetails.cs" />
     <Compile Include="Teachers\TeacherDetails.cs" />
     <Compile Include="UserType.cs" />

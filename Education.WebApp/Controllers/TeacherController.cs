@@ -94,7 +94,7 @@ namespace Education.WebApp.Controllers
                 det.CourseList = _TeacherReposetory.GetCourse();
                 det.SubjectList = _TeacherReposetory.Getsubject();
                 
-                ModelState.Clear();
+                //ModelState.Clear();
                 return View("AddTeacher", "_Layout", det);
             }
             catch (Exception ex)
