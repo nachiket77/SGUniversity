@@ -101,6 +101,7 @@ namespace Education.WebApp.Controllers
                         // RedirectToAction("AddStudent", objalldetails.StudentDetails.USERID);
                         //ViewBag.message = "Success";
                         TempData["Success"] = "Student Details Added Successfully!" + "UserID:" + Session["USERID"];
+                        ModelState.Clear();
                         RedirectToAction("Index", "Student");
                     }
                     else
@@ -177,7 +178,7 @@ namespace Education.WebApp.Controllers
                 if (objalldetails.ParentDetails.USERID > 0)
                 {
                     // RedirectToAction("AddInstitute", objalldetails.StudentDetails.USERID);
-
+                    ModelState.Clear();
                     TempData["Success"] = "Parent details Added Successfully!";
                     //return View("AddStudent");
                 }
@@ -248,7 +249,7 @@ namespace Education.WebApp.Controllers
                 if (objalldetails.ProfessionalDetails.USERID > 0)
                 {
                     // RedirectToAction("AddInstitute", objalldetails.StudentDetails.USERID);
-
+                    ModelState.Clear();
                     TempData["Success"] = "Parent Professional details Added Successfully!";
 
                     //return View("AddStudent");

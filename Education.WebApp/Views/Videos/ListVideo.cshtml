@@ -3,7 +3,22 @@
     ViewBag.Title = "ListVideo";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+@*<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>*@
+<link href="~/assets/css/style.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-latest.min.js"
+        type="text/javascript"></script>
+<br />
 
+<ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="@Url.Action("Index", "Main")">Home</a></li>
+
+    <li class="breadcrumb-item"><a href="@Url.Action("Index", "Videos")">Back</a></li>
+    <li class="breadcrumb-item active">ListVideos</li>
+</ol>
 <div class="col-xs-12 Addstudent-bg">
     <div class="col-xs-12 col-md-10 col-lg-9 col-md-offset-2 col-lg-offset-3 pad-top-20 pad-bottom-20 white-color">
         <div class="col-xs-9 col-sm-10 fw-bold">
