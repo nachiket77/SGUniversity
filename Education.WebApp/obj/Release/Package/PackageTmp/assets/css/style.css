@@ -1,6 +1,9 @@
 .navbar-brand>img,  {
 	display: inline; 
 }
+.full_width{
+    height : 100%;
+}
 .navbar-item{
  display: flex;
 }
@@ -11,6 +14,14 @@
   padding-left: 30px;
   padding-right: 30px;
   margin-bottom: 10px;
+}
+.navitem-left{
+      display: inline-block;
+    float: left;
+}
+.navitem-right{
+      display: inline-block;
+    float: right;
 }
 .nav-link{
  padding-top: 10px !important;
@@ -69,6 +80,9 @@
 .pad-top-20{
 	padding-top: 20px !important;
 }
+.as-left{
+    margin-left: 4%;
+}
 .pad-bottom-20{
 	padding-bottom: 20px;
 }
@@ -123,9 +137,6 @@
    margin-left: 40px;
    margin-top: -24px;
  }
- .next-btn{
-  padding-top: 15px;
-}
 }
 @media(max-width: 767px) {
 	.nav-style{
@@ -146,6 +157,16 @@
 .nav-link{
  padding-top: 0px !important;
  padding-bottom: 0 !important;
+}
+.navitem-left {
+    display: inline-block;
+    float: left;
+    width: 70%;
+}
+.navitem-right{
+      display: inline-block;
+    float: right;
+    width: 30%;
 }
 .font20{
  font-size: 20px !important;
@@ -182,6 +203,42 @@
 }
 .home-pad {
   padding: 15px 0px 15px 0px !important;
+}
+.navlogin-style {
+ background: #2D6493;
+ border: 0;
+ padding-top: 10px !important;
+ padding-left: 0px !important;
+ padding-right: 0px !important;
+ margin-bottom: 0;
+ padding-bottom: 10px !important;
+
+}
+.navlogin-style p{
+ font-size: 11px;
+ color: #ffffff;
+}
+.xs-side-no-pad{
+  padding-left: 0;
+  padding-right: 0;
+}
+.modalsignin-btn {
+    background: #2D6493;
+    padding: 10px 95px 10px 95px !important;
+    border-radius: 5px;
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+}
+.type-radio {
+    display: inline-block;
+    width: 33%;
+    float: left;
+    font-size: 12px;
+}
+.mr40{
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
 }
 }
 .no-margin{
@@ -220,23 +277,34 @@
 .addstudent-style li{
   font-size: 16px;
 }
+.addstudent-style li a{
+      padding: 10px 15px 10px 15px;
+    background: #2D6493;
+  }
 .addstudent-style li a, .addstudent-style li a :active, .addstudent-style li a :hover, .addstudent-style li a :focus, .addstudent-style li a :visited{
   color: #ffffff !important;
   text-decoration: none;
+  font-weight: 600;
+  
 }
 .addstudent-style li:not(:first-child) {
- margin-left: 70px;
+ margin-left: 50px;
 }
 .no-padding{
 	padding: 0;
 }
-.next-btn a{
+.add-btn a,.add-btn btn-add"full"{
   background: #2D6493;
   padding: 7px 25px 7px 25px;
   border-radius: 3px;
   font-weight: 600;
   float: right;
   color: #ffffff;
+  text-decoration: none;
+}
+.add-btn{
+    margin-top:15px;
+    margin-bottom: 15px;
 }
 .addstudent-table td{
   text-align: center;
@@ -298,7 +366,7 @@
  height: 2em;
 }
 .Addstudent-bg{
- background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),url(images/index_41.jpg);
+ background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),url(../images/index_41.jpg);
  min-height: 520px;
  background-position: center;
  background-repeat: no-repeat;
@@ -333,16 +401,278 @@
   background-color: white;
   padding-top: 10px !important;
   padding-bottom: 10px !important;
-}
+}dd-btn
 .liststudent-table .table-body td:not(:first-child){
   padding-left: 0 !important;
 }
 .liststudent-table table {
-    border-collapse: separate;
-    border-spacing: 0 1em;
+  border-collapse: separate;
+  border-spacing: 0 1em;
 }
 .liststudent-table td ul{
   list-style-type: none;
   padding: 0;
   margin: 0;
+}
+.login-bg{
+ background-image: url(../images/index_41.jpg);
+ min-height: 520px;
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+
+ height: 100%;
+ position:fixed;
+ width: 100%;
+}
+.course-type label{
+    padding-left : 15px;
+    padding-right:10px;
+    vertical-align: middle;
+    height: 12px;
+}
+.course-type input {
+    padding-left: 4px;
+    vertical-align : middle;
+}
+.navlogin-style{
+ background: #2D6493;
+ padding-top: 20px;
+ padding-left: 30px;
+ padding-right: 30px;
+ margin-bottom: 0;
+ border: 0;
+ border-radius: 0;
+
+}
+.navlogin-style p{
+ color: #ffffff;
+}
+.navlogin-style ul li button,.navlogin-style ul li button:active, .navlogin-style ul li button:visited, .navlogin-style ul li button:focus, .navlogin-style ul li button:hover{
+ font-weight: 600;
+ text-decoration: none;
+ background: #2D6493 !important;
+ outline: none;
+ border: none !important;
+ padding: 0 !important;
+}
+#signinmodal .modal-header{
+  border-bottom: none;
+}
+#signinmodal .modal-body{
+  border-bottom: none;
+}
+#signinmodal .modal-footer{
+  border-top: none;
+}
+.type-radio{
+  display: inline-block;
+  width: 33%;
+  float: left;
+}
+.type-radio img{
+  margin-bottom: 10px;
+}
+.mr40{
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.black-color{
+  color: #000000 !important;
+}
+.opacity{
+  opacity: .24;
+}
+.modalinput-icon{
+      border-bottom: 1px solid;
+    border-top: 1px solid;
+    border-right: 0;
+    border-left: 1px solid;
+    background: #ffffff;
+    border-color: #2D6493;
+    color: #2D6493;
+}
+.modalinput-text{
+  border-bottom: 1px solid;
+    border-top: 1px solid;
+    border-right: 1px solid;
+    border-left: 0;
+    border-color: #2D6493 !important;
+    box-shadow: none !important;
+    outline: none;
+}
+.modalsignin-btn{
+  background: #2D6493;
+    padding: 10px 130px 10px 130px;
+    border-radius: 5px;
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+}
+.radio {
+    padding-left: 20px; }
+.radio label {
+    display: inline-block;
+    position: relative;
+    padding-left: 5px; }
+.radio label::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    left: 0;
+    margin-left: -20px;
+    border: 1px solid #cccccc;
+    border-radius: 50%;
+    background-color: #fff;
+    -webkit-transition: border 0.15s ease-in-out;
+    -o-transition: border 0.15s ease-in-out;
+    transition: border 0.15s ease-in-out; }
+.radio label::after {
+    display: inline-block;
+    position: absolute;
+    content: " ";
+    width: 11px;
+    height: 11px;
+    left: 3px;
+    top: 3px;
+    margin-left: -20px;
+    border-radius: 50%;
+    background-color: #555555;
+    -webkit-transform: scale(0, 0);
+    -ms-transform: scale(0, 0);
+    -o-transform: scale(0, 0);
+    -moz-transform: scale(1, 1);
+    transform: scale(0, 0);
+    -webkit-transition: -webkit-transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33);
+    -moz-transition: -moz-transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33);
+    -o-transition: -o-transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33);
+    transition: transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33); }
+.radio input[type="radio"] {
+    opacity: 0; }
+.radio input[type="radio"]:focus + label::before {
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px; }
+.radio input[type="radio"]:checked + label::after {
+    -webkit-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    transform: scale(1, 1); }
+.radio input[type="radio"]:disabled + label {
+    opacity: 0.65; }
+.radio input[type="radio"]:disabled + label::before {
+    cursor: not-allowed; }
+.radio.radio-inline {
+    margin-top: 0; }
+
+.radio-primary input[type="radio"] + label::after {
+    background-color: #2D6493; }
+.radio-primary input[type="radio"]:checked + label::before {
+    border-color: #2D6493; }
+.radio-primary input[type="radio"]:checked + label::after {
+    background-color: #2D6493; }
+/* Style the tab */
+div.tab {
+    overflow: hidden;
+    border:none;
+    background-color: transparent;
+    color: #ffffff;
+}
+
+/* Style the buttons inside the tab */
+div.tab button {
+    background-color: inherit;
+    float: left;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    margin-right: 50px;
+}
+
+/* Change background color of buttons on hover */
+div.tab button:hover {
+    background-color: #2D6493;
+    color: #ffffff;
+}
+
+/* Create an active/current tablink class */
+div.tab button.active {
+    background-color: #2D6493;
+    color: #ffffff;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    border-top: none;
+}
+.div-action div select{
+    border: 0;
+    padding: 0;
+    background: transparent;
+    color: white;
+    box-shadow: none !important;
+        height: 20px;
+}
+.div-action div select option{
+color: black;
+}
+.black-color{
+  color: #000000;
+}
+.grey-bg{
+  background-color: grey;
+}
+.div-video{
+      padding: 6px 0px 0px 8px !important;
+}
+.div-video video{
+object-fit: fill;
+    width: 135px;
+    height: 75px;
+}
+.small-font{
+  font-size: 12px;
+}
+.aqua-color{
+  color: aqua;
+}
+.smaller-font{
+  font-size: 10px;
+}
+.div-checkbox1{
+      width: 30px !important;
+    height: 30px !important;
+}
+.div-checkbox{
+      width: 30px !important;
+    height: 80px !important;
+}
+.border-rad{
+  border-radius: 5px;
+}
+.uploadfile-label{
+  padding: 6px 45px !important;
+}
+.upload-preview{
+      position: absolute;
+    font-size: 9px !important;
+    margin-left: -7px;
+    margin-top: -8px;
+    background: white;
+    color: hotpink;
+    padding: 4px 6px 4px 6px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.progressbar-height{
+  height: 4px !important;
+}
+.bar-height{
+  margin-top: -9px;
 }

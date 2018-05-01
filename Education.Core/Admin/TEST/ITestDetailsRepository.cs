@@ -27,5 +27,6 @@ namespace Education.Core.Admin
         List<TestTypeModel> GetTestDetailsForAPI(Nullable<int> StudentId);
         List<TestQuestion> GetTestQuestionForAPI(int testId);
         TestProgressModel SaveTestAnswers(int testId, int subjectId, DateTime startTime, DateTime endTime, int studentId, string quesAnsXml);
+        List<TestQuestionAns> GetTestQuestionAnsForAPI(int testId,int StudentId);
     }
 }

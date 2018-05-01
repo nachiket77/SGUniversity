@@ -8,11 +8,14 @@ using System.Threading.Tasks;
 
 namespace Education.Core
 {
-   public interface IUserReposetory
+    public interface IUserReposetory
     {
         LoginResponse Login(Login login);
         int InsertUserType(string usertype);
         List<UserType> GetUserType();
-     
+        String ChangePassword(ChangePassword model);
+
+        UserDetailsModel ForgotPassword(ForgotPasswordModel model);
+        ProfileModel GetProfile(long userId);
     }
 }

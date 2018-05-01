@@ -29,6 +29,7 @@ namespace Education.DB
         public Nullable<int> CourseId { get; set; }
         public string VideoDesc { get; set; }
         public string RefDocs { get; set; }
+        public string ThumbnailPath { get; set; }
         public string SubjectName { get; set; }
         public string CourseName { get; set; }
     }

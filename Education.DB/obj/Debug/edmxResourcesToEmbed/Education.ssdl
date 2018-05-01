@@ -1,16 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="ajay_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityType Name="RegisterUser">
-    <Key>
-      <PropertyRef Name="Sr_no" />
-    </Key>
-    <Property Name="Sr_no" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Email" Type="nvarchar" MaxLength="50" />
-    <Property Name="Password" Type="nvarchar" MaxLength="50" />
-    <Property Name="Name" Type="nvarchar" MaxLength="50" />
-    <Property Name="Address" Type="nvarchar" MaxLength="50" />
-    <Property Name="City" Type="nvarchar" MaxLength="50" />
-  </EntityType>
   <EntityType Name="Fiscalyear">
     <Key>
       <PropertyRef Name="Fid" />
@@ -169,6 +158,7 @@
     <Property Name="CourseId" Type="int" />
     <Property Name="VideoDesc" Type="nvarchar" MaxLength="1000" />
     <Property Name="RefDocs" Type="nvarchar" MaxLength="500" />
+    <Property Name="ThumbnailPath" Type="nvarchar" MaxLength="2000" />
   </EntityType>
   <EntityType Name="TBL_GN_DIGITALDOC_VIEWDETAILS">
     <Key>
@@ -570,16 +560,6 @@
     <Property Name="MODIFIEDBY" Type="bigint" />
     <Property Name="MODIFIEDDATE" Type="datetime" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="tempTest">
-          <Property Name="TotalMarks" Type="int" />
-          <Property Name="TotalQues" Type="int" />
-          <Property Name="Incorrect" Type="int" />
-          <Property Name="Correct" Type="int" />
-          <Property Name="Unanswered" Type="int" />
-          <Property Name="TestAttampId" Type="int" />
-        </EntityType>-->
   <EntityType Name="Users">
     <Key>
       <PropertyRef Name="Id" />
@@ -1025,17 +1005,6 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Function Name="Register_GetDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ajay_dba" />
-  <Function Name="Register_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ajay_dba">
-    <Parameter Name="Email" Type="nvarchar" Mode="In" />
-    <Parameter Name="Password" Type="nvarchar" Mode="In" />
-    <Parameter Name="Name" Type="nvarchar" Mode="In" />
-    <Parameter Name="Address" Type="nvarchar" Mode="In" />
-    <Parameter Name="City" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="USP_GET_VideosBySubject" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ajay_dba">
-    <Parameter Name="SubjectId" Type="int" Mode="In" />
-  </Function>
   <Function Name="DeleteTBL_MASTER_BOARDS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="DeleteTBL_MASTER_CITY" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="NAME" Type="nchar" Mode="In" />
@@ -1643,6 +1612,9 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
   <Function Name="Usp_GenerateRecepit" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="Memberid" Type="bigint" Mode="In" />
   </Function>
+  <Function Name="USP_GET_Attampted_TestDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StudentId" Type="int" Mode="In" />
+  </Function>
   <Function Name="USP_GET_PopularVideos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="StudentId" Type="bigint" Mode="In" />
   </Function>
@@ -1650,7 +1622,11 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
     <Parameter Name="StudentId" Type="bigint" Mode="In" />
   </Function>
   <Function Name="USP_GET_TestDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="SubjectId" Type="int" Mode="In" />
+    <Parameter Name="StudentId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="USP_GET_TestQuesANSByTestId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TestId" Type="int" Mode="In" />
+    <Parameter Name="StudentId" Type="int" Mode="In" />
   </Function>
   <Function Name="USP_GET_TestQuestionByTestId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="TestId" Type="int" Mode="In" />
@@ -1658,7 +1634,7 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
   <Function Name="USP_GET_VideoDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="VideoId" Type="bigint" Mode="In" />
   </Function>
-  <Function Name="USP_GET_VideosBySubject1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="USP_GET_VideosBySubject">
+  <Function Name="USP_GET_VideosBySubject" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="SubjectId" Type="int" Mode="In" />
   </Function>
   <Function Name="Usp_GetAllRenwalrecords" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
@@ -1706,6 +1682,13 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
   <Function Name="Usp_PaymentDetailinfo_Name" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="MemberFName" Type="varchar" Mode="In" />
   </Function>
+  <Function Name="USP_Profile" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="USP_ResetPassword" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Email" Type="varchar" Mode="In" />
+    <Parameter Name="Password" Type="varchar" Mode="In" />
+  </Function>
   <Function Name="USP_SaveTestAnswers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="TestId" Type="int" Mode="In" />
     <Parameter Name="SubjectId" Type="int" Mode="In" />
@@ -1729,7 +1712,6 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
     <Parameter Name="UserId" Type="varchar" Mode="In" />
   </Function>
   <EntityContainer Name="ajay_dbModelStoreContainer">
-    <EntitySet Name="RegisterUser" EntityType="Self.RegisterUser" Schema="ajay_dba" store:Type="Tables" />
     <EntitySet Name="Fiscalyear" EntityType="Self.Fiscalyear" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LogDetails" EntityType="Self.LogDetails" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="MemberRegistration" EntityType="Self.MemberRegistration" Schema="dbo" store:Type="Tables" />

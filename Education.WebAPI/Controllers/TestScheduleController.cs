@@ -64,5 +64,16 @@ namespace Education.WebAPI.Controllers
             return new HttpResponseMessage() { Content = new StringContent(JsonConvert.SerializeObject(res), Encoding.UTF8, "application/json") };
         }
 
+        [Authorize]
+        [HttpPost]
+        [Route("api/TestQuestionAns")]
+        public HttpResponseMessage TestQuestionAns([FromBody]TestAns model)
+        {
+            // test.TestId = 2;
+            List<TestQuestionAns> testDetails = _ITestDetailsRepository.GetTestQuestionAnsForAPI(model.TestId, model.StudentId);
+
+            return new HttpResponseMessage() { Content = new StringContent(JsonConvert.SerializeObject(testDetails), Encoding.UTF8, "application/json") };
+        }
+
     }
 }

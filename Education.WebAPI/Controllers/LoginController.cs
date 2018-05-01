@@ -13,6 +13,7 @@ using System.Text;
 using Education.Entity.Login;
 using System.Threading.Tasks;
 using System.Configuration;
+using Education.WebAPI.Models.Common;
 
 namespace Education.WebAPI.Controllers
 {
@@ -136,7 +137,46 @@ namespace Education.WebAPI.Controllers
 
         }
 
+        [Authorize]
+        [HttpPost]
+        [Route("api/ChangePassword")]
+        public HttpResponseMessage ChangePassword(ChangePassword model)
+        {
+            MessageModel messageModel = new MessageModel();
+            messageModel.Message = _UserReporsetory.ChangePassword(model);
 
+            return new HttpResponseMessage() { Content = new StringContent(JsonConvert.SerializeObject(messageModel), Encoding.UTF8, "application/json") };
+
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        [Route("api/ForgotPassword")]
+        public HttpResponseMessage ForgotPassword(ForgotPasswordModel model)
+        {
+            MessageModel messageModel = new MessageModel();
+            UserDetailsModel user = _UserReporsetory.ForgotPassword(model);
+            if (user != null)
+            {
+                string subject = "Teacher Fair - Password Reset";
+                bool status = Mails.SendEmail(user.Email, subject, GetBody(user));
+                if (status)
+                    messageModel.Message = "Email has been sent";
+                else
+                    messageModel.Message = "Error in Email sending";
+            }
+            else
+                messageModel.Message = "User does not exists";
+
+            return new HttpResponseMessage() { Content = new StringContent(JsonConvert.SerializeObject(messageModel), Encoding.UTF8, "application/json") };
+
+        }
+        [NonAction]
+        private string GetBody(UserDetailsModel user)
+        {
+            return string.Format("Hi {0},<br /><br />Your password is <b>{1}</b>.<br /><br />Thank You,<br /> Teacher Fair", user.Name, user.Password);
+
+        }
 
     }
 }

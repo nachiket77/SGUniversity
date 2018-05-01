@@ -1,6 +1,7 @@
 ﻿using Education.Core.Admin;
 using Education.Entity.Admin;
 using Education.Entity.Admin.Videos;
+using Education.WebApp.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -63,9 +64,9 @@ namespace Education.WebApp.Controllers
                     {
                         ext = Path.GetExtension(file.FileName);
                         fileName = Path.GetFileName(file.FileName);
-                        videoName = "Video_" + DateTime.Now.Ticks + ext;
+                        videoName = "Video_" + DateTime.Now.Ticks ;
 
-                        string path = Path.Combine(Server.MapPath("~/Content/files"), videoName);
+                        string path = Path.Combine(Server.MapPath("~/Content/files"), videoName + ext);
                         file.SaveAs(path);
 
                         string RefDocName = string.Empty;
@@ -78,23 +79,21 @@ namespace Education.WebApp.Controllers
                             string RefPath = Path.Combine(Server.MapPath("~/Content/ReferenceDocs"), RefDocName);
                             RefDocument.SaveAs(RefPath);
                         }
-                        //objvideodetails.DIGITALDOCTYPEID = 1;
-                        //objvideodetails.DOCUMENTNAME = fileName;
-                        //objvideodetails.VideoPath = videoName;
-
-                        //objvideo.VideoUploaddetails = objvideodetails;
-
+                        VideoReadCls v = new VideoReadCls();
+                        string imagePath = Path.Combine(Server.MapPath("~/Content/Thumbnails"), videoName + ".jpg");
+                        v.extractVideo(path, imagePath);
+                        
                         objvideo.VideoUploaddetails.DIGITALDOCID = 1;
                         objvideo.VideoUploaddetails.DOCUMENTNAME = fileName;
-                        objvideo.VideoUploaddetails.VideoPath = videoName;
+                        objvideo.VideoUploaddetails.VideoPath = videoName + ext;
                         objvideo.VideoUploaddetails.RefDocumentPath = RefDocName;
                         objvideo.VideoUploaddetails.CREATEDBY = 11;
                         objvideo.VideoUploaddetails.CourseId = objvideo.CourseMaster.ID;
                         objvideo.VideoUploaddetails.SUBJECTID = objvideo.SubjectMaster.SUBJECTID;
-
-                        //objvideodetails.VideoDesc = objvideo.VideoUploaddetails.VideoDesc;
-                        //objvideodetails.RefDocumentPath = RefDocName;
-                        //objvideodetails.CREATEDBY = 11;
+                        objvideo.VideoUploaddetails.ThumbnailPath = videoName + ".jpg";
+                       //objvideodetails.VideoDesc = objvideo.VideoUploaddetails.VideoDesc;
+                       //objvideodetails.RefDocumentPath = RefDocName;
+                       //objvideodetails.CREATEDBY = 11;
 
                         int res = _VideoUpload.CreateVideoDetails(objvideo);
                         if (res > 0)
@@ -475,6 +474,21 @@ namespace Education.WebApp.Controllers
         }
 
         #endregion
+
+        //[HttpGet]
+        //public ActionResult VideoRead()
+        //{
+        //    string videoPath = Server.MapPath("~/Content/files/Video_636564963553531668.mp4");
+        //    string imagePath = Server.MapPath("~/Content/thumb.jpg");
+        //    VideoReadCls v = new VideoReadCls();
+
+        //    v.extractVideo(videoPath, imagePath);
+
+        //    //FFMPEG f = new FFMPEG();
+           
+        //    //f.GetThumbnail(videoPath, imagePath, "1200x223");
+        //    return View();
+        //}
 
     }
 }

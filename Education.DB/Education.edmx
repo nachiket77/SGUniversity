@@ -4,18 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ajay_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="RegisterUser">
-          <Key>
-            <PropertyRef Name="Sr_no" />
-          </Key>
-          <Property Name="Sr_no" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Email" Type="nvarchar" MaxLength="50" />
-          <Property Name="Password" Type="nvarchar" MaxLength="50" />
-          <Property Name="Name" Type="nvarchar" MaxLength="50" />
-          <Property Name="Address" Type="nvarchar" MaxLength="50" />
-          <Property Name="City" Type="nvarchar" MaxLength="50" />
-        </EntityType>
+    <Schema Namespace="ajay_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Fiscalyear">
           <Key>
             <PropertyRef Name="Fid" />
@@ -174,6 +163,7 @@
           <Property Name="CourseId" Type="int" />
           <Property Name="VideoDesc" Type="nvarchar" MaxLength="1000" />
           <Property Name="RefDocs" Type="nvarchar" MaxLength="500" />
+          <Property Name="ThumbnailPath" Type="nvarchar" MaxLength="2000" />
         </EntityType>
         <EntityType Name="TBL_GN_DIGITALDOC_VIEWDETAILS">
           <Key>
@@ -575,16 +565,6 @@
           <Property Name="MODIFIEDBY" Type="bigint" />
           <Property Name="MODIFIEDDATE" Type="datetime" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="tempTest">
-          <Property Name="TotalMarks" Type="int" />
-          <Property Name="TotalQues" Type="int" />
-          <Property Name="Incorrect" Type="int" />
-          <Property Name="Correct" Type="int" />
-          <Property Name="Unanswered" Type="int" />
-          <Property Name="TestAttampId" Type="int" />
-        </EntityType>-->
         <EntityType Name="Users">
           <Key>
             <PropertyRef Name="Id" />
@@ -1030,17 +1010,6 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Function Name="Register_GetDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ajay_dba" />
-        <Function Name="Register_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ajay_dba">
-          <Parameter Name="Email" Type="nvarchar" Mode="In" />
-          <Parameter Name="Password" Type="nvarchar" Mode="In" />
-          <Parameter Name="Name" Type="nvarchar" Mode="In" />
-          <Parameter Name="Address" Type="nvarchar" Mode="In" />
-          <Parameter Name="City" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="USP_GET_VideosBySubject" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ajay_dba">
-          <Parameter Name="SubjectId" Type="int" Mode="In" />
-        </Function>
         <Function Name="DeleteTBL_MASTER_BOARDS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="DeleteTBL_MASTER_CITY" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="NAME" Type="nchar" Mode="In" />
@@ -1648,6 +1617,9 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
         <Function Name="Usp_GenerateRecepit" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Memberid" Type="bigint" Mode="In" />
         </Function>
+        <Function Name="USP_GET_Attampted_TestDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="StudentId" Type="int" Mode="In" />
+        </Function>
         <Function Name="USP_GET_PopularVideos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="StudentId" Type="bigint" Mode="In" />
         </Function>
@@ -1655,7 +1627,11 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
           <Parameter Name="StudentId" Type="bigint" Mode="In" />
         </Function>
         <Function Name="USP_GET_TestDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="SubjectId" Type="int" Mode="In" />
+          <Parameter Name="StudentId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="USP_GET_TestQuesANSByTestId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TestId" Type="int" Mode="In" />
+          <Parameter Name="StudentId" Type="int" Mode="In" />
         </Function>
         <Function Name="USP_GET_TestQuestionByTestId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="TestId" Type="int" Mode="In" />
@@ -1663,7 +1639,7 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
         <Function Name="USP_GET_VideoDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="VideoId" Type="bigint" Mode="In" />
         </Function>
-        <Function Name="USP_GET_VideosBySubject1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="USP_GET_VideosBySubject">
+        <Function Name="USP_GET_VideosBySubject" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="SubjectId" Type="int" Mode="In" />
         </Function>
         <Function Name="Usp_GetAllRenwalrecords" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
@@ -1711,6 +1687,13 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
         <Function Name="Usp_PaymentDetailinfo_Name" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="MemberFName" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="USP_Profile" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserId" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="USP_ResetPassword" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Email" Type="varchar" Mode="In" />
+          <Parameter Name="Password" Type="varchar" Mode="In" />
+        </Function>
         <Function Name="USP_SaveTestAnswers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="TestId" Type="int" Mode="In" />
           <Parameter Name="SubjectId" Type="int" Mode="In" />
@@ -1734,7 +1717,6 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
           <Parameter Name="UserId" Type="varchar" Mode="In" />
         </Function>
         <EntityContainer Name="ajay_dbModelStoreContainer">
-          <EntitySet Name="RegisterUser" EntityType="Self.RegisterUser" Schema="ajay_dba" store:Type="Tables" />
           <EntitySet Name="Fiscalyear" EntityType="Self.Fiscalyear" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LogDetails" EntityType="Self.LogDetails" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MemberRegistration" EntityType="Self.MemberRegistration" Schema="dbo" store:Type="Tables" />
@@ -1919,22 +1901,10 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
             <End Role="webpages_UsersInRoles" EntitySet="webpages_UsersInRoles" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ajay_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="RegisterUser">
-          <Key>
-            <PropertyRef Name="Sr_no" />
-          </Key>
-          <Property Name="Sr_no" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
         <EntityType Name="Fiscalyear">
           <Key>
             <PropertyRef Name="Fid" />
@@ -2093,6 +2063,7 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
           <Property Name="CourseId" Type="Int32" />
           <Property Name="VideoDesc" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
           <Property Name="RefDocs" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ThumbnailPath" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="TBL_MASTER_SUBJECT" Relationship="Self.FK_TBL_GN_DIGITALDOC_DETAILS_TBL_MASTER_SUBJECT" FromRole="TBL_GN_DIGITALDOC_DETAILS" ToRole="TBL_MASTER_SUBJECT" />
           <NavigationProperty Name="TBL_GN_DIGITALDOC_VIEWDETAILS" Relationship="Self.FK_TBL_GN_DIGITALDOC_VIEWDETAILS_TBL_GN_DIGITALDOC_DETAILS" FromRole="TBL_GN_DIGITALDOC_DETAILS" ToRole="TBL_GN_DIGITALDOC_VIEWDETAILS" />
         </EntityType>
@@ -2976,7 +2947,6 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
           <End Role="Users" Type="Self.User" Multiplicity="*" />
         </Association>
         <EntityContainer Name="ajay_dbEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="RegisterUsers" EntityType="Self.RegisterUser" />
           <EntitySet Name="Fiscalyears" EntityType="Self.Fiscalyear" />
           <EntitySet Name="LogDetails" EntityType="Self.LogDetail" />
           <EntitySet Name="MemberRegistrations" EntityType="Self.MemberRegistration" />
@@ -3155,17 +3125,6 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
             <End Role="webpages_Roles" EntitySet="webpages_Roles" />
             <End Role="Users" EntitySet="Users" />
           </AssociationSet>
-          <FunctionImport Name="Register_GetDetails" ReturnType="Collection(ajay_dbModel.Register_GetDetails_Result)" />
-          <FunctionImport Name="Register_Insert">
-            <Parameter Name="Email" Mode="In" Type="String" />
-            <Parameter Name="Password" Mode="In" Type="String" />
-            <Parameter Name="Name" Mode="In" Type="String" />
-            <Parameter Name="Address" Mode="In" Type="String" />
-            <Parameter Name="City" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="USP_GET_VideosBySubject" ReturnType="Collection(ajay_dbModel.USP_GET_VideosBySubject_Result)">
-            <Parameter Name="SubjectId" Mode="In" Type="Int32" />
-          </FunctionImport>
           <FunctionImport Name="DeleteTBL_MASTER_BOARDS" />
           <FunctionImport Name="DeleteTBL_MASTER_CITY">
             <Parameter Name="NAME" Mode="In" Type="String" />
@@ -3368,7 +3327,7 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
           <FunctionImport Name="sprocMemberRegistrationDeleteSingleItem">
-            <Parameter Name="MemID" Mode="In" Type="Int64" />
+          <Parameter Name="MemID" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="sprocMemberRegistrationInsertUpdateSingleItem">
             <Parameter Name="MemID" Mode="In" Type="Int64" />
@@ -3390,7 +3349,7 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
           </FunctionImport>
           <FunctionImport Name="sprocMemberRegistrationSelectList" ReturnType="Collection(ajay_dbModel.sprocMemberRegistrationSelectList_Result)" />
           <FunctionImport Name="sprocMemberRegistrationSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocMemberRegistrationSelectSingleItem_Result)">
-            <Parameter Name="MemID" Mode="In" Type="Int64" />
+          <Parameter Name="MemID" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="sprocMemberRegistrationUpdateSingleItem">
             <Parameter Name="PaymentID" Mode="In" Type="Int64" />
@@ -3405,7 +3364,7 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
             <Parameter Name="PaymentIDOUT" Mode="InOut" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sprocPaymentDetailsDeleteSingleItem">
-            <Parameter Name="PaymentID" Mode="In" Type="Int64" />
+          <Parameter Name="PaymentID" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="sprocPaymentDetailsInsertUpdateSingleItem">
             <Parameter Name="PaymentID" Mode="In" Type="Int64" />
@@ -3422,10 +3381,10 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
           </FunctionImport>
           <FunctionImport Name="sprocPaymentDetailsSelectList" ReturnType="Collection(ajay_dbModel.sprocPaymentDetailsSelectList_Result)" />
           <FunctionImport Name="sprocPaymentDetailsSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocPaymentDetailsSelectSingleItem_Result)">
-            <Parameter Name="PaymentID" Mode="In" Type="Int64" />
+          <Parameter Name="PaymentID" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="sprocPlanMasterDeleteSingleItem">
-            <Parameter Name="PlanID" Mode="In" Type="Int32" />
+          <Parameter Name="PlanID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sprocPlanMasterInsertUpdateSingleItem">
             <Parameter Name="PlanID" Mode="In" Type="Int32" />
@@ -3442,7 +3401,7 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
           </FunctionImport>
           <FunctionImport Name="sprocPlanMasterSelectList" ReturnType="Collection(ajay_dbModel.sprocPlanMasterSelectList_Result)" />
           <FunctionImport Name="sprocPlanMasterSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocPlanMasterSelectSingleItem_Result)">
-            <Parameter Name="PlanID" Mode="In" Type="Int32" />
+          <Parameter Name="PlanID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sprocRecepitTBInsertUpdateSingleItem">
             <Parameter Name="RecepitID" Mode="In" Type="Int64" />
@@ -3451,7 +3410,7 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
             <Parameter Name="createdby" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="sprocSchemeMasterDeleteSingleItem">
-            <Parameter Name="SchemeID" Mode="In" Type="Int32" />
+          <Parameter Name="SchemeID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sprocSchemeMasterInsertUpdateSingleItem">
             <Parameter Name="SchemeID" Mode="In" Type="Int32" />
@@ -3459,7 +3418,7 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
             <Parameter Name="Createdby" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_BOARDSDeleteSingleItem">
-            <Parameter Name="BOARDID" Mode="In" Type="Int32" />
+          <Parameter Name="BOARDID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_BOARDSInsertUpdateSingleItem">
             <Parameter Name="BOARDID" Mode="In" Type="Int32" />
@@ -3467,10 +3426,10 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_BOARDSSelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_BOARDSSelectList_Result)" />
           <FunctionImport Name="sprocTBL_MASTER_BOARDSSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_BOARDSSelectSingleItem_Result)">
-            <Parameter Name="BOARDID" Mode="In" Type="Int32" />
+          <Parameter Name="BOARDID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_CITYDeleteSingleItem">
-            <Parameter Name="CITYID" Mode="In" Type="Int32" />
+          <Parameter Name="CITYID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_CITYInsertUpdateSingleItem">
             <Parameter Name="CITYID" Mode="In" Type="Int32" />
@@ -3479,10 +3438,10 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_CITYSelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_CITYSelectList_Result)" />
           <FunctionImport Name="sprocTBL_MASTER_CITYSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_CITYSelectSingleItem_Result)">
-            <Parameter Name="CITYID" Mode="In" Type="Int32" />
+          <Parameter Name="CITYID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_CLASSDeleteSingleItem">
-            <Parameter Name="CLASSID" Mode="In" Type="Int32" />
+          <Parameter Name="CLASSID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_CLASSInsertUpdateSingleItem">
             <Parameter Name="CLASSID" Mode="In" Type="Int32" />
@@ -3490,10 +3449,10 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_CLASSSelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_CLASSSelectList_Result)" />
           <FunctionImport Name="sprocTBL_MASTER_CLASSSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_CLASSSelectSingleItem_Result)">
-            <Parameter Name="CLASSID" Mode="In" Type="Int32" />
+          <Parameter Name="CLASSID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_COUNTRYDeleteSingleItem">
-            <Parameter Name="COUNTRYID" Mode="In" Type="Int32" />
+          <Parameter Name="COUNTRYID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_COUNTRYInsertUpdateSingleItem">
             <Parameter Name="COUNTRYID" Mode="In" Type="Int32" />
@@ -3501,10 +3460,10 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_COUNTRYSelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_COUNTRYSelectList_Result)" />
           <FunctionImport Name="sprocTBL_MASTER_COUNTRYSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_COUNTRYSelectSingleItem_Result)">
-            <Parameter Name="COUNTRYID" Mode="In" Type="Int32" />
+          <Parameter Name="COUNTRYID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_COURSEDeleteSingleItem">
-            <Parameter Name="COURSEID" Mode="In" Type="Int32" />
+          <Parameter Name="COURSEID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_COURSEInsertUpdateSingleItem">
             <Parameter Name="COURSEID" Mode="In" Type="Int32" />
@@ -3512,10 +3471,10 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_COURSESelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_COURSESelectList_Result)" />
           <FunctionImport Name="sprocTBL_MASTER_COURSESelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_COURSESelectSingleItem_Result)">
-            <Parameter Name="COURSEID" Mode="In" Type="Int32" />
+          <Parameter Name="COURSEID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_DOCUMENTTYPEDeleteSingleItem">
-            <Parameter Name="DocumentTypeID" Mode="In" Type="Int32" />
+          <Parameter Name="DocumentTypeID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_DOCUMENTTYPEInsertUpdateSingleItem">
             <Parameter Name="DocumentTypeID" Mode="In" Type="Int32" />
@@ -3523,10 +3482,10 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_DOCUMENTTYPESelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_DOCUMENTTYPESelectList_Result)" />
           <FunctionImport Name="sprocTBL_MASTER_DOCUMENTTYPESelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_DOCUMENTTYPESelectSingleItem_Result)">
-            <Parameter Name="DocumentTypeID" Mode="In" Type="Int32" />
+          <Parameter Name="DocumentTypeID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_STATEDeleteSingleItem">
-            <Parameter Name="STATEID" Mode="In" Type="Int32" />
+          <Parameter Name="STATEID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_STATEInsertUpdateSingleItem">
             <Parameter Name="STATEID" Mode="In" Type="Int32" />
@@ -3535,10 +3494,10 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_STATESelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_STATESelectList_Result)" />
           <FunctionImport Name="sprocTBL_MASTER_STATESelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_STATESelectSingleItem_Result)">
-            <Parameter Name="STATEID" Mode="In" Type="Int32" />
+          <Parameter Name="STATEID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_STATUSDeleteSingleItem">
-            <Parameter Name="STATUSID" Mode="In" Type="Int32" />
+          <Parameter Name="STATUSID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_STATUSInsertUpdateSingleItem">
             <Parameter Name="STATUSID" Mode="In" Type="Int32" />
@@ -3546,10 +3505,10 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_STATUSSelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_STATUSSelectList_Result)" />
           <FunctionImport Name="sprocTBL_MASTER_STATUSSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_STATUSSelectSingleItem_Result)">
-            <Parameter Name="STATUSID" Mode="In" Type="Int32" />
+          <Parameter Name="STATUSID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_SUBJECTDeleteSingleItem">
-            <Parameter Name="SUBJECTID" Mode="In" Type="Int32" />
+          <Parameter Name="SUBJECTID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_SUBJECTInsertUpdateSingleItem">
             <Parameter Name="SUBJECTID" Mode="In" Type="Int32" />
@@ -3557,10 +3516,10 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_SUBJECTSelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_SUBJECTSelectList_Result)" />
           <FunctionImport Name="sprocTBL_MASTER_SUBJECTSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_SUBJECTSelectSingleItem_Result)">
-            <Parameter Name="SUBJECTID" Mode="In" Type="Int32" />
+          <Parameter Name="SUBJECTID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_USERTYPEDeleteSingleItem">
-            <Parameter Name="USERTYPEID" Mode="In" Type="Int32" />
+          <Parameter Name="USERTYPEID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_USERTYPEInsertUpdateSingleItem">
             <Parameter Name="USERTYPEID" Mode="In" Type="Int32" />
@@ -3568,10 +3527,10 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_USERTYPESelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_USERTYPESelectList_Result)" />
           <FunctionImport Name="sprocTBL_MASTER_USERTYPESelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_USERTYPESelectSingleItem_Result)">
-            <Parameter Name="USERTYPEID" Mode="In" Type="Int32" />
+          <Parameter Name="USERTYPEID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_ADDRESS_DETAILSDeleteSingleItem">
-            <Parameter Name="ADDRESSDETAILID" Mode="In" Type="Int64" />
+          <Parameter Name="ADDRESSDETAILID" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_ADDRESS_DETAILSInsertUpdateSingleItem">
             <Parameter Name="ADDRESSDETAILID" Mode="In" Type="Int64" />
@@ -3591,10 +3550,10 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_ADDRESS_DETAILSSelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_ADDRESS_DETAILSSelectList_Result)" />
           <FunctionImport Name="sprocTBL_USER_ADDRESS_DETAILSSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_ADDRESS_DETAILSSelectSingleItem_Result)">
-            <Parameter Name="ADDRESSDETAILID" Mode="In" Type="Int64" />
+          <Parameter Name="ADDRESSDETAILID" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_COURSE_DETAILSDeleteSingleItem">
-            <Parameter Name="STUDENTCOURSEID" Mode="In" Type="Int64" />
+          <Parameter Name="STUDENTCOURSEID" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_COURSE_DETAILSInsertUpdateSingleItem">
             <Parameter Name="STUDENTCOURSEID" Mode="In" Type="Int64" />
@@ -3609,17 +3568,17 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_COURSE_DETAILSSelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_COURSE_DETAILSSelectList_Result)" />
           <FunctionImport Name="sprocTBL_USER_COURSE_DETAILSSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_COURSE_DETAILSSelectSingleItem_Result)">
-            <Parameter Name="STUDENTCOURSEID" Mode="In" Type="Int64" />
+          <Parameter Name="STUDENTCOURSEID" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_DETAILSDeleteSingleItem">
-            <Parameter Name="PERSONALDETAILID" Mode="In" Type="Int64" />
+          <Parameter Name="PERSONALDETAILID" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_DETAILSSelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_DETAILSSelectList_Result)" />
           <FunctionImport Name="sprocTBL_USER_DETAILSSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_DETAILSSelectSingleItem_Result)">
-            <Parameter Name="PERSONALDETAILID" Mode="In" Type="Int64" />
+          <Parameter Name="PERSONALDETAILID" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_DOCUMENTS_DETAILSDeleteSingleItem">
-            <Parameter Name="USERDOCUMENTID" Mode="In" Type="Int64" />
+          <Parameter Name="USERDOCUMENTID" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_DOCUMENTS_DETAILSInsertUpdateSingleItem">
             <Parameter Name="USERDOCUMENTID" Mode="In" Type="Int64" />
@@ -3634,10 +3593,10 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_DOCUMENTS_DETAILSSelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_DOCUMENTS_DETAILSSelectList_Result)" />
           <FunctionImport Name="sprocTBL_USER_DOCUMENTS_DETAILSSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_DOCUMENTS_DETAILSSelectSingleItem_Result)">
-            <Parameter Name="USERDOCUMENTID" Mode="In" Type="Int64" />
+          <Parameter Name="USERDOCUMENTID" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_INSTITUTION_DETAILSDeleteSingleItem">
-            <Parameter Name="INSTITUTIONID" Mode="In" Type="Int64" />
+          <Parameter Name="INSTITUTIONID" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_INSTITUTION_DETAILSInsertUpdateSingleItem">
             <Parameter Name="INSTITUTIONID" Mode="In" Type="Int64" />
@@ -3654,10 +3613,10 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_INSTITUTION_DETAILSSelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_INSTITUTION_DETAILSSelectList_Result)" />
           <FunctionImport Name="sprocTBL_USER_INSTITUTION_DETAILSSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_INSTITUTION_DETAILSSelectSingleItem_Result)">
-            <Parameter Name="INSTITUTIONID" Mode="In" Type="Int64" />
+          <Parameter Name="INSTITUTIONID" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_LOGIN_TRAILDeleteSingleItem">
-            <Parameter Name="LOGIN_TRAIL_ID" Mode="In" Type="Int64" />
+          <Parameter Name="LOGIN_TRAIL_ID" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_LOGIN_TRAILInsertUpdateSingleItem">
             <Parameter Name="LOGIN_TRAIL_ID" Mode="In" Type="Int64" />
@@ -3669,10 +3628,10 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_LOGIN_TRAILSelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_LOGIN_TRAILSelectList_Result)" />
           <FunctionImport Name="sprocTBL_USER_LOGIN_TRAILSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_LOGIN_TRAILSelectSingleItem_Result)">
-            <Parameter Name="LOGIN_TRAIL_ID" Mode="In" Type="Int64" />
+          <Parameter Name="LOGIN_TRAIL_ID" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_LOGINDeleteSingleItem">
-            <Parameter Name="USERID" Mode="In" Type="Int64" />
+          <Parameter Name="USERID" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_LOGINInsertUpdateSingleItem">
             <Parameter Name="USERID" Mode="In" Type="Int64" />
@@ -3687,10 +3646,10 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_LOGINSelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_LOGINSelectList_Result)" />
           <FunctionImport Name="sprocTBL_USER_LOGINSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_LOGINSelectSingleItem_Result)">
-            <Parameter Name="USERID" Mode="In" Type="Int64" />
+          <Parameter Name="USERID" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_PARENTS_DETAILSDeleteSingleItem">
-            <Parameter Name="PARENTID" Mode="In" Type="Int64" />
+          <Parameter Name="PARENTID" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_PARENTS_DETAILSInsertUpdateSingleItem">
             <Parameter Name="PARENTID" Mode="In" Type="Int64" />
@@ -3714,10 +3673,10 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_PARENTS_DETAILSSelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_PARENTS_DETAILSSelectList_Result)" />
           <FunctionImport Name="sprocTBL_USER_PARENTS_DETAILSSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_PARENTS_DETAILSSelectSingleItem_Result)">
-            <Parameter Name="PARENTID" Mode="In" Type="Int64" />
+          <Parameter Name="PARENTID" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_PROFESSIONAL_DETAILSDeleteSingleItem">
-            <Parameter Name="PROFESSIONALDETAILID" Mode="In" Type="Int64" />
+          <Parameter Name="PROFESSIONALDETAILID" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_PROFESSIONAL_DETAILSInsertUpdateSingleItem">
             <Parameter Name="PROFESSIONALDETAILID" Mode="In" Type="Int64" />
@@ -3733,10 +3692,10 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_PROFESSIONAL_DETAILSSelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_PROFESSIONAL_DETAILSSelectList_Result)" />
           <FunctionImport Name="sprocTBL_USER_PROFESSIONAL_DETAILSSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_PROFESSIONAL_DETAILSSelectSingleItem_Result)">
-            <Parameter Name="PROFESSIONALDETAILID" Mode="In" Type="Int64" />
+          <Parameter Name="PROFESSIONALDETAILID" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_SUBJECTSDeleteSingleItem">
-            <Parameter Name="USERSUBJECTID" Mode="In" Type="Int64" />
+          <Parameter Name="USERSUBJECTID" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_SUBJECTSInsertUpdateSingleItem">
             <Parameter Name="USERSUBJECTID" Mode="In" Type="Int64" />
@@ -3749,43 +3708,50 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_SUBJECTSSelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_SUBJECTSSelectList_Result)" />
           <FunctionImport Name="sprocTBL_USER_SUBJECTSSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_SUBJECTSSelectSingleItem_Result)">
-            <Parameter Name="USERSUBJECTID" Mode="In" Type="Int64" />
+          <Parameter Name="USERSUBJECTID" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="Usp_ALLPaymentDetailinfo" ReturnType="Collection(ajay_dbModel.Usp_ALLPaymentDetailinfo_Result)" />
           <FunctionImport Name="Usp_checkplan" ReturnType="Collection(String)">
-            <Parameter Name="Planmaster" Mode="In" Type="String" />
+          <Parameter Name="Planmaster" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Usp_checkscheme" ReturnType="Collection(String)">
-            <Parameter Name="SchemeName" Mode="In" Type="String" />
+          <Parameter Name="SchemeName" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Usp_checkUsernameExits" ReturnType="Collection(Int32)">
-            <Parameter Name="UserName" Mode="In" Type="String" />
+          <Parameter Name="UserName" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Usp_CheckUserRoles" ReturnType="Collection(Int32)">
-            <Parameter Name="UserId" Mode="In" Type="Int32" />
+          <Parameter Name="UserId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Usp_DisplayAllUser_And_Roles" ReturnType="Collection(ajay_dbModel.Usp_DisplayAllUser_And_Roles_Result)" />
           <FunctionImport Name="Usp_Generatenumber" ReturnType="Collection(ajay_dbModel.Usp_Generatenumber_Result)" />
           <FunctionImport Name="Usp_GenerateRecepit" ReturnType="Collection(ajay_dbModel.Usp_GenerateRecepit_Result)">
-            <Parameter Name="Memberid" Mode="In" Type="Int64" />
+          <Parameter Name="Memberid" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="USP_GET_Attampted_TestDetails" ReturnType="Collection(ajay_dbModel.USP_GET_Attampted_TestDetails_Result)">
+          <Parameter Name="StudentId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="USP_GET_PopularVideos" ReturnType="Collection(ajay_dbModel.USP_GET_PopularVideos_Result)">
-            <Parameter Name="StudentId" Mode="In" Type="Int64" />
+          <Parameter Name="StudentId" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="USP_GET_RecommendedVideos" ReturnType="Collection(ajay_dbModel.USP_GET_RecommendedVideos_Result)">
-            <Parameter Name="StudentId" Mode="In" Type="Int64" />
+          <Parameter Name="StudentId" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="USP_GET_TestDetails" ReturnType="Collection(ajay_dbModel.USP_GET_TestDetails_Result)">
-            <Parameter Name="SubjectId" Mode="In" Type="Int32" />
+          <Parameter Name="StudentId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="USP_GET_TestQuesANSByTestId" ReturnType="Collection(ajay_dbModel.USP_GET_TestQuesANSByTestId_Result)">
+            <Parameter Name="TestId" Mode="In" Type="Int32" />
+            <Parameter Name="StudentId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="USP_GET_TestQuestionByTestId" ReturnType="Collection(ajay_dbModel.USP_GET_TestQuestionByTestId_Result)">
-            <Parameter Name="TestId" Mode="In" Type="Int32" />
+          <Parameter Name="TestId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="USP_GET_VideoDetails" ReturnType="Collection(ajay_dbModel.USP_GET_VideoDetails_Result)">
-            <Parameter Name="VideoId" Mode="In" Type="Int64" />
+          <Parameter Name="VideoId" Mode="In" Type="Int64" />
           </FunctionImport>
-          <FunctionImport Name="USP_GET_VideosBySubject1" ReturnType="Collection(ajay_dbModel.USP_GET_VideosBySubject1_Result)">
-            <Parameter Name="SubjectId" Mode="In" Type="Int32" />
+          <FunctionImport Name="USP_GET_VideosBySubject" ReturnType="Collection(ajay_dbModel.USP_GET_VideosBySubject_Result)">
+          <Parameter Name="SubjectId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Usp_GetAllRenwalrecords" ReturnType="Collection(ajay_dbModel.Usp_GetAllRenwalrecords_Result)" />
           <FunctionImport Name="Usp_GetAllRenwalrecordsFromBetweenDate" ReturnType="Collection(ajay_dbModel.Usp_GetAllRenwalrecordsFromBetweenDate_Result)">
@@ -3799,38 +3765,42 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
             <Parameter Name="SchemeID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Usp_GetDataofMemberbyID" ReturnType="Collection(ajay_dbModel.Usp_GetDataofMemberbyID_Result)">
-            <Parameter Name="MainMemberID" Mode="In" Type="Int64" />
+          <Parameter Name="MainMemberID" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="Usp_getDec" ReturnType="Collection(ajay_dbModel.Usp_getDec_Result)">
-            <Parameter Name="Memberid" Mode="In" Type="Int64" />
+          <Parameter Name="Memberid" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="Usp_GetMonthwisepaymentdetails" ReturnType="Collection(ajay_dbModel.Usp_GetMonthwisepaymentdetails_Result)">
-            <Parameter Name="month" Mode="In" Type="Int64" />
+          <Parameter Name="month" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="Usp_GetPlanByWorkTypeID" ReturnType="Collection(ajay_dbModel.Usp_GetPlanByWorkTypeID_Result)">
-            <Parameter Name="SchemeID" Mode="In" Type="Int32" />
+          <Parameter Name="SchemeID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Usp_getPlanPeriodID" ReturnType="Collection(Int32)">
-            <Parameter Name="PlanID" Mode="In" Type="Int32" />
+          <Parameter Name="PlanID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Usp_getRoleByUserID" ReturnType="Collection(String)">
-            <Parameter Name="UserId" Mode="In" Type="Int32" />
+          <Parameter Name="UserId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Usp_GetRoles" ReturnType="Collection(ajay_dbModel.Usp_GetRoles_Result)" />
           <FunctionImport Name="Usp_GetYearwisepaymentdetails" ReturnType="Collection(ajay_dbModel.Usp_GetYearwisepaymentdetails_Result)">
-            <Parameter Name="year" Mode="In" Type="Int64" />
+          <Parameter Name="year" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="USP_listofMemberName" ReturnType="Collection(ajay_dbModel.USP_listofMemberName_Result)">
-            <Parameter Name="MemberFName" Mode="In" Type="String" />
+          <Parameter Name="MemberFName" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="USP_listofMemberno" ReturnType="Collection(ajay_dbModel.USP_listofMemberno_Result)">
-            <Parameter Name="MemberID" Mode="In" Type="String" />
+          <Parameter Name="MemberID" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Usp_PaymentDetailinfo" ReturnType="Collection(ajay_dbModel.Usp_PaymentDetailinfo_Result)">
-            <Parameter Name="MemberID" Mode="In" Type="Int64" />
+          <Parameter Name="MemberID" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="Usp_PaymentDetailinfo_Name" ReturnType="Collection(ajay_dbModel.Usp_PaymentDetailinfo_Name_Result)">
-            <Parameter Name="MemberFName" Mode="In" Type="String" />
+          <Parameter Name="MemberFName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="USP_ResetPassword" ReturnType="Collection(ajay_dbModel.USP_ResetPassword_Result)">
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="USP_SaveTestAnswers" ReturnType="Collection(ajay_dbModel.USP_SaveTestAnswers_Result)">
             <Parameter Name="TestId" Mode="In" Type="Int32" />
@@ -3849,40 +3819,15 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
             <Parameter Name="QuesAnsXml" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Usp_UserIDbyUserName" ReturnType="Collection(Int32)">
-            <Parameter Name="UserName" Mode="In" Type="String" />
+          <Parameter Name="UserName" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Usp_UserNamebyUserID" ReturnType="Collection(String)">
-            <Parameter Name="UserId" Mode="In" Type="String" />
+          <Parameter Name="UserId" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="USP_Profile" ReturnType="Collection(ajay_dbModel.USP_Profile_Result)">
+            <Parameter Name="UserId" Mode="In" Type="Int64" />
           </FunctionImport>
         </EntityContainer>
-        <ComplexType Name="Register_GetDetails_Result">
-          <Property Type="Int32" Name="Sr_no" Nullable="false" />
-          <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="Password" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="Address" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="City" Nullable="true" MaxLength="50" />
-        </ComplexType>
-        <ComplexType Name="USP_GET_VideosBySubject_Result">
-          <Property Type="Int64" Name="DIGITALDOCID" Nullable="false" />
-          <Property Type="Int32" Name="DIGITALDOCTYPEID" Nullable="true" />
-          <Property Type="String" Name="DOCUMENTNAME" Nullable="true" MaxLength="100" />
-          <Property Type="Int32" Name="SUBJECTID" Nullable="true" />
-          <Property Type="Int64" Name="CREATEDBY" Nullable="true" />
-          <Property Type="DateTime" Name="CREATEDDATE" Nullable="true" Precision="23" />
-          <Property Type="Int64" Name="MODIFIEDBY" Nullable="true" />
-          <Property Type="DateTime" Name="MODIFIEDDATE" Nullable="true" Precision="23" />
-          <Property Type="Boolean" Name="STATUS" Nullable="true" />
-          <Property Type="Boolean" Name="ALLOWANONYMOUS" Nullable="true" />
-          <Property Type="Int32" Name="DOWNLOADCOUNT" Nullable="true" />
-          <Property Type="Int32" Name="VIEWCOUNT" Nullable="true" />
-          <Property Type="String" Name="VideoPath" Nullable="true" MaxLength="1000" />
-          <Property Type="Int32" Name="CourseId" Nullable="true" />
-          <Property Type="String" Name="VideoDesc" Nullable="true" MaxLength="1000" />
-          <Property Type="String" Name="RefDocs" Nullable="true" MaxLength="500" />
-          <Property Type="String" Name="SubjectName" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="CourseName" Nullable="true" MaxLength="100" />
-        </ComplexType>
         <ComplexType Name="GetAllTBL_MASTER_BOARDS_Result">
           <Property Type="Int32" Name="BOARDID" Nullable="false" />
           <Property Type="String" Name="NAME" Nullable="true" MaxLength="100" />
@@ -4388,6 +4333,18 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
           <Property Type="Int64" Name="Recepitno" Nullable="true" />
           <Property Type="DateTime" Name="PaymentTodt" Nullable="true" Precision="23" />
         </ComplexType>
+        <ComplexType Name="USP_GET_Attampted_TestDetails_Result">
+          <Property Type="Int64" Name="TestId" Nullable="false" />
+          <Property Type="String" Name="Title" Nullable="true" MaxLength="100" />
+          <Property Type="DateTime" Name="PublishDate" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="SubjectId" Nullable="true" />
+          <Property Type="String" Name="SubjectName" Nullable="true" MaxLength="100" />
+          <Property Type="Boolean" Name="Status" Nullable="true" />
+          <Property Type="Int32" Name="TestTypeId" Nullable="false" />
+          <Property Type="String" Name="TestTypeName" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="TotalAttamptedQues" Nullable="false" />
+          <Property Type="Decimal" Name="ObtainedPer" Nullable="true" Precision="18" Scale="2" />
+        </ComplexType>
         <ComplexType Name="USP_GET_PopularVideos_Result">
           <Property Type="Int64" Name="DIGITALDOCID" Nullable="false" />
           <Property Type="Int32" Name="DIGITALDOCTYPEID" Nullable="true" />
@@ -4402,6 +4359,7 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
           <Property Type="Int32" Name="DOWNLOADCOUNT" Nullable="true" />
           <Property Type="Int32" Name="VIEWCOUNT" Nullable="true" />
           <Property Type="String" Name="VideoPath" Nullable="true" MaxLength="1039" />
+          <Property Type="String" Name="ThumbnailPath" Nullable="true" MaxLength="2044" />
           <Property Type="Int32" Name="CourseId" Nullable="true" />
           <Property Type="String" Name="SubjectName" Nullable="true" MaxLength="100" />
           <Property Type="String" Name="CourseName" Nullable="true" MaxLength="100" />
@@ -4420,6 +4378,7 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
           <Property Type="Int32" Name="DOWNLOADCOUNT" Nullable="true" />
           <Property Type="Int32" Name="VIEWCOUNT" Nullable="true" />
           <Property Type="String" Name="VideoPath" Nullable="true" MaxLength="1039" />
+          <Property Type="String" Name="ThumbnailPath" Nullable="true" MaxLength="2044" />
           <Property Type="Int32" Name="CourseId" Nullable="true" />
           <Property Type="String" Name="SubjectName" Nullable="true" MaxLength="100" />
           <Property Type="String" Name="CourseName" Nullable="true" MaxLength="100" />
@@ -4436,6 +4395,19 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
           <Property Type="Int32" Name="TestTypeId" Nullable="false" />
           <Property Type="String" Name="TestTypeName" Nullable="true" MaxLength="50" />
           <Property Type="String" Name="TotalTime" Nullable="false" MaxLength="4" />
+        </ComplexType>
+        <ComplexType Name="USP_GET_TestQuesANSByTestId_Result">
+          <Property Type="Int64" Name="QuestionId" Nullable="false" />
+          <Property Type="String" Name="Question" Nullable="false" />
+          <Property Type="Int32" Name="Marks" Nullable="false" />
+          <Property Type="Decimal" Name="NegativeMarks" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Int64" Name="AnswerId" Nullable="false" />
+          <Property Type="String" Name="Answer" Nullable="true" MaxLength="1000" />
+          <Property Type="Int64" Name="TestId" Nullable="false" />
+          <Property Type="String" Name="Title" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="SubjectId" Nullable="true" />
+          <Property Type="Int64" Name="ValidAnswer" Nullable="false" />
+          <Property Type="Int64" Name="AttamptedAns" Nullable="true" />
         </ComplexType>
         <ComplexType Name="USP_GET_TestQuestionByTestId_Result">
           <Property Type="Int64" Name="QuestionId" Nullable="false" />
@@ -4462,11 +4434,12 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
           <Property Type="Int32" Name="DOWNLOADCOUNT" Nullable="true" />
           <Property Type="Int32" Name="VIEWCOUNT" Nullable="true" />
           <Property Type="String" Name="VideoPath" Nullable="true" MaxLength="1039" />
+          <Property Type="String" Name="ThumbnailPath" Nullable="true" MaxLength="2044" />
           <Property Type="Int32" Name="CourseId" Nullable="true" />
           <Property Type="String" Name="VideoDesc" Nullable="true" MaxLength="1000" />
           <Property Type="String" Name="RefDocs" Nullable="true" MaxLength="500" />
         </ComplexType>
-        <ComplexType Name="USP_GET_VideosBySubject1_Result">
+        <ComplexType Name="USP_GET_VideosBySubject_Result">
           <Property Type="Int64" Name="DIGITALDOCID" Nullable="false" />
           <Property Type="Int32" Name="DIGITALDOCTYPEID" Nullable="true" />
           <Property Type="String" Name="DOCUMENTNAME" Nullable="true" MaxLength="100" />
@@ -4483,6 +4456,7 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
           <Property Type="Int32" Name="CourseId" Nullable="true" />
           <Property Type="String" Name="VideoDesc" Nullable="true" MaxLength="1000" />
           <Property Type="String" Name="RefDocs" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="ThumbnailPath" Nullable="true" MaxLength="2000" />
           <Property Type="String" Name="SubjectName" Nullable="true" MaxLength="100" />
           <Property Type="String" Name="CourseName" Nullable="true" MaxLength="100" />
         </ComplexType>
@@ -4628,6 +4602,15 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
           <Property Type="Int32" Name="WorkouttypeID" Nullable="true" />
           <Property Type="Int32" Name="PlantypeID" Nullable="true" />
         </ComplexType>
+        <ComplexType Name="USP_ResetPassword_Result">
+          <Property Type="Int64" Name="UserID" Nullable="false" />
+          <Property Type="String" Name="Email" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Mobile" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="152" />
+          <Property Type="DateTime" Name="Dob" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Gender" Nullable="true" MaxLength="10" />
+        </ComplexType>
         <ComplexType Name="USP_SaveTestAnswers_Result">
           <Property Type="Int32" Name="TotalQues" Nullable="true" />
           <Property Type="Int32" Name="Correct" Nullable="true" />
@@ -4636,24 +4619,20 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
           <Property Type="Int32" Name="TestId" Nullable="true" />
           <Property Type="Int32" Name="StudentId" Nullable="true" />
         </ComplexType>
+        <ComplexType Name="USP_Profile_Result">
+          <Property Type="Int64" Name="USERID" Nullable="false" />
+          <Property Type="String" Name="Email" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Mobile" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="UserType" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="152" />
+          <Property Type="String" Name="Photo" Nullable="false" MaxLength="50" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="ajay_dbModelStoreContainer" CdmEntityContainer="ajay_dbEntities">
-          <EntitySetMapping Name="RegisterUsers">
-            <EntityTypeMapping TypeName="ajay_dbModel.RegisterUser">
-              <MappingFragment StoreEntitySet="RegisterUser">
-                <ScalarProperty Name="Sr_no" ColumnName="Sr_no" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="City" ColumnName="City" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Fiscalyears">
             <EntityTypeMapping TypeName="ajay_dbModel.Fiscalyear">
               <MappingFragment StoreEntitySet="Fiscalyear">
@@ -4821,6 +4800,7 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
                 <ScalarProperty Name="CourseId" ColumnName="CourseId" />
                 <ScalarProperty Name="VideoDesc" ColumnName="VideoDesc" />
                 <ScalarProperty Name="RefDocs" ColumnName="RefDocs" />
+                <ScalarProperty Name="ThumbnailPath" ColumnName="ThumbnailPath" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -5311,43 +5291,6 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
               <ScalarProperty Name="Id" ColumnName="UserId" />
             </EndProperty>
           </AssociationSetMapping>
-          <FunctionImportMapping FunctionImportName="Register_GetDetails" FunctionName="ajay_dbModel.Store.Register_GetDetails">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="ajay_dbModel.Register_GetDetails_Result">
-                <ScalarProperty Name="Sr_no" ColumnName="Sr_no" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="City" ColumnName="City" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="Register_Insert" FunctionName="ajay_dbModel.Store.Register_Insert" />
-          <FunctionImportMapping FunctionImportName="USP_GET_VideosBySubject" FunctionName="ajay_dbModel.Store.USP_GET_VideosBySubject">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="ajay_dbModel.USP_GET_VideosBySubject_Result">
-                <ScalarProperty Name="DIGITALDOCID" ColumnName="DIGITALDOCID" />
-                <ScalarProperty Name="DIGITALDOCTYPEID" ColumnName="DIGITALDOCTYPEID" />
-                <ScalarProperty Name="DOCUMENTNAME" ColumnName="DOCUMENTNAME" />
-                <ScalarProperty Name="SUBJECTID" ColumnName="SUBJECTID" />
-                <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
-                <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
-                <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
-                <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
-                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
-                <ScalarProperty Name="ALLOWANONYMOUS" ColumnName="ALLOWANONYMOUS" />
-                <ScalarProperty Name="DOWNLOADCOUNT" ColumnName="DOWNLOADCOUNT" />
-                <ScalarProperty Name="VIEWCOUNT" ColumnName="VIEWCOUNT" />
-                <ScalarProperty Name="VideoPath" ColumnName="VideoPath" />
-                <ScalarProperty Name="CourseId" ColumnName="CourseId" />
-                <ScalarProperty Name="VideoDesc" ColumnName="VideoDesc" />
-                <ScalarProperty Name="RefDocs" ColumnName="RefDocs" />
-                <ScalarProperty Name="SubjectName" ColumnName="SubjectName" />
-                <ScalarProperty Name="CourseName" ColumnName="CourseName" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="DeleteTBL_MASTER_BOARDS" FunctionName="ajay_dbModel.Store.DeleteTBL_MASTER_BOARDS" />
           <FunctionImportMapping FunctionImportName="DeleteTBL_MASTER_CITY" FunctionName="ajay_dbModel.Store.DeleteTBL_MASTER_CITY" />
           <FunctionImportMapping FunctionImportName="DeleteTBL_MASTER_CLASS" FunctionName="ajay_dbModel.Store.DeleteTBL_MASTER_CLASS" />
@@ -6150,6 +6093,22 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_GET_Attampted_TestDetails" FunctionName="ajay_dbModel.Store.USP_GET_Attampted_TestDetails">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ajay_dbModel.USP_GET_Attampted_TestDetails_Result">
+                <ScalarProperty Name="TestId" ColumnName="TestId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="PublishDate" ColumnName="PublishDate" />
+                <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
+                <ScalarProperty Name="SubjectName" ColumnName="SubjectName" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="TestTypeId" ColumnName="TestTypeId" />
+                <ScalarProperty Name="TestTypeName" ColumnName="TestTypeName" />
+                <ScalarProperty Name="TotalAttamptedQues" ColumnName="TotalAttamptedQues" />
+                <ScalarProperty Name="ObtainedPer" ColumnName="ObtainedPer" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="USP_GET_PopularVideos" FunctionName="ajay_dbModel.Store.USP_GET_PopularVideos">
             <ResultMapping>
               <ComplexTypeMapping TypeName="ajay_dbModel.USP_GET_PopularVideos_Result">
@@ -6166,6 +6125,7 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
                 <ScalarProperty Name="DOWNLOADCOUNT" ColumnName="DOWNLOADCOUNT" />
                 <ScalarProperty Name="VIEWCOUNT" ColumnName="VIEWCOUNT" />
                 <ScalarProperty Name="VideoPath" ColumnName="VideoPath" />
+                <ScalarProperty Name="ThumbnailPath" ColumnName="ThumbnailPath" />
                 <ScalarProperty Name="CourseId" ColumnName="CourseId" />
                 <ScalarProperty Name="SubjectName" ColumnName="SubjectName" />
                 <ScalarProperty Name="CourseName" ColumnName="CourseName" />
@@ -6188,6 +6148,7 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
                 <ScalarProperty Name="DOWNLOADCOUNT" ColumnName="DOWNLOADCOUNT" />
                 <ScalarProperty Name="VIEWCOUNT" ColumnName="VIEWCOUNT" />
                 <ScalarProperty Name="VideoPath" ColumnName="VideoPath" />
+                <ScalarProperty Name="ThumbnailPath" ColumnName="ThumbnailPath" />
                 <ScalarProperty Name="CourseId" ColumnName="CourseId" />
                 <ScalarProperty Name="SubjectName" ColumnName="SubjectName" />
                 <ScalarProperty Name="CourseName" ColumnName="CourseName" />
@@ -6208,6 +6169,23 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
                 <ScalarProperty Name="TestTypeId" ColumnName="TestTypeId" />
                 <ScalarProperty Name="TestTypeName" ColumnName="TestTypeName" />
                 <ScalarProperty Name="TotalTime" ColumnName="TotalTime" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_GET_TestQuesANSByTestId" FunctionName="ajay_dbModel.Store.USP_GET_TestQuesANSByTestId">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ajay_dbModel.USP_GET_TestQuesANSByTestId_Result">
+                <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
+                <ScalarProperty Name="Question" ColumnName="Question" />
+                <ScalarProperty Name="Marks" ColumnName="Marks" />
+                <ScalarProperty Name="NegativeMarks" ColumnName="NegativeMarks" />
+                <ScalarProperty Name="AnswerId" ColumnName="AnswerId" />
+                <ScalarProperty Name="Answer" ColumnName="Answer" />
+                <ScalarProperty Name="TestId" ColumnName="TestId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
+                <ScalarProperty Name="ValidAnswer" ColumnName="ValidAnswer" />
+                <ScalarProperty Name="AttamptedAns" ColumnName="AttamptedAns" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
@@ -6242,15 +6220,16 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
                 <ScalarProperty Name="DOWNLOADCOUNT" ColumnName="DOWNLOADCOUNT" />
                 <ScalarProperty Name="VIEWCOUNT" ColumnName="VIEWCOUNT" />
                 <ScalarProperty Name="VideoPath" ColumnName="VideoPath" />
+                <ScalarProperty Name="ThumbnailPath" ColumnName="ThumbnailPath" />
                 <ScalarProperty Name="CourseId" ColumnName="CourseId" />
                 <ScalarProperty Name="VideoDesc" ColumnName="VideoDesc" />
                 <ScalarProperty Name="RefDocs" ColumnName="RefDocs" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="USP_GET_VideosBySubject1" FunctionName="ajay_dbModel.Store.USP_GET_VideosBySubject1">
+          <FunctionImportMapping FunctionImportName="USP_GET_VideosBySubject" FunctionName="ajay_dbModel.Store.USP_GET_VideosBySubject">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="ajay_dbModel.USP_GET_VideosBySubject1_Result">
+              <ComplexTypeMapping TypeName="ajay_dbModel.USP_GET_VideosBySubject_Result">
                 <ScalarProperty Name="DIGITALDOCID" ColumnName="DIGITALDOCID" />
                 <ScalarProperty Name="DIGITALDOCTYPEID" ColumnName="DIGITALDOCTYPEID" />
                 <ScalarProperty Name="DOCUMENTNAME" ColumnName="DOCUMENTNAME" />
@@ -6267,6 +6246,7 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
                 <ScalarProperty Name="CourseId" ColumnName="CourseId" />
                 <ScalarProperty Name="VideoDesc" ColumnName="VideoDesc" />
                 <ScalarProperty Name="RefDocs" ColumnName="RefDocs" />
+                <ScalarProperty Name="ThumbnailPath" ColumnName="ThumbnailPath" />
                 <ScalarProperty Name="SubjectName" ColumnName="SubjectName" />
                 <ScalarProperty Name="CourseName" ColumnName="CourseName" />
               </ComplexTypeMapping>
@@ -6469,6 +6449,19 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_ResetPassword" FunctionName="ajay_dbModel.Store.USP_ResetPassword">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ajay_dbModel.USP_ResetPassword_Result">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Dob" ColumnName="Dob" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="USP_SaveTestAnswers" FunctionName="ajay_dbModel.Store.USP_SaveTestAnswers">
             <ResultMapping>
               <ComplexTypeMapping TypeName="ajay_dbModel.USP_SaveTestAnswers_Result">
@@ -6484,6 +6477,18 @@ warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key 
           <FunctionImportMapping FunctionImportName="USP_TestAnswers_new" FunctionName="ajay_dbModel.Store.USP_TestAnswers_new" />
           <FunctionImportMapping FunctionImportName="Usp_UserIDbyUserName" FunctionName="ajay_dbModel.Store.Usp_UserIDbyUserName" />
           <FunctionImportMapping FunctionImportName="Usp_UserNamebyUserID" FunctionName="ajay_dbModel.Store.Usp_UserNamebyUserID" />
+          <FunctionImportMapping FunctionImportName="USP_Profile" FunctionName="ajay_dbModel.Store.USP_Profile">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ajay_dbModel.USP_Profile_Result">
+                <ScalarProperty Name="USERID" ColumnName="USERID" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="UserType" ColumnName="UserType" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

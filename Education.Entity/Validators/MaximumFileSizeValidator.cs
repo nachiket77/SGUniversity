@@ -8,14 +8,14 @@ namespace Education.Entity.Validators
     public class MaximumFileSizeValidator
             : ValidationAttribute, IClientValidatable
     {
-        private string _errorMessage = "{0} can not be larger than {1} GB";
+        private string _errorMessage = "{0} can not be larger than {1} MB";
 
-        /// <summary>
-        /// Maximum file size in MB
-        /// </summary>
+        /// <summary> 
+        /// Maximum file size in MB 
+        /// </summary> 
         public double MaximumFileSize { get; private set; }
 
-        /// <param name="maximumFileSize">Maximum file size in MB</param>
+        /// <param name="maximumFileSize">Maximum file size in MB</param> 
         public MaximumFileSizeValidator(
             double maximumFileSize)
         {

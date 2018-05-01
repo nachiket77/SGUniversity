@@ -106,6 +106,9 @@
       <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="NReco.VideoConverter">
+      <HintPath>..\packages\NReco.VideoConverter.1.1.2\lib\net20\NReco.VideoConverter.dll</HintPath>
+    </Reference>
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\EducationAPI\TeacherFairAPI\TeacherFairAPI\bin\Owin.dll</HintPath>
@@ -309,6 +312,7 @@
     <Content Include="bootstrap-3.3.6-dist\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="bootstrap-3.3.6-dist\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Properties\PublishProfiles\edu.pubxml" />
+    <Content Include="scripts\custom-validators.js" />
     <Content Include="scripts\jquery-1.11.3.min.js" />
     <None Include="scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="scripts\jquery-1.7.1.js" />
@@ -336,7 +340,6 @@
     <Compile Include="App_Start\Iteacher.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
-    <Compile Include="Controllers\CourseSubjectMappingController.cs" />
     <Compile Include="Controllers\ListController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MainController.cs" />
@@ -348,6 +351,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\VideoRead.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -381,7 +385,6 @@
     <Content Include="Views\List\ListStudent.cshtml" />
     <Content Include="Views\List\UpdateStudentDetails.cshtml" />
     <Content Include="Views\Teacher\UpdateTeacherDetails.cshtml" />
-    <Content Include="Views\CourseSubjectMapping\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -392,7 +395,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\ReferenceDocs\" />
-    <Folder Include="Models\" />
+    <Folder Include="Content\Thumbnails\" />
     <Folder Include="TestDetail\" />
   </ItemGroup>
   <ItemGroup>

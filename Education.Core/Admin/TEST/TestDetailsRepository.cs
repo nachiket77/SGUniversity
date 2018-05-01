@@ -7,7 +7,6 @@ using Education.Entity.Admin;
 using Education.DB;
 using System.Data;
 using Education.Entity.Admin.Test;
-using System.Web;
 
 namespace Education.Core.Admin
 {
@@ -32,7 +31,7 @@ namespace Education.Core.Admin
             dbEntities.SaveChanges();
             allTestDetails.TestDetails.TESTID = objtestdetails.TESTID;
 
-           
+
 
 
 
@@ -50,24 +49,15 @@ namespace Education.Core.Admin
 
                     TBL_TEST_QUESTIONS objquestiondetails = new TBL_TEST_QUESTIONS();
 
-                    if (questions!="")
-                    {
-                        objquestiondetails.DESCRIPTION = questions;
-                        objquestiondetails.ISMULTISELECT = true;
-                        objquestiondetails.TESTID = allTestDetails.TestDetails.TESTID;
-                        objquestiondetails.QUESTIONTYPEID = allTestDetails.QuestionTypeMaster.QUESTIONTYPEID;
-                        objquestiondetails.MARKS = Marks;
-                        dbEntities.TBL_TEST_QUESTIONS.Add(objquestiondetails);
-                        dbEntities.SaveChanges();
-                        allTestDetails.TestDetails.QUESTIONID = objquestiondetails.QUESTIONID;
-                        HttpContext.Current.Session["SessionQuestionID"] = allTestDetails.TestDetails.QUESTIONID;
+                    objquestiondetails.DESCRIPTION = questions;
+                    objquestiondetails.ISMULTISELECT = true;
+                    objquestiondetails.TESTID = allTestDetails.TestDetails.TESTID;
+                    objquestiondetails.QUESTIONTYPEID = allTestDetails.QuestionTypeMaster.QUESTIONTYPEID;
+                    objquestiondetails.MARKS = Marks;
+                    dbEntities.TBL_TEST_QUESTIONS.Add(objquestiondetails);
+                    dbEntities.SaveChanges();
+                    allTestDetails.TestDetails.QUESTIONID = objquestiondetails.QUESTIONID;
 
-
-                    }
-                    if (questions == "")
-                    {
-                         allTestDetails.TestDetails.QUESTIONID = long.Parse(HttpContext.Current.Session["SessionQuestionID"].ToString());
-                    }
 
                     TBL_TEST_ANSWERS objtestanswersdetail = new TBL_TEST_ANSWERS();
                     objtestanswersdetail.DESCRIPTION = answers;
@@ -75,7 +65,7 @@ namespace Education.Core.Admin
                     objtestanswersdetail.TESTID = allTestDetails.TestDetails.TESTID;
                     objtestanswersdetail.ISVALID = Convert.ToBoolean(Isvalid);
 
-                   
+
 
                     //dbEntities.TBL_TEST_TESTDETAIL.Add(objtestdetails);
                     //dbEntities.TBL_TEST_QUESTIONS.Add(objquestiondetails);
@@ -168,15 +158,6 @@ namespace Education.Core.Admin
         // Added by Pramod for API
         public List<TestTypeModel> GetTestDetailsForAPI(Nullable<int> StudentId)
         {
-            //var testDetails = (from a in dbEntities.TBL_MASTER_SUBJECT
-            //                   select new
-            //                   {
-            //                       a.SUBJECTID,
-            //                       a.NAME,
-            //                       lstTestDetails = dbEntities.USP_GET_TestDetails(a.SUBJECTID)
-            //                   }).ToList();
-
-            //List<USP_GET_TestDetails_Result> testDetails =dbEntities.USP_GET_TestDetails(1).ToList();
             List<TestSchedule> testSchedule = new List<TestSchedule>();
             var testDetails = (from a in dbEntities.USP_GET_TestDetails(StudentId)
                                select new TestScheduleDetails
@@ -196,13 +177,59 @@ namespace Education.Core.Admin
 
                                }).ToList();
 
-            testSchedule = (from a in testDetails
+            var ts = (from a in testDetails
+                      group a by a.SubjectId into temp
+                      select new
+                      {
+                          subjectId = temp.Key,
+                          subjectName = temp.Max(g => g.SubjectName)
+                      }).ToList();
+
+
+            testSchedule = (from a in ts
                             select new TestSchedule
                             {
-                                SubjectId = a.SubjectId,
-                                SubjectName = a.SubjectName,
-                                TDetails = testDetails.Where(t => t.SubjectId == a.SubjectId).ToList()
+                                SubjectId = a.subjectId,
+                                SubjectName = a.subjectName,
+                                TDetails = testDetails.Where(t => t.SubjectId == a.subjectId).ToList()
                             }).ToList();
+
+            // For Attampted Questions
+
+            var attTestDetails = (from a in dbEntities.USP_GET_Attampted_TestDetails(StudentId)
+                                  select new TestAttamptedDetails
+                                  {
+                                      PublishDate = a.PublishDate,
+                                      Status = a.Status,
+                                      SubjectId = a.SubjectId,
+                                      SubjectName = a.SubjectName,
+                                      TestId = a.TestId,
+                                      TestTypeId = a.TestTypeId,
+                                      TestTypeName = a.TestTypeName,
+                                      Title = a.Title,
+                                      ObtainedPer = a.ObtainedPer,
+                                      TotalAttamptedQues = a.TotalAttamptedQues
+
+                                  }).ToList();
+
+            var attTs = (from a in attTestDetails
+                      group a by a.SubjectId into temp
+                      select new
+                      {
+                          subjectId = temp.Key,
+                          subjectName = temp.Max(g => g.SubjectName)
+                      }).ToList();
+
+
+            List<TestAttampted> testAttampted = new List<TestAttampted>();
+            testAttampted = (from a in attTs
+                             select new TestAttampted
+                             {
+                                 SubjectId = a.subjectId,
+                                 SubjectName = a.subjectName,
+                                 TDetails = attTestDetails.Where(t => t.SubjectId == a.subjectId).ToList()
+                             }).ToList();
+
             List<TestTypeModel> lstTestTypeModel = new List<TestTypeModel>();
             TestTypeModel model = new TestTypeModel();
             model.TestType = "Upcoming";
@@ -211,7 +238,7 @@ namespace Education.Core.Admin
 
             model = new TestTypeModel();
             model.TestType = "Attempted";
-            model.Data = null;
+            model.Data = testAttampted;
             lstTestTypeModel.Add(model);
 
             return lstTestTypeModel;
@@ -269,6 +296,48 @@ namespace Education.Core.Admin
                                            Unanswered = a.Unanswered
                                        }).FirstOrDefault();
             return model;
+
+        }
+
+        public List<TestQuestionAns> GetTestQuestionAnsForAPI(int testId, int studentId)
+        {
+            List<TestQuestionAns> testQuestionAns = new List<TestQuestionAns>();
+            var testQuestionAndDetails = (from a in dbEntities.USP_GET_TestQuesANSByTestId(testId, studentId)
+                                          select new TestQuestionAnsDetails
+                                          {
+                                              TestId = a.TestId,
+                                              Title = a.Title,
+                                              SubjectId = a.SubjectId,
+                                              QuestionId = a.QuestionId,
+                                              Question = a.Question,
+                                              AnswerId = a.AnswerId,
+                                              Answer = a.Answer,
+                                              Marks = a.Marks,
+                                              NegativeMarks = a.NegativeMarks,
+                                              ValidAnswer = a.ValidAnswer,
+                                              AttamptedAns = a.AttamptedAns
+                                          }).ToList();
+
+            testQuestionAns = (from a in testQuestionAndDetails
+                               group a by a.QuestionId into temp
+                               select new TestQuestionAns
+                               {
+                                   TestId = temp.Max(g => g.TestId),
+                                   Title = temp.Max(g => g.Title),
+                                   SubjectId = temp.Max(g => g.SubjectId),
+                                   Marks = temp.Max(g => g.Marks),
+                                   NegativeMarks = temp.Max(g => g.NegativeMarks),
+                                   QuestionId = temp.Key,
+                                   Question = temp.Max(g => g.Question),
+                                   TAnswer = (from t in testQuestionAndDetails where (t.QuestionId == temp.Key) select new TestAnswer { Answer = t.Answer, AnswerId = t.AnswerId }).ToList(),
+                                   ValidAnswer = temp.Max(g => g.ValidAnswer),
+                                   AttamptedAns = temp.Max(g => g.AttamptedAns)
+
+
+                               }).ToList();
+
+            return testQuestionAns;
+
 
         }
     }

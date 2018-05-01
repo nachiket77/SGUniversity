@@ -45,7 +45,7 @@ namespace Education.Entity.Students
         public string NATIONALITY { get; set; }
         [Display(Name = "Mobile Number:")]
         [Required(ErrorMessage = "Mobile Number is required.")]
-        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Invalid Mobile Number.")]
+        [RegularExpression(@"^([0-9]{10})$", ErrorMessage = "Invalid Mobile Number.")]
         public string MOBILENO { get; set; }
         public long CREATEDBY { get; set; }
         public Education.Entity.Master.UserLoginStatus LoginStatus { get; set; }

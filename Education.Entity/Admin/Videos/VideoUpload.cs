@@ -41,12 +41,12 @@ namespace Education.Entity.Admin
 
         public string VideoDesc { get; set; }
 
-        [MaximumFileSizeValidator(2.0)]
+        [MaximumFileSizeValidator(1.0)]
         [RegularExpression(@"([a-zA-Z0-9\s_\\.\-:])+(.doc|.docs|.pdf|.txt)$", ErrorMessage = "Please select valid file")]
         public HttpPostedFileBase RefDocument { get; set; }
 
         public string RefDocumentPath { get; set; }
-
+        public string ThumbnailPath { get; set; }
     }
 
     public class CourseMaster
@@ -135,6 +135,7 @@ namespace Education.Entity.Admin
         public Nullable<int> CourseId { get; set; }
         public string VideoDesc { get; set; }
         public string RefDocs { get; set; }
+        public string ThumbnailPath { get; set; }
     }
 
     public class Video

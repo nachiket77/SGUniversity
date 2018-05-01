@@ -1,0 +1,8 @@
+
+*.dll
+*.pdb
+*.xml
+*.csproj
+Debug/
+Release/
+obj/

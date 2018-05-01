@@ -26,6 +26,7 @@ namespace Education.DB
         public Nullable<int> DOWNLOADCOUNT { get; set; }
         public Nullable<int> VIEWCOUNT { get; set; }
         public string VideoPath { get; set; }
+        public string ThumbnailPath { get; set; }
         public Nullable<int> CourseId { get; set; }
         public string SubjectName { get; set; }
         public string CourseName { get; set; }

@@ -7,7 +7,6 @@ using Education.Core.Admin.Master;
 using Education.Core.Teacher;
 using Education.Core.Admin;
 using Education.Core.CountryStateCity;
-using Education.Core.SubjectCourseMapping;
 
 namespace Education.WebApp
 {
@@ -41,9 +40,6 @@ namespace Education.WebApp
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
 
             container.RegisterType<ICountryStateCityReposetory, CountryStateCityReposetory>();
-            DependencyResolver.SetResolver(new UnityDependencyResolver(container));
-
-            container.RegisterType<ISubjectCourseMapping, SubjectCourseMapping>();
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }
 

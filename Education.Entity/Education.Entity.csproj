@@ -42,10 +42,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\EducationApp\EducationApp\EducationApp\Education.WebApp\bin\System.Web.Mvc.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.Webpages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Education.WebApp\bin\System.Web.Webpages.dll</HintPath>
-    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -81,8 +78,6 @@
     <Compile Include="Students\Documents.cs" />
     <Compile Include="Students\InstitutionDetail.cs" />
     <Compile Include="Students\StudentDetails.cs" />
-    <Compile Include="SubjectCourseMapping\AllSubjectCourseMappingDetails.cs" />
-    <Compile Include="SubjectCourseMapping\SubjectCourseMappingDetails.cs" />
     <Compile Include="Teachers\AllTeacherDetails.cs" />
     <Compile Include="Teachers\TeacherDetails.cs" />
     <Compile Include="UserType.cs" />

@@ -4,37 +4,36 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="fa321e3509eb4faab74506b5354e3098" Name="Diagram1">
-        <EntityTypeShape EntityType="ajay_dbModel.RegisterUser" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ajay_dbModel.Fiscalyear" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ajay_dbModel.LogDetail" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ajay_dbModel.MemberRegistration" Width="1.5" PointX="4.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ajay_dbModel.PaymentDetail" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ajay_dbModel.PlanMaster" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ajay_dbModel.ReceiptDetail" Width="1.5" PointX="8.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ajay_dbModel.SchemeMaster" Width="1.5" PointX="8.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ajay_dbModel.sysdiagram" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ajay_dbModel.TBL_COURSE_SUBJECT_MAPPING_DETAILS" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ajay_dbModel.TBL_GN_ANNOUNCEMENT" Width="1.5" PointX="10.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ajay_dbModel.TBL_GN_DIGITALDOC_DETAILS" Width="1.5" PointX="11.25" PointY="13.75" IsExpanded="true" />
+      <Diagram DiagramId="ac0285fd91bb405ebabcd2afcaa2fa8c" Name="Diagram1">
+        <EntityTypeShape EntityType="ajay_dbModel.Fiscalyear" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ajay_dbModel.LogDetail" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ajay_dbModel.MemberRegistration" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ajay_dbModel.PaymentDetail" Width="1.5" PointX="4.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ajay_dbModel.PlanMaster" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ajay_dbModel.ReceiptDetail" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ajay_dbModel.SchemeMaster" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ajay_dbModel.sysdiagram" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ajay_dbModel.TBL_COURSE_SUBJECT_MAPPING_DETAILS" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ajay_dbModel.TBL_GN_ANNOUNCEMENT" Width="1.5" PointX="8.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ajay_dbModel.TBL_GN_DIGITALDOC_DETAILS" Width="1.5" PointX="11.25" PointY="13.625" IsExpanded="true" />
         <EntityTypeShape EntityType="ajay_dbModel.TBL_GN_DIGITALDOC_VIEWDETAILS" Width="1.5" PointX="13.5" PointY="14.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ajay_dbModel.TBL_MASTER_BOARDS" Width="1.5" PointX="6" PointY="13" IsExpanded="true" />
         <EntityTypeShape EntityType="ajay_dbModel.TBL_MASTER_CITY" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="ajay_dbModel.TBL_MASTER_CLASS" Width="1.5" PointX="6" PointY="37.375" IsExpanded="true" />
         <EntityTypeShape EntityType="ajay_dbModel.TBL_MASTER_COUNTRY" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="ajay_dbModel.TBL_MASTER_COURSE" Width="1.5" PointX="3" PointY="19.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ajay_dbModel.TBL_MASTER_DIGITALDOC" Width="1.5" PointX="10.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ajay_dbModel.TBL_MASTER_DIGITALDOC" Width="1.5" PointX="9.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ajay_dbModel.TBL_MASTER_DOCUMENTTYPE" Width="1.5" PointX="6" PointY="16.125" IsExpanded="true" />
         <EntityTypeShape EntityType="ajay_dbModel.TBL_MASTER_STATE" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
         <EntityTypeShape EntityType="ajay_dbModel.TBL_MASTER_STATUS" Width="1.5" PointX="0.75" PointY="21.125" IsExpanded="true" />
         <EntityTypeShape EntityType="ajay_dbModel.TBL_MASTER_SUBJECT" Width="1.5" PointX="9" PointY="16" IsExpanded="true" />
-        <EntityTypeShape EntityType="ajay_dbModel.TBL_MASTER_TEACHER" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ajay_dbModel.TBL_MASTER_TEST_TYPE" Width="1.5" PointX="10.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ajay_dbModel.TBL_MASTER_TEACHER" Width="1.5" PointX="10.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ajay_dbModel.TBL_MASTER_TEST_TYPE" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ajay_dbModel.TBL_MASTER_TESTQUESTIONTYPE" Width="1.5" PointX="6" PointY="53.125" IsExpanded="true" />
         <EntityTypeShape EntityType="ajay_dbModel.TBL_MASTER_USERTYPE" Width="1.5" PointX="0.75" PointY="24.125" IsExpanded="true" />
         <EntityTypeShape EntityType="ajay_dbModel.TBL_STUDENT_MASTER_MAPPING" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ajay_dbModel.TBL_TEACHER_COURSE_MAPPING_DETAILS" Width="1.5" PointX="2.75" PointY="12.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ajay_dbModel.TBL_TEACHER_SUBJECT_MAPPING_DETAILS" Width="1.5" PointX="12.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ajay_dbModel.TBL_TEACHER_COURSE_MAPPING_DETAILS" Width="1.5" PointX="11.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ajay_dbModel.TBL_TEACHER_SUBJECT_MAPPING_DETAILS" Width="1.5" PointX="2.75" PointY="12.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ajay_dbModel.TBL_TEST_ANSWERS" Width="1.5" PointX="8.25" PointY="32.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ajay_dbModel.TBL_TEST_ATAMPT" Width="1.5" PointX="8.25" PointY="23.25" IsExpanded="true" />
         <EntityTypeShape EntityType="ajay_dbModel.TBL_TEST_ATAMPT_QUESTION_ANSWER" Width="1.5" PointX="11.25" PointY="32.5" IsExpanded="true" />
@@ -42,7 +41,7 @@
         <EntityTypeShape EntityType="ajay_dbModel.TBL_TEST_TESTDETAIL" Width="1.5" PointX="6" PointY="31.625" IsExpanded="true" />
         <EntityTypeShape EntityType="ajay_dbModel.TBL_USER_ADDRESS_DETAILS" Width="1.5" PointX="5.25" PointY="18.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ajay_dbModel.TBL_USER_COURSE_DETAILS" Width="1.5" PointX="5.25" PointY="23.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="ajay_dbModel.TBL_USER_COURSE_MAPPING_DETAILS" Width="1.5" PointX="12.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ajay_dbModel.TBL_USER_COURSE_MAPPING_DETAILS" Width="1.5" PointX="12.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ajay_dbModel.TBL_USER_DETAILS" Width="1.5" PointX="5.25" PointY="27.25" IsExpanded="true" />
         <EntityTypeShape EntityType="ajay_dbModel.TBL_USER_DOCUMENTS_DETAILS" Width="1.5" PointX="8.25" PointY="19.375" IsExpanded="true" />
         <EntityTypeShape EntityType="ajay_dbModel.TBL_USER_INSTITUTION_DETAILS" Width="1.5" PointX="8.25" PointY="28.125" IsExpanded="true" />
@@ -53,8 +52,8 @@
         <EntityTypeShape EntityType="ajay_dbModel.TBL_USER_ROLE" Width="1.5" PointX="11.25" PointY="23.625" IsExpanded="true" />
         <EntityTypeShape EntityType="ajay_dbModel.TBL_USER_SUBJECTS" Width="1.5" PointX="11.25" PointY="19.625" IsExpanded="true" />
         <EntityTypeShape EntityType="ajay_dbModel.User" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ajay_dbModel.webpages_Membership" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ajay_dbModel.webpages_OAuthMembership" Width="1.5" PointX="13.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ajay_dbModel.webpages_Membership" Width="1.5" PointX="13.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ajay_dbModel.webpages_OAuthMembership" Width="1.5" PointX="12.75" PointY="9.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ajay_dbModel.webpages_Roles" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
         <AssociationConnector Association="ajay_dbModel.FK_TBL_GN_DIGITALDOC_DETAILS_TBL_MASTER_SUBJECT" ManuallyRouted="false" />
         <AssociationConnector Association="ajay_dbModel.FK_TBL_GN_DIGITALDOC_VIEWDETAILS_TBL_GN_DIGITALDOC_DETAILS" ManuallyRouted="false" />

@@ -1,16 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="ajay_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="RegisterUser">
-    <Key>
-      <PropertyRef Name="Sr_no" />
-    </Key>
-    <Property Name="Sr_no" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-  </EntityType>
   <EntityType Name="Fiscalyear">
     <Key>
       <PropertyRef Name="Fid" />
@@ -169,6 +158,7 @@
     <Property Name="CourseId" Type="Int32" />
     <Property Name="VideoDesc" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
     <Property Name="RefDocs" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ThumbnailPath" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="TBL_MASTER_SUBJECT" Relationship="Self.FK_TBL_GN_DIGITALDOC_DETAILS_TBL_MASTER_SUBJECT" FromRole="TBL_GN_DIGITALDOC_DETAILS" ToRole="TBL_MASTER_SUBJECT" />
     <NavigationProperty Name="TBL_GN_DIGITALDOC_VIEWDETAILS" Relationship="Self.FK_TBL_GN_DIGITALDOC_VIEWDETAILS_TBL_GN_DIGITALDOC_DETAILS" FromRole="TBL_GN_DIGITALDOC_DETAILS" ToRole="TBL_GN_DIGITALDOC_VIEWDETAILS" />
   </EntityType>
@@ -1052,7 +1042,6 @@
     <End Role="Users" Type="Self.User" Multiplicity="*" />
   </Association>
   <EntityContainer Name="ajay_dbEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="RegisterUsers" EntityType="Self.RegisterUser" />
     <EntitySet Name="Fiscalyears" EntityType="Self.Fiscalyear" />
     <EntitySet Name="LogDetails" EntityType="Self.LogDetail" />
     <EntitySet Name="MemberRegistrations" EntityType="Self.MemberRegistration" />
@@ -1231,17 +1220,6 @@
       <End Role="webpages_Roles" EntitySet="webpages_Roles" />
       <End Role="Users" EntitySet="Users" />
     </AssociationSet>
-    <FunctionImport Name="Register_GetDetails" ReturnType="Collection(ajay_dbModel.Register_GetDetails_Result)" />
-    <FunctionImport Name="Register_Insert">
-      <Parameter Name="Email" Mode="In" Type="String" />
-      <Parameter Name="Password" Mode="In" Type="String" />
-      <Parameter Name="Name" Mode="In" Type="String" />
-      <Parameter Name="Address" Mode="In" Type="String" />
-      <Parameter Name="City" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="USP_GET_VideosBySubject" ReturnType="Collection(ajay_dbModel.USP_GET_VideosBySubject_Result)">
-      <Parameter Name="SubjectId" Mode="In" Type="Int32" />
-    </FunctionImport>
     <FunctionImport Name="DeleteTBL_MASTER_BOARDS" />
     <FunctionImport Name="DeleteTBL_MASTER_CITY">
       <Parameter Name="NAME" Mode="In" Type="String" />
@@ -1845,6 +1823,9 @@
     <FunctionImport Name="Usp_GenerateRecepit" ReturnType="Collection(ajay_dbModel.Usp_GenerateRecepit_Result)">
       <Parameter Name="Memberid" Mode="In" Type="Int64" />
     </FunctionImport>
+    <FunctionImport Name="USP_GET_Attampted_TestDetails" ReturnType="Collection(ajay_dbModel.USP_GET_Attampted_TestDetails_Result)">
+      <Parameter Name="StudentId" Mode="In" Type="Int32" />
+    </FunctionImport>
     <FunctionImport Name="USP_GET_PopularVideos" ReturnType="Collection(ajay_dbModel.USP_GET_PopularVideos_Result)">
       <Parameter Name="StudentId" Mode="In" Type="Int64" />
     </FunctionImport>
@@ -1852,7 +1833,11 @@
       <Parameter Name="StudentId" Mode="In" Type="Int64" />
     </FunctionImport>
     <FunctionImport Name="USP_GET_TestDetails" ReturnType="Collection(ajay_dbModel.USP_GET_TestDetails_Result)">
-      <Parameter Name="SubjectId" Mode="In" Type="Int32" />
+      <Parameter Name="StudentId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="USP_GET_TestQuesANSByTestId" ReturnType="Collection(ajay_dbModel.USP_GET_TestQuesANSByTestId_Result)">
+      <Parameter Name="TestId" Mode="In" Type="Int32" />
+      <Parameter Name="StudentId" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="USP_GET_TestQuestionByTestId" ReturnType="Collection(ajay_dbModel.USP_GET_TestQuestionByTestId_Result)">
       <Parameter Name="TestId" Mode="In" Type="Int32" />
@@ -1860,7 +1845,7 @@
     <FunctionImport Name="USP_GET_VideoDetails" ReturnType="Collection(ajay_dbModel.USP_GET_VideoDetails_Result)">
       <Parameter Name="VideoId" Mode="In" Type="Int64" />
     </FunctionImport>
-    <FunctionImport Name="USP_GET_VideosBySubject1" ReturnType="Collection(ajay_dbModel.USP_GET_VideosBySubject1_Result)">
+    <FunctionImport Name="USP_GET_VideosBySubject" ReturnType="Collection(ajay_dbModel.USP_GET_VideosBySubject_Result)">
       <Parameter Name="SubjectId" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="Usp_GetAllRenwalrecords" ReturnType="Collection(ajay_dbModel.Usp_GetAllRenwalrecords_Result)" />
@@ -1908,6 +1893,10 @@
     <FunctionImport Name="Usp_PaymentDetailinfo_Name" ReturnType="Collection(ajay_dbModel.Usp_PaymentDetailinfo_Name_Result)">
       <Parameter Name="MemberFName" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="USP_ResetPassword" ReturnType="Collection(ajay_dbModel.USP_ResetPassword_Result)">
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+    </FunctionImport>
     <FunctionImport Name="USP_SaveTestAnswers" ReturnType="Collection(ajay_dbModel.USP_SaveTestAnswers_Result)">
       <Parameter Name="TestId" Mode="In" Type="Int32" />
       <Parameter Name="SubjectId" Mode="In" Type="Int32" />
@@ -1930,35 +1919,10 @@
     <FunctionImport Name="Usp_UserNamebyUserID" ReturnType="Collection(String)">
       <Parameter Name="UserId" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="USP_Profile" ReturnType="Collection(ajay_dbModel.USP_Profile_Result)">
+      <Parameter Name="UserId" Mode="In" Type="Int64" />
+    </FunctionImport>
   </EntityContainer>
-  <ComplexType Name="Register_GetDetails_Result">
-    <Property Type="Int32" Name="Sr_no" Nullable="false" />
-    <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
-    <Property Type="String" Name="Password" Nullable="true" MaxLength="50" />
-    <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
-    <Property Type="String" Name="Address" Nullable="true" MaxLength="50" />
-    <Property Type="String" Name="City" Nullable="true" MaxLength="50" />
-  </ComplexType>
-  <ComplexType Name="USP_GET_VideosBySubject_Result">
-    <Property Type="Int64" Name="DIGITALDOCID" Nullable="false" />
-    <Property Type="Int32" Name="DIGITALDOCTYPEID" Nullable="true" />
-    <Property Type="String" Name="DOCUMENTNAME" Nullable="true" MaxLength="100" />
-    <Property Type="Int32" Name="SUBJECTID" Nullable="true" />
-    <Property Type="Int64" Name="CREATEDBY" Nullable="true" />
-    <Property Type="DateTime" Name="CREATEDDATE" Nullable="true" Precision="23" />
-    <Property Type="Int64" Name="MODIFIEDBY" Nullable="true" />
-    <Property Type="DateTime" Name="MODIFIEDDATE" Nullable="true" Precision="23" />
-    <Property Type="Boolean" Name="STATUS" Nullable="true" />
-    <Property Type="Boolean" Name="ALLOWANONYMOUS" Nullable="true" />
-    <Property Type="Int32" Name="DOWNLOADCOUNT" Nullable="true" />
-    <Property Type="Int32" Name="VIEWCOUNT" Nullable="true" />
-    <Property Type="String" Name="VideoPath" Nullable="true" MaxLength="1000" />
-    <Property Type="Int32" Name="CourseId" Nullable="true" />
-    <Property Type="String" Name="VideoDesc" Nullable="true" MaxLength="1000" />
-    <Property Type="String" Name="RefDocs" Nullable="true" MaxLength="500" />
-    <Property Type="String" Name="SubjectName" Nullable="true" MaxLength="100" />
-    <Property Type="String" Name="CourseName" Nullable="true" MaxLength="100" />
-  </ComplexType>
   <ComplexType Name="GetAllTBL_MASTER_BOARDS_Result">
     <Property Type="Int32" Name="BOARDID" Nullable="false" />
     <Property Type="String" Name="NAME" Nullable="true" MaxLength="100" />
@@ -2464,6 +2428,18 @@
     <Property Type="Int64" Name="Recepitno" Nullable="true" />
     <Property Type="DateTime" Name="PaymentTodt" Nullable="true" Precision="23" />
   </ComplexType>
+  <ComplexType Name="USP_GET_Attampted_TestDetails_Result">
+    <Property Type="Int64" Name="TestId" Nullable="false" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="100" />
+    <Property Type="DateTime" Name="PublishDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="SubjectId" Nullable="true" />
+    <Property Type="String" Name="SubjectName" Nullable="true" MaxLength="100" />
+    <Property Type="Boolean" Name="Status" Nullable="true" />
+    <Property Type="Int32" Name="TestTypeId" Nullable="false" />
+    <Property Type="String" Name="TestTypeName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="TotalAttamptedQues" Nullable="false" />
+    <Property Type="Decimal" Name="ObtainedPer" Nullable="true" Precision="18" Scale="2" />
+  </ComplexType>
   <ComplexType Name="USP_GET_PopularVideos_Result">
     <Property Type="Int64" Name="DIGITALDOCID" Nullable="false" />
     <Property Type="Int32" Name="DIGITALDOCTYPEID" Nullable="true" />
@@ -2478,6 +2454,7 @@
     <Property Type="Int32" Name="DOWNLOADCOUNT" Nullable="true" />
     <Property Type="Int32" Name="VIEWCOUNT" Nullable="true" />
     <Property Type="String" Name="VideoPath" Nullable="true" MaxLength="1039" />
+    <Property Type="String" Name="ThumbnailPath" Nullable="true" MaxLength="2044" />
     <Property Type="Int32" Name="CourseId" Nullable="true" />
     <Property Type="String" Name="SubjectName" Nullable="true" MaxLength="100" />
     <Property Type="String" Name="CourseName" Nullable="true" MaxLength="100" />
@@ -2496,6 +2473,7 @@
     <Property Type="Int32" Name="DOWNLOADCOUNT" Nullable="true" />
     <Property Type="Int32" Name="VIEWCOUNT" Nullable="true" />
     <Property Type="String" Name="VideoPath" Nullable="true" MaxLength="1039" />
+    <Property Type="String" Name="ThumbnailPath" Nullable="true" MaxLength="2044" />
     <Property Type="Int32" Name="CourseId" Nullable="true" />
     <Property Type="String" Name="SubjectName" Nullable="true" MaxLength="100" />
     <Property Type="String" Name="CourseName" Nullable="true" MaxLength="100" />
@@ -2512,6 +2490,19 @@
     <Property Type="Int32" Name="TestTypeId" Nullable="false" />
     <Property Type="String" Name="TestTypeName" Nullable="true" MaxLength="50" />
     <Property Type="String" Name="TotalTime" Nullable="false" MaxLength="4" />
+  </ComplexType>
+  <ComplexType Name="USP_GET_TestQuesANSByTestId_Result">
+    <Property Type="Int64" Name="QuestionId" Nullable="false" />
+    <Property Type="String" Name="Question" Nullable="false" />
+    <Property Type="Int32" Name="Marks" Nullable="false" />
+    <Property Type="Decimal" Name="NegativeMarks" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Int64" Name="AnswerId" Nullable="false" />
+    <Property Type="String" Name="Answer" Nullable="true" MaxLength="1000" />
+    <Property Type="Int64" Name="TestId" Nullable="false" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="SubjectId" Nullable="true" />
+    <Property Type="Int64" Name="ValidAnswer" Nullable="false" />
+    <Property Type="Int64" Name="AttamptedAns" Nullable="true" />
   </ComplexType>
   <ComplexType Name="USP_GET_TestQuestionByTestId_Result">
     <Property Type="Int64" Name="QuestionId" Nullable="false" />
@@ -2538,11 +2529,12 @@
     <Property Type="Int32" Name="DOWNLOADCOUNT" Nullable="true" />
     <Property Type="Int32" Name="VIEWCOUNT" Nullable="true" />
     <Property Type="String" Name="VideoPath" Nullable="true" MaxLength="1039" />
+    <Property Type="String" Name="ThumbnailPath" Nullable="true" MaxLength="2044" />
     <Property Type="Int32" Name="CourseId" Nullable="true" />
     <Property Type="String" Name="VideoDesc" Nullable="true" MaxLength="1000" />
     <Property Type="String" Name="RefDocs" Nullable="true" MaxLength="500" />
   </ComplexType>
-  <ComplexType Name="USP_GET_VideosBySubject1_Result">
+  <ComplexType Name="USP_GET_VideosBySubject_Result">
     <Property Type="Int64" Name="DIGITALDOCID" Nullable="false" />
     <Property Type="Int32" Name="DIGITALDOCTYPEID" Nullable="true" />
     <Property Type="String" Name="DOCUMENTNAME" Nullable="true" MaxLength="100" />
@@ -2559,6 +2551,7 @@
     <Property Type="Int32" Name="CourseId" Nullable="true" />
     <Property Type="String" Name="VideoDesc" Nullable="true" MaxLength="1000" />
     <Property Type="String" Name="RefDocs" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="ThumbnailPath" Nullable="true" MaxLength="2000" />
     <Property Type="String" Name="SubjectName" Nullable="true" MaxLength="100" />
     <Property Type="String" Name="CourseName" Nullable="true" MaxLength="100" />
   </ComplexType>
@@ -2704,6 +2697,15 @@
     <Property Type="Int32" Name="WorkouttypeID" Nullable="true" />
     <Property Type="Int32" Name="PlantypeID" Nullable="true" />
   </ComplexType>
+  <ComplexType Name="USP_ResetPassword_Result">
+    <Property Type="Int64" Name="UserID" Nullable="false" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="Mobile" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Password" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="152" />
+    <Property Type="DateTime" Name="Dob" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Gender" Nullable="true" MaxLength="10" />
+  </ComplexType>
   <ComplexType Name="USP_SaveTestAnswers_Result">
     <Property Type="Int32" Name="TotalQues" Nullable="true" />
     <Property Type="Int32" Name="Correct" Nullable="true" />
@@ -2711,5 +2713,13 @@
     <Property Type="Int32" Name="Unanswered" Nullable="true" />
     <Property Type="Int32" Name="TestId" Nullable="true" />
     <Property Type="Int32" Name="StudentId" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="USP_Profile_Result">
+    <Property Type="Int64" Name="USERID" Nullable="false" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="Mobile" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="UserType" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="152" />
+    <Property Type="String" Name="Photo" Nullable="false" MaxLength="50" />
   </ComplexType>
 </Schema>

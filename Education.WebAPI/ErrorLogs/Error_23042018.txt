@@ -1,0 +1,60 @@
+=====================================================================
+Page Name :-/api/ForgotPassword
+Error Log Date Time :-4/23/2018 9:29:40 PM
+Method Name :-SendEmail()
+Error Message :-The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.7.0 Must issue a STARTTLS command first. a13-v6sm3590636wrn.6 - gsmtp
+Source :-System
+Trace :-   at System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, String response)
+   at System.Net.Mail.MailCommand.Send(SmtpConnection conn, Byte[] command, MailAddress from, Boolean allowUnicode)
+   at System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, String deliveryNotify, Boolean allowUnicode, SmtpFailedRecipientException& exception)
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at Education.WebAPI.Models.Common.Mails.SendEmail(String toMail, String subject, String body) in D:\Projects\Mumbai\Git\Education.WebAPI\Models\Common\Mails.cs:line 35
+
+=====================================================================
+Page Name :-/api/ForgotPassword
+Error Log Date Time :-4/23/2018 9:41:25 PM
+Method Name :-SendEmail()
+Error Message :-The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.7.0 Must issue a STARTTLS command first. v6-v6sm12783577wrd.54 - gsmtp
+Source :-System
+Trace :-   at System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, String response)
+   at System.Net.Mail.MailCommand.Send(SmtpConnection conn, Byte[] command, MailAddress from, Boolean allowUnicode)
+   at System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, String deliveryNotify, Boolean allowUnicode, SmtpFailedRecipientException& exception)
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at Education.WebAPI.Models.Common.Mails.SendEmail(String toMail, String subject, String body) in D:\Projects\Mumbai\Git\Education.WebAPI\Models\Common\Mails.cs:line 35
+
+=====================================================================
+Page Name :-/api/ForgotPassword
+Error Log Date Time :-4/23/2018 10:12:15 PM
+Method Name :-SendEmail()
+Error Message :-The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.5.1 Authentication Required. Learn more at
+Source :-System
+Trace :-   at System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, String response)
+   at System.Net.Mail.MailCommand.Send(SmtpConnection conn, Byte[] command, MailAddress from, Boolean allowUnicode)
+   at System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, String deliveryNotify, Boolean allowUnicode, SmtpFailedRecipientException& exception)
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at Education.WebAPI.Models.Common.Mails.SendEmail(String toMail, String subject, String body) in D:\Projects\Mumbai\Git\Education.WebAPI\Models\Common\Mails.cs:line 35
+
+=====================================================================
+Page Name :-/api/ForgotPassword
+Error Log Date Time :-4/23/2018 10:16:47 PM
+Method Name :-SendEmail()
+Error Message :-The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.5.1 Authentication Required. Learn more at
+Source :-System
+Trace :-   at System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, String response)
+   at System.Net.Mail.MailCommand.Send(SmtpConnection conn, Byte[] command, MailAddress from, Boolean allowUnicode)
+   at System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, String deliveryNotify, Boolean allowUnicode, SmtpFailedRecipientException& exception)
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at Education.WebAPI.Models.Common.Mails.SendEmail(String toMail, String subject, String body) in D:\Projects\Mumbai\Git\Education.WebAPI\Models\Common\Mails.cs:line 35
+
+=====================================================================
+Page Name :-/api/ForgotPassword
+Error Log Date Time :-4/23/2018 10:21:56 PM
+Method Name :-SendEmail()
+Error Message :-The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.5.1 Authentication Required. Learn more at
+Source :-System
+Trace :-   at System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, String response)
+   at System.Net.Mail.MailCommand.Send(SmtpConnection conn, Byte[] command, MailAddress from, Boolean allowUnicode)
+   at System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, String deliveryNotify, Boolean allowUnicode, SmtpFailedRecipientException& exception)
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at Education.WebAPI.Models.Common.Mails.SendEmail(String toMail, String subject, String body) in D:\Projects\Mumbai\Git\Education.WebAPI\Models\Common\Mails.cs:line 35
+

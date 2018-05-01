@@ -1,18 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="ajay_dbModelStoreContainer" CdmEntityContainer="ajay_dbEntities">
-    <EntitySetMapping Name="RegisterUsers">
-      <EntityTypeMapping TypeName="ajay_dbModel.RegisterUser">
-        <MappingFragment StoreEntitySet="RegisterUser">
-          <ScalarProperty Name="Sr_no" ColumnName="Sr_no" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="Password" ColumnName="Password" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Address" ColumnName="Address" />
-          <ScalarProperty Name="City" ColumnName="City" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Fiscalyears">
       <EntityTypeMapping TypeName="ajay_dbModel.Fiscalyear">
         <MappingFragment StoreEntitySet="Fiscalyear">
@@ -180,6 +168,7 @@
           <ScalarProperty Name="CourseId" ColumnName="CourseId" />
           <ScalarProperty Name="VideoDesc" ColumnName="VideoDesc" />
           <ScalarProperty Name="RefDocs" ColumnName="RefDocs" />
+          <ScalarProperty Name="ThumbnailPath" ColumnName="ThumbnailPath" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -670,43 +659,6 @@
         <ScalarProperty Name="Id" ColumnName="UserId" />
       </EndProperty>
     </AssociationSetMapping>
-    <FunctionImportMapping FunctionImportName="Register_GetDetails" FunctionName="ajay_dbModel.Store.Register_GetDetails">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="ajay_dbModel.Register_GetDetails_Result">
-          <ScalarProperty Name="Sr_no" ColumnName="Sr_no" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="Password" ColumnName="Password" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Address" ColumnName="Address" />
-          <ScalarProperty Name="City" ColumnName="City" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="Register_Insert" FunctionName="ajay_dbModel.Store.Register_Insert" />
-    <FunctionImportMapping FunctionImportName="USP_GET_VideosBySubject" FunctionName="ajay_dbModel.Store.USP_GET_VideosBySubject">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="ajay_dbModel.USP_GET_VideosBySubject_Result">
-          <ScalarProperty Name="DIGITALDOCID" ColumnName="DIGITALDOCID" />
-          <ScalarProperty Name="DIGITALDOCTYPEID" ColumnName="DIGITALDOCTYPEID" />
-          <ScalarProperty Name="DOCUMENTNAME" ColumnName="DOCUMENTNAME" />
-          <ScalarProperty Name="SUBJECTID" ColumnName="SUBJECTID" />
-          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
-          <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
-          <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
-          <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
-          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
-          <ScalarProperty Name="ALLOWANONYMOUS" ColumnName="ALLOWANONYMOUS" />
-          <ScalarProperty Name="DOWNLOADCOUNT" ColumnName="DOWNLOADCOUNT" />
-          <ScalarProperty Name="VIEWCOUNT" ColumnName="VIEWCOUNT" />
-          <ScalarProperty Name="VideoPath" ColumnName="VideoPath" />
-          <ScalarProperty Name="CourseId" ColumnName="CourseId" />
-          <ScalarProperty Name="VideoDesc" ColumnName="VideoDesc" />
-          <ScalarProperty Name="RefDocs" ColumnName="RefDocs" />
-          <ScalarProperty Name="SubjectName" ColumnName="SubjectName" />
-          <ScalarProperty Name="CourseName" ColumnName="CourseName" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="DeleteTBL_MASTER_BOARDS" FunctionName="ajay_dbModel.Store.DeleteTBL_MASTER_BOARDS" />
     <FunctionImportMapping FunctionImportName="DeleteTBL_MASTER_CITY" FunctionName="ajay_dbModel.Store.DeleteTBL_MASTER_CITY" />
     <FunctionImportMapping FunctionImportName="DeleteTBL_MASTER_CLASS" FunctionName="ajay_dbModel.Store.DeleteTBL_MASTER_CLASS" />
@@ -1509,6 +1461,22 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_GET_Attampted_TestDetails" FunctionName="ajay_dbModel.Store.USP_GET_Attampted_TestDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.USP_GET_Attampted_TestDetails_Result">
+          <ScalarProperty Name="TestId" ColumnName="TestId" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="PublishDate" ColumnName="PublishDate" />
+          <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
+          <ScalarProperty Name="SubjectName" ColumnName="SubjectName" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="TestTypeId" ColumnName="TestTypeId" />
+          <ScalarProperty Name="TestTypeName" ColumnName="TestTypeName" />
+          <ScalarProperty Name="TotalAttamptedQues" ColumnName="TotalAttamptedQues" />
+          <ScalarProperty Name="ObtainedPer" ColumnName="ObtainedPer" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="USP_GET_PopularVideos" FunctionName="ajay_dbModel.Store.USP_GET_PopularVideos">
       <ResultMapping>
         <ComplexTypeMapping TypeName="ajay_dbModel.USP_GET_PopularVideos_Result">
@@ -1525,6 +1493,7 @@
           <ScalarProperty Name="DOWNLOADCOUNT" ColumnName="DOWNLOADCOUNT" />
           <ScalarProperty Name="VIEWCOUNT" ColumnName="VIEWCOUNT" />
           <ScalarProperty Name="VideoPath" ColumnName="VideoPath" />
+          <ScalarProperty Name="ThumbnailPath" ColumnName="ThumbnailPath" />
           <ScalarProperty Name="CourseId" ColumnName="CourseId" />
           <ScalarProperty Name="SubjectName" ColumnName="SubjectName" />
           <ScalarProperty Name="CourseName" ColumnName="CourseName" />
@@ -1547,6 +1516,7 @@
           <ScalarProperty Name="DOWNLOADCOUNT" ColumnName="DOWNLOADCOUNT" />
           <ScalarProperty Name="VIEWCOUNT" ColumnName="VIEWCOUNT" />
           <ScalarProperty Name="VideoPath" ColumnName="VideoPath" />
+          <ScalarProperty Name="ThumbnailPath" ColumnName="ThumbnailPath" />
           <ScalarProperty Name="CourseId" ColumnName="CourseId" />
           <ScalarProperty Name="SubjectName" ColumnName="SubjectName" />
           <ScalarProperty Name="CourseName" ColumnName="CourseName" />
@@ -1567,6 +1537,23 @@
           <ScalarProperty Name="TestTypeId" ColumnName="TestTypeId" />
           <ScalarProperty Name="TestTypeName" ColumnName="TestTypeName" />
           <ScalarProperty Name="TotalTime" ColumnName="TotalTime" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_GET_TestQuesANSByTestId" FunctionName="ajay_dbModel.Store.USP_GET_TestQuesANSByTestId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.USP_GET_TestQuesANSByTestId_Result">
+          <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="Marks" ColumnName="Marks" />
+          <ScalarProperty Name="NegativeMarks" ColumnName="NegativeMarks" />
+          <ScalarProperty Name="AnswerId" ColumnName="AnswerId" />
+          <ScalarProperty Name="Answer" ColumnName="Answer" />
+          <ScalarProperty Name="TestId" ColumnName="TestId" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
+          <ScalarProperty Name="ValidAnswer" ColumnName="ValidAnswer" />
+          <ScalarProperty Name="AttamptedAns" ColumnName="AttamptedAns" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
@@ -1601,15 +1588,16 @@
           <ScalarProperty Name="DOWNLOADCOUNT" ColumnName="DOWNLOADCOUNT" />
           <ScalarProperty Name="VIEWCOUNT" ColumnName="VIEWCOUNT" />
           <ScalarProperty Name="VideoPath" ColumnName="VideoPath" />
+          <ScalarProperty Name="ThumbnailPath" ColumnName="ThumbnailPath" />
           <ScalarProperty Name="CourseId" ColumnName="CourseId" />
           <ScalarProperty Name="VideoDesc" ColumnName="VideoDesc" />
           <ScalarProperty Name="RefDocs" ColumnName="RefDocs" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="USP_GET_VideosBySubject1" FunctionName="ajay_dbModel.Store.USP_GET_VideosBySubject1">
+    <FunctionImportMapping FunctionImportName="USP_GET_VideosBySubject" FunctionName="ajay_dbModel.Store.USP_GET_VideosBySubject">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="ajay_dbModel.USP_GET_VideosBySubject1_Result">
+        <ComplexTypeMapping TypeName="ajay_dbModel.USP_GET_VideosBySubject_Result">
           <ScalarProperty Name="DIGITALDOCID" ColumnName="DIGITALDOCID" />
           <ScalarProperty Name="DIGITALDOCTYPEID" ColumnName="DIGITALDOCTYPEID" />
           <ScalarProperty Name="DOCUMENTNAME" ColumnName="DOCUMENTNAME" />
@@ -1626,6 +1614,7 @@
           <ScalarProperty Name="CourseId" ColumnName="CourseId" />
           <ScalarProperty Name="VideoDesc" ColumnName="VideoDesc" />
           <ScalarProperty Name="RefDocs" ColumnName="RefDocs" />
+          <ScalarProperty Name="ThumbnailPath" ColumnName="ThumbnailPath" />
           <ScalarProperty Name="SubjectName" ColumnName="SubjectName" />
           <ScalarProperty Name="CourseName" ColumnName="CourseName" />
         </ComplexTypeMapping>
@@ -1828,6 +1817,19 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_ResetPassword" FunctionName="ajay_dbModel.Store.USP_ResetPassword">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.USP_ResetPassword_Result">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Dob" ColumnName="Dob" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="USP_SaveTestAnswers" FunctionName="ajay_dbModel.Store.USP_SaveTestAnswers">
       <ResultMapping>
         <ComplexTypeMapping TypeName="ajay_dbModel.USP_SaveTestAnswers_Result">
@@ -1843,5 +1845,17 @@
     <FunctionImportMapping FunctionImportName="USP_TestAnswers_new" FunctionName="ajay_dbModel.Store.USP_TestAnswers_new" />
     <FunctionImportMapping FunctionImportName="Usp_UserIDbyUserName" FunctionName="ajay_dbModel.Store.Usp_UserIDbyUserName" />
     <FunctionImportMapping FunctionImportName="Usp_UserNamebyUserID" FunctionName="ajay_dbModel.Store.Usp_UserNamebyUserID" />
+    <FunctionImportMapping FunctionImportName="USP_Profile" FunctionName="ajay_dbModel.Store.USP_Profile">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ajay_dbModel.USP_Profile_Result">
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

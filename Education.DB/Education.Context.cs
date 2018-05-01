@@ -27,7 +27,6 @@ namespace Education.DB
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<RegisterUser> RegisterUsers { get; set; }
         public virtual DbSet<Fiscalyear> Fiscalyears { get; set; }
         public virtual DbSet<LogDetail> LogDetails { get; set; }
         public virtual DbSet<MemberRegistration> MemberRegistrations { get; set; }
@@ -78,45 +77,6 @@ namespace Education.DB
         public virtual DbSet<webpages_Membership> webpages_Membership { get; set; }
         public virtual DbSet<webpages_OAuthMembership> webpages_OAuthMembership { get; set; }
         public virtual DbSet<webpages_Roles> webpages_Roles { get; set; }
-    
-        public virtual ObjectResult<Register_GetDetails_Result> Register_GetDetails()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Register_GetDetails_Result>("Register_GetDetails");
-        }
-    
-        public virtual int Register_Insert(string email, string password, string name, string address, string city)
-        {
-            var emailParameter = email != null ?
-                new ObjectParameter("Email", email) :
-                new ObjectParameter("Email", typeof(string));
-    
-            var passwordParameter = password != null ?
-                new ObjectParameter("Password", password) :
-                new ObjectParameter("Password", typeof(string));
-    
-            var nameParameter = name != null ?
-                new ObjectParameter("Name", name) :
-                new ObjectParameter("Name", typeof(string));
-    
-            var addressParameter = address != null ?
-                new ObjectParameter("Address", address) :
-                new ObjectParameter("Address", typeof(string));
-    
-            var cityParameter = city != null ?
-                new ObjectParameter("City", city) :
-                new ObjectParameter("City", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Register_Insert", emailParameter, passwordParameter, nameParameter, addressParameter, cityParameter);
-        }
-    
-        public virtual ObjectResult<USP_GET_VideosBySubject_Result> USP_GET_VideosBySubject(Nullable<int> subjectId)
-        {
-            var subjectIdParameter = subjectId.HasValue ?
-                new ObjectParameter("SubjectId", subjectId) :
-                new ObjectParameter("SubjectId", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<USP_GET_VideosBySubject_Result>("USP_GET_VideosBySubject", subjectIdParameter);
-        }
     
         public virtual int DeleteTBL_MASTER_BOARDS()
         {
@@ -2248,6 +2208,15 @@ namespace Education.DB
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Usp_GenerateRecepit_Result>("Usp_GenerateRecepit", memberidParameter);
         }
     
+        public virtual ObjectResult<USP_GET_Attampted_TestDetails_Result> USP_GET_Attampted_TestDetails(Nullable<int> studentId)
+        {
+            var studentIdParameter = studentId.HasValue ?
+                new ObjectParameter("StudentId", studentId) :
+                new ObjectParameter("StudentId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<USP_GET_Attampted_TestDetails_Result>("USP_GET_Attampted_TestDetails", studentIdParameter);
+        }
+    
         public virtual ObjectResult<USP_GET_PopularVideos_Result> USP_GET_PopularVideos(Nullable<long> studentId)
         {
             var studentIdParameter = studentId.HasValue ?
@@ -2266,13 +2235,26 @@ namespace Education.DB
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<USP_GET_RecommendedVideos_Result>("USP_GET_RecommendedVideos", studentIdParameter);
         }
     
-        public virtual ObjectResult<USP_GET_TestDetails_Result> USP_GET_TestDetails(Nullable<int> subjectId)
+        public virtual ObjectResult<USP_GET_TestDetails_Result> USP_GET_TestDetails(Nullable<int> studentId)
         {
-            var subjectIdParameter = subjectId.HasValue ?
-                new ObjectParameter("SubjectId", subjectId) :
-                new ObjectParameter("SubjectId", typeof(int));
+            var studentIdParameter = studentId.HasValue ?
+                new ObjectParameter("StudentId", studentId) :
+                new ObjectParameter("StudentId", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<USP_GET_TestDetails_Result>("USP_GET_TestDetails", subjectIdParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<USP_GET_TestDetails_Result>("USP_GET_TestDetails", studentIdParameter);
+        }
+    
+        public virtual ObjectResult<USP_GET_TestQuesANSByTestId_Result> USP_GET_TestQuesANSByTestId(Nullable<int> testId, Nullable<int> studentId)
+        {
+            var testIdParameter = testId.HasValue ?
+                new ObjectParameter("TestId", testId) :
+                new ObjectParameter("TestId", typeof(int));
+    
+            var studentIdParameter = studentId.HasValue ?
+                new ObjectParameter("StudentId", studentId) :
+                new ObjectParameter("StudentId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<USP_GET_TestQuesANSByTestId_Result>("USP_GET_TestQuesANSByTestId", testIdParameter, studentIdParameter);
         }
     
         public virtual ObjectResult<USP_GET_TestQuestionByTestId_Result> USP_GET_TestQuestionByTestId(Nullable<int> testId)
@@ -2293,13 +2275,13 @@ namespace Education.DB
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<USP_GET_VideoDetails_Result>("USP_GET_VideoDetails", videoIdParameter);
         }
     
-        public virtual ObjectResult<USP_GET_VideosBySubject1_Result> USP_GET_VideosBySubject1(Nullable<int> subjectId)
+        public virtual ObjectResult<USP_GET_VideosBySubject_Result> USP_GET_VideosBySubject(Nullable<int> subjectId)
         {
             var subjectIdParameter = subjectId.HasValue ?
                 new ObjectParameter("SubjectId", subjectId) :
                 new ObjectParameter("SubjectId", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<USP_GET_VideosBySubject1_Result>("USP_GET_VideosBySubject1", subjectIdParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<USP_GET_VideosBySubject_Result>("USP_GET_VideosBySubject", subjectIdParameter);
         }
     
         public virtual ObjectResult<Usp_GetAllRenwalrecords_Result> Usp_GetAllRenwalrecords()
@@ -2446,6 +2428,19 @@ namespace Education.DB
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Usp_PaymentDetailinfo_Name_Result>("Usp_PaymentDetailinfo_Name", memberFNameParameter);
         }
     
+        public virtual ObjectResult<USP_ResetPassword_Result> USP_ResetPassword(string email, string password)
+        {
+            var emailParameter = email != null ?
+                new ObjectParameter("Email", email) :
+                new ObjectParameter("Email", typeof(string));
+    
+            var passwordParameter = password != null ?
+                new ObjectParameter("Password", password) :
+                new ObjectParameter("Password", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<USP_ResetPassword_Result>("USP_ResetPassword", emailParameter, passwordParameter);
+        }
+    
         public virtual ObjectResult<USP_SaveTestAnswers_Result> USP_SaveTestAnswers(Nullable<int> testId, Nullable<int> subjectId, Nullable<System.DateTime> startTime, Nullable<System.DateTime> endTime, Nullable<int> studentId, string quesAnsXml)
         {
             var testIdParameter = testId.HasValue ?
@@ -2520,6 +2515,15 @@ namespace Education.DB
                 new ObjectParameter("UserId", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("Usp_UserNamebyUserID", userIdParameter);
+        }
+    
+        public virtual ObjectResult<USP_Profile_Result> USP_Profile(Nullable<long> userId)
+        {
+            var userIdParameter = userId.HasValue ?
+                new ObjectParameter("UserId", userId) :
+                new ObjectParameter("UserId", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<USP_Profile_Result>("USP_Profile", userIdParameter);
         }
     }
 }

@@ -35,12 +35,13 @@ namespace Education.Core.Admin
                 videodetails.CourseId = objvideoDetails.VideoUploaddetails.CourseId;
                 videodetails.VideoDesc = objvideoDetails.VideoUploaddetails.VideoDesc;
                 videodetails.RefDocs = objvideoDetails.VideoUploaddetails.RefDocumentPath;
+                videodetails.ThumbnailPath = objvideoDetails.VideoUploaddetails.ThumbnailPath;
 
                 videodetails.STATUS = true;
                 videodetails.CREATEDBY = objvideoDetails.VideoUploaddetails.CREATEDBY;
 
                 dbEntities.TBL_GN_DIGITALDOC_DETAILS.Add(videodetails);
-               return dbEntities.SaveChanges();
+                return dbEntities.SaveChanges();
                 //return objvideoDetails;
             }
             catch (Exception)
@@ -201,17 +202,26 @@ namespace Education.Core.Admin
                      CREATEDDATE = X.CREATEDDATE,
                      SUBJECTID = X.SUBJECTID,
                      SubjectName = X.SubjectName,
-                     CourseName = X.CourseName
+                     CourseName = X.CourseName,
+                     ThumbnailPath = X.ThumbnailPath
                  }).ToList();
+
+                var vd = (from a in videos
+                          group a by a.SUBJECTID into temp
+                          select new
+                          {
+                              subjectId = temp.Key,
+                              subjectName = temp.Max(g => g.SubjectName)
+                          }).ToList();
 
                 List<RecommendedVideoModel> lstModel = new List<RecommendedVideoModel>();
 
-                lstModel = (from a in videos
+                lstModel = (from a in vd
                             select new RecommendedVideoModel
                             {
-                                Subject = a.SubjectName,
-                                SubjectId = a.SUBJECTID,
-                                lstVideoModel = videos.Where(t => t.SUBJECTID == a.SUBJECTID).ToList()
+                                Subject = a.subjectName,
+                                SubjectId = a.subjectId,
+                                lstVideoModel = videos.Where(t => t.SUBJECTID == a.subjectId).ToList()
                             }).ToList();
 
 
@@ -229,8 +239,6 @@ namespace Education.Core.Admin
         {
             try
             {
-                //  List<VideoUploaddetails> obj = new List<VideoUploaddetails>();
-                // return obj;
                 var videos = dbEntities.USP_GET_PopularVideos(StudentId).Select(X =>
                  new VideoUploaddetails()
                  {
@@ -241,17 +249,25 @@ namespace Education.Core.Admin
                      CREATEDDATE = X.CREATEDDATE,
                      SUBJECTID = X.SUBJECTID,
                      SubjectName = X.SubjectName,
-                     CourseName = X.CourseName
+                     CourseName = X.CourseName,
+                     ThumbnailPath = X.ThumbnailPath
                  }).ToList();
 
                 List<PopularVideoModel> lstModel = new List<PopularVideoModel>();
-
-                lstModel = (from a in videos
+                var vd = (from a in videos
+                          group a by a.SUBJECTID into temp
+                          select new
+                          {
+                              subjectId = temp.Key,
+                              subjectName = temp.Max(g => g.SubjectName)
+                          }).ToList();
+                
+                lstModel = (from a in vd
                             select new PopularVideoModel
                             {
-                                Subject = a.SubjectName,
-                                SubjectId = a.SUBJECTID,
-                                lstVideoModel = videos.Where(t => t.SUBJECTID == a.SUBJECTID).ToList()
+                                Subject = a.subjectName,
+                                SubjectId = a.subjectId,
+                                lstVideoModel = videos.Where(t => t.SUBJECTID == a.subjectId).ToList()
                             }).ToList();
 
 
@@ -264,7 +280,6 @@ namespace Education.Core.Admin
                 throw;
             }
         }
-
 
         public VideoDetailsViewModel GET_VideoDetails(long VideoId)
         {
@@ -285,8 +300,8 @@ namespace Education.Core.Admin
                      DOWNLOADCOUNT = X.DOWNLOADCOUNT,
                      RefDocs = X.RefDocs,
                      VideoDesc = X.VideoDesc,
-                     VIEWCOUNT = X.VIEWCOUNT
-
+                     VIEWCOUNT = X.VIEWCOUNT,
+                     ThumbnailPath=X.ThumbnailPath
 
                  }).FirstOrDefault();
 

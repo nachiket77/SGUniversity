@@ -36,6 +36,7 @@ namespace Education.DB
         public Nullable<int> CourseId { get; set; }
         public string VideoDesc { get; set; }
         public string RefDocs { get; set; }
+        public string ThumbnailPath { get; set; }
     
         public virtual TBL_MASTER_SUBJECT TBL_MASTER_SUBJECT { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

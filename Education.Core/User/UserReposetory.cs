@@ -110,5 +110,76 @@ namespace Education.Core
 
 
         }
+
+        public String ChangePassword(ChangePassword model)
+        {
+            string message = string.Empty;
+            TBL_USER_LOGIN user = dbEntities.TBL_USER_LOGIN.Where(a => a.USERID == model.UserId).FirstOrDefault();
+            if (user != null)
+            {
+                if (model.OldPassword == user.PASSWORD)
+                {
+                    user.PASSWORD = model.NewPassword;
+                    dbEntities.SaveChanges();
+
+                    message = "Password changed successfully";
+
+                }
+                else
+                {
+                    message = "Password does not match";
+                }
+            }
+            else
+            {
+                message = "User does not exists";
+            }
+            return message;
+        }
+
+        public UserDetailsModel ForgotPassword(ForgotPasswordModel model)
+        {
+            const string valid = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@";
+            StringBuilder res = new StringBuilder();
+            Random rnd = new Random();
+            int length = 8;
+            while (0 < length--)
+            {
+                res.Append(valid[rnd.Next(valid.Length)]);
+            }
+
+            UserDetailsModel user = (from a in dbEntities.USP_ResetPassword(model.Email, res.ToString())
+                                     select new UserDetailsModel
+                                     {
+                                         Name = a.Name,
+                                         Email = a.Email,
+                                         Dob = a.Dob,
+                                         Mobile = a.Mobile,
+                                         Gender = a.Gender,
+                                         Password = a.Password,
+                                         UserId = a.UserID
+                                     }).FirstOrDefault();
+
+            return user;
+        }
+
+        public ProfileModel GetProfile(long userId)
+        {
+            ProfileModel user = (from a in dbEntities.USP_Profile(userId)
+                                 select new ProfileModel
+                                 {
+                                     Name = a.Name,
+                                     Email = a.Email,
+                                     Mobile = a.Mobile,
+                                     USERID = a.USERID,
+                                     Photo = a.Photo,
+                                     UserType = a.UserType
+
+                                 }).FirstOrDefault();
+
+            return user;
+        }
+
+
     }
 }

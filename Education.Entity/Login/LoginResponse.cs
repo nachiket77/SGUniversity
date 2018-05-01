@@ -20,4 +20,6 @@ namespace Education.Entity.Login
 
         public string ErrorMessage { get; set; }
     }
+
+   
 }

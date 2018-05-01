@@ -42,13 +42,9 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Excel">
-      <HintPath>..\Education.WebApp\bin\Excel.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -74,8 +70,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Students\IStudentReposetory.cs" />
     <Compile Include="Students\StudentReposetory.cs" />
-    <Compile Include="SubjectCourseMapping\ISubjectCourseMapping.cs" />
-    <Compile Include="SubjectCourseMapping\SubjectCourseMapping.cs" />
     <Compile Include="Teacher\ITeacherRepository.cs" />
     <Compile Include="Teacher\TeacherRepository.cs" />
     <Compile Include="User\IUserReposetory.cs" />

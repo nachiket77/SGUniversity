@@ -53,4 +53,50 @@ namespace Education.Entity.Login
         public DateTime ModifiedDate { get; set; }
         public string ErrorMessage { get; set; }
     }
+
+    public class ChangePassword
+    {
+        public long UserId { get; set; }
+        public string OldPassword { get; set; }
+        public string NewPassword { get; set; }
+    }
+
+    public class MessageModel
+    {
+        public string Message{ get; set; }
+
+    }
+
+    public class ForgotPasswordModel
+    {
+        public string Email{ get; set; }
+        
+    }
+
+    public class UserDetailsModel
+    {
+        public string Email { get; set; }
+        public string Name { get; set; }
+        public string Password  { get; set; }
+        public long UserId { get; set; }
+        public DateTime? Dob { get; set; }
+        public string Gender { get; set; }
+        public string Mobile { get; set; }
+    }
+
+    public class ProfileModel
+    {
+        public long USERID { get; set; }
+        public string Email { get; set; }
+        public string Mobile { get; set; }
+        public string UserType { get; set; }
+        public string Name { get; set; }
+        public string Photo { get; set; }
+    }
+
+    public class UserModel
+    {
+        public long UserId { get; set; }
+    }
+
 }

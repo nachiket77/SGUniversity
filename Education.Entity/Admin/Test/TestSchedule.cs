@@ -23,11 +23,32 @@ namespace Education.Entity.Admin.Test
 
     }
 
+    public class TestAttamptedDetails
+    {
+        public long TestId { get; set; }
+        public string Title { get; set; }
+        public Nullable<DateTime> PublishDate { get; set; }
+        public Nullable<int> SubjectId { get; set; }
+        public string SubjectName { get; set; }
+        public Nullable<bool> Status { get; set; }
+        public int TestTypeId { get; set; }
+        public string TestTypeName { get; set; }
+        public int TotalAttamptedQues { get; set; }
+        public decimal? ObtainedPer { get; set; }
+    }
+
     public class TestSchedule
     {
         public Nullable<int> SubjectId { get; set; }
         public string SubjectName { get; set; }
         public List<TestScheduleDetails> TDetails { get; set; }
+
+    }
+    public class TestAttampted
+    {
+        public Nullable<int> SubjectId { get; set; }
+        public string SubjectName { get; set; }
+        public List<TestAttamptedDetails> TDetails { get; set; }
 
     }
 
@@ -65,6 +86,35 @@ namespace Education.Entity.Admin.Test
         public List<TestAnswer> TAnswer { get; set; }
     }
 
+    public class TestQuestionAnsDetails
+    {
+        public long QuestionId { get; set; }
+        public string Question { get; set; }
+        public int Marks { get; set; }
+        public decimal? NegativeMarks { get; set; }
+        public long AnswerId { get; set; }
+        public string Answer { get; set; }
+        public long TestId { get; set; }
+        public string Title { get; set; }
+        public Nullable<int> SubjectId { get; set; }
+        public long ValidAnswer { get; set; }
+        public long? AttamptedAns { get; set; }
+    }
+
+    public class TestQuestionAns
+    {
+        public long TestId { get; set; }
+        public string Title { get; set; }
+        public Nullable<int> SubjectId { get; set; }
+        public int Marks { get; set; }
+        public decimal? NegativeMarks { get; set; }
+        public long QuestionId { get; set; }
+        public string Question { get; set; }
+        public List<TestAnswer> TAnswer { get; set; }
+        public long ValidAnswer { get; set; }
+        public long? AttamptedAns { get; set; }
+    }
+
     public class TestAnswer
     {
         public long AnswerId { get; set; }
@@ -80,6 +130,13 @@ namespace Education.Entity.Admin.Test
     {
         public int TestId { get; set; }
     }
+
+    public class TestAns
+    {
+        public int TestId { get; set; }
+        public int StudentId { get; set; }
+    }
+
 
     #region TestAnswer
 
@@ -111,4 +168,6 @@ namespace Education.Entity.Admin.Test
 
     }
     #endregion
+
+
 }

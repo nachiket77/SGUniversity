@@ -88,12 +88,6 @@
     <Compile Include="ReceiptDetail.cs">
       <DependentUpon>Education.tt</DependentUpon>
     </Compile>
-    <Compile Include="RegisterUser.cs">
-      <DependentUpon>Education.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Register_GetDetails_Result.cs">
-      <DependentUpon>Education.tt</DependentUpon>
-    </Compile>
     <Compile Include="SchemeMaster.cs">
       <DependentUpon>Education.tt</DependentUpon>
     </Compile>
@@ -400,6 +394,9 @@
     <Compile Include="Usp_GetYearwisepaymentdetails_Result.cs">
       <DependentUpon>Education.tt</DependentUpon>
     </Compile>
+    <Compile Include="USP_GET_Attampted_TestDetails_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
     <Compile Include="USP_GET_PopularVideos_Result.cs">
       <DependentUpon>Education.tt</DependentUpon>
     </Compile>
@@ -409,13 +406,13 @@
     <Compile Include="USP_GET_TestDetails_Result.cs">
       <DependentUpon>Education.tt</DependentUpon>
     </Compile>
+    <Compile Include="USP_GET_TestQuesANSByTestId_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
     <Compile Include="USP_GET_TestQuestionByTestId_Result.cs">
       <DependentUpon>Education.tt</DependentUpon>
     </Compile>
     <Compile Include="USP_GET_VideoDetails_Result.cs">
-      <DependentUpon>Education.tt</DependentUpon>
-    </Compile>
-    <Compile Include="USP_GET_VideosBySubject1_Result.cs">
       <DependentUpon>Education.tt</DependentUpon>
     </Compile>
     <Compile Include="USP_GET_VideosBySubject_Result.cs">
@@ -431,6 +428,12 @@
       <DependentUpon>Education.tt</DependentUpon>
     </Compile>
     <Compile Include="Usp_PaymentDetailinfo_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USP_Profile_Result.cs">
+      <DependentUpon>Education.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USP_ResetPassword_Result.cs">
       <DependentUpon>Education.tt</DependentUpon>
     </Compile>
     <Compile Include="USP_SaveTestAnswers_Result.cs">
