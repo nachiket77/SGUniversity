@@ -285,7 +285,6 @@
     <Content Include="build\js\utils.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\files\Battle Los Angeles 2011 720p %28shirazpatogh%29.mkv" />
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
@@ -297,7 +296,6 @@
     <Content Include="assets\css\bootstrap-theme.min.css.map" />
     <Content Include="assets\css\bootstrap.css.map" />
     <Content Include="assets\css\bootstrap.min.css.map" />
-    <Content Include="Content\files\VTS_01_2.VOB" />
     <Content Include="bin\ApplicationInsights.config" />
     <Content Include="bin\Education.WebApp.dll.config" />
     <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
@@ -394,6 +392,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\files\" />
     <Folder Include="Content\ReferenceDocs\" />
     <Folder Include="Content\Thumbnails\" />
     <Folder Include="TestDetail\" />

@@ -10,217 +10,349 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="ApplicationInsights.config">
-      <publishTime>07/29/2017 10:32:35</publishTime>
+      <publishTime>03/11/2018 17:51:47</publishTime>
     </File>
     <File Include="assets/css/bootstrap-grid.css">
-      <publishTime>10/07/2017 12:12:26</publishTime>
+      <publishTime>03/11/2018 17:51:47</publishTime>
     </File>
     <File Include="assets/css/bootstrap-grid.css.map">
-      <publishTime>10/07/2017 12:12:26</publishTime>
+      <publishTime>03/11/2018 17:51:47</publishTime>
     </File>
     <File Include="assets/css/bootstrap-grid.min.css">
-      <publishTime>10/07/2017 12:12:26</publishTime>
+      <publishTime>03/11/2018 17:51:47</publishTime>
     </File>
     <File Include="assets/css/bootstrap-grid.min.css.map">
-      <publishTime>10/07/2017 12:12:26</publishTime>
+      <publishTime>03/11/2018 17:51:47</publishTime>
     </File>
     <File Include="assets/css/bootstrap-reboot.css">
-      <publishTime>10/07/2017 12:12:26</publishTime>
+      <publishTime>03/11/2018 17:51:47</publishTime>
     </File>
     <File Include="assets/css/bootstrap-reboot.css.map">
-      <publishTime>10/07/2017 12:12:26</publishTime>
+      <publishTime>03/11/2018 17:51:48</publishTime>
     </File>
     <File Include="assets/css/bootstrap-reboot.min.css">
-      <publishTime>10/07/2017 12:12:27</publishTime>
+      <publishTime>03/11/2018 17:51:48</publishTime>
     </File>
     <File Include="assets/css/bootstrap-reboot.min.css.map">
-      <publishTime>10/07/2017 12:12:27</publishTime>
+      <publishTime>03/11/2018 17:51:48</publishTime>
     </File>
     <File Include="assets/css/bootstrap-theme.css">
-      <publishTime>10/07/2017 12:12:27</publishTime>
+      <publishTime>03/11/2018 17:51:48</publishTime>
     </File>
     <File Include="assets/css/bootstrap-theme.css.map">
-      <publishTime>10/07/2017 12:12:27</publishTime>
+      <publishTime>03/11/2018 17:51:48</publishTime>
     </File>
     <File Include="assets/css/bootstrap-theme.min.css">
-      <publishTime>10/07/2017 12:12:27</publishTime>
+      <publishTime>03/11/2018 17:51:48</publishTime>
     </File>
     <File Include="assets/css/bootstrap-theme.min.css.map">
-      <publishTime>10/07/2017 12:12:28</publishTime>
+      <publishTime>03/11/2018 17:51:48</publishTime>
     </File>
     <File Include="assets/css/bootstrap.css">
-      <publishTime>10/07/2017 12:12:28</publishTime>
+      <publishTime>03/11/2018 17:51:48</publishTime>
     </File>
     <File Include="assets/css/bootstrap.css.map">
-      <publishTime>10/07/2017 12:12:28</publishTime>
+      <publishTime>03/11/2018 17:51:48</publishTime>
     </File>
     <File Include="assets/css/bootstrap.min.css">
-      <publishTime>10/07/2017 12:12:28</publishTime>
+      <publishTime>03/11/2018 17:51:48</publishTime>
     </File>
     <File Include="assets/css/bootstrap.min.css.map">
-      <publishTime>10/07/2017 12:12:29</publishTime>
+      <publishTime>03/11/2018 17:51:48</publishTime>
     </File>
     <File Include="assets/css/style.css">
-      <publishTime>10/07/2017 13:04:15</publishTime>
+      <publishTime>03/11/2018 17:51:48</publishTime>
+    </File>
+    <File Include="assets/images/book.jpg">
+      <publishTime>03/11/2018 17:51:48</publishTime>
     </File>
     <File Include="assets/images/bottom.jpg">
-      <publishTime>10/07/2017 12:12:30</publishTime>
+      <publishTime>03/11/2018 17:51:48</publishTime>
+    </File>
+    <File Include="assets/images/giphy.gif">
+      <publishTime>03/11/2018 17:51:48</publishTime>
     </File>
     <File Include="assets/images/index_41.jpg">
-      <publishTime>10/07/2017 12:12:30</publishTime>
+      <publishTime>03/11/2018 17:51:48</publishTime>
+    </File>
+    <File Include="assets/images/loader4.gif">
+      <publishTime>03/11/2018 17:51:48</publishTime>
+    </File>
+    <File Include="assets/images/loading_spinner.gif">
+      <publishTime>03/11/2018 17:51:48</publishTime>
+    </File>
+    <File Include="assets/images/logo.jpg">
+      <publishTime>03/11/2018 17:51:48</publishTime>
     </File>
     <File Include="assets/images/navlogo.png">
-      <publishTime>10/07/2017 12:12:30</publishTime>
+      <publishTime>03/11/2018 17:51:48</publishTime>
+    </File>
+    <File Include="assets/images/spinner.gif">
+      <publishTime>03/11/2018 17:51:48</publishTime>
     </File>
     <File Include="assets/images/student.png">
-      <publishTime>10/07/2017 12:12:30</publishTime>
+      <publishTime>03/11/2018 17:51:49</publishTime>
     </File>
     <File Include="assets/js/bootstrap.min.js">
-      <publishTime>10/07/2017 12:12:25</publishTime>
+      <publishTime>03/11/2018 17:51:49</publishTime>
     </File>
     <File Include="assets/js/index.js">
-      <publishTime>10/07/2017 12:12:25</publishTime>
+      <publishTime>03/11/2018 17:51:49</publishTime>
     </File>
     <File Include="bin/ApplicationInsights.config">
-      <publishTime>07/29/2017 10:32:35</publishTime>
+      <publishTime>03/11/2018 17:51:49</publishTime>
     </File>
     <File Include="bin/Education.Core.dll">
-      <publishTime>10/07/2017 14:47:34</publishTime>
+      <publishTime>04/30/2018 23:42:41</publishTime>
     </File>
     <File Include="bin/Education.DB.dll">
-      <publishTime>10/07/2017 14:47:32</publishTime>
+      <publishTime>04/30/2018 23:42:39</publishTime>
     </File>
     <File Include="bin/Education.Entity.dll">
-      <publishTime>07/29/2017 11:55:58</publishTime>
+      <publishTime>04/30/2018 23:42:38</publishTime>
     </File>
     <File Include="bin/Education.WebApp.dll">
-      <publishTime>10/07/2017 14:47:50</publishTime>
+      <publishTime>05/01/2018 14:54:31</publishTime>
+    </File>
+    <File Include="bin/Education.WebApp.dll.config">
+      <publishTime>03/17/2018 17:18:29</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
-      <publishTime>05/20/2017 20:21:52</publishTime>
+      <publishTime>03/11/2018 17:52:03</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>03/11/2018 17:52:03</publishTime>
+    </File>
+    <File Include="bin/Excel.dll">
+      <publishTime>03/11/2018 17:51:49</publishTime>
+    </File>
+    <File Include="bin/ExcelUpload.dll">
+      <publishTime>03/11/2018 17:51:49</publishTime>
+    </File>
+    <File Include="bin/ICSharpCode.SharpZipLib.dll">
+      <publishTime>03/11/2018 17:51:49</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.Agent.Intercept.dll">
-      <publishTime>07/29/2017 10:30:13</publishTime>
+      <publishTime>03/11/2018 17:51:49</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.DependencyCollector.dll">
-      <publishTime>07/29/2017 10:30:18</publishTime>
+      <publishTime>03/11/2018 17:51:49</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.PerfCounterCollector.dll">
-      <publishTime>07/29/2017 10:30:24</publishTime>
+      <publishTime>03/11/2018 17:51:49</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.ServerTelemetryChannel.dll">
-      <publishTime>07/29/2017 10:30:29</publishTime>
+      <publishTime>03/11/2018 17:51:49</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.Web.dll">
-      <publishTime>07/29/2017 10:30:40</publishTime>
+      <publishTime>03/11/2018 17:51:49</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.WindowsServer.dll">
-      <publishTime>07/29/2017 10:30:34</publishTime>
+      <publishTime>03/11/2018 17:51:49</publishTime>
     </File>
     <File Include="bin/Microsoft.ApplicationInsights.dll">
-      <publishTime>07/29/2017 10:30:08</publishTime>
+      <publishTime>03/11/2018 17:51:49</publishTime>
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
-      <publishTime>07/29/2017 10:29:38</publishTime>
+      <publishTime>03/11/2018 17:52:05</publishTime>
     </File>
     <File Include="bin/Microsoft.Practices.ServiceLocation.dll">
-      <publishTime>07/29/2017 11:41:17</publishTime>
+      <publishTime>03/11/2018 17:51:49</publishTime>
     </File>
     <File Include="bin/Microsoft.Practices.Unity.Configuration.dll">
-      <publishTime>07/29/2017 11:41:23</publishTime>
+      <publishTime>03/11/2018 17:51:49</publishTime>
     </File>
     <File Include="bin/Microsoft.Practices.Unity.dll">
-      <publishTime>07/29/2017 11:41:23</publishTime>
+      <publishTime>03/11/2018 17:51:49</publishTime>
     </File>
     <File Include="bin/Microsoft.Practices.Unity.RegistrationByConvention.dll">
-      <publishTime>07/29/2017 11:41:23</publishTime>
+      <publishTime>03/11/2018 17:51:49</publishTime>
     </File>
     <File Include="bin/Microsoft.Web.Infrastructure.dll">
-      <publishTime>07/29/2017 10:29:00</publishTime>
+      <publishTime>03/11/2018 17:51:49</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>03/11/2018 17:51:50</publishTime>
+    </File>
+    <File Include="bin/NReco.VideoConverter.dll">
+      <publishTime>01/14/2017 11:56:12</publishTime>
+    </File>
+    <File Include="bin/Owin.dll">
+      <publishTime>03/11/2018 17:51:50</publishTime>
+    </File>
+    <File Include="bin/PagedList.dll">
+      <publishTime>03/11/2018 17:52:06</publishTime>
+    </File>
+    <File Include="bin/PagedList.Mvc.dll">
+      <publishTime>03/11/2018 17:52:06</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
-      <publishTime>07/29/2017 10:29:34</publishTime>
+      <publishTime>03/11/2018 17:52:05</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
-      <publishTime>07/29/2017 10:29:34</publishTime>
+      <publishTime>03/11/2018 17:52:05</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
-      <publishTime>07/29/2017 10:29:35</publishTime>
+      <publishTime>03/11/2018 17:52:05</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
-      <publishTime>07/29/2017 10:29:35</publishTime>
+      <publishTime>03/11/2018 17:52:05</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
-      <publishTime>07/29/2017 10:29:35</publishTime>
+      <publishTime>03/11/2018 17:52:05</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
-      <publishTime>07/29/2017 10:29:35</publishTime>
+      <publishTime>03/11/2018 17:52:05</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
-      <publishTime>07/29/2017 10:29:35</publishTime>
+      <publishTime>03/11/2018 17:52:05</publishTime>
     </File>
     <File Include="bin/roslyn/System.Collections.Immutable.dll">
-      <publishTime>07/29/2017 10:29:35</publishTime>
+      <publishTime>03/11/2018 17:52:05</publishTime>
     </File>
     <File Include="bin/roslyn/System.Reflection.Metadata.dll">
-      <publishTime>07/29/2017 10:29:35</publishTime>
+      <publishTime>03/11/2018 17:52:05</publishTime>
     </File>
     <File Include="bin/roslyn/vbc.exe">
-      <publishTime>07/29/2017 10:29:35</publishTime>
+      <publishTime>03/11/2018 17:52:05</publishTime>
     </File>
     <File Include="bin/roslyn/VBCSCompiler.exe">
-      <publishTime>07/29/2017 10:29:35</publishTime>
+      <publishTime>03/11/2018 17:52:05</publishTime>
     </File>
     <File Include="bin/roslyn/VBCSCompiler.exe.config">
-      <publishTime>07/29/2017 10:29:35</publishTime>
+      <publishTime>03/11/2018 17:52:05</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>03/11/2018 17:51:50</publishTime>
     </File>
     <File Include="bin/System.Web.Helpers.dll">
-      <publishTime>07/29/2017 10:28:58</publishTime>
+      <publishTime>03/11/2018 17:51:50</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>03/11/2018 17:51:50</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>03/11/2018 17:51:50</publishTime>
     </File>
     <File Include="bin/System.Web.Mvc.dll">
-      <publishTime>07/29/2017 10:29:00</publishTime>
+      <publishTime>03/11/2018 17:51:50</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>03/11/2018 17:51:50</publishTime>
     </File>
     <File Include="bin/System.Web.Razor.dll">
-      <publishTime>07/29/2017 10:28:57</publishTime>
+      <publishTime>03/11/2018 17:51:50</publishTime>
     </File>
     <File Include="bin/System.Web.Webpages.Deployment.dll">
-      <publishTime>07/29/2017 10:28:58</publishTime>
+      <publishTime>03/11/2018 17:51:50</publishTime>
     </File>
     <File Include="bin/System.Web.Webpages.dll">
-      <publishTime>07/29/2017 10:28:58</publishTime>
+      <publishTime>03/11/2018 17:51:50</publishTime>
     </File>
     <File Include="bin/System.Web.Webpages.Razor.dll">
-      <publishTime>07/29/2017 10:28:58</publishTime>
+      <publishTime>03/11/2018 17:51:50</publishTime>
     </File>
     <File Include="bin/Unity.Mvc5.dll">
-      <publishTime>07/29/2017 11:44:41</publishTime>
+      <publishTime>03/11/2018 17:51:50</publishTime>
+    </File>
+    <File Include="bootstrap-3.3.6-dist/css/bootstrap-theme.css">
+      <publishTime>03/11/2018 17:51:50</publishTime>
+    </File>
+    <File Include="bootstrap-3.3.6-dist/css/bootstrap-theme.css.map">
+      <publishTime>03/11/2018 17:51:50</publishTime>
+    </File>
+    <File Include="bootstrap-3.3.6-dist/css/bootstrap-theme.min.css">
+      <publishTime>03/11/2018 17:51:50</publishTime>
+    </File>
+    <File Include="bootstrap-3.3.6-dist/css/bootstrap-theme.min.css.map">
+      <publishTime>03/11/2018 17:51:50</publishTime>
+    </File>
+    <File Include="bootstrap-3.3.6-dist/css/bootstrap.css">
+      <publishTime>03/11/2018 17:51:50</publishTime>
+    </File>
+    <File Include="bootstrap-3.3.6-dist/css/bootstrap.css.map">
+      <publishTime>03/11/2018 17:51:50</publishTime>
+    </File>
+    <File Include="bootstrap-3.3.6-dist/css/bootstrap.min.css">
+      <publishTime>03/11/2018 17:51:50</publishTime>
+    </File>
+    <File Include="bootstrap-3.3.6-dist/css/bootstrap.min.css.map">
+      <publishTime>03/11/2018 17:51:50</publishTime>
+    </File>
+    <File Include="bootstrap-3.3.6-dist/fonts/glyphicons-halflings-regular.eot">
+      <publishTime>03/11/2018 17:51:51</publishTime>
+    </File>
+    <File Include="bootstrap-3.3.6-dist/fonts/glyphicons-halflings-regular.svg">
+      <publishTime>03/11/2018 17:51:51</publishTime>
+    </File>
+    <File Include="bootstrap-3.3.6-dist/fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>03/11/2018 17:51:51</publishTime>
+    </File>
+    <File Include="bootstrap-3.3.6-dist/fonts/glyphicons-halflings-regular.woff">
+      <publishTime>03/11/2018 17:51:51</publishTime>
+    </File>
+    <File Include="bootstrap-3.3.6-dist/fonts/glyphicons-halflings-regular.woff2">
+      <publishTime>03/11/2018 17:51:51</publishTime>
+    </File>
+    <File Include="bootstrap-3.3.6-dist/js/bootstrap.js">
+      <publishTime>03/11/2018 17:51:51</publishTime>
+    </File>
+    <File Include="bootstrap-3.3.6-dist/js/bootstrap.min.js">
+      <publishTime>03/11/2018 17:51:51</publishTime>
+    </File>
+    <File Include="bootstrap-3.3.6-dist/js/npm.js">
+      <publishTime>03/11/2018 17:51:51</publishTime>
+    </File>
+    <File Include="build/css/demo.css">
+      <publishTime>03/11/2018 17:51:51</publishTime>
+    </File>
+    <File Include="build/css/intlTelInput.css">
+      <publishTime>03/11/2018 17:51:51</publishTime>
+    </File>
+    <File Include="build/img/flags%402x.png">
+      <publishTime>03/11/2018 17:51:51</publishTime>
+    </File>
+    <File Include="build/img/flags.png">
+      <publishTime>03/11/2018 17:51:51</publishTime>
+    </File>
+    <File Include="build/js/intlTelInput.js">
+      <publishTime>03/11/2018 17:51:51</publishTime>
+    </File>
+    <File Include="build/js/intlTelInput.min.js">
+      <publishTime>03/11/2018 17:51:51</publishTime>
+    </File>
+    <File Include="build/js/utils.js">
+      <publishTime>03/11/2018 17:51:51</publishTime>
     </File>
     <File Include="Content/bootstrap.css">
-      <publishTime>07/29/2017 10:34:43</publishTime>
+      <publishTime>03/11/2018 17:51:51</publishTime>
     </File>
     <File Include="Content/bootstrap.min.css">
-      <publishTime>07/29/2017 10:34:42</publishTime>
+      <publishTime>03/11/2018 17:51:51</publishTime>
+    </File>
+    <File Include="Content/PagedList.css">
+      <publishTime>03/11/2018 17:51:51</publishTime>
     </File>
     <File Include="Content/Site.css">
-      <publishTime>07/29/2017 10:34:26</publishTime>
+      <publishTime>03/17/2018 17:18:29</publishTime>
     </File>
     <File Include="fonts/glyphicons-halflings-regular.eot">
-      <publishTime>07/29/2017 10:34:42</publishTime>
+      <publishTime>03/11/2018 17:51:52</publishTime>
     </File>
     <File Include="fonts/glyphicons-halflings-regular.svg">
-      <publishTime>07/29/2017 10:34:42</publishTime>
+      <publishTime>03/11/2018 17:51:52</publishTime>
     </File>
     <File Include="fonts/glyphicons-halflings-regular.ttf">
-      <publishTime>07/29/2017 10:34:42</publishTime>
+      <publishTime>03/11/2018 17:51:52</publishTime>
     </File>
     <File Include="fonts/glyphicons-halflings-regular.woff">
-      <publishTime>07/29/2017 10:34:42</publishTime>
+      <publishTime>03/11/2018 17:51:52</publishTime>
     </File>
     <File Include="Global.asax">
-      <publishTime>07/29/2017 10:31:59</publishTime>
+      <publishTime>03/11/2018 17:51:52</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>07/29/2017 11:44:44</publishTime>
+      <publishTime>03/11/2018 17:51:55</publishTime>
     </File>
     <File Include="scripts/ai.0.15.0-build58334.js">
       <publishTime>07/29/2017 10:32:39</publishTime>
@@ -234,6 +366,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="scripts/bootstrap.min.js">
       <publishTime>07/29/2017 10:34:42</publishTime>
     </File>
+    <File Include="scripts/custom-validators.js">
+      <publishTime>04/29/2018 23:07:03</publishTime>
+    </File>
     <File Include="scripts/jquery-1.10.2.js">
       <publishTime>07/29/2017 10:34:45</publishTime>
     </File>
@@ -243,35 +378,128 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="scripts/jquery-1.10.2.min.map">
       <publishTime>07/29/2017 10:34:45</publishTime>
     </File>
+    <File Include="scripts/jquery-1.11.3.min.js">
+      <publishTime>03/11/2018 17:51:56</publishTime>
+    </File>
+    <File Include="scripts/jquery-1.7.1.js">
+      <publishTime>03/11/2018 17:51:56</publishTime>
+    </File>
+    <File Include="scripts/jquery-1.7.1.min.js">
+      <publishTime>03/11/2018 17:51:56</publishTime>
+    </File>
+    <File Include="scripts/jquery-ui-1.8.20.js">
+      <publishTime>03/11/2018 17:51:56</publishTime>
+    </File>
+    <File Include="scripts/jquery-ui-1.8.20.min.js">
+      <publishTime>03/11/2018 17:51:56</publishTime>
+    </File>
+    <File Include="scripts/jquery.unobtrusive-ajax.js">
+      <publishTime>03/11/2018 17:51:56</publishTime>
+    </File>
+    <File Include="scripts/jquery.unobtrusive-ajax.min.js">
+      <publishTime>03/11/2018 17:51:56</publishTime>
+    </File>
+    <File Include="scripts/jquery.validate.js">
+      <publishTime>03/11/2018 17:51:56</publishTime>
+    </File>
+    <File Include="scripts/jquery.validate.min.js">
+      <publishTime>03/11/2018 17:51:57</publishTime>
+    </File>
+    <File Include="scripts/jquery.validate.unobtrusive.js">
+      <publishTime>03/11/2018 17:51:57</publishTime>
+    </File>
+    <File Include="scripts/jquery.validate.unobtrusive.min.js">
+      <publishTime>03/11/2018 17:51:57</publishTime>
+    </File>
+    <File Include="scripts/knockout-2.1.0.debug.js">
+      <publishTime>03/11/2018 17:51:57</publishTime>
+    </File>
+    <File Include="scripts/knockout-2.1.0.js">
+      <publishTime>03/11/2018 17:51:57</publishTime>
+    </File>
+    <File Include="scripts/modernizr-2.5.3.js">
+      <publishTime>03/11/2018 17:51:57</publishTime>
+    </File>
     <File Include="scripts/modernizr-2.6.2.js">
       <publishTime>07/29/2017 10:34:48</publishTime>
+    </File>
+    <File Include="scripts/Paging.js">
+      <publishTime>03/11/2018 17:51:57</publishTime>
+    </File>
+    <File Include="scripts/sweet-alert.js">
+      <publishTime>03/11/2018 17:51:57</publishTime>
     </File>
     <File Include="Views/Home/index.cshtml">
       <publishTime>10/07/2017 13:58:51</publishTime>
     </File>
+    <File Include="Views/List/ListStudent.cshtml">
+      <publishTime>04/25/2018 23:14:58</publishTime>
+    </File>
+    <File Include="Views/List/UpdateStudentDetails.cshtml">
+      <publishTime>03/11/2018 17:51:57</publishTime>
+    </File>
+    <File Include="Views/Login/Index.cshtml">
+      <publishTime>03/11/2018 17:51:57</publishTime>
+    </File>
+    <File Include="Views/Login/Login.cshtml">
+      <publishTime>03/11/2018 17:51:57</publishTime>
+    </File>
+    <File Include="Views/Main/index.cshtml">
+      <publishTime>04/25/2018 23:14:58</publishTime>
+    </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>10/07/2017 13:01:20</publishTime>
+      <publishTime>03/17/2018 17:18:29</publishTime>
     </File>
     <File Include="Views/Student/AddStudent.cshtml">
-      <publishTime>10/07/2017 14:11:41</publishTime>
+      <publishTime>04/25/2018 23:14:58</publishTime>
     </File>
     <File Include="Views/Student/Index.cshtml">
-      <publishTime>10/07/2017 14:16:09</publishTime>
+      <publishTime>04/25/2018 23:14:58</publishTime>
     </File>
     <File Include="Views/Student/ListStudent.cshtml">
-      <publishTime>10/07/2017 14:15:44</publishTime>
+      <publishTime>04/25/2018 23:14:58</publishTime>
+    </File>
+    <File Include="Views/Teacher/AddTeacher.cshtml">
+      <publishTime>04/25/2018 23:14:58</publishTime>
+    </File>
+    <File Include="Views/Teacher/Index.cshtml">
+      <publishTime>04/25/2018 23:14:58</publishTime>
+    </File>
+    <File Include="Views/Teacher/ListTeacher.cshtml">
+      <publishTime>04/25/2018 23:14:58</publishTime>
+    </File>
+    <File Include="Views/Teacher/UpdateTeacherDetails.cshtml">
+      <publishTime>03/11/2018 17:51:57</publishTime>
+    </File>
+    <File Include="Views/TestDetail/AddTestDetails.cshtml">
+      <publishTime>04/25/2018 23:14:58</publishTime>
+    </File>
+    <File Include="Views/TestDetail/Index.cshtml">
+      <publishTime>04/25/2018 23:14:58</publishTime>
+    </File>
+    <File Include="Views/TestDetail/ListTestDetail.cshtml">
+      <publishTime>04/25/2018 23:14:58</publishTime>
     </File>
     <File Include="Views/User/Index.cshtml">
-      <publishTime>07/29/2017 10:35:28</publishTime>
+      <publishTime>03/11/2018 17:51:57</publishTime>
+    </File>
+    <File Include="Views/Videos/AddVideo.cshtml">
+      <publishTime>04/29/2018 23:07:15</publishTime>
+    </File>
+    <File Include="Views/Videos/Index.cshtml">
+      <publishTime>04/25/2018 23:14:58</publishTime>
+    </File>
+    <File Include="Views/Videos/ListVideo.cshtml">
+      <publishTime>04/25/2018 23:14:58</publishTime>
     </File>
     <File Include="Views/web.config">
-      <publishTime>07/29/2017 10:31:59</publishTime>
+      <publishTime>03/11/2018 17:51:57</publishTime>
     </File>
     <File Include="Views/_ViewStart.cshtml">
-      <publishTime>07/29/2017 10:34:22</publishTime>
+      <publishTime>03/11/2018 17:51:57</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>07/29/2017 11:56:13</publishTime>
+      <publishTime>05/01/2018 14:52:59</publishTime>
     </File>
   </ItemGroup>
 </Project>
