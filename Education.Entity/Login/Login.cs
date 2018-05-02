@@ -92,6 +92,7 @@ namespace Education.Entity.Login
         public string UserType { get; set; }
         public string Name { get; set; }
         public string Photo { get; set; }
+        public string Course { get; set; }
     }
 
     public class UserModel

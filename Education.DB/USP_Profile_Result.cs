@@ -19,5 +19,6 @@ namespace Education.DB
         public string UserType { get; set; }
         public string Name { get; set; }
         public string Photo { get; set; }
+        public string Course { get; set; }
     }
 }

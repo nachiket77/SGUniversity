@@ -173,7 +173,9 @@ namespace Education.Core
                                      Mobile = a.Mobile,
                                      USERID = a.USERID,
                                      Photo = a.Photo,
-                                     UserType = a.UserType
+                                     UserType = a.UserType,
+                                     Course=a.Course
+                                     
 
                                  }).FirstOrDefault();
 

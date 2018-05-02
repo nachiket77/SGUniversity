@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="ajay_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="ajay_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Fiscalyear">
           <Key>
             <PropertyRef Name="Fid" />
@@ -565,6 +565,16 @@
           <Property Name="MODIFIEDBY" Type="bigint" />
           <Property Name="MODIFIEDDATE" Type="datetime" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'ajay_db.dbo.tempTest' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="tempTest">
+          <Property Name="TotalMarks" Type="int" />
+          <Property Name="TotalQues" Type="int" />
+          <Property Name="Incorrect" Type="int" />
+          <Property Name="Correct" Type="int" />
+          <Property Name="Unanswered" Type="int" />
+          <Property Name="TestAttampId" Type="int" />
+        </EntityType>-->
         <EntityType Name="Users">
           <Key>
             <PropertyRef Name="Id" />
@@ -1901,7 +1911,8 @@
             <End Role="webpages_UsersInRoles" EntitySet="webpages_UsersInRoles" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ajay_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -3327,7 +3338,7 @@
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
           <FunctionImport Name="sprocMemberRegistrationDeleteSingleItem">
-          <Parameter Name="MemID" Mode="In" Type="Int64" />
+            <Parameter Name="MemID" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="sprocMemberRegistrationInsertUpdateSingleItem">
             <Parameter Name="MemID" Mode="In" Type="Int64" />
@@ -3349,7 +3360,7 @@
           </FunctionImport>
           <FunctionImport Name="sprocMemberRegistrationSelectList" ReturnType="Collection(ajay_dbModel.sprocMemberRegistrationSelectList_Result)" />
           <FunctionImport Name="sprocMemberRegistrationSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocMemberRegistrationSelectSingleItem_Result)">
-          <Parameter Name="MemID" Mode="In" Type="Int64" />
+            <Parameter Name="MemID" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="sprocMemberRegistrationUpdateSingleItem">
             <Parameter Name="PaymentID" Mode="In" Type="Int64" />
@@ -3364,7 +3375,7 @@
             <Parameter Name="PaymentIDOUT" Mode="InOut" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sprocPaymentDetailsDeleteSingleItem">
-          <Parameter Name="PaymentID" Mode="In" Type="Int64" />
+            <Parameter Name="PaymentID" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="sprocPaymentDetailsInsertUpdateSingleItem">
             <Parameter Name="PaymentID" Mode="In" Type="Int64" />
@@ -3381,10 +3392,10 @@
           </FunctionImport>
           <FunctionImport Name="sprocPaymentDetailsSelectList" ReturnType="Collection(ajay_dbModel.sprocPaymentDetailsSelectList_Result)" />
           <FunctionImport Name="sprocPaymentDetailsSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocPaymentDetailsSelectSingleItem_Result)">
-          <Parameter Name="PaymentID" Mode="In" Type="Int64" />
+            <Parameter Name="PaymentID" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="sprocPlanMasterDeleteSingleItem">
-          <Parameter Name="PlanID" Mode="In" Type="Int32" />
+            <Parameter Name="PlanID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sprocPlanMasterInsertUpdateSingleItem">
             <Parameter Name="PlanID" Mode="In" Type="Int32" />
@@ -3401,7 +3412,7 @@
           </FunctionImport>
           <FunctionImport Name="sprocPlanMasterSelectList" ReturnType="Collection(ajay_dbModel.sprocPlanMasterSelectList_Result)" />
           <FunctionImport Name="sprocPlanMasterSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocPlanMasterSelectSingleItem_Result)">
-          <Parameter Name="PlanID" Mode="In" Type="Int32" />
+            <Parameter Name="PlanID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sprocRecepitTBInsertUpdateSingleItem">
             <Parameter Name="RecepitID" Mode="In" Type="Int64" />
@@ -3410,7 +3421,7 @@
             <Parameter Name="createdby" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="sprocSchemeMasterDeleteSingleItem">
-          <Parameter Name="SchemeID" Mode="In" Type="Int32" />
+            <Parameter Name="SchemeID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sprocSchemeMasterInsertUpdateSingleItem">
             <Parameter Name="SchemeID" Mode="In" Type="Int32" />
@@ -3418,7 +3429,7 @@
             <Parameter Name="Createdby" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_BOARDSDeleteSingleItem">
-          <Parameter Name="BOARDID" Mode="In" Type="Int32" />
+            <Parameter Name="BOARDID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_BOARDSInsertUpdateSingleItem">
             <Parameter Name="BOARDID" Mode="In" Type="Int32" />
@@ -3426,10 +3437,10 @@
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_BOARDSSelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_BOARDSSelectList_Result)" />
           <FunctionImport Name="sprocTBL_MASTER_BOARDSSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_BOARDSSelectSingleItem_Result)">
-          <Parameter Name="BOARDID" Mode="In" Type="Int32" />
+            <Parameter Name="BOARDID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_CITYDeleteSingleItem">
-          <Parameter Name="CITYID" Mode="In" Type="Int32" />
+            <Parameter Name="CITYID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_CITYInsertUpdateSingleItem">
             <Parameter Name="CITYID" Mode="In" Type="Int32" />
@@ -3438,10 +3449,10 @@
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_CITYSelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_CITYSelectList_Result)" />
           <FunctionImport Name="sprocTBL_MASTER_CITYSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_CITYSelectSingleItem_Result)">
-          <Parameter Name="CITYID" Mode="In" Type="Int32" />
+            <Parameter Name="CITYID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_CLASSDeleteSingleItem">
-          <Parameter Name="CLASSID" Mode="In" Type="Int32" />
+            <Parameter Name="CLASSID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_CLASSInsertUpdateSingleItem">
             <Parameter Name="CLASSID" Mode="In" Type="Int32" />
@@ -3449,10 +3460,10 @@
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_CLASSSelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_CLASSSelectList_Result)" />
           <FunctionImport Name="sprocTBL_MASTER_CLASSSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_CLASSSelectSingleItem_Result)">
-          <Parameter Name="CLASSID" Mode="In" Type="Int32" />
+            <Parameter Name="CLASSID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_COUNTRYDeleteSingleItem">
-          <Parameter Name="COUNTRYID" Mode="In" Type="Int32" />
+            <Parameter Name="COUNTRYID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_COUNTRYInsertUpdateSingleItem">
             <Parameter Name="COUNTRYID" Mode="In" Type="Int32" />
@@ -3460,10 +3471,10 @@
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_COUNTRYSelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_COUNTRYSelectList_Result)" />
           <FunctionImport Name="sprocTBL_MASTER_COUNTRYSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_COUNTRYSelectSingleItem_Result)">
-          <Parameter Name="COUNTRYID" Mode="In" Type="Int32" />
+            <Parameter Name="COUNTRYID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_COURSEDeleteSingleItem">
-          <Parameter Name="COURSEID" Mode="In" Type="Int32" />
+            <Parameter Name="COURSEID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_COURSEInsertUpdateSingleItem">
             <Parameter Name="COURSEID" Mode="In" Type="Int32" />
@@ -3471,10 +3482,10 @@
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_COURSESelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_COURSESelectList_Result)" />
           <FunctionImport Name="sprocTBL_MASTER_COURSESelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_COURSESelectSingleItem_Result)">
-          <Parameter Name="COURSEID" Mode="In" Type="Int32" />
+            <Parameter Name="COURSEID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_DOCUMENTTYPEDeleteSingleItem">
-          <Parameter Name="DocumentTypeID" Mode="In" Type="Int32" />
+            <Parameter Name="DocumentTypeID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_DOCUMENTTYPEInsertUpdateSingleItem">
             <Parameter Name="DocumentTypeID" Mode="In" Type="Int32" />
@@ -3482,10 +3493,10 @@
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_DOCUMENTTYPESelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_DOCUMENTTYPESelectList_Result)" />
           <FunctionImport Name="sprocTBL_MASTER_DOCUMENTTYPESelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_DOCUMENTTYPESelectSingleItem_Result)">
-          <Parameter Name="DocumentTypeID" Mode="In" Type="Int32" />
+            <Parameter Name="DocumentTypeID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_STATEDeleteSingleItem">
-          <Parameter Name="STATEID" Mode="In" Type="Int32" />
+            <Parameter Name="STATEID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_STATEInsertUpdateSingleItem">
             <Parameter Name="STATEID" Mode="In" Type="Int32" />
@@ -3494,10 +3505,10 @@
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_STATESelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_STATESelectList_Result)" />
           <FunctionImport Name="sprocTBL_MASTER_STATESelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_STATESelectSingleItem_Result)">
-          <Parameter Name="STATEID" Mode="In" Type="Int32" />
+            <Parameter Name="STATEID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_STATUSDeleteSingleItem">
-          <Parameter Name="STATUSID" Mode="In" Type="Int32" />
+            <Parameter Name="STATUSID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_STATUSInsertUpdateSingleItem">
             <Parameter Name="STATUSID" Mode="In" Type="Int32" />
@@ -3505,10 +3516,10 @@
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_STATUSSelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_STATUSSelectList_Result)" />
           <FunctionImport Name="sprocTBL_MASTER_STATUSSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_STATUSSelectSingleItem_Result)">
-          <Parameter Name="STATUSID" Mode="In" Type="Int32" />
+            <Parameter Name="STATUSID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_SUBJECTDeleteSingleItem">
-          <Parameter Name="SUBJECTID" Mode="In" Type="Int32" />
+            <Parameter Name="SUBJECTID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_SUBJECTInsertUpdateSingleItem">
             <Parameter Name="SUBJECTID" Mode="In" Type="Int32" />
@@ -3516,10 +3527,10 @@
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_SUBJECTSelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_SUBJECTSelectList_Result)" />
           <FunctionImport Name="sprocTBL_MASTER_SUBJECTSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_SUBJECTSelectSingleItem_Result)">
-          <Parameter Name="SUBJECTID" Mode="In" Type="Int32" />
+            <Parameter Name="SUBJECTID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_USERTYPEDeleteSingleItem">
-          <Parameter Name="USERTYPEID" Mode="In" Type="Int32" />
+            <Parameter Name="USERTYPEID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_USERTYPEInsertUpdateSingleItem">
             <Parameter Name="USERTYPEID" Mode="In" Type="Int32" />
@@ -3527,10 +3538,10 @@
           </FunctionImport>
           <FunctionImport Name="sprocTBL_MASTER_USERTYPESelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_USERTYPESelectList_Result)" />
           <FunctionImport Name="sprocTBL_MASTER_USERTYPESelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_MASTER_USERTYPESelectSingleItem_Result)">
-          <Parameter Name="USERTYPEID" Mode="In" Type="Int32" />
+            <Parameter Name="USERTYPEID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_ADDRESS_DETAILSDeleteSingleItem">
-          <Parameter Name="ADDRESSDETAILID" Mode="In" Type="Int64" />
+            <Parameter Name="ADDRESSDETAILID" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_ADDRESS_DETAILSInsertUpdateSingleItem">
             <Parameter Name="ADDRESSDETAILID" Mode="In" Type="Int64" />
@@ -3550,10 +3561,10 @@
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_ADDRESS_DETAILSSelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_ADDRESS_DETAILSSelectList_Result)" />
           <FunctionImport Name="sprocTBL_USER_ADDRESS_DETAILSSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_ADDRESS_DETAILSSelectSingleItem_Result)">
-          <Parameter Name="ADDRESSDETAILID" Mode="In" Type="Int64" />
+            <Parameter Name="ADDRESSDETAILID" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_COURSE_DETAILSDeleteSingleItem">
-          <Parameter Name="STUDENTCOURSEID" Mode="In" Type="Int64" />
+            <Parameter Name="STUDENTCOURSEID" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_COURSE_DETAILSInsertUpdateSingleItem">
             <Parameter Name="STUDENTCOURSEID" Mode="In" Type="Int64" />
@@ -3568,17 +3579,17 @@
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_COURSE_DETAILSSelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_COURSE_DETAILSSelectList_Result)" />
           <FunctionImport Name="sprocTBL_USER_COURSE_DETAILSSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_COURSE_DETAILSSelectSingleItem_Result)">
-          <Parameter Name="STUDENTCOURSEID" Mode="In" Type="Int64" />
+            <Parameter Name="STUDENTCOURSEID" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_DETAILSDeleteSingleItem">
-          <Parameter Name="PERSONALDETAILID" Mode="In" Type="Int64" />
+            <Parameter Name="PERSONALDETAILID" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_DETAILSSelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_DETAILSSelectList_Result)" />
           <FunctionImport Name="sprocTBL_USER_DETAILSSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_DETAILSSelectSingleItem_Result)">
-          <Parameter Name="PERSONALDETAILID" Mode="In" Type="Int64" />
+            <Parameter Name="PERSONALDETAILID" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_DOCUMENTS_DETAILSDeleteSingleItem">
-          <Parameter Name="USERDOCUMENTID" Mode="In" Type="Int64" />
+            <Parameter Name="USERDOCUMENTID" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_DOCUMENTS_DETAILSInsertUpdateSingleItem">
             <Parameter Name="USERDOCUMENTID" Mode="In" Type="Int64" />
@@ -3593,10 +3604,10 @@
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_DOCUMENTS_DETAILSSelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_DOCUMENTS_DETAILSSelectList_Result)" />
           <FunctionImport Name="sprocTBL_USER_DOCUMENTS_DETAILSSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_DOCUMENTS_DETAILSSelectSingleItem_Result)">
-          <Parameter Name="USERDOCUMENTID" Mode="In" Type="Int64" />
+            <Parameter Name="USERDOCUMENTID" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_INSTITUTION_DETAILSDeleteSingleItem">
-          <Parameter Name="INSTITUTIONID" Mode="In" Type="Int64" />
+            <Parameter Name="INSTITUTIONID" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_INSTITUTION_DETAILSInsertUpdateSingleItem">
             <Parameter Name="INSTITUTIONID" Mode="In" Type="Int64" />
@@ -3613,10 +3624,10 @@
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_INSTITUTION_DETAILSSelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_INSTITUTION_DETAILSSelectList_Result)" />
           <FunctionImport Name="sprocTBL_USER_INSTITUTION_DETAILSSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_INSTITUTION_DETAILSSelectSingleItem_Result)">
-          <Parameter Name="INSTITUTIONID" Mode="In" Type="Int64" />
+            <Parameter Name="INSTITUTIONID" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_LOGIN_TRAILDeleteSingleItem">
-          <Parameter Name="LOGIN_TRAIL_ID" Mode="In" Type="Int64" />
+            <Parameter Name="LOGIN_TRAIL_ID" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_LOGIN_TRAILInsertUpdateSingleItem">
             <Parameter Name="LOGIN_TRAIL_ID" Mode="In" Type="Int64" />
@@ -3628,10 +3639,10 @@
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_LOGIN_TRAILSelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_LOGIN_TRAILSelectList_Result)" />
           <FunctionImport Name="sprocTBL_USER_LOGIN_TRAILSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_LOGIN_TRAILSelectSingleItem_Result)">
-          <Parameter Name="LOGIN_TRAIL_ID" Mode="In" Type="Int64" />
+            <Parameter Name="LOGIN_TRAIL_ID" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_LOGINDeleteSingleItem">
-          <Parameter Name="USERID" Mode="In" Type="Int64" />
+            <Parameter Name="USERID" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_LOGINInsertUpdateSingleItem">
             <Parameter Name="USERID" Mode="In" Type="Int64" />
@@ -3646,10 +3657,10 @@
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_LOGINSelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_LOGINSelectList_Result)" />
           <FunctionImport Name="sprocTBL_USER_LOGINSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_LOGINSelectSingleItem_Result)">
-          <Parameter Name="USERID" Mode="In" Type="Int64" />
+            <Parameter Name="USERID" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_PARENTS_DETAILSDeleteSingleItem">
-          <Parameter Name="PARENTID" Mode="In" Type="Int64" />
+            <Parameter Name="PARENTID" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_PARENTS_DETAILSInsertUpdateSingleItem">
             <Parameter Name="PARENTID" Mode="In" Type="Int64" />
@@ -3673,10 +3684,10 @@
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_PARENTS_DETAILSSelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_PARENTS_DETAILSSelectList_Result)" />
           <FunctionImport Name="sprocTBL_USER_PARENTS_DETAILSSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_PARENTS_DETAILSSelectSingleItem_Result)">
-          <Parameter Name="PARENTID" Mode="In" Type="Int64" />
+            <Parameter Name="PARENTID" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_PROFESSIONAL_DETAILSDeleteSingleItem">
-          <Parameter Name="PROFESSIONALDETAILID" Mode="In" Type="Int64" />
+            <Parameter Name="PROFESSIONALDETAILID" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_PROFESSIONAL_DETAILSInsertUpdateSingleItem">
             <Parameter Name="PROFESSIONALDETAILID" Mode="In" Type="Int64" />
@@ -3692,10 +3703,10 @@
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_PROFESSIONAL_DETAILSSelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_PROFESSIONAL_DETAILSSelectList_Result)" />
           <FunctionImport Name="sprocTBL_USER_PROFESSIONAL_DETAILSSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_PROFESSIONAL_DETAILSSelectSingleItem_Result)">
-          <Parameter Name="PROFESSIONALDETAILID" Mode="In" Type="Int64" />
+            <Parameter Name="PROFESSIONALDETAILID" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_SUBJECTSDeleteSingleItem">
-          <Parameter Name="USERSUBJECTID" Mode="In" Type="Int64" />
+            <Parameter Name="USERSUBJECTID" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_SUBJECTSInsertUpdateSingleItem">
             <Parameter Name="USERSUBJECTID" Mode="In" Type="Int64" />
@@ -3708,50 +3719,50 @@
           </FunctionImport>
           <FunctionImport Name="sprocTBL_USER_SUBJECTSSelectList" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_SUBJECTSSelectList_Result)" />
           <FunctionImport Name="sprocTBL_USER_SUBJECTSSelectSingleItem" ReturnType="Collection(ajay_dbModel.sprocTBL_USER_SUBJECTSSelectSingleItem_Result)">
-          <Parameter Name="USERSUBJECTID" Mode="In" Type="Int64" />
+            <Parameter Name="USERSUBJECTID" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="Usp_ALLPaymentDetailinfo" ReturnType="Collection(ajay_dbModel.Usp_ALLPaymentDetailinfo_Result)" />
           <FunctionImport Name="Usp_checkplan" ReturnType="Collection(String)">
-          <Parameter Name="Planmaster" Mode="In" Type="String" />
+            <Parameter Name="Planmaster" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Usp_checkscheme" ReturnType="Collection(String)">
-          <Parameter Name="SchemeName" Mode="In" Type="String" />
+            <Parameter Name="SchemeName" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Usp_checkUsernameExits" ReturnType="Collection(Int32)">
-          <Parameter Name="UserName" Mode="In" Type="String" />
+            <Parameter Name="UserName" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Usp_CheckUserRoles" ReturnType="Collection(Int32)">
-          <Parameter Name="UserId" Mode="In" Type="Int32" />
+            <Parameter Name="UserId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Usp_DisplayAllUser_And_Roles" ReturnType="Collection(ajay_dbModel.Usp_DisplayAllUser_And_Roles_Result)" />
           <FunctionImport Name="Usp_Generatenumber" ReturnType="Collection(ajay_dbModel.Usp_Generatenumber_Result)" />
           <FunctionImport Name="Usp_GenerateRecepit" ReturnType="Collection(ajay_dbModel.Usp_GenerateRecepit_Result)">
-          <Parameter Name="Memberid" Mode="In" Type="Int64" />
+            <Parameter Name="Memberid" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="USP_GET_Attampted_TestDetails" ReturnType="Collection(ajay_dbModel.USP_GET_Attampted_TestDetails_Result)">
-          <Parameter Name="StudentId" Mode="In" Type="Int32" />
+            <Parameter Name="StudentId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="USP_GET_PopularVideos" ReturnType="Collection(ajay_dbModel.USP_GET_PopularVideos_Result)">
-          <Parameter Name="StudentId" Mode="In" Type="Int64" />
+            <Parameter Name="StudentId" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="USP_GET_RecommendedVideos" ReturnType="Collection(ajay_dbModel.USP_GET_RecommendedVideos_Result)">
-          <Parameter Name="StudentId" Mode="In" Type="Int64" />
+            <Parameter Name="StudentId" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="USP_GET_TestDetails" ReturnType="Collection(ajay_dbModel.USP_GET_TestDetails_Result)">
-          <Parameter Name="StudentId" Mode="In" Type="Int32" />
+            <Parameter Name="StudentId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="USP_GET_TestQuesANSByTestId" ReturnType="Collection(ajay_dbModel.USP_GET_TestQuesANSByTestId_Result)">
             <Parameter Name="TestId" Mode="In" Type="Int32" />
             <Parameter Name="StudentId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="USP_GET_TestQuestionByTestId" ReturnType="Collection(ajay_dbModel.USP_GET_TestQuestionByTestId_Result)">
-          <Parameter Name="TestId" Mode="In" Type="Int32" />
+            <Parameter Name="TestId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="USP_GET_VideoDetails" ReturnType="Collection(ajay_dbModel.USP_GET_VideoDetails_Result)">
-          <Parameter Name="VideoId" Mode="In" Type="Int64" />
+            <Parameter Name="VideoId" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="USP_GET_VideosBySubject" ReturnType="Collection(ajay_dbModel.USP_GET_VideosBySubject_Result)">
-          <Parameter Name="SubjectId" Mode="In" Type="Int32" />
+            <Parameter Name="SubjectId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Usp_GetAllRenwalrecords" ReturnType="Collection(ajay_dbModel.Usp_GetAllRenwalrecords_Result)" />
           <FunctionImport Name="Usp_GetAllRenwalrecordsFromBetweenDate" ReturnType="Collection(ajay_dbModel.Usp_GetAllRenwalrecordsFromBetweenDate_Result)">
@@ -3765,38 +3776,41 @@
             <Parameter Name="SchemeID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Usp_GetDataofMemberbyID" ReturnType="Collection(ajay_dbModel.Usp_GetDataofMemberbyID_Result)">
-          <Parameter Name="MainMemberID" Mode="In" Type="Int64" />
+            <Parameter Name="MainMemberID" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="Usp_getDec" ReturnType="Collection(ajay_dbModel.Usp_getDec_Result)">
-          <Parameter Name="Memberid" Mode="In" Type="Int64" />
+            <Parameter Name="Memberid" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="Usp_GetMonthwisepaymentdetails" ReturnType="Collection(ajay_dbModel.Usp_GetMonthwisepaymentdetails_Result)">
-          <Parameter Name="month" Mode="In" Type="Int64" />
+            <Parameter Name="month" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="Usp_GetPlanByWorkTypeID" ReturnType="Collection(ajay_dbModel.Usp_GetPlanByWorkTypeID_Result)">
-          <Parameter Name="SchemeID" Mode="In" Type="Int32" />
+            <Parameter Name="SchemeID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Usp_getPlanPeriodID" ReturnType="Collection(Int32)">
-          <Parameter Name="PlanID" Mode="In" Type="Int32" />
+            <Parameter Name="PlanID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Usp_getRoleByUserID" ReturnType="Collection(String)">
-          <Parameter Name="UserId" Mode="In" Type="Int32" />
+            <Parameter Name="UserId" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Usp_GetRoles" ReturnType="Collection(ajay_dbModel.Usp_GetRoles_Result)" />
           <FunctionImport Name="Usp_GetYearwisepaymentdetails" ReturnType="Collection(ajay_dbModel.Usp_GetYearwisepaymentdetails_Result)">
-          <Parameter Name="year" Mode="In" Type="Int64" />
+            <Parameter Name="year" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="USP_listofMemberName" ReturnType="Collection(ajay_dbModel.USP_listofMemberName_Result)">
-          <Parameter Name="MemberFName" Mode="In" Type="String" />
+            <Parameter Name="MemberFName" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="USP_listofMemberno" ReturnType="Collection(ajay_dbModel.USP_listofMemberno_Result)">
-          <Parameter Name="MemberID" Mode="In" Type="String" />
+            <Parameter Name="MemberID" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Usp_PaymentDetailinfo" ReturnType="Collection(ajay_dbModel.Usp_PaymentDetailinfo_Result)">
-          <Parameter Name="MemberID" Mode="In" Type="Int64" />
+            <Parameter Name="MemberID" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="Usp_PaymentDetailinfo_Name" ReturnType="Collection(ajay_dbModel.Usp_PaymentDetailinfo_Name_Result)">
-          <Parameter Name="MemberFName" Mode="In" Type="String" />
+            <Parameter Name="MemberFName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="USP_Profile" ReturnType="Collection(ajay_dbModel.USP_Profile_Result)">
+            <Parameter Name="UserId" Mode="In" Type="Int64" />
           </FunctionImport>
           <FunctionImport Name="USP_ResetPassword" ReturnType="Collection(ajay_dbModel.USP_ResetPassword_Result)">
             <Parameter Name="Email" Mode="In" Type="String" />
@@ -3819,13 +3833,10 @@
             <Parameter Name="QuesAnsXml" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Usp_UserIDbyUserName" ReturnType="Collection(Int32)">
-          <Parameter Name="UserName" Mode="In" Type="String" />
+            <Parameter Name="UserName" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Usp_UserNamebyUserID" ReturnType="Collection(String)">
-          <Parameter Name="UserId" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="USP_Profile" ReturnType="Collection(ajay_dbModel.USP_Profile_Result)">
-            <Parameter Name="UserId" Mode="In" Type="Int64" />
+            <Parameter Name="UserId" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="GetAllTBL_MASTER_BOARDS_Result">
@@ -4359,7 +4370,7 @@
           <Property Type="Int32" Name="DOWNLOADCOUNT" Nullable="true" />
           <Property Type="Int32" Name="VIEWCOUNT" Nullable="true" />
           <Property Type="String" Name="VideoPath" Nullable="true" MaxLength="1039" />
-          <Property Type="String" Name="ThumbnailPath" Nullable="true" MaxLength="2044" />
+          <Property Type="String" Name="ThumbnailPath" Nullable="false" MaxLength="2044" />
           <Property Type="Int32" Name="CourseId" Nullable="true" />
           <Property Type="String" Name="SubjectName" Nullable="true" MaxLength="100" />
           <Property Type="String" Name="CourseName" Nullable="true" MaxLength="100" />
@@ -4378,7 +4389,7 @@
           <Property Type="Int32" Name="DOWNLOADCOUNT" Nullable="true" />
           <Property Type="Int32" Name="VIEWCOUNT" Nullable="true" />
           <Property Type="String" Name="VideoPath" Nullable="true" MaxLength="1039" />
-          <Property Type="String" Name="ThumbnailPath" Nullable="true" MaxLength="2044" />
+          <Property Type="String" Name="ThumbnailPath" Nullable="false" MaxLength="2044" />
           <Property Type="Int32" Name="CourseId" Nullable="true" />
           <Property Type="String" Name="SubjectName" Nullable="true" MaxLength="100" />
           <Property Type="String" Name="CourseName" Nullable="true" MaxLength="100" />
@@ -4434,7 +4445,7 @@
           <Property Type="Int32" Name="DOWNLOADCOUNT" Nullable="true" />
           <Property Type="Int32" Name="VIEWCOUNT" Nullable="true" />
           <Property Type="String" Name="VideoPath" Nullable="true" MaxLength="1039" />
-          <Property Type="String" Name="ThumbnailPath" Nullable="true" MaxLength="2044" />
+          <Property Type="String" Name="ThumbnailPath" Nullable="false" MaxLength="2044" />
           <Property Type="Int32" Name="CourseId" Nullable="true" />
           <Property Type="String" Name="VideoDesc" Nullable="true" MaxLength="1000" />
           <Property Type="String" Name="RefDocs" Nullable="true" MaxLength="500" />
@@ -4602,6 +4613,15 @@
           <Property Type="Int32" Name="WorkouttypeID" Nullable="true" />
           <Property Type="Int32" Name="PlantypeID" Nullable="true" />
         </ComplexType>
+        <ComplexType Name="USP_Profile_Result">
+          <Property Type="Int64" Name="USERID" Nullable="false" />
+          <Property Type="String" Name="Email" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Mobile" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="UserType" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="152" />
+          <Property Type="String" Name="Photo" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Course" Nullable="true" MaxLength="100" />
+        </ComplexType>
         <ComplexType Name="USP_ResetPassword_Result">
           <Property Type="Int64" Name="UserID" Nullable="false" />
           <Property Type="String" Name="Email" Nullable="false" MaxLength="100" />
@@ -4618,14 +4638,6 @@
           <Property Type="Int32" Name="Unanswered" Nullable="true" />
           <Property Type="Int32" Name="TestId" Nullable="true" />
           <Property Type="Int32" Name="StudentId" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="USP_Profile_Result">
-          <Property Type="Int64" Name="USERID" Nullable="false" />
-          <Property Type="String" Name="Email" Nullable="false" MaxLength="100" />
-          <Property Type="String" Name="Mobile" Nullable="true" MaxLength="10" />
-          <Property Type="String" Name="UserType" Nullable="true" MaxLength="20" />
-          <Property Type="String" Name="Name" Nullable="false" MaxLength="152" />
-          <Property Type="String" Name="Photo" Nullable="false" MaxLength="50" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -6449,6 +6461,19 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_Profile" FunctionName="ajay_dbModel.Store.USP_Profile">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ajay_dbModel.USP_Profile_Result">
+                <ScalarProperty Name="USERID" ColumnName="USERID" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="UserType" ColumnName="UserType" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="Course" ColumnName="Course" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="USP_ResetPassword" FunctionName="ajay_dbModel.Store.USP_ResetPassword">
             <ResultMapping>
               <ComplexTypeMapping TypeName="ajay_dbModel.USP_ResetPassword_Result">
@@ -6477,18 +6502,6 @@
           <FunctionImportMapping FunctionImportName="USP_TestAnswers_new" FunctionName="ajay_dbModel.Store.USP_TestAnswers_new" />
           <FunctionImportMapping FunctionImportName="Usp_UserIDbyUserName" FunctionName="ajay_dbModel.Store.Usp_UserIDbyUserName" />
           <FunctionImportMapping FunctionImportName="Usp_UserNamebyUserID" FunctionName="ajay_dbModel.Store.Usp_UserNamebyUserID" />
-          <FunctionImportMapping FunctionImportName="USP_Profile" FunctionName="ajay_dbModel.Store.USP_Profile">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="ajay_dbModel.USP_Profile_Result">
-                <ScalarProperty Name="USERID" ColumnName="USERID" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
-                <ScalarProperty Name="UserType" ColumnName="UserType" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Photo" ColumnName="Photo" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

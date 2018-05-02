@@ -2428,6 +2428,15 @@ namespace Education.DB
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Usp_PaymentDetailinfo_Name_Result>("Usp_PaymentDetailinfo_Name", memberFNameParameter);
         }
     
+        public virtual ObjectResult<USP_Profile_Result> USP_Profile(Nullable<long> userId)
+        {
+            var userIdParameter = userId.HasValue ?
+                new ObjectParameter("UserId", userId) :
+                new ObjectParameter("UserId", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<USP_Profile_Result>("USP_Profile", userIdParameter);
+        }
+    
         public virtual ObjectResult<USP_ResetPassword_Result> USP_ResetPassword(string email, string password)
         {
             var emailParameter = email != null ?
@@ -2515,15 +2524,6 @@ namespace Education.DB
                 new ObjectParameter("UserId", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("Usp_UserNamebyUserID", userIdParameter);
-        }
-    
-        public virtual ObjectResult<USP_Profile_Result> USP_Profile(Nullable<long> userId)
-        {
-            var userIdParameter = userId.HasValue ?
-                new ObjectParameter("UserId", userId) :
-                new ObjectParameter("UserId", typeof(long));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<USP_Profile_Result>("USP_Profile", userIdParameter);
         }
     }
 }
